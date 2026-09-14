@@ -138,33 +138,33 @@ Twenty-five sites from the library, all verified reachable, DA 20 to 96, 25 of t
 <details>
 <summary>Show all 25</summary>
 
-| Site | DA | Referring domains | Method | Needs |
-|---|---|---|---|---|
-| Medium | 96 | 1,371,100 | Article or blog post | sign-up |
-| IMDB | 95 | 891,904 | Profile website field | no account |
-| Zotero | 75 | 51,364 | Bookmark / link submit | sign-up |
-| ArtFire | 75 | 31,486 | Profile website field | sign-up |
-| Milkyway (.edu) | 75 | 9,011 | Profile website field | sign-up |
-| DsiBlogger | 74 | 37,269 | Article or blog post | sign-up |
-| FireBlogz | 74 | 39,401 | Article or blog post | sign-up |
-| Beatstars | 73 | 39,465 | Page builder site | sign-up |
-| Flip HTML5 | 73 | 226,903 | Shared document | sign-up |
-| Figma | 71 | 101,339 | Social post | sign-up |
-| MD Anderson | 71 | 918 | Other | no account |
-| Wakelet | 71 | 191,490 | Bookmark / link submit | sign-up |
-| GrowthHackers | 68 | 7,690 | Forum post | sign-up |
-| Gust | 67 | 11,264 | Directory listing | sign-up |
-| RiseUp | 64 | 11,528 | Page builder site | sign-up |
-| Wantedly | 64 | 29,585 | Bookmark / link submit | sign-up |
-| XtGem | 64 | 26,727 | Page builder site | sign-up |
-| Ouo Press | 60 | 4,724 | URL shortener | no account |
-| BlogFree | 58 | 5,019 | Forum signature | sign-up |
-| Pub HTML5 | 56 | 99,088 | Shared document | sign-up |
-| AxMag | 54 | 1,668 | Shared document | sign-up |
-| Yooco | 43 | 8,568 | Comment | sign-up |
-| N9.cl Shortener | 40 | 17,321 | URL shortener | no account |
-| Goolnk.com Shortener | 23 | 1,922 | URL shortener | no account |
-| YellKey Shortener | 20 | 389 | URL shortener | no account |
+| Site | DA | Referring domains | Link | Method | Needs |
+|---|---|---|---|---|---|
+| Medium | 96 | 1,371,100 | dofollow | Article or blog post | sign-up |
+| IMDB | 95 | 891,904 | dofollow | Profile website field | no account |
+| Zotero | 75 | 51,364 | dofollow | Bookmark / link submit | sign-up |
+| ArtFire | 75 | 31,486 | dofollow | Profile website field | sign-up |
+| Milkyway (.edu) | 75 | 9,011 | dofollow | Profile website field | sign-up |
+| DsiBlogger | 74 | 37,269 | dofollow | Article or blog post | sign-up |
+| FireBlogz | 74 | 39,401 | dofollow | Article or blog post | sign-up |
+| Beatstars | 73 | 39,465 | dofollow | Page builder site | sign-up |
+| Flip HTML5 | 73 | 226,903 | dofollow | Shared document | sign-up |
+| Figma | 71 | 101,339 | dofollow | Social post | sign-up |
+| MD Anderson | 71 | 918 | dofollow | Other | no account |
+| Wakelet | 71 | 191,490 | dofollow | Bookmark / link submit | sign-up |
+| GrowthHackers | 68 | 7,690 | dofollow | Forum post | sign-up |
+| Gust | 67 | 11,264 | dofollow | Directory listing | sign-up |
+| RiseUp | 64 | 11,528 | dofollow | Page builder site | sign-up |
+| Wantedly | 64 | 29,585 | dofollow | Bookmark / link submit | sign-up |
+| XtGem | 64 | 26,727 | dofollow | Page builder site | sign-up |
+| Ouo Press | 60 | 4,724 | dofollow | URL shortener | no account |
+| BlogFree | 58 | 5,019 | dofollow | Forum signature | sign-up |
+| Pub HTML5 | 56 | 99,088 | dofollow | Shared document | sign-up |
+| AxMag | 54 | 1,668 | dofollow | Shared document | sign-up |
+| Yooco | 43 | 8,568 | dofollow | Comment | sign-up |
+| N9.cl Shortener | 40 | 17,321 | dofollow | URL shortener | no account |
+| Goolnk.com Shortener | 23 | 1,922 | dofollow | URL shortener | no account |
+| YellKey Shortener | 20 | 389 | dofollow | URL shortener | no account |
 
 
 </details>
