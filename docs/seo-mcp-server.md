@@ -7,7 +7,7 @@ description: "Tools and prompts of SEO Agent's MCP server for link building. Sea
 
 SEO Agent is an MCP server. Any MCP client, Claude, Cursor, Codex, Windsurf, VS Code, Cline and others, can call these tools.
 
-## Free mode, no key
+## Free mode, no key (pip package)
 
 | Tool | What it does |
 |---|---|
@@ -17,7 +17,9 @@ SEO Agent is an MCP server. Any MCP client, Claude, Cursor, Codex, Windsurf, VS 
 
 Prompt `build_backlink(slug, target_url, anchor_text)` packages a site's method, your anchor and the rules into one instruction.
 
-## With an API key
+## With your MCP link (hosted)
+
+Get a personal link at [https://mcp.seoagent.dev/start](https://mcp.seoagent.dev/start). 50 backlinks free, then $97 once for unlimited links on that key.
 
 | Tool | What it does |
 |---|---|
@@ -35,6 +37,7 @@ Prompt `build_backlink(slug, target_url, anchor_text)` packages a site's method,
 | `recheck_links`, `campaign_report` | Monitor placed links over time and report a campaign |
 | `log_link` | Record an outcome: placed, unverified or manual |
 | `list_results` | Everything built or logged under your key, and the credit balance |
+| `account` | Plan, links left, your MCP link, dashboard and the upgrade link |
 
 Prompts: `build_backlink` for one site, `run_campaign` for the whole loop.
 

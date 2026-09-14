@@ -9,20 +9,24 @@ Claude can plan and build backlinks when it has two things: a library of sites w
 
 ## Install
 
+The quickest way is the hosted link. Get one at [https://mcp.seoagent.dev/start](https://mcp.seoagent.dev/start): it carries your key, comes with 50 backlinks free, and upgrades to unlimited for $97 once.
+
+Claude Desktop and claude.ai: Settings, Connectors, Add custom connector, name `SEO Agent`, paste the link, no OAuth, then enable it in a chat.
+
 Claude Code:
+
+```bash
+claude mcp add --transport http seo-agent "https://mcp.seoagent.dev/u/le_…/mcp"
+```
+
+Local free mode instead, with the 50 bundled sites and no account:
 
 ```bash
 pip install seo-agent
 claude mcp add seo-agent -- seo-agent
 ```
 
-Claude Desktop, in `claude_desktop_config.json`:
-
-```json
-{ "mcpServers": { "seo-agent": { "command": "seo-agent" } } }
-```
-
-With a free API key, set `SEOAGENT_API_KEY` in the same place and Claude sees the full library and the campaign tools.
+Claude Desktop, in `claude_desktop_config.json`: `{ "mcpServers": { "seo-agent": { "command": "seo-agent" } } }`
 
 ## A first session
 

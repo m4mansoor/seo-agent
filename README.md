@@ -85,28 +85,38 @@ Notice what the verifier caught: one dofollow link sits on a noindex page and on
 
 Fifty of these sites, with their methods, are bundled free. The rest, the campaign planner, automatic building and verification come with a free API key when the hosted service opens.
 
-## Install in Claude, Cursor or Codex
+## Connect the MCP link: 50 backlinks free, then $97 once
 
-Requires Python 3.10 or newer.
+Get a personal MCP link at **https://mcp.seoagent.dev/start**. It looks like `https://mcp.seoagent.dev/u/le_…/mcp`, carries your key, and works in every client with nothing else to configure. Each link comes with **50 backlinks free**. After that, the **Lifetime plan is one payment of $97** for unlimited links on that key: every one of the 1,245 sites, the campaign planner, browser building with proof, verification, gates and services, monitoring, reports and the dashboard.
+
+**Claude Desktop and claude.ai**: Settings, Connectors, Add custom connector. Name `SEO Agent`, paste the URL, no OAuth. Enable it in a chat.
 
 **Claude Code**
+
+```bash
+claude mcp add --transport http seo-agent "https://mcp.seoagent.dev/u/le_…/mcp"
+```
+
+**Cursor**: Settings, MCP, add a server:
+
+```json
+{ "mcpServers": { "seo-agent": { "url": "https://mcp.seoagent.dev/u/le_…/mcp" } } }
+```
+
+**ChatGPT**: Settings, Connectors, Developer mode, Create, paste the URL.
+
+Then ask: *I need 5 dofollow backlinks, DA 40 to 70.* The assistant asks for your URL and keywords, plans, builds, verifies and reports. Ask *how many links do I have left* at any time; it calls the `account` tool. When the 50 are used, it gives you the upgrade link in the chat.
+
+## Run it locally with pip
+
+The pip package is the same server in free mode: the 50 bundled sites with their methods, no key, nothing sent anywhere. Requires Python 3.10 or newer.
 
 ```bash
 pip install seo-agent
 claude mcp add seo-agent -- seo-agent
 ```
 
-**Claude Desktop**: add to `claude_desktop_config.json`:
-
-```json
-{ "mcpServers": { "seo-agent": { "command": "seo-agent" } } }
-```
-
-**Cursor**: Settings, MCP, add a server with command `seo-agent`.
-
-**Codex CLI**: add an `mcp_servers.seo-agent` entry with `command = "seo-agent"` to `~/.codex/config.toml`.
-
-**With an API key**: set `SEOAGENT_API_KEY=le_...` in the same place. The assistant then sees the full set of tools: `plan_campaign`, `build_link`, `verify_link`, `get_step_screenshot`, `set_identity`, `generate_identity`, `connect_service`, `resolve_gate`, `queue_build`, `recheck_links`, `campaign_report`, `log_link`, `list_results`, and the `run_campaign` prompt.
+Claude Desktop, Cursor and Codex take the same command in their MCP config: `{ "mcpServers": { "seo-agent": { "command": "seo-agent" } } }`. To use your hosted link through the local package instead, set `SEOAGENT_URL` to it.
 
 ## The free backlink sites list
 
@@ -192,6 +202,8 @@ It never fakes a person or works around a site's rules, which keeps your site ou
 
 ## Everything the hosted service adds
 
+Free for the first 50 backlinks on your link, then $97 once for life.
+
 | Feature | What you get |
 |---|---|
 | Model-driven executor | Builds on account-based sites: sign-up, profile fields, articles, forum posts, directory listings, page builders |
@@ -205,12 +217,12 @@ It never fakes a person or works around a site's rules, which keeps your site ou
 
 ## Configuration
 
+The hosted link needs no configuration. The pip package reads two optional variables:
+
 | Variable | Purpose |
 |---|---|
-| `SEOAGENT_API_KEY` | Your key for the hosted service. Unset: free mode with the 50 bundled sites. Set: the full tool set above. |
-| `SEOAGENT_URL` | The hosted MCP endpoint, only needed if you run your own server. |
-
-No other configuration. Nothing is sent anywhere in free mode; the 50 sites and their methods are read from the package.
+| `SEOAGENT_URL` | Your personal MCP link (`https://mcp.seoagent.dev/u/le_…/mcp`). Set: the local package proxies every hosted tool. Unset: free mode with the 50 bundled sites. |
+| `SEOAGENT_API_KEY` | Alternative to the link: a bare key sent as a bearer header, with `SEOAGENT_URL` pointing at `https://mcp.seoagent.dev/mcp`. |
 
 ## Guides
 

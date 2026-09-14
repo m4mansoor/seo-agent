@@ -15,6 +15,8 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 DATA = os.path.join(HERE, "data")
 REMOTE_URL = os.environ.get("SEOAGENT_URL", "https://mcp.seoagent.dev/mcp")
 API_KEY = os.environ.get("SEOAGENT_API_KEY", "")
+# Hosted mode is on when a key is given, or when SEOAGENT_URL is a personal link (the key is inside the URL: /u/<key>/mcp).
+HOSTED = bool(API_KEY) or "/u/le_" in REMOTE_URL
 
 
 def _load(name: str):
@@ -83,14 +85,14 @@ async def _connect_remote():
     from mcp import ClientSession
     from mcp.client.streamable_http import streamablehttp_client
     _stack = AsyncExitStack()
-    r, w, _ = await _stack.enter_async_context(streamablehttp_client(REMOTE_URL, headers={"Authorization": f"Bearer {API_KEY}"}))
+    r, w, _ = await _stack.enter_async_context(streamablehttp_client(REMOTE_URL, headers={"Authorization": f"Bearer {API_KEY}"} if API_KEY else {}))
     _remote = await _stack.enter_async_context(ClientSession(r, w))
     await _remote.initialize()
 
 
 @server.list_tools()
 async def list_tools() -> list[types.Tool]:
-    if API_KEY:
+    if HOSTED:
         if _remote is None:
             await _connect_remote()
         return (await _remote.list_tools()).tools
@@ -100,7 +102,7 @@ async def list_tools() -> list[types.Tool]:
 @server.call_tool()
 async def call_tool(name: str, arguments: dict | None) -> list[types.TextContent | types.ImageContent]:
     arguments = arguments or {}
-    if API_KEY:
+    if HOSTED:
         if _remote is None:
             await _connect_remote()
         res = await _remote.call_tool(name, arguments)
@@ -113,7 +115,7 @@ async def call_tool(name: str, arguments: dict | None) -> list[types.TextContent
 
 @server.list_prompts()
 async def list_prompts() -> list[types.Prompt]:
-    if API_KEY:
+    if HOSTED:
         if _remote is None:
             await _connect_remote()
         return (await _remote.list_prompts()).prompts
@@ -124,7 +126,7 @@ async def list_prompts() -> list[types.Prompt]:
 @server.get_prompt()
 async def get_prompt(name: str, arguments: dict | None) -> types.GetPromptResult:
     arguments = arguments or {}
-    if API_KEY:
+    if HOSTED:
         if _remote is None:
             await _connect_remote()
         return await _remote.get_prompt(name, arguments)
