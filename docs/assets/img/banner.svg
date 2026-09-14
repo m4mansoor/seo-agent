@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="400" viewBox="0 0 1280 400" font-family="Bricolage Grotesque, Helvetica Neue, Arial, sans-serif">
+  <rect width="1280" height="400" fill="#0E5F5B"/>
+  <text x="64" y="86" fill="#BFE3DE" font-size="18" font-weight="600" letter-spacing="2">OPEN SOURCE · MCP SERVER · MIT</text>
+  <text x="64" y="160" fill="#FFFFFF" font-size="66" font-weight="800" letter-spacing="-1.5">An SEO agent that builds</text>
+  <text x="64" y="232" fill="#FFFFFF" font-size="66" font-weight="800" letter-spacing="-1.5">your backlinks.</text>
+  <text x="64" y="278" fill="#DDEFEC" font-size="22">Plans the campaign, follows each site's method, places the link,</text><text x="64" y="306" fill="#DDEFEC" font-size="22">verifies it went live. Inside Claude, Cursor or Codex.</text>
+  <g font-weight="800" fill="#FFFFFF" font-size="44">
+    <text x="64" y="356">1,245</text><text x="270" y="356">900</text><text x="440" y="356">117</text><text x="620" y="356">50</text>
+  </g>
+  <g fill="#BFE3DE" font-size="15" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif">
+    <text x="64" y="380">sites in the library</text><text x="270" y="380">dofollow</text><text x="440" y="380">at DA 90+</text><text x="620" y="380">free, no key</text>
+  </g>
+  <rect x="900" y="60" width="316" height="280" rx="6" fill="#0A4E4B" stroke="#1E7B76"/>
+  <g font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="14">
+    <text x="924" y="96" fill="#BFE3DE" font-weight="600">you</text>
+    <text x="924" y="120" fill="#FFFFFF">I need 5 dofollow backlinks,</text><text x="924" y="140" fill="#FFFFFF">DA 40 to 70.</text>
+    <text x="924" y="180" fill="#BFE3DE" font-weight="600">agent</text>
+    <text x="924" y="204" fill="#FFFFFF">Which URL and keywords?</text>
+    <text x="924" y="244" fill="#BFE3DE" font-weight="600">you</text>
+    <text x="924" y="268" fill="#FFFFFF">lmrify.com, "product reviews"</text>
+    <text x="924" y="308" fill="#FFE45C" font-weight="600">agent · 5 links placed, 4 verified live</text>
+    <text x="924" y="328" fill="#DDEFEC">proof and live URLs attached</text>
+  </g>
+</svg>

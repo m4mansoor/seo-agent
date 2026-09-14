@@ -1,24 +1,60 @@
+<p align="center"><img src="docs/assets/img/banner.png" alt="SEO Agent: an open-source SEO agent that builds your backlinks" width="100%"></p>
+
 # Open-source SEO agent for link building
 
-SEO Agent plans backlink campaigns and builds the links, working inside the AI assistant you already use: Claude, Cursor, Codex or any MCP client. It comes with a free list of 50 backlink sites, each with Domain Authority, referring domains and a step-by-step method, and connects to a library of 1,245 sites with a free API key.
+You say what you need. The agent asks for your URL and keywords, plans the campaign, builds each link by following that site's method, checks that it went live, and hands you the live URLs with proof. It works inside Claude, Cursor, Codex or any MCP client.
 
 ```bash
 pip install seo-agent
 claude mcp add seo-agent -- seo-agent
 ```
 
-Then ask your assistant:
+## A session, start to finish
 
-> Find dofollow sites above DA 50 in the free list and build a link to https://example.com with the anchor "example".
+<p align="center"><img src="docs/assets/img/session.png" alt="A session: the user asks for 5 dofollow backlinks DA 40 to 70, the agent asks for URL and keywords, plans, builds and verifies" width="100%"></p>
 
-## What it does
+That is the whole interaction. In detail:
 
-- **Plans**: picks sites by authority and effort, balances dofollow share, and assigns anchor text by the ratio you set (exact, partial, branded, naked, generic).
-- **Builds**: for every site it hands the assistant a playbook for that kind of link, the guide's steps parsed into actions with the exact button names, and what the site requires. Sites that need no account are built automatically with a proof screenshot.
-- **Verifies**: opens the live page and checks the hyperlink, the anchor text and whether it is nofollow before counting the link.
-- **Logs**: every link, its proof and its status in one results table.
+1. **You ask in plain language**: *I need 5 dofollow backlinks, DA 40 to 70.*
+2. **The agent asks for two things**: the URL the links should point to, and your main keywords. It stores your sign-up identity once so every form is filled the same way.
+3. **It plans**: picks sites from the library by authority and effort inside your DA range, keeps the dofollow share you asked for, spreads the methods so it is not five profile pages, and assigns anchor text by ratio: exact, partial, branded, naked, generic.
+4. **It builds**: login-free sites are built automatically with a proof screenshot. For sites that need an account, the agent follows the site's method in its browser: the playbook for that kind of link, the steps as actions with the exact button names, and what the site requires.
+5. **It verifies**: opens the public page and checks that the target is a real hyperlink, that the anchor matches, and whether the link is nofollow. Plain-text URLs and noindex pages do not count.
+6. **It reports**: live URL, anchor, dofollow status and proof per link. Anything that hit a captcha or a paid gate is reported as manual, never bypassed.
 
-The library behind it: 1,245 backlink sites, 1,138 verified reachable, 900 dofollow, 117 with DA 90 or higher, with referring domains, backlinks, spam score and organic traffic for every domain. Methods covered: profile fields, articles and guest posts, social bookmarking, web 2.0 pages, forums, directories, shared documents, comments, Q&A and URL shorteners.
+*The session above is illustrative. The table below is real.*
+
+## Real links it built
+
+Built for lmrify.com during development, on login-free sites, then verified by fetching each page:
+
+| Site | DA | Live link | Verified |
+|---|---|---|---|
+| Netcraft site report | 77 | https://sitereport.netcraft.com/?url=https://lmrify.com | hyperlink present, nofollow |
+| rentry.co | — | https://rentry.co/tu4euyew | contextual anchor "Let me Review it For You", dofollow attribute, page is noindex |
+| write.as | 52 | https://write.as/uooky17nv701i.md | contextual anchor, indexed page, nofollow |
+| n9.cl | 40 | https://n9.cl/aav9b | redirects to target |
+| goolnk.com | 23 | https://goolnk.com/bwv0gn | redirects to target |
+| yellkey.com | 20 | https://www.yellkey.com/forget | redirects to target |
+
+Notice what the verifier caught: one dofollow link sits on a noindex page and one indexed contextual link is nofollow. The agent reports both, because a link you cannot trust is worse than no link.
+
+## How it works
+
+<p align="center"><img src="docs/assets/img/flow.png" alt="Plan, build, verify, report" width="100%"></p>
+
+## What is in the library
+
+| | |
+|---|---|
+| Sites | 1,245, of which 1,138 verified reachable this month |
+| Dofollow | 900 |
+| DA 90 or higher | 117 |
+| Metrics per site | Domain Authority, referring domains, total backlinks, spam score, organic traffic |
+| Methods | profile fields, articles and guest posts, social bookmarking, web 2.0 pages, forums and signatures, directories, shared documents, comments, Q&A, URL shorteners |
+| Per site | the step-by-step method parsed into actions, the placement step, and what the site requires: account, inbox, captcha, social login, upload, moderation |
+
+Fifty of these sites, with their methods, are bundled free. The rest, the campaign planner, automatic building and verification come with a free API key when the hosted service opens.
 
 ## Install in Claude, Cursor or Codex
 
@@ -41,17 +77,14 @@ claude mcp add seo-agent -- seo-agent
 
 **Codex CLI**: add an `mcp_servers.seo-agent` entry with `command = "seo-agent"` to `~/.codex/config.toml`.
 
-**With an API key** (full library, campaign planner, automatic building, verification and results):
-
-```bash
-export SEOAGENT_API_KEY=le_...
-```
-
-Everything else stays the same; the assistant simply sees the full set of tools.
+**With an API key**: set `SEOAGENT_API_KEY=le_...` in the same place. The assistant then sees the full set of tools: `plan_campaign`, `build_link`, `verify_link`, `get_step_screenshot`, `set_identity`, `log_link`, `list_results`, and the `run_campaign` prompt.
 
 ## The free backlink sites list
 
 Fifty sites from the library, all verified reachable, DA 37 to 69, 49 of them dofollow. Each has a method your assistant can follow.
+
+<details>
+<summary>Show all 50</summary>
 
 | Site | DA | Referring domains | Method | Needs |
 |---|---|---|---|---|
@@ -106,29 +139,14 @@ Fifty sites from the library, all verified reachable, DA 37 to 69, 49 of them do
 | Yooco | 43 | 8,568 | Comment | sign-up |
 | Cgm internet marketing | 37 | 4,120 | Directory listing | email verification |
 
+
+</details>
+
 More lists, with DA and referring domains: [social bookmarking sites](docs/social-bookmarking-sites.md), [profile creation sites](docs/profile-creation-sites.md), [guest posting sites](docs/guest-posting-sites.md), [web 2.0 sites](docs/web-2-0-sites.md), [directory submission sites](docs/directory-submission-sites.md), [forum posting sites](docs/forum-posting-sites.md), [high DA backlinks](docs/high-da-backlinks.md).
 
-## How the agent builds a link
+## What it will not do
 
-For each site the server gives the assistant everything a careful human would want before starting:
-
-1. A **playbook** for the method: where the link goes on a profile site versus an article site versus a forum, the pitfalls, and how to verify.
-2. The guide's **steps as actions**: navigate, click, fill the form, place the link, verify email, upload, wait for moderation, verify, with the exact button and field names and the step marked as the placement.
-3. **Requirements**: an account, a readable inbox, a captcha, a social login, a file, or written content.
-4. **Rules**: exact URL and anchor, no duplicates, stop at captchas, verify on the public page, report the live URL.
-
-Example, a real link built on a login-free site:
-
-```
-Site      rentry.co
-Anchor    Let me Review it For You
-Live URL  https://rentry.co/tu4euyew
-Verified  hyperlink found, anchor matches, no nofollow attribute
-```
-
-## SEO automation from the command line
-
-The hosted engine also ships a CLI for the same operations: search the library, plan a campaign, build a link, list results. See the [tool reference](docs/seo-mcp-server.md).
+It does not solve captchas, bypass bot checks, or create accounts where a site forbids automation. When it meets one of those it stops and tells you what was asked. That keeps your site safe and keeps the links you do get worth having.
 
 ## Guides
 
@@ -138,9 +156,7 @@ The hosted engine also ships a CLI for the same operations: search the library, 
 - [LLM SEO and SEO automation](docs/llm-seo.md)
 - [The SEO MCP server: tool reference](docs/seo-mcp-server.md)
 
-## Upgrade
-
-The free list is the same engine with 50 sites. A free API key unlocks the full library of 1,245 sites, the campaign planner, automatic building for login-free sites, link verification and the results log. Get a key at the address in the docs once the hosted service opens; until then, star the repo and watch releases.
+Documentation site: https://m4mansoor.github.io/seo-agent/
 
 ## License
 

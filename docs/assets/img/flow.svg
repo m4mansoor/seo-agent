@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="300" viewBox="0 0 1280 300" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif">
+  <rect width="1280" height="300" fill="#F7F6F2"/>
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0L10 5L0 10z" fill="#7C8590"/></marker></defs>
+  <g font-size="15" fill="#4B5560">
+    <rect x="40" y="70" width="260" height="160" rx="4" fill="#FFFFFF" stroke="#0F6E6A" stroke-width="2"/>
+    <text x="60" y="104" font-family="Bricolage Grotesque, Helvetica Neue, Arial, sans-serif" font-size="24" font-weight="800" fill="#1C2229">1. Plan</text>
+    <text x="60" y="134">URL, keywords, count, DA range,</text><text x="60" y="156">dofollow share, anchor ratio.</text>
+    <text x="60" y="186">Agent picks sites by authority</text><text x="60" y="208">and effort, assigns anchors.</text>
+    <rect x="352" y="70" width="260" height="160" rx="4" fill="#FFFFFF" stroke="#0F6E6A" stroke-width="2"/>
+    <text x="372" y="104" font-family="Bricolage Grotesque, Helvetica Neue, Arial, sans-serif" font-size="24" font-weight="800" fill="#1C2229">2. Build</text>
+    <text x="372" y="134">Playbook per method, steps as</text><text x="372" y="156">actions with exact button names.</text>
+    <text x="372" y="186">Login-free sites built automatically;</text><text x="372" y="208">others by the assistant's browser.</text>
+    <rect x="664" y="70" width="260" height="160" rx="4" fill="#FFFFFF" stroke="#0F6E6A" stroke-width="2"/>
+    <text x="684" y="104" font-family="Bricolage Grotesque, Helvetica Neue, Arial, sans-serif" font-size="24" font-weight="800" fill="#1C2229">3. Verify</text>
+    <text x="684" y="134">Opens the live page. Checks the</text><text x="684" y="156">hyperlink, anchor text, nofollow.</text>
+    <text x="684" y="186">Plain-text URLs and noindex</text><text x="684" y="208">pages do not count.</text>
+    <rect x="976" y="70" width="260" height="160" rx="4" fill="#FFFFFF" stroke="#0F6E6A" stroke-width="2"/>
+    <text x="996" y="104" font-family="Bricolage Grotesque, Helvetica Neue, Arial, sans-serif" font-size="24" font-weight="800" fill="#1C2229">4. Report</text>
+    <text x="996" y="134">Live URL, anchor, dofollow status</text><text x="996" y="156">and proof screenshot per link.</text>
+    <text x="996" y="186">Captchas and paid gates are</text><text x="996" y="208">reported as manual, not bypassed.</text>
+    <path d="M300 150 L350 150" stroke="#7C8590" stroke-width="2" marker-end="url(#a)"/><path d="M612 150 L662 150" stroke="#7C8590" stroke-width="2" marker-end="url(#a)"/><path d="M924 150 L974 150" stroke="#7C8590" stroke-width="2" marker-end="url(#a)"/>
+  </g>
+  <text x="40" y="270" font-size="14" fill="#7C8590">Same flow from Claude Code, Claude Desktop, Cursor, Codex or the command line.</text>
+</svg>

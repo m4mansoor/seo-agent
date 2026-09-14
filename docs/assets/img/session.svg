@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="760" viewBox="0 0 1280 760" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="17">
+  <rect width="1280" height="760" fill="#F7F6F2"/>
+  <rect x="40" y="30" width="1200" height="700" rx="8" fill="#FFFFFF" stroke="#DAD7CE"/>
+  <text x="70" y="66" fill="#7C8590" font-size="14">Claude Code · seo-agent connected</text>
+  <g>
+    <rect x="70" y="86" width="1140" height="46" rx="6" fill="#EEEDE7"/>
+    <text x="90" y="115" fill="#1C2229" font-weight="600">I need 5 dofollow backlinks, DA 40 to 70.</text>
+  </g>
+  <g>
+    <text x="90" y="170" fill="#0F6E6A" font-weight="600">Agent</text>
+    <text x="90" y="196" fill="#1C2229">Which URL should the links point to, and what are the main keywords?</text>
+  </g>
+  <g>
+    <rect x="70" y="216" width="1140" height="46" rx="6" fill="#EEEDE7"/>
+    <text x="90" y="245" fill="#1C2229" font-weight="600">https://lmrify.com, keywords "product reviews" and "amazon review".</text>
+  </g>
+  <g>
+    <text x="90" y="300" fill="#0F6E6A" font-weight="600">Agent</text>
+    <text x="90" y="326" fill="#1C2229">Planned 5 links, all dofollow, average DA 56. Anchors: 1 exact, 1 partial, 2 branded, 1 naked. Building now.</text>
+    <g font-size="15">
+      <rect x="90" y="346" width="1100" height="34" fill="#F7F6F2"/>
+      <text x="104" y="368" fill="#7C8590" font-weight="600">SITE</text><text x="360" y="368" fill="#7C8590" font-weight="600">DA</text><text x="430" y="368" fill="#7C8590" font-weight="600">METHOD</text><text x="700" y="368" fill="#7C8590" font-weight="600">ANCHOR</text><text x="960" y="368" fill="#7C8590" font-weight="600">STATUS</text>
+      <text x="104" y="404" fill="#1C2229">GitBook</text><text x="360" y="404">69</text><text x="430" y="404">Profile website field</text><text x="700" y="404">LMRIFY</text><text x="960" y="404" fill="#2C7A4B" font-weight="600">placed · verified</text>
+      <text x="104" y="434" fill="#1C2229">ouo.press</text><text x="360" y="434">60</text><text x="430" y="434">URL shortener</text><text x="700" y="434">https://lmrify.com</text><text x="960" y="434" fill="#B9761F" font-weight="600">unverified</text>
+      <text x="104" y="464" fill="#1C2229">Promodj</text><text x="360" y="464">68</text><text x="430" y="464">Article or blog post</text><text x="700" y="464">product reviews</text><text x="960" y="464" fill="#2C7A4B" font-weight="600">placed · verified</text>
+      <text x="104" y="494" fill="#1C2229">v.gd</text><text x="360" y="494">53</text><text x="430" y="494">URL shortener</text><text x="700" y="494">https://lmrify.com</text><text x="960" y="494" fill="#2C7A4B" font-weight="600">placed · verified</text>
+      <text x="104" y="524" fill="#1C2229">MyMiniFactory</text><text x="360" y="524">68</text><text x="430" y="524">Profile website field</text><text x="700" y="524">best product reviews</text><text x="960" y="524" fill="#2C7A4B" font-weight="600">placed · verified</text>
+    </g>
+  </g>
+  <g>
+    <text x="90" y="580" fill="#0F6E6A" font-weight="600">Agent</text>
+    <text x="90" y="606" fill="#1C2229">Done: 4 verified live, 1 unverified (interstitial redirect). Each verified link was checked on its public page for the</text>
+    <text x="90" y="630" fill="#1C2229">hyperlink, the anchor text and nofollow. Proof screenshots are saved. Want me to replace the unverified one?</text>
+  </g>
+  <rect x="70" y="662" width="1140" height="42" rx="6" fill="#0E5F5B"/>
+  <text x="90" y="689" fill="#FFFFFF">Yes, and keep the same anchor mix.</text>
+</svg>
