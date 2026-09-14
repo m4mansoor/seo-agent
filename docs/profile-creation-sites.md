@@ -1,6 +1,6 @@
 ---
-title: Profile creation sites list (high DA, dofollow marked)
-description: 575 profile creation sites, verified reachable, with Domain Authority, referring domains and whether the link is dofollow. Built by an open-source SEO agent.
+title: "Profile creation sites list (high DA, dofollow marked)"
+description: "575 profile creation sites, verified reachable, with Domain Authority, referring domains and whether the link is dofollow. Built by an open-source SEO agent."
 ---
 
 # Profile creation sites list (high DA, dofollow marked)

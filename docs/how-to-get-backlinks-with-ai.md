@@ -1,6 +1,6 @@
 ---
-title: How to get backlinks with an AI agent
-description: A practical guide to AI link building, automated link building and backlink automation, with the exact steps an SEO agent follows to plan, place and verify links.
+title: "How to get backlinks with an AI agent"
+description: "A practical guide to AI link building, automated link building and backlink automation, with the exact steps an SEO agent follows to plan, place and verify links."
 ---
 
 # How to get backlinks with an AI agent

@@ -1,6 +1,6 @@
 ---
-title: Claude SEO, link building from Claude Code and Claude Desktop
-description: Use Claude as an SEO agent for link building. Install the SEO Agent MCP server in Claude Code or Claude Desktop and build verified backlinks from a chat.
+title: "Claude SEO, link building from Claude Code and Claude Desktop"
+description: "Use Claude as an SEO agent for link building. Install the SEO Agent MCP server in Claude Code or Claude Desktop and build verified backlinks from a chat."
 ---
 
 # Claude SEO: link building from Claude

@@ -1,6 +1,6 @@
 ---
-title: Social bookmarking sites list (with DA and referring domains)
-description: 181 social bookmarking and link-submission sites, verified reachable, with Domain Authority, referring domains and whether the link is dofollow. Built by an open-source SEO agent.
+title: "Social bookmarking sites list (with DA and referring domains)"
+description: "181 social bookmarking and link-submission sites, verified reachable, with Domain Authority, referring domains and whether the link is dofollow. Built by an open-source SEO agent."
 ---
 
 # Social bookmarking sites list (with DA and referring domains)

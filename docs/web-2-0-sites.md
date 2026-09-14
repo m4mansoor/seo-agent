@@ -1,6 +1,6 @@
 ---
-title: Web 2.0 sites list for backlinks
-description: 69 web 2.0 and page-builder sites, verified reachable, with Domain Authority, referring domains and whether the link is dofollow. Built by an open-source SEO agent.
+title: "Web 2.0 sites list for backlinks"
+description: "69 web 2.0 and page-builder sites, verified reachable, with Domain Authority, referring domains and whether the link is dofollow. Built by an open-source SEO agent."
 ---
 
 # Web 2.0 sites list for backlinks

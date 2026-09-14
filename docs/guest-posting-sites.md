@@ -1,6 +1,6 @@
 ---
-title: Guest posting and article submission sites list
-description: 239 article and guest posting sites, verified reachable, with Domain Authority, referring domains and whether the link is dofollow. Built by an open-source SEO agent.
+title: "Guest posting and article submission sites list"
+description: "239 article and guest posting sites, verified reachable, with Domain Authority, referring domains and whether the link is dofollow. Built by an open-source SEO agent."
 ---
 
 # Guest posting and article submission sites list

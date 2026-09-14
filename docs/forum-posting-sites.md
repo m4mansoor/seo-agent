@@ -1,6 +1,6 @@
 ---
-title: Forum posting sites list
-description: forums that allow links in posts or signatures, verified reachable, with Domain Authority, referring domains and whether the link is dofollow. Built by an open-source SEO agent.
+title: "Forum posting sites list"
+description: "forums that allow links in posts or signatures, verified reachable, with Domain Authority, referring domains and whether the link is dofollow. Built by an open-source SEO agent."
 ---
 
 # Forum posting sites list

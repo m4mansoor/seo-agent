@@ -1,6 +1,6 @@
 ---
-title: Cursor SEO, link building from Cursor
-description: Use Cursor as an SEO agent for link building. Add the SEO Agent MCP server to Cursor and build verified backlinks with the model of your choice.
+title: "Cursor SEO, link building from Cursor"
+description: "Use Cursor as an SEO agent for link building. Add the SEO Agent MCP server to Cursor and build verified backlinks with the model of your choice."
 ---
 
 # Cursor SEO: link building from Cursor

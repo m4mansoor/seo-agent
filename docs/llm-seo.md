@@ -1,6 +1,6 @@
 ---
-title: LLM SEO and SEO automation with an agent
-description: What LLM SEO means for link building, and how SEO automation with an AI agent differs from the bulk tools of the past. ChatGPT, Claude and Cursor as SEO tools.
+title: "LLM SEO and SEO automation with an agent"
+description: "What LLM SEO means for link building, and how SEO automation with an AI agent differs from the bulk tools of the past. ChatGPT, Claude and Cursor as SEO tools."
 ---
 
 # LLM SEO and SEO automation

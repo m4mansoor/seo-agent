@@ -1,6 +1,6 @@
 ---
-title: Directory submission sites list
-description: business and web directories, verified reachable, with Domain Authority, referring domains and whether the link is dofollow. Built by an open-source SEO agent.
+title: "Directory submission sites list"
+description: "business and web directories, verified reachable, with Domain Authority, referring domains and whether the link is dofollow. Built by an open-source SEO agent."
 ---
 
 # Directory submission sites list

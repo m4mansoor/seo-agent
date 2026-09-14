@@ -1,6 +1,6 @@
 ---
-title: High DA backlinks: 117 reachable sites at DA 90+
-description: 117 sites with Domain Authority 90 or higher, verified reachable, with Domain Authority, referring domains and whether the link is dofollow. Built by an open-source SEO agent.
+title: "High DA backlinks: 117 reachable sites at DA 90+"
+description: "117 sites with Domain Authority 90 or higher, verified reachable, with Domain Authority, referring domains and whether the link is dofollow. Built by an open-source SEO agent."
 ---
 
 # High DA backlinks: 117 reachable sites at DA 90+

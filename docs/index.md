@@ -1,6 +1,6 @@
 ---
-title: SEO Agent, an open-source SEO agent for link building
-description: Plan backlink campaigns and build links from Claude, Cursor or Codex. Free list of 50 backlink sites with DA and referring domains; library of 1,245 sites with a free API key.
+title: "SEO Agent, an open-source SEO agent for link building"
+description: "Plan backlink campaigns and build links from Claude, Cursor or Codex. Free list of 50 backlink sites with DA and referring domains; library of 1,245 sites with a free API key."
 ---
 
 # SEO Agent
