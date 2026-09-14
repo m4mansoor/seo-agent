@@ -14,7 +14,7 @@ SEO Agent is an open-source SEO agent for link building. It runs as an MCP serve
 
 **What it does**
 
-- **Searches a library of 1,245 backlink sites** with Domain Authority, referring domains, spam score and dofollow status. Twenty-five ship free inside the package, two of them at DA 90+; the rest show up locked, by name and DA, and unlock with a subscription (`search_sites`).
+- **Searches a library of 1,138 backlink sites, every one verified reachable this month** with Domain Authority, referring domains, spam score and dofollow status. Twenty-five ship free inside the package, two of them at DA 90+; the rest show up locked, by name and DA, and unlock with a subscription (`search_sites`).
 - **Gives your assistant the method for each site**: the playbook for that kind of link, the guide steps parsed into actions with the exact button names, and what the site requires (`get_method`).
 - **Plans a campaign** for your URL: sites inside your DA range, the dofollow share you asked for, methods spread, anchor text assigned by ratio (`plan_campaign`, subscription).
 - **Builds links in your browser** with a proof screenshot on login-free sites, free; on account-based sites with the model-driven executor on a subscription (`build_link`, `queue_build`).
@@ -67,7 +67,7 @@ That is the whole interaction, on the free list alone. In detail:
 
 | | |
 |---|---|
-| Sites | 1,245, of which 1,138 verified reachable this month |
+| Sites | 1,138, verified reachable this month. The catalogue holds 1,245; 107 failed the last check and are hidden from search and planning until they come back |
 | Dofollow | 900 |
 | DA 90 or higher | 117 |
 | Metrics per site | Domain Authority, referring domains, total backlinks, spam score, organic traffic |
@@ -103,7 +103,7 @@ When you ask for more high-DA sites than the free list holds, the assistant show
 activate le_your_key
 ```
 
-No restart, no config file. From that message on, the same MCP has the full 1,245-site library, the campaign planner, browser building on account-based sites, gates with connected services, background jobs, identity generation, monitoring, campaign reports and a dashboard. Fair use is 500 placed links per key in any 30 days.
+No restart, no config file. From that message on, the same MCP has the full 1,138-site library, the campaign planner, browser building on account-based sites, gates with connected services, background jobs, identity generation, monitoring, campaign reports and a dashboard. Fair use is 500 placed links per key in any 30 days.
 
 **No pip? Use the link instead.** The success page also shows a personal MCP link, `https://mcp.seoagent.dev/u/le_…/mcp`. Paste it into Claude Desktop or claude.ai (Settings, Connectors, Add custom connector, no OAuth), ChatGPT (Settings, Connectors, Developer mode) or Cursor (`"url"` instead of `"command"`). It carries your key, so keep it private.
 
@@ -116,7 +116,7 @@ Fifty verified, dofollow-checked backlinks a month is a job. Typical ways to get
 | **In-house link builder** | $2,500 to $4,000 a month salary, plus tools | 3 to 6 weeks, at 30 to 60 minutes per link | Only the sites they have used before; a new hire starts from a blank list |
 | **Agency or marketplace** | $150 to $400 per DA 40+ dofollow link, so $7,500 to $20,000 per 50 | 4 to 8 weeks | Their list, not yours; you never see the method |
 | **Freelancer on a gig site** | $10 to $50 per link | 1 to 2 weeks | Usually the same 100 sites everyone else spams |
-| **SEO Agent** | $97 a year or $27 a month | An afternoon; login-free sites build in seconds each | 1,245 sites with the exact method for each, verified reachable monthly, with DataForSEO metrics |
+| **SEO Agent** | $97 a year or $27 a month | An afternoon; login-free sites build in seconds each | 1,138 sites with the exact method for each, re-verified monthly, with DataForSEO metrics |
 
 The library is the part a team cannot copy quickly. Every site in it came from years of link building: which DA 60 profile page still gives a dofollow link, which forum strips links from new members, which shortener sits behind a captcha, which directory approves in a day. Each entry carries the step-by-step method with the exact button names, what the site requires, and referring domains, spam score and traffic from DataForSEO. A person could rebuild that list, but it would take them the same years.
 
@@ -165,7 +165,7 @@ More lists, with DA and referring domains: [social bookmarking sites](https://m4
 ## Why SEO Agent and not another SEO MCP server
 
 - **It builds, not only reports.** Most SEO MCP servers wrap a metrics API. This one follows a site's method in a browser, places the link and proves it with a screenshot and a live-page check.
-- **The library is the moat.** 1,245 sites, each with its parsed step-by-step method, verified reachable monthly, with DataForSEO metrics. Twenty-five are free with no key, two of them at DA 90 or higher; the rest appear locked by name and DA.
+- **The library is the moat.** 1,138 sites, each with its parsed step-by-step method, re-verified reachable every month, with DataForSEO metrics. Twenty-five are free with no key, two of them at DA 90 or higher; the rest appear locked by name and DA.
 - **It is honest about limits.** A captcha or a login is a gate it asks you about, never something it fakes its way past. Links that are plain text, nofollow or on a noindex page are reported as such.
 
 ## Gates are handled in the chat, not skipped
