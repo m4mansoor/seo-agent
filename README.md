@@ -51,25 +51,7 @@ That is the whole interaction, on the free list alone. In detail:
 5. **It verifies**: opens the public page and checks that the target is a real hyperlink, that the anchor matches, and whether the link is nofollow. Plain-text URLs, redirect pages and noindex pages do not count as verified.
 6. **It reports**: live URL, anchor, dofollow or nofollow and proof per link, a campaign report, and a re-check later so you know which links still stand. When a site asks for a captcha, a verification code or a login, the agent asks you in the same chat and continues once it is cleared.
 
-*The session above is illustrative. The table below is real.*
-
-## Real links it built
-
-Built for lmrify.com during development by the scripted executor on login-free sites, then re-verified by fetching each page on 14 September 2026. Sorted by DA; the free-list column shows which of these sites ship in the package.
-
-| Site | DA | Link | Free list | Live link | Verified |
-|---|---|---|---|---|---|
-| Netcraft site report | 77 | nofollow | | https://sitereport.netcraft.com/?url=https://lmrify.com | hyperlink to target present |
-| ouo.press | 60 | redirect | yes | https://ouo.press/1O9kCB | short link created; the redirect page shows no hyperlink, so it stays unverified |
-| write.as | 52 | nofollow | | https://write.as/uooky17nv701i.md | contextual anchor "Let me Review it For You", indexed page |
-| n9.cl | 40 | redirect | yes | https://n9.cl/aav9b | short link created; the landing page shows the target as plain text |
-| goolnk.com | 23 | redirect | yes | https://goolnk.com/bwv0gn | short link created; the landing page shows the target as plain text |
-| yellkey.com | 20 | redirect | yes | https://www.yellkey.com/forget | short link created; expires by design |
-| rentry.co | — | dofollow | | https://rentry.co/tu4euyew | contextual anchor, dofollow attribute, but the page is noindex |
-
-Notice what the verifier reports. Two well-formed contextual links are nofollow. The one dofollow link sits on a noindex page. The shorteners create real redirects but not hyperlinks, so the agent never counts them as verified. That is the point: a link you cannot trust is worse than no link, and the agent says so instead of padding the count.
-
-The higher-DA sites at the top of the free list, Medium, IMDB, Zotero and ArtFire, all need an account, so the scripted executor does not build them; in free mode the agent gives you their exact method to follow, and with a subscription the model-driven executor builds them itself.
+*The session above is illustrative.*
 
 ## How it works
 
