@@ -26,21 +26,30 @@ $97 a year or $27 a month at [https://mcp.seoagent.dev/buy](https://mcp.seoagent
 
 | Tool | What it does |
 |---|---|
-| `search_sites` | The full library of 1,245 sites with referring domains, traffic and spam score |
-| `get_method` | Same, for every site |
+| `search_sites` | The full library of 1,245 sites with referring domains, traffic, spam score and liveness |
+| `get_method` | The playbook, requirements and parsed actions for every site, with the placement step marked |
 | `get_step_screenshot` | The annotated screenshot for a step, when a page does not match the text |
-| `set_identity`, `get_identity` | The name, inbox, username and password used on sign-up forms |
-| `plan_campaign` | Pick sites, balance dofollow share and method mix, assign anchor text by ratio |
-| `build_link` | Build a link automatically on login-free sites, with proof screenshot |
+| `plan_campaign` | Pick sites, balance the dofollow share and method mix, assign anchor text by ratio |
+| `build_link` | Build a link automatically, with a proof screenshot |
+| `queue_build`, `job_status` | Background builds, for clients with short tool timeouts |
 | `verify_link` | Fetch a live page and confirm the hyperlink, anchor text and nofollow |
-| `connect_service`, `list_services`, `read_inbox` | Connect your own AI model key (Anthropic, OpenAI, Google, OpenRouter) that drives account-based sites, plus a captcha solver, inbox or SMS service; read verification links and codes |
+| `log_link` | Record an outcome: placed, unverified, gated or manual |
+| `list_results` | Everything built or logged under your key |
+| `account` | Plan, links left, renewal date, your MCP link, dashboard and the upgrade link |
+| `set_identity`, `get_identity` | The name, inbox, username and password used on sign-up forms |
+| `generate_identity` | A complete, consistent sign-up identity on your catch-all domain |
+| `connect_service`, `list_services` | Your own AI model key (Anthropic, OpenAI, Google, OpenRouter) that drives account-based sites, plus a captcha solver, an inbox or an SMS service |
+| `read_inbox` | Read recent messages from the connected inbox and extract verification links and codes |
 | `resolve_gate` | Continue after a gate: clear it in a window, retry with a service, paste a code, or skip |
-| `queue_build`, `job_status` | Background builds for clients with short tool timeouts |
-| `generate_identity` | A complete sign-up identity on your catch-all domain |
-| `recheck_links`, `campaign_report` | Monitor placed links over time and report a campaign |
-| `log_link` | Record an outcome: placed, unverified or manual |
-| `list_results` | Everything built or logged under your key, and the credit balance |
-| `account` | Plan, links left, your MCP link, dashboard and the upgrade link |
+| `register_site`, `list_sites`, `verify_site` | Register a site under your key and prove you own the domain, so many sites can run on one subscription |
+| `suggest_keywords` | Read a target page and get keywords and a full anchor plan across the five anchor types |
+| `monitor_backlinks` | Every referring domain to your site, what is new and lost, spam flags, and a disavow file |
+| `competitor_gap` | The referring domains your competitors have and you do not, each row carrying the method to build it |
+| `recheck_links` | Re-verify every placed link: still live, still a hyperlink, still dofollow |
+| `campaign_report` | Planned against placed, counts by status and method, every live URL, as data or rendered HTML |
+
+Twenty-six tools in all. Two resources come with them: `library://summary` for what the library holds, and
+`library://rules` for the rules the agent follows on every link.
 
 Prompts: `build_backlink` for one site, `run_campaign` for the whole loop.
 

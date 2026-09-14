@@ -23,6 +23,10 @@ Open the agent panel and ask for what you want in plain language:
 
 Cursor calls the server's tools, follows the site's method with a browser tool if one is installed, and reports the live URL.
 
+## Beyond building
+
+A subscription adds the parts that come after the link: weekly re-checks of everything placed, the full backlink profile of your domain with new and lost domains each month and a disavow file, competitor gap analysis with a buildable method on every row, keyword and anchor suggestions read from the target page, velocity pacing so links arrive steadily, and campaign reports you can hand to a client. All of it through the same server, in the same chat.
+
 ## Notes
 
 - Models differ. Claude and GPT-class models follow ten-step methods reliably; small local models struggle. Pick a capable model for building; any model is fine for searching and planning.

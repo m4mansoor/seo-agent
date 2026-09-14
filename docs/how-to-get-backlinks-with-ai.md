@@ -30,11 +30,15 @@ A link only counts when the public page shows a hyperlink to the target with the
 
 Every placed link, its live URL, its proof and its status live in one results table, so a month later you can re-check which links still stand.
 
-## 5. Gates are handled in the chat
+## 5. Let the gap pick your next targets
+
+The hardest question in link building is which site to approach next. Point the agent at two or three competitors and it lists the referring domains they have and you do not, with the method attached to every row that is in the library, so the answer stops being a spreadsheet and becomes a queue of buildable work.
+
+## 6. Gates are handled in the chat
 
 A captcha, a verification code, a social login or a payment is a gate, not a failure. The agent stops, tells you what the site wants, and offers the ways through in the same chat: clear it yourself in the browser window it opens, connect a service once so it handles it next time (a captcha solver, your inbox over IMAP, an SMS number), paste a code, or skip the site. Once cleared, the build continues where it stopped. It never fakes a person or works around a site's rules, which keeps your site out of trouble and the links worth having.
 
-## 6. Check again later
+## 7. Check again later
 
 Links drop: posts get moderated away, profiles get deleted. A re-check fetches every placed link again and marks the ones that are gone, and a campaign report shows planned versus placed with every live URL.
 

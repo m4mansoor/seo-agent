@@ -20,6 +20,12 @@ SEO Agent is an open-source SEO agent for link building. It runs as an MCP serve
 - **Builds links in your browser** with a proof screenshot on login-free sites, free; on account-based sites with the model-driven executor on a subscription (`build_link`, `queue_build`).
 - **Verifies every link** by fetching the live page and checking the hyperlink, the anchor text and nofollow (`verify_link`).
 - **Handles gates in the chat**: at a captcha, email code or login it asks you, or with a subscription uses a service you connected once (`resolve_gate`, `connect_service`, `read_inbox`).
+- **Suggests the keywords and anchors** by reading the target page itself, then allocates them across the five anchor types so your profile is not one phrase forty times (`suggest_keywords`, subscription).
+- **Watches the links afterwards**: weekly re-checks of everything it placed, plus every referring domain to your site, what is new and lost each month, spam flags and a disavow file (`recheck_links`, `monitor_backlinks`, subscription).
+- **Finds what competitors have and you do not**, with the method to build each one attached (`competitor_gap`, subscription).
+- **Paces the campaign** so links arrive steadily across days and methods rather than in a burst, and runs many sites under one subscription (`register_site`, subscription).
+
+Twenty-six tools in all; the [tool reference](https://m4mansoor.github.io/seo-agent/seo-mcp-server.html) lists every one.
 
 **Quick start**
 

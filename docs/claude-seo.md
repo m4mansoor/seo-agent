@@ -27,6 +27,16 @@ Every site, $97 a year or $27 a month: subscribe at [https://mcp.seoagent.dev/bu
 3. *Build a link to https://example.com with the anchor "example".* Claude follows the steps in its browser, asks you in the chat if a captcha or a verification code appears, continues once it is cleared, and reports the live URL.
 4. *Verify it.* With a key, Claude calls `verify_link` on that page and reports hyperlink, anchor and nofollow status.
 
+## What else it can do in the same chat
+
+With a subscription the same conversation reaches the rest of the engine, so you rarely leave Claude:
+
+- *Which keywords should this page target?* reads the page and proposes keywords and a full anchor plan.
+- *Who links to my competitors but not to me?* returns the gap with a method attached to every row that is buildable.
+- *Are my links still live?* re-checks every one it placed and tells you which dropped.
+- *Show me my backlink profile* lists every referring domain, what is new and lost this month, spam flags, and generates a disavow file.
+- *Report on that campaign* returns planned against placed, counts by status and method, and every live URL, as data or as a rendered page you can send to a client.
+
 ## Why Claude does well at this
 
 Long multi-step guides with quoted button names are exactly the kind of instruction Claude follows reliably, and it reads the annotated screenshot for a step when a page does not match. The playbooks add the judgement a guide leaves out: what to write in an article, why a plain-text URL is not a backlink, when to stop.
