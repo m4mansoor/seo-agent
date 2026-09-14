@@ -144,9 +144,9 @@ Fifty sites from the library, all verified reachable, DA 37 to 69, 49 of them do
 
 More lists, with DA and referring domains: [social bookmarking sites](docs/social-bookmarking-sites.md), [profile creation sites](docs/profile-creation-sites.md), [guest posting sites](docs/guest-posting-sites.md), [web 2.0 sites](docs/web-2-0-sites.md), [directory submission sites](docs/directory-submission-sites.md), [forum posting sites](docs/forum-posting-sites.md), [high DA backlinks](docs/high-da-backlinks.md).
 
-## What it will not do
+## When a site asks for something the agent can't do alone
 
-It does not solve captchas, bypass bot checks, or create accounts where a site forbids automation. When it meets one of those it stops and tells you what was asked. That keeps your site safe and keeps the links you do get worth having.
+A captcha, a verification code, a social login or a payment is a gate, not a failure. The agent reports the gate and asks you in the same chat: clear it yourself in the browser window it opens, connect a service once so it handles it next time (a captcha solver, your inbox over IMAP, an SMS service), paste a code, or skip the site. It never fakes a person or works around a site's rules.
 
 ## Guides
 

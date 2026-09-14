@@ -30,9 +30,9 @@ A link only counts when the public page shows a hyperlink to the target with the
 
 Every placed link, its live URL, its proof and its status live in one results table, so a month later you can re-check which links still stand.
 
-## What an SEO agent will not do
+## When a site asks for something the agent can't do alone
 
-It will not solve captchas, bypass bot checks, or create accounts on sites that forbid automation. When it meets one of those it stops and tells you what was asked. That keeps your site out of trouble and keeps the links you do get worth having.
+A captcha, a verification code, a social login or a payment is a gate, not a failure. The agent reports it and asks you in the same chat: clear it yourself in the browser window it opens, connect a service once so it handles it next time (a captcha solver, your inbox over IMAP, an SMS service), paste a code, or skip the site. It never fakes a person or works around a site's rules, which keeps your site out of trouble and the links worth having.
 
 ## Try it
 
