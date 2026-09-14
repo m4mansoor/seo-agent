@@ -23,8 +23,21 @@ description: "Plan backlink campaigns and build links from Claude, Cursor or Cod
   <h2>What the agent does</h2>
   <div class="three">
     <div><h3>Plans</h3><p>Picks sites by authority and effort, balances the dofollow share, and assigns anchor text by the ratio you set: exact, partial, branded, naked, generic.</p></div>
-    <div><h3>Builds</h3><p>Hands your assistant a playbook for each kind of link, the site's steps as actions with the exact button names, and what the site requires. Login-free sites are built automatically with a proof screenshot.</p></div>
-    <div><h3>Verifies</h3><p>Opens the live page and checks the hyperlink, the anchor text and whether it is nofollow before a link counts. Every result is logged with its proof.</p></div>
+    <div><h3>Builds</h3><p>Login-free sites run on scripted playbooks. Account-based sites run on the model-driven browser executor: it reads the site's method and the page each turn, signs up, fills the profile or writes the post, and places the link, with a proof screenshot.</p></div>
+    <div><h3>Verifies</h3><p>Opens the live page and checks the hyperlink, the anchor text and whether it is nofollow before a link counts. Every result is logged with its proof, and a re-check later shows which links still stand.</p></div>
+  </div>
+</section>
+
+<section class="gates">
+  <h2>Gates are handled in the chat, not skipped</h2>
+  <p>When a site asks for a captcha, an email code, a phone code, a social login or a payment, the agent stops and asks you in the same conversation. You clear it in the browser window it opens, connect a service once (a captcha solver, your inbox over IMAP, an SMS number) so it handles the next one itself, paste the code, or skip the site. Then the build continues where it stopped.</p>
+  <div class="cards">
+    <div class="card"><b>Model-driven executor</b><span>Builds on account-based sites: profiles, articles, forums, directories, page builders</span></div>
+    <div class="card"><b>Services connected once</b><span>Captcha solver, IMAP inbox and SMS; verification links and codes read automatically</span></div>
+    <div class="card"><b>Background jobs</b><span>Queue a build and poll it, so clients with short tool timeouts never drop a link</span></div>
+    <div class="card"><b>Identity generation</b><span>A complete, consistent sign-up identity on your catch-all domain</span></div>
+    <div class="card"><b>Monitoring and reports</b><span>Re-check every placed link, campaign report with every live URL, CSV export</span></div>
+    <div class="card"><b>Dashboard and credits</b><span>A page per API key with credits, campaigns, results and proof screenshots; only live links are charged</span></div>
   </div>
 </section>
 
@@ -53,6 +66,6 @@ description: "Plan backlink campaigns and build links from Claude, Cursor or Cod
 
 <section class="upgrade">
   <h2>Full library with a free API key</h2>
-  <p>All 1,245 sites with referring domains, backlinks, spam score and organic traffic, the campaign planner, automatic building on login-free sites, link verification and the results log. Keys open when the hosted service launches; star the repository to hear first.</p>
+  <p>All 1,245 sites with referring domains, backlinks, spam score and organic traffic, the campaign planner, the model-driven executor for account-based sites, gate handling with connected services, background jobs, identity generation, link monitoring, campaign reports and a dashboard. Keys open when the hosted service launches; star the repository to hear first.</p>
   <a class="btn" href="https://github.com/m4mansoor/seo-agent">Star on GitHub</a>
 </section>

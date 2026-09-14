@@ -28,7 +28,7 @@ With a free API key, set `SEOAGENT_API_KEY` in the same place and Claude sees th
 
 1. *Search the free list for dofollow sites above DA 50.* Claude calls `search_sites` and shows the candidates with DA and referring domains.
 2. *Get the method for GitBook.* Claude calls `get_method` and reads the playbook, the requirements and the steps, including which step places the link.
-3. *Build a link to https://example.com with the anchor "example".* Claude follows the steps in its browser, stops if a captcha appears, and reports the live URL.
+3. *Build a link to https://example.com with the anchor "example".* Claude follows the steps in its browser, asks you in the chat if a captcha or a verification code appears, continues once it is cleared, and reports the live URL.
 4. *Verify it.* With a key, Claude calls `verify_link` on that page and reports hyperlink, anchor and nofollow status.
 
 ## Why Claude does well at this

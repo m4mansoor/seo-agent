@@ -13,7 +13,7 @@ Bulk link software posted the same text to thousands of sites, ignored what each
 
 ## What an agent does differently
 
-An LLM-driven SEO agent reads a site's method the way a person would: it knows a profile field takes a URL while an article needs three hundred words; it fills the sign-up form with one consistent identity; it stops at a captcha; and it opens the public page afterwards to confirm the hyperlink, the anchor and whether the link is nofollow. Every link is logged with proof. Quantity is limited by what is genuinely available, which is the point.
+An LLM-driven SEO agent reads a site's method the way a person would: it knows a profile field takes a URL while an article needs three hundred words; it fills the sign-up form with one consistent identity; it asks you in the chat at a captcha or a verification code and continues once it is cleared, or reads the code itself from a connected inbox; and it opens the public page afterwards to confirm the hyperlink, the anchor and whether the link is nofollow. Every link is logged with proof. Quantity is limited by what is genuinely available, which is the point.
 
 ## ChatGPT, Claude or Cursor as the SEO tool
 

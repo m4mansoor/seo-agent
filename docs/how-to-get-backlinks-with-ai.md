@@ -30,9 +30,13 @@ A link only counts when the public page shows a hyperlink to the target with the
 
 Every placed link, its live URL, its proof and its status live in one results table, so a month later you can re-check which links still stand.
 
-## When a site asks for something the agent can't do alone
+## 5. Gates are handled in the chat
 
-A captcha, a verification code, a social login or a payment is a gate, not a failure. The agent reports it and asks you in the same chat: clear it yourself in the browser window it opens, connect a service once so it handles it next time (a captcha solver, your inbox over IMAP, an SMS service), paste a code, or skip the site. It never fakes a person or works around a site's rules, which keeps your site out of trouble and the links worth having.
+A captcha, a verification code, a social login or a payment is a gate, not a failure. The agent stops, tells you what the site wants, and offers the ways through in the same chat: clear it yourself in the browser window it opens, connect a service once so it handles it next time (a captcha solver, your inbox over IMAP, an SMS number), paste a code, or skip the site. Once cleared, the build continues where it stopped. It never fakes a person or works around a site's rules, which keeps your site out of trouble and the links worth having.
+
+## 6. Check again later
+
+Links drop: posts get moderated away, profiles get deleted. A re-check fetches every placed link again and marks the ones that are gone, and a campaign report shows planned versus placed with every live URL.
 
 ## Try it
 

@@ -18,9 +18,9 @@ That is the whole interaction. In detail:
 1. **You ask in plain language**: *I need 5 dofollow backlinks, DA 40 to 70.*
 2. **The agent asks for two things**: the URL the links should point to, and your main keywords. It stores your sign-up identity once so every form is filled the same way.
 3. **It plans**: picks sites from the library by authority and effort inside your DA range, keeps the dofollow share you asked for, spreads the methods so it is not five profile pages, and assigns anchor text by ratio: exact, partial, branded, naked, generic.
-4. **It builds**: login-free sites are built automatically with a proof screenshot. For sites that need an account, the agent follows the site's method in its browser: the playbook for that kind of link, the steps as actions with the exact button names, and what the site requires.
+4. **It builds**: login-free sites are built by scripted playbooks with a proof screenshot. Sites that need an account are built by the model-driven browser executor: it reads the site's playbook, the guide steps with the exact button names, and a snapshot of the page each turn, then signs up, fills the profile or writes the post, and places the link. Long builds run in the background so your chat never times out.
 5. **It verifies**: opens the public page and checks that the target is a real hyperlink, that the anchor matches, and whether the link is nofollow. Plain-text URLs and noindex pages do not count.
-6. **It reports**: live URL, anchor, dofollow status and proof per link. Anything that hit a captcha or a paid gate is reported as manual, never bypassed.
+6. **It reports**: live URL, anchor, dofollow status and proof per link, a campaign report, and a re-check later so you know which links still stand. When a site asks for a captcha, a verification code or a login, the agent asks you in the same chat and continues once it is cleared.
 
 *The session above is illustrative. The table below is real.*
 
@@ -144,9 +144,29 @@ Fifty sites from the library, all verified reachable, DA 37 to 69, 49 of them do
 
 More lists, with DA and referring domains: [social bookmarking sites](docs/social-bookmarking-sites.md), [profile creation sites](docs/profile-creation-sites.md), [guest posting sites](docs/guest-posting-sites.md), [web 2.0 sites](docs/web-2-0-sites.md), [directory submission sites](docs/directory-submission-sites.md), [forum posting sites](docs/forum-posting-sites.md), [high DA backlinks](docs/high-da-backlinks.md).
 
-## When a site asks for something the agent can't do alone
+## Gates are handled in the chat, not skipped
 
-A captcha, a verification code, a social login or a payment is a gate, not a failure. The agent reports the gate and asks you in the same chat: clear it yourself in the browser window it opens, connect a service once so it handles it next time (a captcha solver, your inbox over IMAP, an SMS service), paste a code, or skip the site. It never fakes a person or works around a site's rules.
+A captcha, an email verification, a phone code, a social login or a payment step is a gate. The agent stops at the gate, tells you what the site wants, and offers the ways through, in the same conversation:
+
+- **Clear it yourself**: it opens the page in a visible browser window and waits while you solve the captcha or log in.
+- **Connect a service once**: a captcha solver, your inbox over IMAP, or an SMS number. From then on the agent reads the verification link or code itself and continues without asking.
+- **Paste the code**: you read the email or SMS and paste the code into the chat.
+- **Skip the site**: it moves to the next site in the plan.
+
+It never fakes a person or works around a site's rules, which keeps your site out of trouble and the links worth having.
+
+## Everything the hosted service adds
+
+| Feature | What you get |
+|---|---|
+| Model-driven executor | Builds on account-based sites: sign-up, profile fields, articles, forum posts, directory listings, page builders |
+| Gates and services | Captcha solver, IMAP inbox and SMS connected once; verification links and codes read automatically |
+| Background jobs | `queue_build` starts a build and `job_status` polls it, so clients with short tool timeouts never drop a link |
+| Identity generation | `generate_identity` creates a complete, consistent sign-up identity on your catch-all domain |
+| Monitoring | `recheck_links` re-fetches every placed link and marks the ones that dropped |
+| Campaign reports | `campaign_report` gives planned versus placed, counts by status and method, and every live URL; CSV export |
+| Dashboard | A web page per API key with credits, campaigns, results and proof screenshots |
+| Per-key credits | Each key has its own balance; only verified live links are charged |
 
 ## Guides
 

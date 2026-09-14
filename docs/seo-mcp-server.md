@@ -48,4 +48,4 @@ Actions in a method: `navigate`, `click`, `fill_form`, `place_link`, `email_veri
 
 ## Statuses
 
-`placed` means verified live. `unverified` means placed but not confirmable yet, for example a post awaiting moderation. `manual` means the site asked for something the agent will not do: a captcha, a phone number, a payment.
+`placed` means verified live. `unverified` means placed but not confirmable yet, for example a post awaiting moderation. `gated` means the site asked for a captcha, a verification code, a login or a payment: the result carries the gate and its options, and `resolve_gate` continues the build once you clear it, connect a service, paste a code or skip. `manual` means you placed the link yourself and logged it.
