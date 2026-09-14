@@ -16,15 +16,15 @@ SEO Agent is an open-source SEO agent for link building. It runs as an MCP serve
 
 - **Searches a library of 1,245 backlink sites** with Domain Authority, referring domains, spam score and dofollow status. Fifty sites ship free inside the package (`search_sites`).
 - **Gives your assistant the method for each site**: the playbook for that kind of link, the guide steps parsed into actions with the exact button names, and what the site requires (`get_method`).
-- **Plans a campaign** for your URL: sites inside your DA range, the dofollow share you asked for, methods spread, anchor text assigned by ratio (`plan_campaign`, with a key).
-- **Builds links in a browser** with a proof screenshot: scripted playbooks on login-free sites, a model-driven executor on account-based sites (`build_link`, `queue_build`).
+- **Plans a campaign** for your URL: sites inside your DA range, the dofollow share you asked for, methods spread, anchor text assigned by ratio (`plan_campaign`, Lifetime).
+- **Builds links in your browser** with a proof screenshot on login-free sites, free; on account-based sites with the model-driven executor on Lifetime (`build_link`, `queue_build`).
 - **Verifies every link** by fetching the live page and checking the hyperlink, the anchor text and nofollow (`verify_link`).
-- **Handles gates in the chat**: at a captcha, email code or login it asks you, or uses a service you connected once (`resolve_gate`, `connect_service`, `read_inbox`).
+- **Handles gates in the chat**: at a captcha, email code or login it asks you, or on Lifetime uses a service you connected once (`resolve_gate`, `connect_service`, `read_inbox`).
 
 **Quick start**
 
 ```bash
-pip install seo-agent
+pip install seo-agent && playwright install chromium
 claude mcp add seo-agent -- seo-agent
 ```
 
@@ -85,38 +85,36 @@ Notice what the verifier caught: one dofollow link sits on a noindex page and on
 
 Fifty of these sites, with their methods, are bundled free. The rest, the campaign planner, automatic building and verification come with a free API key when the hosted service opens.
 
-## Connect the MCP link: 50 backlinks free, then $97 once
+## Free: 50 backlinks from GitHub, right now
 
-Get a personal MCP link at **https://mcp.seoagent.dev/start**. It looks like `https://mcp.seoagent.dev/u/le_…/mcp`, carries your key, and works in every client with nothing else to configure. Each link comes with **50 backlinks free**. After that, the **Lifetime plan is one payment of $97** for unlimited links on that key: every one of the 1,245 sites, the campaign planner, browser building with proof, verification, gates and services, monitoring, reports and the dashboard.
-
-**Claude Desktop and claude.ai**: Settings, Connectors, Add custom connector. Name `SEO Agent`, paste the URL, no OAuth. Enable it in a chat.
+The package is the agent. It runs on your machine, builds links in your own browser on the login-free sites, follows the method with you on the rest, verifies every link and keeps the log. No account, no key, nothing sent anywhere. Requires Python 3.10 or newer.
 
 **Claude Code**
 
 ```bash
-claude mcp add --transport http seo-agent "https://mcp.seoagent.dev/u/le_…/mcp"
-```
-
-**Cursor**: Settings, MCP, add a server:
-
-```json
-{ "mcpServers": { "seo-agent": { "url": "https://mcp.seoagent.dev/u/le_…/mcp" } } }
-```
-
-**ChatGPT**: Settings, Connectors, Developer mode, Create, paste the URL.
-
-Then ask: *I need 5 dofollow backlinks, DA 40 to 70.* The assistant asks for your URL and keywords, plans, builds, verifies and reports. Ask *how many links do I have left* at any time; it calls the `account` tool. When the 50 are used, it gives you the upgrade link in the chat.
-
-## Run it locally with pip
-
-The pip package is the same server in free mode: the 50 bundled sites with their methods, no key, nothing sent anywhere. Requires Python 3.10 or newer.
-
-```bash
-pip install seo-agent
+pip install seo-agent && playwright install chromium
 claude mcp add seo-agent -- seo-agent
 ```
 
-Claude Desktop, Cursor and Codex take the same command in their MCP config: `{ "mcpServers": { "seo-agent": { "command": "seo-agent" } } }`. To use your hosted link through the local package instead, set `SEOAGENT_URL` to it.
+**Claude Desktop, Cursor, Codex** and any other MCP client take the same command in their config:
+
+```json
+{ "mcpServers": { "seo-agent": { "command": "seo-agent" } } }
+```
+
+Then ask: *I need 5 dofollow backlinks from the free list for https://example.com, keyword "example".* The assistant searches the 50 sites, calls `build_link` where it can build by itself, follows `get_method` where an account is needed, verifies each link and logs it. Ask *how many links have I built* any time; it calls `account`.
+
+## Lifetime: $97 once, every site, forever
+
+When you want more than the 50 free sites, the assistant gives you the payment link when you ask, or call `upgrade`. Pay once at **https://mcp.seoagent.dev/buy**, copy the key from the success page, and tell your assistant:
+
+```
+activate le_your_key
+```
+
+No restart, no config file. From that message on, the same MCP has the full 1,245-site library, the campaign planner, browser building on account-based sites, gates with connected services, background jobs, identity generation, monitoring, campaign reports and a dashboard. Unlimited links, no subscription.
+
+**No pip? Use the link instead.** The success page also shows a personal MCP link, `https://mcp.seoagent.dev/u/le_…/mcp`. Paste it into Claude Desktop or claude.ai (Settings, Connectors, Add custom connector, no OAuth), ChatGPT (Settings, Connectors, Developer mode) or Cursor (`"url"` instead of `"command"`). It carries your key, so keep it private.
 
 ## The free backlink sites list
 
@@ -200,9 +198,9 @@ A captcha, an email verification, a phone code, a social login or a payment step
 
 It never fakes a person or works around a site's rules, which keeps your site out of trouble and the links worth having.
 
-## Everything the hosted service adds
+## Everything Lifetime adds
 
-Free for the first 50 backlinks on your link, then $97 once for life.
+$97 once. Activate in the chat; nothing else changes.
 
 | Feature | What you get |
 |---|---|
@@ -217,12 +215,12 @@ Free for the first 50 backlinks on your link, then $97 once for life.
 
 ## Configuration
 
-The hosted link needs no configuration. The pip package reads two optional variables:
+Nothing is required. `activate` stores your key in `~/.seoagent/config.json`; results live in `~/.seoagent/results.db`. Two optional variables override that:
 
 | Variable | Purpose |
 |---|---|
-| `SEOAGENT_URL` | Your personal MCP link (`https://mcp.seoagent.dev/u/le_…/mcp`). Set: the local package proxies every hosted tool. Unset: free mode with the 50 bundled sites. |
-| `SEOAGENT_API_KEY` | Alternative to the link: a bare key sent as a bearer header, with `SEOAGENT_URL` pointing at `https://mcp.seoagent.dev/mcp`. |
+| `SEOAGENT_API_KEY` | A Lifetime key, for environments where a config file is inconvenient (CI, containers). |
+| `SEOAGENT_URL` | The hosted endpoint, or a personal link `https://mcp.seoagent.dev/u/le_…/mcp`. Only needed for a self-hosted engine. |
 
 ## Guides
 

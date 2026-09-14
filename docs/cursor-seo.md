@@ -9,13 +9,9 @@ Cursor runs MCP servers with whichever model you choose, so SEO Agent works ther
 
 ## Install
 
-Hosted, with 50 backlinks free and $97 once for unlimited: get your link at [https://mcp.seoagent.dev/start](https://mcp.seoagent.dev/start), then in Cursor, Settings, MCP, Add new MCP server:
+Free, 50 sites, links built in your own browser: `pip install seo-agent && playwright install chromium`, then in Cursor, Settings, MCP, Add new MCP server with command `seo-agent`.
 
-```json
-{ "mcpServers": { "seo-agent": { "url": "https://mcp.seoagent.dev/u/le_…/mcp" } } }
-```
-
-Local free mode, the 50 bundled sites and no account: `pip install seo-agent`, then add a server with command `seo-agent`.
+Lifetime, $97 once for every site: pay at [https://mcp.seoagent.dev/buy](https://mcp.seoagent.dev/buy) and tell the assistant `activate le_your_key`. Or add the personal link from the success page as a server with `"url"` instead of `"command"`.
 
 ## Use
 

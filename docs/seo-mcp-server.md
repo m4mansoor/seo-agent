@@ -7,19 +7,22 @@ description: "Tools and prompts of SEO Agent's MCP server for link building. Sea
 
 SEO Agent is an MCP server. Any MCP client, Claude, Cursor, Codex, Windsurf, VS Code, Cline and others, can call these tools.
 
-## Free mode, no key (pip package)
+## Free, the pip package
 
 | Tool | What it does |
 |---|---|
-| `search_sites` | Search the free list of 50 sites by name, domain, method, DA and dofollow |
+| `search_sites` | Search the free list of 50 sites by name, domain, method, DA and dofollow; marks the ones `build_link` can do alone |
 | `get_method` | Playbook, requirements and parsed actions for one site, with the placement step marked |
-| `library_summary` | What the free list contains and what the full library adds |
+| `build_link` | Build a link in a local browser on login-free sites, with proof; returns the method elsewhere |
+| `verify_link` | Fetch a live page and confirm the hyperlink, anchor text and nofollow |
+| `log_link`, `list_results` | The local results log |
+| `account`, `upgrade` | Links built, and the Lifetime payment link |
+| `activate` | Save a Lifetime key or personal link; every hosted tool appears in the same session |
+| `library_summary` | What the free list contains and what Lifetime adds |
 
-Prompt `build_backlink(slug, target_url, anchor_text)` packages a site's method, your anchor and the rules into one instruction.
+## Lifetime, after `activate`
 
-## With your MCP link (hosted)
-
-Get a personal link at [https://mcp.seoagent.dev/start](https://mcp.seoagent.dev/start). 50 backlinks free, then $97 once for unlimited links on that key.
+$97 once at [https://mcp.seoagent.dev/buy](https://mcp.seoagent.dev/buy). The same server, now proxying the hosted engine:
 
 | Tool | What it does |
 |---|---|
