@@ -24,6 +24,7 @@ DATA = os.path.join(HERE, "data")
 HOST = os.environ.get("SEOAGENT_HOST", "https://mcp.seoagent.dev").rstrip("/")
 BUY_URL = os.environ.get("SEOAGENT_BUY_URL", f"{HOST}/buy")
 PRICE_USD = 97
+CONNECT_TIMEOUT = 20
 
 
 def _load(name: str):
@@ -192,9 +193,18 @@ async def _connect_remote(url: Optional[str] = None, key: Optional[str] = None):
     url, key = url or u, key or k
     await _disconnect_remote()
     _stack = AsyncExitStack()
-    r, w, _ = await _stack.enter_async_context(streamablehttp_client(url, headers={"Authorization": f"Bearer {key}"} if key else {}))
-    _remote = await _stack.enter_async_context(ClientSession(r, w))
-    await _remote.initialize()
+
+    async def open_session():
+        r, w, _ = await _stack.enter_async_context(streamablehttp_client(url, headers={"Authorization": f"Bearer {key}"} if key else {}))
+        sess = await _stack.enter_async_context(ClientSession(r, w))
+        await sess.initialize()
+        return sess
+
+    try:
+        _remote = await asyncio.wait_for(open_session(), CONNECT_TIMEOUT)
+    except BaseException as e:   # a dead host must fail fast, never hang the assistant
+        await _disconnect_remote()
+        raise ConnectionError(f"could not reach {url} within {CONNECT_TIMEOUT}s: {type(e).__name__}") from None
     return _remote
 
 
@@ -224,7 +234,7 @@ async def activate(key: str) -> dict:
         return {"error": "a key looks like le_... ; copy it from the purchase success page, or paste your personal MCP link"}
     try:
         sess = await _connect_remote(url, key)
-        res = await sess.call_tool("account", {})
+        res = await asyncio.wait_for(sess.call_tool("account", {}), CONNECT_TIMEOUT)
         text = "".join(c.text for c in res.content if getattr(c, "type", "") == "text")
         info = json.loads(text) if text else {}
     except Exception as e:
