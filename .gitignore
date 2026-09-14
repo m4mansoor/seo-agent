@@ -1,0 +1,11 @@
+.venv/
+.venv*/
+__pycache__/
+*.pyc
+.env
+.pytest_cache/
+dist/
+build/
+*.egg-info/
+.DS_Store
+data/free_table.md

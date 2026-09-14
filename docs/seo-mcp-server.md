@@ -1,0 +1,46 @@
+---
+title: SEO MCP server, tool reference
+description: Tools and prompts of the SEO Agent MCP server for link building. Search a backlink site library, get a site's method, plan a campaign, build, verify and log links.
+---
+
+# The SEO MCP server: tool reference
+
+SEO Agent is an MCP server. Any MCP client, Claude, Cursor, Codex, Windsurf, VS Code, Cline and others, can call these tools.
+
+## Free mode, no key
+
+| Tool | What it does |
+|---|---|
+| `search_sites` | Search the free list of 50 sites by name, domain, method, DA and dofollow |
+| `get_method` | Playbook, requirements and parsed actions for one site, with the placement step marked |
+| `library_summary` | What the free list contains and what the full library adds |
+
+Prompt `build_backlink(slug, target_url, anchor_text)` packages a site's method, your anchor and the rules into one instruction.
+
+## With an API key
+
+| Tool | What it does |
+|---|---|
+| `search_sites` | The full library of 1,245 sites with referring domains, traffic and spam score |
+| `get_method` | Same, for every site |
+| `get_step_screenshot` | The annotated screenshot for a step, when a page does not match the text |
+| `set_identity`, `get_identity` | The name, inbox, username and password used on sign-up forms |
+| `plan_campaign` | Pick sites, balance dofollow share and method mix, assign anchor text by ratio |
+| `build_link` | Build a link automatically on login-free sites, with proof screenshot |
+| `verify_link` | Fetch a live page and confirm the hyperlink, anchor text and nofollow |
+| `log_link` | Record an outcome: placed, unverified or manual |
+| `list_results` | Everything built or logged, and the credit balance |
+
+Prompts: `build_backlink` for one site, `run_campaign` for the whole loop.
+
+## Method vocabulary
+
+Tiers: A needs no account, B sign-up only, C email verification or captcha, D social login.
+
+Methods: `profile_website_field`, `article_post`, `bookmark_submit`, `url_shortener`, `page_builder`, `forum_post`, `forum_signature`, `document_share`, `directory_listing`, `social_post`, `qa_answer`, `comment`.
+
+Actions in a method: `navigate`, `click`, `fill_form`, `place_link`, `email_verify`, `upload`, `wait_moderation`, `verify`.
+
+## Statuses
+
+`placed` means verified live. `unverified` means placed but not confirmable yet, for example a post awaiting moderation. `manual` means the site asked for something the agent will not do: a captcha, a phone number, a payment.

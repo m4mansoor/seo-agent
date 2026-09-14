@@ -1,0 +1,1355 @@
+{
+ "social-bookmarking-sites": [
+  {
+   "name": "Google Bookmarks",
+   "domain": "google.com",
+   "da": 100,
+   "rd": 26211059,
+   "dofollow": true,
+   "tier": "D",
+   "free": false
+  },
+  {
+   "name": "Berkeley's ERL Forum",
+   "domain": "ocf.berkeley.edu",
+   "da": 93,
+   "rd": 306,
+   "dofollow": true,
+   "tier": "B",
+   "free": false
+  },
+  {
+   "name": "Gravatar",
+   "domain": "gravatar.com",
+   "da": 93,
+   "rd": 1920894,
+   "dofollow": false,
+   "tier": "C",
+   "free": false
+  },
+  {
+   "name": "IBM Developer",
+   "domain": "ibm.com",
+   "da": 93,
+   "rd": 421760,
+   "dofollow": false,
+   "tier": "B",
+   "free": false
+  },
+  {
+   "name": "Kickstarter",
+   "domain": "kickstarter.com",
+   "da": 93,
+   "rd": 291551,
+   "dofollow": false,
+   "tier": "C",
+   "free": false
+  },
+  {
+   "name": "TripAdvisor Business Listing",
+   "domain": "tripadvisor.com",
+   "da": 93,
+   "rd": 555582,
+   "dofollow": true,
+   "tier": "A",
+   "free": false
+  },
+  {
+   "name": "Cocolog Nifty",
+   "domain": "cocolog-nifty.com",
+   "da": 92,
+   "rd": 77274,
+   "dofollow": true,
+   "tier": "C",
+   "free": false
+  },
+  {
+   "name": "Instagram",
+   "domain": "instagram.com",
+   "da": 92,
+   "rd": 24249418,
+   "dofollow": false,
+   "tier": "B",
+   "free": false
+  },
+  {
+   "name": "Scoop it",
+   "domain": "scoop.it",
+   "da": 92,
+   "rd": 139259,
+   "dofollow": false,
+   "tier": "B",
+   "free": false
+  },
+  {
+   "name": "Know Your Meme",
+   "domain": "knowyourmeme.com",
+   "da": 90,
+   "rd": 86592,
+   "dofollow": false,
+   "tier": "C",
+   "free": false
+  },
+  {
+   "name": "Soup.io",
+   "domain": "soup.io",
+   "da": 89,
+   "rd": 35771,
+   "dofollow": false,
+   "tier": "B",
+   "free": false
+  },
+  {
+   "name": "CyberLink Community",
+   "domain": "forum.cyberlink.com",
+   "da": 88,
+   "rd": 822,
+   "dofollow": true,
+   "tier": "C",
+   "free": false
+  },
+  {
+   "name": "CHEEZburger",
+   "domain": "cheezburger.com",
+   "da": 87,
+   "rd": 39806,
+   "dofollow": false,
+   "tier": "B",
+   "free": false
+  },
+  {
+   "name": "Docker",
+   "domain": "hub.docker.com",
+   "da": 87,
+   "rd": 151338,
+   "dofollow": true,
+   "tier": "B",
+   "free": false
+  },
+  {
+   "name": "NewGrounds",
+   "domain": "newgrounds.com",
+   "da": 87,
+   "rd": 38386,
+   "dofollow": false,
+   "tier": "C",
+   "free": false
+  },
+  {
+   "name": "SimpleSite",
+   "domain": "simplesite.com",
+   "da": 87,
+   "rd": 725,
+   "dofollow": false,
+   "tier": "B",
+   "free": false
+  },
+  {
+   "name": "Viki",
+   "domain": "viki.com",
+   "da": 86,
+   "rd": 32147,
+   "dofollow": true,
+   "tier": "C",
+   "free": false
+  },
+  {
+   "name": "Instapaper",
+   "domain": "instapaper.com",
+   "da": 85,
+   "rd": 133422,
+   "dofollow": true,
+   "tier": "B",
+   "free": false
+  },
+  {
+   "name": "Contently",
+   "domain": "contently.com",
+   "da": 83,
+   "rd": 44455,
+   "dofollow": true,
+   "tier": "C",
+   "free": false
+  },
+  {
+   "name": "CSS Tricks",
+   "domain": "css-tricks.com",
+   "da": 83,
+   "rd": 34798,
+   "dofollow": true,
+   "tier": "B",
+   "free": false
+  },
+  {
+   "name": "DEV Community",
+   "domain": "dev.to",
+   "da": 82,
+   "rd": 92292,
+   "dofollow": true,
+   "tier": "D",
+   "free": false
+  },
+  {
+   "name": "FileZilla Forums",
+   "domain": "forum.filezilla-project.org",
+   "da": 82,
+   "rd": 1805,
+   "dofollow": true,
+   "tier": "B",
+   "free": false
+  },
+  {
+   "name": "MagCloud",
+   "domain": "magcloud.com",
+   "da": 77,
+   "rd": 78244,
+   "dofollow": false,
+   "tier": "B",
+   "free": false
+  },
+  {
+   "name": "Read The Docs",
+   "domain": "readthedocs.org",
+   "da": 77,
+   "rd": 80337,
+   "dofollow": true,
+   "tier": "C",
+   "free": false
+  },
+  {
+   "name": "SiteJabber",
+   "domain": "sitejabber.com",
+   "da": 76,
+   "rd": 36986,
+   "dofollow": false,
+   "tier": "A",
+   "free": false
+  }
+ ],
+ "profile-creation-sites": [
+  {
+   "name": "Adobe Education Exchange",
+   "domain": "edex.adobe.com",
+   "da": 99,
+   "rd": 14919,
+   "dofollow": false,
+   "tier": "B",
+   "free": false
+  },
+  {
+   "name": "YouTube",
+   "domain": "youtube.com",
+   "da": 99,
+   "rd": 17758893,
+   "dofollow": false,
+   "tier": "D",
+   "free": false
+  },
+  {
+   "name": "LinkedIn Pulse",
+   "domain": "linkedin.com",
+   "da": 98,
+   "rd": 13513068,
+   "dofollow": true,
+   "tier": "C",
+   "free": false
+  },
+  {
+   "name": "Wordpress.org",
+   "domain": "wordpress.org",
+   "da": 98,
+   "rd": 4411148,
+   "dofollow": false,
+   "tier": "B",
+   "free": false
+  },
+  {
+   "name": "Vimeo",
+   "domain": "vimeo.com",
+   "da": 96,
+   "rd": 2242430,
+   "dofollow": false,
+   "tier": "B",
+   "free": false
+  },
+  {
+   "name": "VK",
+   "domain": "vk.com",
+   "da": 96,
+   "rd": 2207026,
+   "dofollow": false,
+   "tier": "B",
+   "free": false
+  },
+  {
+   "name": "GitHub Profile",
+   "domain": "github.com",
+   "da": 95,
+   "rd": 2168888,
+   "dofollow": true,
+   "tier": "C",
+   "free": false
+  },
+  {
+   "name": "IMDB",
+   "domain": "imdb.com",
+   "da": 95,
+   "rd": 891904,
+   "dofollow": true,
+   "tier": "A",
+   "free": false
+  },
+  {
+   "name": "Myspace",
+   "domain": "myspace.com",
+   "da": 95,
+   "rd": 598684,
+   "dofollow": true,
+   "tier": "B",
+   "free": false
+  },
+  {
+   "name": "W3C",
+   "domain": "w3.org",
+   "da": 95,
+   "rd": 499393,
+   "dofollow": true,
+   "tier": "A",
+   "free": false
+  },
+  {
+   "name": "AOL",
+   "domain": "aol.com",
+   "da": 94,
+   "rd": 285960,
+   "dofollow": true,
+   "tier": "C",
+   "free": false
+  },
+  {
+   "name": "Change",
+   "domain": "change.org",
+   "da": 94,
+   "rd": 305308,
+   "dofollow": false,
+   "tier": "A",
+   "free": false
+  },
+  {
+   "name": "Fandom",
+   "domain": "fandom.com",
+   "da": 94,
+   "rd": 397393,
+   "dofollow": true,
+   "tier": "C",
+   "free": false
+  },
+  {
+   "name": "Pixabay",
+   "domain": "pixabay.com",
+   "da": 94,
+   "rd": 420495,
+   "dofollow": true,
+   "tier": "C",
+   "free": false
+  },
+  {
+   "name": "SourceForge",
+   "domain": "sourceforge.net",
+   "da": 94,
+   "rd": 446250,
+   "dofollow": false,
+   "tier": "B",
+   "free": false
+  },
+  {
+   "name": "TED",
+   "domain": "ted.com",
+   "da": 94,
+   "rd": 364295,
+   "dofollow": false,
+   "tier": "B",
+   "free": false
+  },
+  {
+   "name": "4shared",
+   "domain": "4shared.com",
+   "da": 93,
+   "rd": 246258,
+   "dofollow": false,
+   "tier": "B",
+   "free": false
+  },
+  {
+   "name": "Ask.fm",
+   "domain": "ask.fm",
+   "da": 93,
+   "rd": 38011,
+   "dofollow": false,
+   "tier": "B",
+   "free": false
+  },
+  {
+   "name": "Cornell.edu",
+   "domain": "flgclassifieds.cce.cornell.edu",
+   "da": 93,
+   "rd": 3208,
+   "dofollow": false,
+   "tier": "B",
+   "free": false
+  },
+  {
+   "name": "Disqus",
+   "domain": "disqus.com",
+   "da": 93,
+   "rd": 275180,
+   "dofollow": false,
+   "tier": "C",
+   "free": false
+  },
+  {
+   "name": "GoDaddy Sites",
+   "domain": "godaddy.com",
+   "da": 93,
+   "rd": 5624048,
+   "dofollow": true,
+   "tier": "B",
+   "free": false
+  },
+  {
+   "name": "GoFundMe",
+   "domain": "charity.gofundme.com",
+   "da": 93,
+   "rd": 7092,
+   "dofollow": true,
+   "tier": "B",
+   "free": false
+  },
+  {
+   "name": "Goodreads",
+   "domain": "goodreads.com",
+   "da": 93,
+   "rd": 557153,
+   "dofollow": false,
+   "tier": "B",
+   "free": false
+  },
+  {
+   "name": "Gui Clarin",
+   "domain": "guia.clarin.com",
+   "da": 93,
+   "rd": 3349,
+   "dofollow": true,
+   "tier": "B",
+   "free": false
+  },
+  {
+   "name": "Hatena",
+   "domain": "hatena.ne.jp",
+   "da": 93,
+   "rd": 632944,
+   "dofollow": true,
+   "tier": "C",
+   "free": false
+  }
+ ],
+ "guest-posting-sites": [
+  {
+   "name": "Blogger",
+   "domain": "blogger.com",
+   "da": 99,
+   "rd": 11548285,
+   "dofollow": true,
+   "tier": "D",
+   "free": false
+  },
+  {
+   "name": "Medium",
+   "domain": "medium.com",
+   "da": 96,
+   "rd": 1371100,
+   "dofollow": true,
+   "tier": "B",
+   "free": false
+  },
+  {
+   "name": "Issuu",
+   "domain": "issuu.com",
+   "da": 94,
+   "rd": 784367,
+   "dofollow": false,
+   "tier": "B",
+   "free": false
+  },
+  {
+   "name": "BandCamp",
+   "domain": "bandcamp.com",
+   "da": 93,
+   "rd": 531964,
+   "dofollow": true,
+   "tier": "B",
+   "free": false
+  },
+  {
+   "name": "BuzzFeed (2 Guides)",
+   "domain": "buzzfeed.com",
+   "da": 93,
+   "rd": 329943,
+   "dofollow": true,
+   "tier": "C",
+   "free": false
+  },
+  {
+   "name": "Taringa",
+   "domain": "taringa.net",
+   "da": 93,
+   "rd": 44117,
+   "dofollow": false,
+   "tier": "D",
+   "free": false
+  },
+  {
+   "name": "Tes",
+   "domain": "tes.com",
+   "da": 93,
+   "rd": 31996,
+   "dofollow": false,
+   "tier": "C",
+   "free": false
+  },
+  {
+   "name": "Weebly",
+   "domain": "weebly.com",
+   "da": 93,
+   "rd": 1040304,
+   "dofollow": true,
+   "tier": "B",
+   "free": false
+  },
+  {
+   "name": "Wordpress.com",
+   "domain": "wordpress.com",
+   "da": 93,
+   "rd": 4326941,
+   "dofollow": true,
+   "tier": "B",
+   "free": false
+  },
+  {
+   "name": "Crunchyroll",
+   "domain": "crunchyroll.com",
+   "da": 92,
+   "rd": 69634,
+   "dofollow": false,
+   "tier": "B",
+   "free": false
+  },
+  {
+   "name": "Bloglovin'",
+   "domain": "bloglovin.com",
+   "da": 91,
+   "rd": 215949,
+   "dofollow": true,
+   "tier": "D",
+   "free": false
+  },
+  {
+   "name": "Constant Contact",
+   "domain": "constantcontact.com",
+   "da": 91,
+   "rd": 235070,
+   "dofollow": true,
+   "tier": "C",
+   "free": false
+  },
+  {
+   "name": "Stack Overflow Profile",
+   "domain": "stackoverflow.com",
+   "da": 91,
+   "rd": 232496,
+   "dofollow": false,
+   "tier": "B",
+   "free": false
+  },
+  {
+   "name": "Ameba",
+   "domain": "ameba.jp",
+   "da": 90,
+   "rd": 135700,
+   "dofollow": true,
+   "tier": "C",
+   "free": false
+  },
+  {
+   "name": "JustPaste.it",
+   "domain": "justpaste.it",
+   "da": 90,
+   "rd": 101623,
+   "dofollow": false,
+   "tier": "A",
+   "free": false
+  },
+  {
+   "name": "Playbuzz",
+   "domain": "playbuzz.com",
+   "da": 90,
+   "rd": 35592,
+   "dofollow": false,
+   "tier": "B",
+   "free": false
+  },
+  {
+   "name": "Kinja",
+   "domain": "kinja.com",
+   "da": 89,
+   "rd": 29824,
+   "dofollow": false,
+   "tier": "B",
+   "free": false
+  },
+  {
+   "name": "Ezine Articles",
+   "domain": "ezinearticles.com",
+   "da": 88,
+   "rd": 59276,
+   "dofollow": false,
+   "tier": "B",
+   "free": false
+  },
+  {
+   "name": "Minds",
+   "domain": "minds.com",
+   "da": 88,
+   "rd": 27197,
+   "dofollow": true,
+   "tier": "B",
+   "free": false
+  },
+  {
+   "name": "Padlet",
+   "domain": "padlet.com",
+   "da": 88,
+   "rd": 139935,
+   "dofollow": false,
+   "tier": "B",
+   "free": false
+  },
+  {
+   "name": "Giant Bomb",
+   "domain": "giantbomb.com",
+   "da": 87,
+   "rd": 68785,
+   "dofollow": true,
+   "tier": "C",
+   "free": false
+  },
+  {
+   "name": "Podbean",
+   "domain": "podbean.com",
+   "da": 86,
+   "rd": 165017,
+   "dofollow": true,
+   "tier": "C",
+   "free": false
+  },
+  {
+   "name": "Get Satisfaction",
+   "domain": "getsatisfaction.com",
+   "da": 85,
+   "rd": 14308,
+   "dofollow": false,
+   "tier": "B",
+   "free": false
+  },
+  {
+   "name": "Exposure",
+   "domain": "exposure.co",
+   "da": 81,
+   "rd": 14949,
+   "dofollow": true,
+   "tier": "B",
+   "free": false
+  },
+  {
+   "name": "Taggad",
+   "domain": "tagged.com",
+   "da": 81,
+   "rd": 14696,
+   "dofollow": true,
+   "tier": "B",
+   "free": false
+  }
+ ],
+ "web-2-0-sites": [
+  {
+   "name": "Adobe Spark",
+   "domain": "spark.adobe.com",
+   "da": 98,
+   "rd": 39057,
+   "dofollow": false,
+   "tier": "B",
+   "free": false
+  },
+  {
+   "name": "Google Sites",
+   "domain": "sites.google.com",
+   "da": 98,
+   "rd": 1529288,
+   "dofollow": true,
+   "tier": "D",
+   "free": false
+  },
+  {
+   "name": "LiveJournal",
+   "domain": "livejournal.com",
+   "da": 93,
+   "rd": 465357,
+   "dofollow": true,
+   "tier": "A",
+   "free": false
+  },
+  {
+   "name": "Over Blog",
+   "domain": "over-blog.com",
+   "da": 93,
+   "rd": 279218,
+   "dofollow": true,
+   "tier": "A",
+   "free": false
+  },
+  {
+   "name": "LiveDoor",
+   "domain": "livedoor.com",
+   "da": 92,
+   "rd": 73078,
+   "dofollow": true,
+   "tier": "C",
+   "free": false
+  },
+  {
+   "name": "Strikingly",
+   "domain": "strikingly.com",
+   "da": 90,
+   "rd": 79581,
+   "dofollow": true,
+   "tier": "A",
+   "free": false
+  },
+  {
+   "name": "Ucoz",
+   "domain": "ucoz.com",
+   "da": 90,
+   "rd": 46467,
+   "dofollow": true,
+   "tier": "B",
+   "free": false
+  },
+  {
+   "name": "Pen.io",
+   "domain": "pen.io",
+   "da": 89,
+   "rd": 13356,
+   "dofollow": true,
+   "tier": "A",
+   "free": false
+  },
+  {
+   "name": "SS Blog",
+   "domain": "blog.ss-blog.jp",
+   "da": 88,
+   "rd": 8875,
+   "dofollow": true,
+   "tier": "C",
+   "free": false
+  },
+  {
+   "name": "SiteW",
+   "domain": "en.sitew.com",
+   "da": 87,
+   "rd": 59,
+   "dofollow": false,
+   "tier": "B",
+   "free": false
+  },
+  {
+   "name": "Webflow",
+   "domain": "webflow.io",
+   "da": 87,
+   "rd": 860,
+   "dofollow": true,
+   "tier": "A",
+   "free": false
+  },
+  {
+   "name": "Zoho Sites",
+   "domain": "zoho.com",
+   "da": 87,
+   "rd": 124611,
+   "dofollow": true,
+   "tier": "B",
+   "free": false
+  },
+  {
+   "name": "Wix",
+   "domain": "wix.com",
+   "da": 86,
+   "rd": 1717714,
+   "dofollow": false,
+   "tier": "C",
+   "free": false
+  },
+  {
+   "name": "Yola",
+   "domain": "yola.com",
+   "da": 85,
+   "rd": 105081,
+   "dofollow": true,
+   "tier": "B",
+   "free": false
+  },
+  {
+   "name": "Shutterfly",
+   "domain": "shutterfly.com",
+   "da": 84,
+   "rd": 91749,
+   "dofollow": false,
+   "tier": "C",
+   "free": false
+  },
+  {
+   "name": "Bravenet",
+   "domain": "bravenet.com",
+   "da": 80,
+   "rd": 43920,
+   "dofollow": false,
+   "tier": "B",
+   "free": false
+  },
+  {
+   "name": "EmailMeForm",
+   "domain": "emailmeform.com",
+   "da": 78,
+   "rd": 39073,
+   "dofollow": true,
+   "tier": "C",
+   "free": false
+  },
+  {
+   "name": "EduBlogs",
+   "domain": "edublogs.org",
+   "da": 77,
+   "rd": 82929,
+   "dofollow": false,
+   "tier": "B",
+   "free": false
+  },
+  {
+   "name": "About.me",
+   "domain": "about.me",
+   "da": 76,
+   "rd": 249608,
+   "dofollow": true,
+   "tier": "B",
+   "free": false
+  },
+  {
+   "name": "Beatstars",
+   "domain": "beatstars.com",
+   "da": 73,
+   "rd": 39465,
+   "dofollow": true,
+   "tier": "B",
+   "free": false
+  },
+  {
+   "name": "Jimdo",
+   "domain": "jimdo.com",
+   "da": 68,
+   "rd": 612061,
+   "dofollow": false,
+   "tier": "B",
+   "free": false
+  },
+  {
+   "name": "Webself",
+   "domain": "en.webself.net",
+   "da": 67,
+   "rd": 626,
+   "dofollow": true,
+   "tier": "A",
+   "free": false
+  },
+  {
+   "name": "Portfoliobox",
+   "domain": "portfoliobox.net",
+   "da": 66,
+   "rd": 12479,
+   "dofollow": true,
+   "tier": "A",
+   "free": true
+  },
+  {
+   "name": "RiseUp",
+   "domain": "we.riseup.net",
+   "da": 64,
+   "rd": 11528,
+   "dofollow": true,
+   "tier": "B",
+   "free": false
+  },
+  {
+   "name": "XtGem",
+   "domain": "xtgem.com",
+   "da": 64,
+   "rd": 26727,
+   "dofollow": true,
+   "tier": "B",
+   "free": false
+  }
+ ],
+ "directory-submission-sites": [
+  {
+   "name": "Crunchbase",
+   "domain": "crunchbase.com",
+   "da": 92,
+   "rd": 147773,
+   "dofollow": true,
+   "tier": "B",
+   "free": false
+  },
+  {
+   "name": "VisualStudio",
+   "domain": "marketplace.visualstudio.com",
+   "da": 90,
+   "rd": 52939,
+   "dofollow": true,
+   "tier": "B",
+   "free": false
+  },
+  {
+   "name": "Gust",
+   "domain": "gust.com",
+   "da": 67,
+   "rd": 11264,
+   "dofollow": true,
+   "tier": "B",
+   "free": true
+  },
+  {
+   "name": "Tuugo",
+   "domain": "tuugo.us",
+   "da": 48,
+   "rd": 8420,
+   "dofollow": false,
+   "tier": "C",
+   "free": false
+  },
+  {
+   "name": "Cgm internet marketing",
+   "domain": "cgmimm.com",
+   "da": 37,
+   "rd": 4120,
+   "dofollow": true,
+   "tier": "C",
+   "free": true
+  },
+  {
+   "name": "YaraBook",
+   "domain": "yarabook.com",
+   "da": 31,
+   "rd": 5861,
+   "dofollow": true,
+   "tier": "B",
+   "free": false
+  }
+ ],
+ "forum-posting-sites": [
+  {
+   "name": "Apple.com Sub-Domain",
+   "domain": "discussions.apple.com",
+   "da": 100,
+   "rd": 40611,
+   "dofollow": false,
+   "tier": "A",
+   "free": false
+  },
+  {
+   "name": "Reddit",
+   "domain": "reddit.com",
+   "da": 94,
+   "rd": 1613154,
+   "dofollow": false,
+   "tier": "B",
+   "free": false
+  },
+  {
+   "name": "Dell",
+   "domain": "dell.com",
+   "da": 93,
+   "rd": 133763,
+   "dofollow": false,
+   "tier": "C",
+   "free": false
+  },
+  {
+   "name": "Hubspot",
+   "domain": "community.hubspot.com",
+   "da": 93,
+   "rd": 24723,
+   "dofollow": false,
+   "tier": "B",
+   "free": false
+  },
+  {
+   "name": "Zendesk Help",
+   "domain": "support.zendesk.com",
+   "da": 93,
+   "rd": 6296,
+   "dofollow": false,
+   "tier": "B",
+   "free": false
+  },
+  {
+   "name": "Unity Forum",
+   "domain": "forum.unity.com",
+   "da": 90,
+   "rd": 7464,
+   "dofollow": false,
+   "tier": "A",
+   "free": false
+  },
+  {
+   "name": "Vue.js Forum",
+   "domain": "forum.vuejs.org",
+   "da": 71,
+   "rd": 992,
+   "dofollow": false,
+   "tier": "C",
+   "free": false
+  },
+  {
+   "name": "Videomaker",
+   "domain": "videomaker.com",
+   "da": 69,
+   "rd": 10245,
+   "dofollow": false,
+   "tier": "B",
+   "free": false
+  },
+  {
+   "name": "GrowthHackers",
+   "domain": "growthhackers.com",
+   "da": 68,
+   "rd": 7690,
+   "dofollow": true,
+   "tier": "B",
+   "free": true
+  },
+  {
+   "name": "Tennis Warehouse",
+   "domain": "tt.tennis-warehouse.com",
+   "da": 62,
+   "rd": 4684,
+   "dofollow": false,
+   "tier": "C",
+   "free": false
+  },
+  {
+   "name": "Hugo",
+   "domain": "discourse.gohugo.io",
+   "da": 60,
+   "rd": 3139,
+   "dofollow": false,
+   "tier": "C",
+   "free": true
+  },
+  {
+   "name": "CS Cart Forum",
+   "domain": "forum.cs-cart.com",
+   "da": 56,
+   "rd": 9660,
+   "dofollow": false,
+   "tier": "C",
+   "free": false
+  },
+  {
+   "name": "Catch Themes",
+   "domain": "catchthemes.com",
+   "da": 53,
+   "rd": 46911,
+   "dofollow": true,
+   "tier": "B",
+   "free": true
+  },
+  {
+   "name": "Grav",
+   "domain": "discourse.getgrav.org",
+   "da": 53,
+   "rd": 304,
+   "dofollow": true,
+   "tier": "C",
+   "free": false
+  },
+  {
+   "name": "Silverstripe",
+   "domain": "silverstripe.org",
+   "da": 53,
+   "rd": 25933,
+   "dofollow": true,
+   "tier": "B",
+   "free": false
+  }
+ ],
+ "high-da-backlinks": [
+  {
+   "name": "Facebook",
+   "domain": "facebook.com",
+   "da": 95,
+   "rd": 34082125,
+   "dofollow": false,
+   "tier": "C",
+   "method": "Social post",
+   "free": false
+  },
+  {
+   "name": "Google Bookmarks",
+   "domain": "google.com",
+   "da": 100,
+   "rd": 26211059,
+   "dofollow": true,
+   "tier": "D",
+   "method": "Bookmark / link submit",
+   "free": false
+  },
+  {
+   "name": "Instagram",
+   "domain": "instagram.com",
+   "da": 92,
+   "rd": 24249418,
+   "dofollow": false,
+   "tier": "B",
+   "method": "Bookmark / link submit",
+   "free": false
+  },
+  {
+   "name": "Twitter",
+   "domain": "twitter.com",
+   "da": 93,
+   "rd": 18249606,
+   "dofollow": false,
+   "tier": "B",
+   "method": "Profile website field",
+   "free": false
+  },
+  {
+   "name": "YouTube",
+   "domain": "youtube.com",
+   "da": 99,
+   "rd": 17758893,
+   "dofollow": false,
+   "tier": "D",
+   "method": "Profile website field",
+   "free": false
+  },
+  {
+   "name": "LinkedIn Pulse",
+   "domain": "linkedin.com",
+   "da": 98,
+   "rd": 13513068,
+   "dofollow": true,
+   "tier": "C",
+   "method": "Profile website field",
+   "free": false
+  },
+  {
+   "name": "Blogger",
+   "domain": "blogger.com",
+   "da": 99,
+   "rd": 11548285,
+   "dofollow": true,
+   "tier": "D",
+   "method": "Article or blog post",
+   "free": false
+  },
+  {
+   "name": "Pinterest",
+   "domain": "pinterest.com",
+   "da": 93,
+   "rd": 7170985,
+   "dofollow": true,
+   "tier": "B",
+   "method": "Profile website field",
+   "free": false
+  },
+  {
+   "name": "GoDaddy Sites",
+   "domain": "godaddy.com",
+   "da": 93,
+   "rd": 5624048,
+   "dofollow": true,
+   "tier": "B",
+   "method": "Profile website field",
+   "free": false
+  },
+  {
+   "name": "Wordpress.org",
+   "domain": "wordpress.org",
+   "da": 98,
+   "rd": 4411148,
+   "dofollow": false,
+   "tier": "B",
+   "method": "Profile website field",
+   "free": false
+  },
+  {
+   "name": "Wordpress.com",
+   "domain": "wordpress.com",
+   "da": 93,
+   "rd": 4326941,
+   "dofollow": true,
+   "tier": "B",
+   "method": "Article or blog post",
+   "free": false
+  },
+  {
+   "name": "Google Document",
+   "domain": "docs.google.com",
+   "da": 99,
+   "rd": 3398075,
+   "dofollow": true,
+   "tier": "D",
+   "method": "Shared document",
+   "free": false
+  },
+  {
+   "name": "Google Forms",
+   "domain": "docs.google.com",
+   "da": 99,
+   "rd": 3398075,
+   "dofollow": true,
+   "tier": "D",
+   "method": "Shared document",
+   "free": false
+  },
+  {
+   "name": "Google Sheets",
+   "domain": "docs.google.com",
+   "da": 99,
+   "rd": 3398075,
+   "dofollow": true,
+   "tier": "D",
+   "method": "Shared document",
+   "free": false
+  },
+  {
+   "name": "Google Slides",
+   "domain": "docs.google.com",
+   "da": 99,
+   "rd": 3398075,
+   "dofollow": true,
+   "tier": "D",
+   "method": "Shared document",
+   "free": false
+  },
+  {
+   "name": "Google Drawings",
+   "domain": "docs.google.com",
+   "da": 98,
+   "rd": 3398075,
+   "dofollow": true,
+   "tier": "D",
+   "method": "Shared document",
+   "free": false
+  },
+  {
+   "name": "Microsoft",
+   "domain": "microsoft.com",
+   "da": 100,
+   "rd": 2771728,
+   "dofollow": true,
+   "tier": "B",
+   "method": "Q&A answer",
+   "free": false
+  },
+  {
+   "name": "Google Drive",
+   "domain": "drive.google.com",
+   "da": 97,
+   "rd": 2393177,
+   "dofollow": true,
+   "tier": "D",
+   "method": "Shared document",
+   "free": false
+  },
+  {
+   "name": "Vimeo",
+   "domain": "vimeo.com",
+   "da": 96,
+   "rd": 2242430,
+   "dofollow": false,
+   "tier": "B",
+   "method": "Profile website field",
+   "free": false
+  },
+  {
+   "name": "VK",
+   "domain": "vk.com",
+   "da": 96,
+   "rd": 2207026,
+   "dofollow": false,
+   "tier": "B",
+   "method": "Profile website field",
+   "free": false
+  },
+  {
+   "name": "GitHub Profile",
+   "domain": "github.com",
+   "da": 95,
+   "rd": 2168888,
+   "dofollow": true,
+   "tier": "C",
+   "method": "Profile website field",
+   "free": false
+  },
+  {
+   "name": "Gravatar",
+   "domain": "gravatar.com",
+   "da": 93,
+   "rd": 1920894,
+   "dofollow": false,
+   "tier": "C",
+   "method": "Bookmark / link submit",
+   "free": false
+  },
+  {
+   "name": "Flickr",
+   "domain": "flickr.com",
+   "da": 91,
+   "rd": 1743736,
+   "dofollow": true,
+   "tier": "D",
+   "method": "Profile website field",
+   "free": false
+  },
+  {
+   "name": "Reddit",
+   "domain": "reddit.com",
+   "da": 94,
+   "rd": 1613154,
+   "dofollow": false,
+   "tier": "B",
+   "method": "Forum post",
+   "free": false
+  },
+  {
+   "name": "Google Sites",
+   "domain": "sites.google.com",
+   "da": 98,
+   "rd": 1529288,
+   "dofollow": true,
+   "tier": "D",
+   "method": "Page builder site",
+   "free": false
+  }
+ ]
+}
