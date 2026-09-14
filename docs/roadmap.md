@@ -9,7 +9,7 @@ Written plainly, because a roadmap that reads like a brochure is useless. Three 
 
 ## Live today
 
-| | |
+| What | Where it is |
 |---|---|
 | The `seo-agent` package | `pip install seo-agent`, MIT, on GitHub |
 | 25 backlink sites with their step-by-step methods | Bundled in the package, two of them at DA 90 or higher |

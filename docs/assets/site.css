@@ -11,21 +11,37 @@ code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.92em}
 main{max-width:1060px;margin:0 auto;padding:0 28px 60px}
 .hero{padding:72px 0 40px;max-width:820px}.eyebrow{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--teal);font-weight:600;margin:0 0 14px}
 .hero h1{font-size:72px;font-weight:800;line-height:1;color:var(--ink);margin:0}.hero .sub{font-family:var(--disp);font-size:28px;font-weight:700;line-height:1.2;color:var(--ink);margin:14px 0 0}.lede{font-size:20px;line-height:1.45;color:var(--ink-2);max-width:62ch;margin:22px 0 0}
-.install{margin-top:28px;background:var(--ink);color:#F3EFE4;padding:16px 20px;border-radius:4px;overflow-x:auto;font-size:15px}.install code{color:#F3EFE4}
+.install{margin-top:28px;background:var(--ink);color:#F3EFE4;padding:16px 20px;border-radius:4px;font-size:15px;overflow-wrap:anywhere}.install code{color:#F3EFE4}
 .actions{display:flex;gap:12px;margin-top:20px;flex-wrap:wrap}
 .btn{display:inline-block;background:var(--teal);color:#fff;text-decoration:none;padding:12px 20px;border-radius:3px;font-weight:600}.btn:hover{background:var(--teal-ink);color:#fff}.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--ink)}
 .facts{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule);margin:36px 0 0}.facts div{background:var(--paper);padding:18px 18px}.facts b{display:block;font-family:var(--disp);font-size:36px;font-weight:800;line-height:1;font-variant-numeric:tabular-nums}.facts span{color:var(--ink-3);font-size:14px}
 section h2{font-size:30px;font-weight:700;margin-top:64px;padding-top:20px;border-top:2px solid var(--ink)}
 .three{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px;margin-top:22px}.three h3{font-size:20px;font-weight:700}.three p{color:var(--ink-2);margin:8px 0 0}
-.compare>p{max-width:72ch;color:var(--ink-2)}.compare td:first-child{white-space:nowrap}.free p,.lists p,.upgrade p,.guides p{max-width:66ch;color:var(--ink-2)}
-.tablewrap{overflow-x:auto;margin-top:16px}table{border-collapse:collapse;width:100%;font-size:15px}th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--rule)}th{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3);font-weight:600}td.num,th.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.compare>p{max-width:72ch;color:var(--ink-2)}.compare td:first-child{font-weight:600}.free p,.lists p,.upgrade p,.guides p{max-width:66ch;color:var(--ink-2)}
+.tablewrap{overflow-x:auto;margin-top:16px}table{border-collapse:collapse;width:100%;font-size:15px}th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--rule);white-space:normal;overflow-wrap:anywhere;vertical-align:top}th{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3);font-weight:600}td.num,th.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
 .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;margin-top:20px}.card{display:flex;flex-direction:column;gap:6px;padding:18px;border:1px solid var(--rule);background:#fff;text-decoration:none;color:var(--ink)}.card b{font-family:var(--disp);font-size:18px}.card span{color:var(--ink-3);font-size:14px}.card:hover{border-color:var(--teal);color:var(--ink)}
 .guides ul{padding-left:20px;margin:14px 0}.guides li{margin:8px 0}
 .upgrade{margin-top:30px;background:var(--teal-soft);padding:28px 30px 32px;border-radius:4px}.upgrade h2{border-top:0;margin-top:0;padding-top:0;font-size:26px}.upgrade .btn{margin-top:8px}
-.doc{max-width:820px}.doc h1{font-size:40px;font-weight:800;line-height:1.05;margin-top:48px}.doc h2{font-size:24px;margin-top:40px;padding-top:14px;border-top:2px solid var(--ink)}.doc h3{font-size:18px;margin-top:22px}.doc p,.doc li{max-width:70ch}.doc pre{background:var(--ink);color:#F3EFE4;padding:14px 16px;border-radius:4px;overflow-x:auto;font-size:14px}.doc pre code{color:#F3EFE4}.doc table{display:block;overflow-x:auto;white-space:nowrap;margin-top:14px}.doc blockquote{margin:14px 0;padding:10px 16px;border-left:3px solid var(--teal);background:var(--paper-2);color:var(--ink-2)}
+.doc{max-width:820px}.doc h1{font-size:40px;font-weight:800;line-height:1.05;margin-top:48px}.doc h2{font-size:24px;margin-top:40px;padding-top:14px;border-top:2px solid var(--ink)}.doc h3{font-size:18px;margin-top:22px}.doc p,.doc li{max-width:70ch}.doc pre{background:var(--ink);color:#F3EFE4;padding:14px 16px;border-radius:4px;overflow-x:auto;font-size:14px}.doc pre code{color:#F3EFE4}.doc table{width:100%;table-layout:auto;margin:16px 0}.doc blockquote{margin:14px 0;padding:10px 16px;border-left:3px solid var(--teal);background:var(--paper-2);color:var(--ink-2)}
 .foot{border-top:1px solid var(--rule);padding:22px 28px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:14px;color:var(--ink-3)}
 @media (max-width:820px){.hero h1{font-size:40px}.facts{grid-template-columns:repeat(2,minmax(0,1fr))}.three{grid-template-columns:1fr}.top{padding:14px 18px}.top nav{gap:14px;font-size:14px}main{padding:0 18px 40px}}
 
 .gates>p{max-width:72ch;color:var(--ink-2)}.gates .card{cursor:default}.gates .card:hover{border-color:var(--rule)}
 
 .platforms>p{max-width:72ch;color:var(--ink-2)}.tag{display:inline-block;font-size:10px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:2px 6px;vertical-align:middle;margin-left:6px;border:1px solid currentColor}.tag.live{color:#2C7A4B}.tag.soon{color:#B9761F}
+
+/* Tables fit the page instead of scrolling: cells wrap, numbers stay on one line, and at phone
+   widths the type and padding step down rather than the table growing a scrollbar. */
+html,body{max-width:100%;overflow-x:clip}
+.doc table td:first-child{font-weight:600}
+.doc table code{overflow-wrap:anywhere}
+@media (max-width:900px){
+  table{font-size:14px}
+  th,td{padding:8px 8px}
+}
+@media (max-width:620px){
+  table{font-size:13px}
+  th,td{padding:7px 6px}
+  td.num,th.num{white-space:normal}
+  .tablewrap{overflow-x:visible}
+}
