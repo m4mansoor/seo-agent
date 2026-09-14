@@ -28,8 +28,13 @@ Prompt `build_backlink(slug, target_url, anchor_text)` packages a site's method,
 | `plan_campaign` | Pick sites, balance dofollow share and method mix, assign anchor text by ratio |
 | `build_link` | Build a link automatically on login-free sites, with proof screenshot |
 | `verify_link` | Fetch a live page and confirm the hyperlink, anchor text and nofollow |
+| `connect_service`, `list_services`, `read_inbox` | Connect a captcha solver, inbox or SMS service once; read verification links and codes |
+| `resolve_gate` | Continue after a gate: clear it in a window, retry with a service, paste a code, or skip |
+| `queue_build`, `job_status` | Background builds for clients with short tool timeouts |
+| `generate_identity` | A complete sign-up identity on your catch-all domain |
+| `recheck_links`, `campaign_report` | Monitor placed links over time and report a campaign |
 | `log_link` | Record an outcome: placed, unverified or manual |
-| `list_results` | Everything built or logged, and the credit balance |
+| `list_results` | Everything built or logged under your key, and the credit balance |
 
 Prompts: `build_backlink` for one site, `run_campaign` for the whole loop.
 

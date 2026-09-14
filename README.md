@@ -77,7 +77,7 @@ claude mcp add seo-agent -- seo-agent
 
 **Codex CLI**: add an `mcp_servers.seo-agent` entry with `command = "seo-agent"` to `~/.codex/config.toml`.
 
-**With an API key**: set `SEOAGENT_API_KEY=le_...` in the same place. The assistant then sees the full set of tools: `plan_campaign`, `build_link`, `verify_link`, `get_step_screenshot`, `set_identity`, `log_link`, `list_results`, and the `run_campaign` prompt.
+**With an API key**: set `SEOAGENT_API_KEY=le_...` in the same place. The assistant then sees the full set of tools: `plan_campaign`, `build_link`, `verify_link`, `get_step_screenshot`, `set_identity`, `generate_identity`, `connect_service`, `resolve_gate`, `queue_build`, `recheck_links`, `campaign_report`, `log_link`, `list_results`, and the `run_campaign` prompt.
 
 ## The free backlink sites list
 
