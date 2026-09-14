@@ -40,33 +40,36 @@ Documentation: https://m4mansoor.github.io/seo-agent/ · Repository: https://git
 
 ## A session, start to finish
 
-<p align="center"><img src="https://raw.githubusercontent.com/m4mansoor/seo-agent/main/docs/assets/img/session.png" alt="A session: the user asks for 5 dofollow backlinks DA 40 to 70, the agent asks for URL and keywords, plans, builds and verifies" width="100%"></p>
+<p align="center"><img src="https://raw.githubusercontent.com/m4mansoor/seo-agent/main/docs/assets/img/session.png" alt="A session: the user asks for 5 dofollow backlinks at DA 60 or higher, the agent asks for URL and keywords, plans from the free list, builds on Medium, IMDB, Zotero, ArtFire and ouo.press, and verifies each" width="100%"></p>
 
-That is the whole interaction. In detail:
+That is the whole interaction, on the free list alone. In detail:
 
-1. **You ask in plain language**: *I need 5 dofollow backlinks, DA 40 to 70.*
+1. **You ask in plain language**: *I need 5 dofollow backlinks, DA 60 or higher.*
 2. **The agent asks for two things**: the URL the links should point to, and your main keywords. It stores your sign-up identity once so every form is filled the same way.
-3. **It plans**: picks sites from the library by authority and effort inside your DA range, keeps the dofollow share you asked for, spreads the methods so it is not five profile pages, and assigns anchor text by ratio: exact, partial, branded, naked, generic.
-4. **It builds**: login-free sites are built by scripted playbooks with a proof screenshot. Sites that need an account are built by the model-driven browser executor: it reads the site's playbook, the guide steps with the exact button names, and a snapshot of the page each turn, then signs up, fills the profile or writes the post, and places the link. Long builds run in the background so your chat never times out.
-5. **It verifies**: opens the public page and checks that the target is a real hyperlink, that the anchor matches, and whether the link is nofollow. Plain-text URLs and noindex pages do not count.
-6. **It reports**: live URL, anchor, dofollow status and proof per link, a campaign report, and a re-check later so you know which links still stand. When a site asks for a captcha, a verification code or a login, the agent asks you in the same chat and continues once it is cleared.
+3. **It plans**: picks sites by authority and effort inside your DA range, keeps the dofollow share you asked for, spreads the methods so it is not five profile pages, and assigns anchor text by ratio: exact, partial, branded, naked, generic. The free list reaches DA 96: Medium, IMDB, Zotero, ArtFire, Milkyway (.edu), all dofollow. When you ask for more at the top end, it shows what the full library holds and offers the subscription.
+4. **It builds**: login-free sites are built by scripted playbooks with a proof screenshot. Sites that need an account, which is where the high DA lives, are built by the model-driven browser executor: it reads the site's playbook, the guide steps with the exact button names, and a snapshot of the page each turn, then signs up, fills the profile or writes the post, and places the link. In free mode it hands you the same method to follow in your own browser. Long builds run in the background so your chat never times out.
+5. **It verifies**: opens the public page and checks that the target is a real hyperlink, that the anchor matches, and whether the link is nofollow. Plain-text URLs, redirect pages and noindex pages do not count as verified.
+6. **It reports**: live URL, anchor, dofollow or nofollow and proof per link, a campaign report, and a re-check later so you know which links still stand. When a site asks for a captcha, a verification code or a login, the agent asks you in the same chat and continues once it is cleared.
 
 *The session above is illustrative. The table below is real.*
 
 ## Real links it built
 
-Built for lmrify.com during development, on login-free sites, then verified by fetching each page:
+Built for lmrify.com during development by the scripted executor on login-free sites, then re-verified by fetching each page on 14 September 2026. Sorted by DA; the free-list column shows which of these sites ship in the package.
 
-| Site | DA | Live link | Verified |
-|---|---|---|---|
-| Netcraft site report | 77 | https://sitereport.netcraft.com/?url=https://lmrify.com | hyperlink present, nofollow |
-| rentry.co | — | https://rentry.co/tu4euyew | contextual anchor "Let me Review it For You", dofollow attribute, page is noindex |
-| write.as | 52 | https://write.as/uooky17nv701i.md | contextual anchor, indexed page, nofollow |
-| n9.cl | 40 | https://n9.cl/aav9b | redirects to target |
-| goolnk.com | 23 | https://goolnk.com/bwv0gn | redirects to target |
-| yellkey.com | 20 | https://www.yellkey.com/forget | redirects to target |
+| Site | DA | Link | Free list | Live link | Verified |
+|---|---|---|---|---|---|
+| Netcraft site report | 77 | nofollow | | https://sitereport.netcraft.com/?url=https://lmrify.com | hyperlink to target present |
+| ouo.press | 60 | redirect | yes | https://ouo.press/1O9kCB | short link created; the redirect page shows no hyperlink, so it stays unverified |
+| write.as | 52 | nofollow | | https://write.as/uooky17nv701i.md | contextual anchor "Let me Review it For You", indexed page |
+| n9.cl | 40 | redirect | yes | https://n9.cl/aav9b | short link created; the landing page shows the target as plain text |
+| goolnk.com | 23 | redirect | yes | https://goolnk.com/bwv0gn | short link created; the landing page shows the target as plain text |
+| yellkey.com | 20 | redirect | yes | https://www.yellkey.com/forget | short link created; expires by design |
+| rentry.co | — | dofollow | | https://rentry.co/tu4euyew | contextual anchor, dofollow attribute, but the page is noindex |
 
-Notice what the verifier caught: one dofollow link sits on a noindex page and one indexed contextual link is nofollow. The agent reports both, because a link you cannot trust is worse than no link.
+Notice what the verifier reports. Two well-formed contextual links are nofollow. The one dofollow link sits on a noindex page. The shorteners create real redirects but not hyperlinks, so the agent never counts them as verified. That is the point: a link you cannot trust is worse than no link, and the agent says so instead of padding the count.
+
+The higher-DA sites at the top of the free list, Medium, IMDB, Zotero and ArtFire, all need an account, so the scripted executor does not build them; in free mode the agent gives you their exact method to follow, and with a subscription the model-driven executor builds them itself.
 
 ## How it works
 
