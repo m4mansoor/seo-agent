@@ -32,16 +32,25 @@ section h2{font-size:30px;font-weight:700;margin-top:64px;padding-top:20px;borde
 
 /* Tables fit the page instead of scrolling: cells wrap, numbers stay on one line, and at phone
    widths the type and padding step down rather than the table growing a scrollbar. */
-html,body{max-width:100%;overflow-x:clip}
 .doc table td:first-child{font-weight:600}
 .doc table code{overflow-wrap:anywhere}
 @media (max-width:900px){
   table{font-size:14px}
   th,td{padding:8px 8px}
 }
+/* Phone: a four- or seven-column table cannot be read at 390px, so each row becomes a block and every
+   value carries its column name. The label is copied from the header row by the small script in the
+   layout; without it the page still renders as an ordinary table, just denser. */
 @media (max-width:620px){
-  table{font-size:13px}
-  th,td{padding:7px 6px}
-  td.num,th.num{white-space:normal}
+  table{font-size:14px;display:block}
+  thead{display:none}
+  tbody,tr,th,td{display:block;width:auto}
+  tr{border-bottom:1px solid var(--rule);padding:12px 0}
+  tr:last-child{border-bottom:0}
+  td{border:0;padding:3px 0;text-align:left}
+  td:first-child{font-family:var(--disp);font-weight:700;font-size:16px;padding-bottom:6px}
+  td[data-label]:not(:first-child)::before{content:attr(data-label);display:block;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3);font-weight:600;margin-top:4px}
+  td.num,th.num{text-align:left;white-space:normal}
+  td:empty{display:none}
   .tablewrap{overflow-x:visible}
 }

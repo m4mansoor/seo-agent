@@ -27,7 +27,7 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"SEO Agent","applicationCategory":"DeveloperApplication","operatingSystem":"macOS, Linux, Windows","url":"https://m4mansoor.github.io/seo-agent/","codeRepository":"https://github.com/m4mansoor/seo-agent","license":"https://opensource.org/licenses/MIT","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"author":{"@type":"Person","name":"Inaamul Haq Mansoor","url":"https://github.com/m4mansoor"},"description":"{{ site.description }}"}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="{{ site.baseurl }}/assets/site.css">
+<link rel="stylesheet" href="{{ site.baseurl }}/assets/site.css?v={{ site.time | date: '%Y%m%d%H%M%S' }}">
 </head>
 <body>
 <header class="top">
@@ -47,5 +47,16 @@
   <div>SEO Agent is open source under the MIT licence. Site data is verified monthly; check a site before relying on it.</div>
   <div><a href="https://github.com/m4mansoor/seo-agent">GitHub</a> · <a href="{{ site.baseurl }}/seo-mcp-server.html">Tool reference</a></div>
 </footer>
+<script>
+/* Copy each column's header onto its cells so the phone layout can show "DA" above a number
+   instead of a bare figure. Progressive: without this the table still reads as a table. */
+for (const t of document.querySelectorAll('table')) {
+  const heads = [...(t.tHead ? t.tHead.rows[0]?.cells ?? [] : [])].map(h => h.textContent.trim());
+  if (!heads.length) continue;
+  for (const row of t.tBodies[0]?.rows ?? []) {
+    [...row.cells].forEach((c, i) => { if (heads[i]) c.setAttribute('data-label', heads[i]); });
+  }
+}
+</script>
 </body>
 </html>
