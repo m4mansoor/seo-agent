@@ -187,6 +187,10 @@ Activate in the chat; nothing else changes.
 | Monitoring | `recheck_links` re-fetches every placed link and marks the ones that dropped |
 | Campaign reports | `campaign_report` gives planned versus placed, counts by status and method, and every live URL; CSV export |
 | Dashboard | A web page per API key with credits, campaigns, results and proof screenshots |
+| Competitor gap | The referring domains your competitors have and you do not, each row carrying the method to build it |
+| Keyword and anchor suggestions | Read a target page and get keywords and a full anchor plan across the five types |
+| Link velocity pacing | Links spread across days and methods, never fired in a burst |
+| Multi-site | Register many sites under one subscription, each with its own caps and reports |
 | Fair use | 500 placed links per key in any 30 days; only verified live links count |
 
 ## Configuration
@@ -198,13 +202,28 @@ Nothing is required. `activate` stores your key in `~/.seoagent/config.json`; re
 | `SEOAGENT_API_KEY` | A subscription key, for environments where a config file is inconvenient (CI, containers). |
 | `SEOAGENT_URL` | The hosted endpoint, or a personal link `https://mcp.seoagent.dev/u/le_…/mcp`. Only needed for a self-hosted engine. |
 
+## Where it runs
+
+One engine, one library, one subscription. Four ways in, at four different stages.
+
+| Door | Status | What it is |
+|---|---|---|
+| **Any AI assistant** | Live | Claude Code, Claude Desktop, claude.ai, Cursor, Codex, ChatGPT, Windsurf. `pip install seo-agent`, 25 sites free, links built in your own browser. |
+| **[WordPress plugin](https://m4mansoor.github.io/seo-agent/wordpress-backlink-plugin.html)** | In development | Posts, pages and WooCommerce products as targets. Campaigns, gates, weekly monitoring and white-label reports inside wp-admin. |
+| **[Shopify app](https://m4mansoor.github.io/seo-agent/shopify-seo-app.html)** | In development | Products and collections as targets, embedded in the Shopify admin, billed through Shopify. |
+| **[Windows and macOS app](https://m4mansoor.github.io/seo-agent/seo-desktop-app.html)** | In development | The only door that uses accounts you are already signed in to. Its own browser, your own model key, nothing uploaded. |
+
+The [roadmap](https://m4mansoor.github.io/seo-agent/roadmap.html) says plainly what is live, what is being built, and what will never be built.
+
 ## Guides
 
 - [How to get backlinks with an AI agent](https://m4mansoor.github.io/seo-agent/how-to-get-backlinks-with-ai.html)
+- [Link building software, and what most of it leaves out](https://m4mansoor.github.io/seo-agent/link-building-software.html)
 - [Claude SEO: link building from Claude Code and Claude Desktop](https://m4mansoor.github.io/seo-agent/claude-seo.html)
 - [Cursor SEO: link building from Cursor](https://m4mansoor.github.io/seo-agent/cursor-seo.html)
 - [LLM SEO and SEO automation](https://m4mansoor.github.io/seo-agent/llm-seo.html)
 - [The SEO MCP server: tool reference](https://m4mansoor.github.io/seo-agent/seo-mcp-server.html)
+- [Roadmap and status](https://m4mansoor.github.io/seo-agent/roadmap.html)
 
 Documentation site: https://m4mansoor.github.io/seo-agent/
 

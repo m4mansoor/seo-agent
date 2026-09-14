@@ -55,3 +55,9 @@ Actions in a method: `navigate`, `click`, `fill_form`, `place_link`, `email_veri
 ## Statuses
 
 `placed` means verified live. `unverified` means placed but not confirmable yet, for example a post awaiting moderation. `gated` means the site asked for a captcha, a verification code, a login or a payment: the result carries the gate and its options, and `resolve_gate` continues the build once you clear it, connect a service, paste a code or skip. `manual` means you placed the link yourself and logged it.
+
+## For plugin and app developers
+
+The hosted engine also speaks plain REST at `/api/v1`, because a WordPress plugin in PHP and a Shopify app in Node are not MCP clients. Every tool above has an endpoint, plus the ones only a hosted client needs: site registration with a callback ownership check, signed outbound webhooks so a plugin never polls, and an agent step endpoint that lets a client with its own browser ask the engine what to do next on a page.
+
+Authentication is the same key, either as a bearer header or inside the URL path, so a client that can only hold a URL still works. That API is what the [WordPress plugin](wordpress-backlink-plugin.html), the [Shopify app](shopify-seo-app.html) and the [desktop app](seo-desktop-app.html) are built on. See the [roadmap](roadmap.html) for where each one is.
