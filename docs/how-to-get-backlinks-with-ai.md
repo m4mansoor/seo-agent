@@ -5,6 +5,8 @@ description: "A practical guide to AI link building, automated link building and
 
 # How to get backlinks with an AI agent
 
+*Want the instructions rather than the idea? [How to use SEO Agent](how-to-use-seo-agent.html) walks through setup to your first verified link.*
+
 Backlinks still decide rankings, and getting them is still slow: find a site that gives links, create an account, find the field or the editor, place the link, and check that it went live and is dofollow. An SEO agent removes the slow part without removing the judgement. Here is how it works with SEO Agent, and what it does not do.
 
 ## 1. Decide the campaign, not the links

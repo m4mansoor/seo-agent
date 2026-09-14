@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="430" viewBox="0 0 1280 430" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" role="img" aria-label="Four tiers of link site: A needs no account and builds automatically, B needs a free account, C also needs an email you can read, D needs a social login">
+  <rect width="1280" height="430" fill="#F7F6F2"/>
+  <g font-size="15" fill="#4B5560">
+    <text x="40" y="44" font-family="Bricolage Grotesque, Helvetica Neue, Arial, sans-serif" font-size="26" font-weight="800" fill="#1C2229">How much a site asks of you</text>
+    <text x="40" y="68" font-size="14" fill="#7C8590">Every site in the library carries a tier. It decides who does the work and what you need ready before you start.</text>
+
+    <g font-size="11" font-weight="600" fill="#7C8590" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" letter-spacing="1.2">
+      <text x="86" y="100">TIER</text><text x="250" y="100">WHAT THE SITE ASKS FOR</text><text x="700" y="100">WHO DOES IT</text><text x="1030" y="100">GET READY FIRST</text>
+    </g>
+    <line x1="40" y1="110" x2="1240" y2="110" stroke="#DAD7CE" stroke-width="1"/>
+
+    <rect x="40" y="122" width="1200" height="64" rx="4" fill="#FFFFFF" stroke="#DAD7CE" stroke-width="1"/>
+    <rect x="40" y="122" width="5" height="64" rx="2" fill="#0F6E6A"/>
+    <text x="86" y="152" font-family="Bricolage Grotesque, Helvetica Neue, Arial, sans-serif" font-size="22" font-weight="800" fill="#0F6E6A">A</text>
+    <text x="250" y="150">Nothing. No account, no sign-in.</text>
+    <text x="250" y="172" font-size="13" fill="#7C8590">Shorteners and open submission forms.</text>
+    <text x="700" y="150">The agent, on its own.</text>
+    <text x="700" y="172" font-size="13" fill="#7C8590">Scripted, with a proof screenshot.</text>
+    <text x="1030" y="160">Nothing.</text>
+
+    <rect x="40" y="196" width="1200" height="64" rx="4" fill="#FFFFFF" stroke="#DAD7CE" stroke-width="1"/>
+    <rect x="40" y="196" width="5" height="64" rx="2" fill="#0F6E6A"/>
+    <rect x="47" y="196" width="5" height="64" rx="2" fill="#0F6E6A"/>
+    <text x="86" y="226" font-family="Bricolage Grotesque, Helvetica Neue, Arial, sans-serif" font-size="22" font-weight="800" fill="#0F6E6A">B</text>
+    <text x="250" y="224">A free account.</text>
+    <text x="250" y="246" font-size="13" fill="#7C8590">Profile fields, web 2.0 pages, most forums.</text>
+    <text x="700" y="224">The assistant, in a browser.</text>
+    <text x="700" y="246" font-size="13" fill="#7C8590">Signs up once, then signs in after that.</text>
+    <text x="1030" y="234">A name and an email address.</text>
+
+    <rect x="40" y="270" width="1200" height="64" rx="4" fill="#FFFFFF" stroke="#DAD7CE" stroke-width="1"/>
+    <rect x="40" y="270" width="5" height="64" rx="2" fill="#B9761F"/>
+    <rect x="47" y="270" width="5" height="64" rx="2" fill="#B9761F"/>
+    <rect x="54" y="270" width="5" height="64" rx="2" fill="#B9761F"/>
+    <text x="86" y="300" font-family="Bricolage Grotesque, Helvetica Neue, Arial, sans-serif" font-size="22" font-weight="800" fill="#B9761F">C</text>
+    <text x="250" y="298">An account, plus a code or link by email.</text>
+    <text x="250" y="320" font-size="13" fill="#7C8590">Often a captcha as well.</text>
+    <text x="700" y="298">The assistant, and then you.</text>
+    <text x="700" y="320" font-size="13" fill="#7C8590">It stops and asks for the code.</text>
+    <text x="1030" y="308">An inbox you can open.</text>
+
+    <rect x="40" y="344" width="1200" height="64" rx="4" fill="#FFFFFF" stroke="#DAD7CE" stroke-width="1"/>
+    <rect x="40" y="344" width="5" height="64" rx="2" fill="#B9761F"/>
+    <rect x="47" y="344" width="5" height="64" rx="2" fill="#B9761F"/>
+    <rect x="54" y="344" width="5" height="64" rx="2" fill="#B9761F"/>
+    <rect x="61" y="344" width="5" height="64" rx="2" fill="#B9761F"/>
+    <text x="86" y="374" font-family="Bricolage Grotesque, Helvetica Neue, Arial, sans-serif" font-size="22" font-weight="800" fill="#B9761F">D</text>
+    <text x="250" y="372">A Google, Facebook or similar login.</text>
+    <text x="250" y="394" font-size="13" fill="#7C8590">The site never offers its own sign-up.</text>
+    <text x="700" y="372">You sign in; it carries on.</text>
+    <text x="700" y="394" font-size="13" fill="#7C8590">It will not log in as you unattended.</text>
+    <text x="1030" y="382">The account you want used.</text>
+  </g>
+</svg>

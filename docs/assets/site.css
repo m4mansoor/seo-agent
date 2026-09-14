@@ -64,3 +64,6 @@ section h2{font-size:30px;font-weight:700;margin-top:64px;padding-top:20px;borde
   td:empty{display:none}
   .tablewrap{overflow-x:visible}
 }
+/* Diagrams are authored at 1280px; never let one widen the page on a phone. */
+img{max-width:100%;height:auto;display:block}
+.doc img{margin:26px 0;border:1px solid var(--rule);border-radius:4px}

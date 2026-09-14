@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="300" viewBox="0 0 1280 300" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" role="img" aria-label="Three setup steps: install the package, connect it to your assistant, then ask for a link">
+  <rect width="1280" height="300" fill="#F7F6F2"/>
+  <defs><marker id="s" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0L10 5L0 10z" fill="#7C8590"/></marker></defs>
+  <g font-size="15" fill="#4B5560">
+
+    <rect x="40" y="60" width="360" height="180" rx="4" fill="#FFFFFF" stroke="#0F6E6A" stroke-width="2"/>
+    <text x="64" y="98" font-family="Bricolage Grotesque, Helvetica Neue, Arial, sans-serif" font-size="24" font-weight="800" fill="#1C2229">1. Install</text>
+    <rect x="64" y="114" width="312" height="26" rx="3" fill="#EEEDE7"/>
+    <text x="74" y="132" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" fill="#0A4E4B">pip install seo-agent</text>
+    <rect x="64" y="146" width="312" height="26" rx="3" fill="#EEEDE7"/>
+    <text x="74" y="164" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" fill="#0A4E4B">playwright install chromium</text>
+    <text x="64" y="196">Needs Python 3.10 or newer.</text>
+    <text x="64" y="218">Chromium is the browser it builds in.</text>
+
+    <line x1="404" y1="150" x2="452" y2="150" stroke="#7C8590" stroke-width="2" marker-end="url(#s)"/>
+
+    <rect x="460" y="60" width="360" height="180" rx="4" fill="#FFFFFF" stroke="#0F6E6A" stroke-width="2"/>
+    <text x="484" y="98" font-family="Bricolage Grotesque, Helvetica Neue, Arial, sans-serif" font-size="24" font-weight="800" fill="#1C2229">2. Connect</text>
+    <rect x="484" y="114" width="312" height="26" rx="3" fill="#EEEDE7"/>
+    <text x="494" y="132" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" fill="#0A4E4B">claude mcp add seo-agent -- seo-agent</text>
+    <text x="484" y="166">Cursor, Codex and Claude Desktop take</text>
+    <text x="484" y="188">the same command in their own</text>
+    <text x="484" y="210">mcpServers config. Restart after.</text>
+
+    <line x1="824" y1="150" x2="872" y2="150" stroke="#7C8590" stroke-width="2" marker-end="url(#s)"/>
+
+    <rect x="880" y="60" width="360" height="180" rx="4" fill="#FFFFFF" stroke="#0F6E6A" stroke-width="2"/>
+    <text x="904" y="98" font-family="Bricolage Grotesque, Helvetica Neue, Arial, sans-serif" font-size="24" font-weight="800" fill="#1C2229">3. Ask</text>
+    <rect x="904" y="114" width="312" height="52" rx="3" fill="#DCEDEA"/>
+    <text x="914" y="134" font-size="14" fill="#0A4E4B">“Build a dofollow backlink to</text>
+    <text x="914" y="154" font-size="14" fill="#0A4E4B">example.com and verify it.”</text>
+    <text x="904" y="192">It asks for your URL and keywords,</text>
+    <text x="904" y="214">then plans, builds and verifies.</text>
+
+    <text x="40" y="274" font-size="14" fill="#7C8590">No account and no key needed for any of this: 25 sites, their methods, and local building and verification are bundled in the package.</text>
+  </g>
+</svg>

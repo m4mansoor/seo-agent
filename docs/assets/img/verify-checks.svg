@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="360" viewBox="0 0 1280 360" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" role="img" aria-label="What verification checks: is the target a real hyperlink, does the anchor match, is it nofollow; plus two traps, plain text URLs and nofollow added by the host">
+  <rect width="1280" height="360" fill="#F7F6F2"/>
+  <g font-size="15" fill="#4B5560">
+    <text x="40" y="44" font-family="Bricolage Grotesque, Helvetica Neue, Arial, sans-serif" font-size="26" font-weight="800" fill="#1C2229">What “verified” has to mean</text>
+    <text x="40" y="68" font-size="14" fill="#7C8590">The agent opens the public page a visitor would see and checks three things before a link counts.</text>
+
+    <rect x="40" y="88" width="386" height="120" rx="4" fill="#FFFFFF" stroke="#0F6E6A" stroke-width="2"/>
+    <text x="64" y="122" font-family="Bricolage Grotesque, Helvetica Neue, Arial, sans-serif" font-size="19" font-weight="800" fill="#1C2229">Is it a hyperlink?</text>
+    <text x="64" y="150">Your URL has to be a real anchor</text>
+    <text x="64" y="172">element, not text on the page.</text>
+    <text x="64" y="194" font-size="13" fill="#7C8590">Otherwise: not a backlink at all.</text>
+
+    <rect x="447" y="88" width="386" height="120" rx="4" fill="#FFFFFF" stroke="#0F6E6A" stroke-width="2"/>
+    <text x="471" y="122" font-family="Bricolage Grotesque, Helvetica Neue, Arial, sans-serif" font-size="19" font-weight="800" fill="#1C2229">Does the anchor match?</text>
+    <text x="471" y="150">The visible words have to be the</text>
+    <text x="471" y="172">anchor the plan assigned.</text>
+    <text x="471" y="194" font-size="13" fill="#7C8590">Otherwise: it is reported, not hidden.</text>
+
+    <rect x="854" y="88" width="386" height="120" rx="4" fill="#FFFFFF" stroke="#0F6E6A" stroke-width="2"/>
+    <text x="878" y="122" font-family="Bricolage Grotesque, Helvetica Neue, Arial, sans-serif" font-size="19" font-weight="800" fill="#1C2229">Followed or nofollow?</text>
+    <text x="878" y="150">Read from the link itself, so you</text>
+    <text x="878" y="172">know what you actually got.</text>
+    <text x="878" y="194" font-size="13" fill="#7C8590">rel=“me” counts as followed.</text>
+
+    <rect x="40" y="236" width="1200" height="96" rx="4" fill="#FFFFFF" stroke="#B9761F" stroke-width="2"/>
+    <text x="64" y="268" font-family="Bricolage Grotesque, Helvetica Neue, Arial, sans-serif" font-size="19" font-weight="800" fill="#B9761F">Two traps this catches and a human skim does not</text>
+    <text x="64" y="296">Some hosts print your URL as plain text. It looks right on the page and passes nothing.</text>
+    <text x="64" y="318">Others add nofollow to every outgoing link, or noindex to the whole page, after you post.</text>
+  </g>
+</svg>
