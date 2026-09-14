@@ -1,5 +1,5 @@
 title: SEO Agent
-description: Open-source SEO agent for link building. Plans campaigns and builds backlinks from Claude, Cursor or Codex via MCP.
+description: Open-source AI SEO Agent and MCP server for Claude Code, Cursor and Codex. Plans backlink campaigns, builds each link by following the site's method, and verifies it went live. 1,245-site library.
 url: https://m4mansoor.github.io
 baseurl: /seo-agent
 markdown: kramdown
@@ -8,3 +8,5 @@ plugins:
 defaults:
   - scope: {path: ""}
     values: {layout: default}
+include:
+  - robots.txt

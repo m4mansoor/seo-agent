@@ -1,11 +1,11 @@
 [project]
 name = "seo-agent"
 version = "0.1.0"
-description = "Open-source SEO agent for link building: an MCP server that plans and builds backlinks from Claude, Cursor or Codex"
+description = "Open-source SEO agent for link building. Plans campaigns and builds backlinks from Claude, Cursor or Codex via MCP. 1,245-site library."
 readme = "README.md"
 license = {text = "MIT"}
 requires-python = ">=3.10"
-keywords = ["seo", "seo-agent", "link-building", "backlinks", "mcp", "mcp-server", "ai-seo", "seo-automation"]
+keywords = ["seo", "seo-agent", "ai-seo", "link-building", "backlinks", "mcp", "mcp-server", "seo-automation", "claude", "cursor"]
 dependencies = ["mcp>=1.10,<2"]
 
 [project.scripts]

@@ -1,6 +1,6 @@
 ---
 title: "SEO MCP server, tool reference"
-description: "Tools and prompts of the SEO Agent MCP server for link building. Search a backlink site library, get a site's method, plan a campaign, build, verify and log links."
+description: "Tools and prompts of SEO Agent's MCP server for link building. Search a backlink site library, get a site's method, plan a campaign, build, verify and log links."
 ---
 
 # The SEO MCP server: tool reference

@@ -10,7 +10,7 @@ code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.92em}
 .top nav{display:flex;gap:22px;align-items:center;font-size:15px}.top nav a{color:var(--ink-2);text-decoration:none}.top nav a:hover{color:var(--ink)}.top nav a.gh{border:1px solid var(--ink);padding:6px 12px;border-radius:3px;color:var(--ink)}
 main{max-width:1060px;margin:0 auto;padding:0 28px 60px}
 .hero{padding:72px 0 40px;max-width:820px}.eyebrow{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--teal);font-weight:600;margin:0 0 14px}
-.hero h1{font-size:60px;font-weight:800;line-height:1;color:var(--ink)}.lede{font-size:20px;line-height:1.45;color:var(--ink-2);max-width:62ch;margin:22px 0 0}
+.hero h1{font-size:72px;font-weight:800;line-height:1;color:var(--ink);margin:0}.hero .sub{font-family:var(--disp);font-size:28px;font-weight:700;line-height:1.2;color:var(--ink);margin:14px 0 0}.lede{font-size:20px;line-height:1.45;color:var(--ink-2);max-width:62ch;margin:22px 0 0}
 .install{margin-top:28px;background:var(--ink);color:#F3EFE4;padding:16px 20px;border-radius:4px;overflow-x:auto;font-size:15px}.install code{color:#F3EFE4}
 .actions{display:flex;gap:12px;margin-top:20px;flex-wrap:wrap}
 .btn{display:inline-block;background:var(--teal);color:#fff;text-decoration:none;padding:12px 20px;border-radius:3px;font-weight:600}.btn:hover{background:var(--teal-ink);color:#fff}.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--ink)}

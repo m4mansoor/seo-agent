@@ -1,17 +1,46 @@
-<p align="center"><img src="docs/assets/img/banner.png" alt="SEO Agent: an open-source SEO agent that builds your backlinks" width="100%"></p>
+<!-- Social preview: docs/assets/img/og-seo-agent.png (1280x640). Set it in Settings, General, Social preview; the GitHub API cannot set it. -->
+<p align="center"><img src="https://raw.githubusercontent.com/m4mansoor/seo-agent/main/docs/assets/img/banner.png" alt="SEO Agent: an open-source SEO agent that builds your backlinks" width="100%"></p>
 
-# Open-source SEO agent for link building
+# SEO Agent
 
-You say what you need. The agent asks for your URL and keywords, plans the campaign, builds each link by following that site's method, checks that it went live, and hands you the live URLs with proof. It works inside Claude, Cursor, Codex or any MCP client.
+*Open-source AI SEO Agent and MCP server for Claude Code, Cursor and Codex.*
+
+[![MIT licence](https://img.shields.io/github/license/m4mansoor/seo-agent)](https://github.com/m4mansoor/seo-agent/blob/main/LICENSE)
+[![GitHub stars](https://img.shields.io/github/stars/m4mansoor/seo-agent?style=flat)](https://github.com/m4mansoor/seo-agent/stargazers)
+[![MCP server](https://img.shields.io/badge/MCP-server-0F6E6A)](https://m4mansoor.github.io/seo-agent/seo-mcp-server.html)
+[![Docs](https://img.shields.io/badge/docs-GitHub%20Pages-1C2229)](https://m4mansoor.github.io/seo-agent/)
+
+SEO Agent is an open-source SEO agent for link building. It runs as an MCP server inside Claude Code, Cursor, Codex or any MCP client: you say what you need, it asks for your URL and keywords, plans the campaign, builds each link by following that site's method, checks that the link went live, and hands you the live URLs with proof.
+
+**What it does**
+
+- **Searches a library of 1,245 backlink sites** with Domain Authority, referring domains, spam score and dofollow status. Fifty sites ship free inside the package (`search_sites`).
+- **Gives your assistant the method for each site**: the playbook for that kind of link, the guide steps parsed into actions with the exact button names, and what the site requires (`get_method`).
+- **Plans a campaign** for your URL: sites inside your DA range, the dofollow share you asked for, methods spread, anchor text assigned by ratio (`plan_campaign`, with a key).
+- **Builds links in a browser** with a proof screenshot: scripted playbooks on login-free sites, a model-driven executor on account-based sites (`build_link`, `queue_build`).
+- **Verifies every link** by fetching the live page and checking the hyperlink, the anchor text and nofollow (`verify_link`).
+- **Handles gates in the chat**: at a captcha, email code or login it asks you, or uses a service you connected once (`resolve_gate`, `connect_service`, `read_inbox`).
+
+**Quick start**
 
 ```bash
 pip install seo-agent
 claude mcp add seo-agent -- seo-agent
 ```
 
+Any other MCP client, in its `mcpServers` config:
+
+```json
+{ "mcpServers": { "seo-agent": { "command": "seo-agent" } } }
+```
+
+Then ask: *Build a link to my site on a dofollow site from the free list, and verify it.*
+
+Documentation: https://m4mansoor.github.io/seo-agent/ · Repository: https://github.com/m4mansoor/seo-agent
+
 ## A session, start to finish
 
-<p align="center"><img src="docs/assets/img/session.png" alt="A session: the user asks for 5 dofollow backlinks DA 40 to 70, the agent asks for URL and keywords, plans, builds and verifies" width="100%"></p>
+<p align="center"><img src="https://raw.githubusercontent.com/m4mansoor/seo-agent/main/docs/assets/img/session.png" alt="A session: the user asks for 5 dofollow backlinks DA 40 to 70, the agent asks for URL and keywords, plans, builds and verifies" width="100%"></p>
 
 That is the whole interaction. In detail:
 
@@ -41,7 +70,7 @@ Notice what the verifier caught: one dofollow link sits on a noindex page and on
 
 ## How it works
 
-<p align="center"><img src="docs/assets/img/flow.png" alt="Plan, build, verify, report" width="100%"></p>
+<p align="center"><img src="https://raw.githubusercontent.com/m4mansoor/seo-agent/main/docs/assets/img/flow.png" alt="Plan, build, verify, report" width="100%"></p>
 
 ## What is in the library
 
@@ -142,7 +171,13 @@ Fifty sites from the library, all verified reachable, DA 37 to 69, 49 of them do
 
 </details>
 
-More lists, with DA and referring domains: [social bookmarking sites](docs/social-bookmarking-sites.md), [profile creation sites](docs/profile-creation-sites.md), [guest posting sites](docs/guest-posting-sites.md), [web 2.0 sites](docs/web-2-0-sites.md), [directory submission sites](docs/directory-submission-sites.md), [forum posting sites](docs/forum-posting-sites.md), [high DA backlinks](docs/high-da-backlinks.md).
+More lists, with DA and referring domains: [social bookmarking sites](https://m4mansoor.github.io/seo-agent/social-bookmarking-sites.html), [profile creation sites](https://m4mansoor.github.io/seo-agent/profile-creation-sites.html), [guest posting sites](https://m4mansoor.github.io/seo-agent/guest-posting-sites.html), [web 2.0 sites](https://m4mansoor.github.io/seo-agent/web-2-0-sites.html), [directory submission sites](https://m4mansoor.github.io/seo-agent/directory-submission-sites.html), [forum posting sites](https://m4mansoor.github.io/seo-agent/forum-posting-sites.html), [high DA backlinks](https://m4mansoor.github.io/seo-agent/high-da-backlinks.html).
+
+## Why SEO Agent and not another SEO MCP server
+
+- **It builds, not only reports.** Most SEO MCP servers wrap a metrics API. This one follows a site's method in a browser, places the link and proves it with a screenshot and a live-page check.
+- **The library is the moat.** 1,245 sites, each with its parsed step-by-step method, verified reachable monthly, with DataForSEO metrics. Fifty are free with no key.
+- **It is honest about limits.** A captcha or a login is a gate it asks you about, never something it fakes its way past. Links that are plain text, nofollow or on a noindex page are reported as such.
 
 ## Gates are handled in the chat, not skipped
 
@@ -168,16 +203,25 @@ It never fakes a person or works around a site's rules, which keeps your site ou
 | Dashboard | A web page per API key with credits, campaigns, results and proof screenshots |
 | Per-key credits | Each key has its own balance; only verified live links are charged |
 
+## Configuration
+
+| Variable | Purpose |
+|---|---|
+| `SEOAGENT_API_KEY` | Your key for the hosted service. Unset: free mode with the 50 bundled sites. Set: the full tool set above. |
+| `SEOAGENT_URL` | The hosted MCP endpoint, only needed if you run your own server. |
+
+No other configuration. Nothing is sent anywhere in free mode; the 50 sites and their methods are read from the package.
+
 ## Guides
 
-- [How to get backlinks with an AI agent](docs/how-to-get-backlinks-with-ai.md)
-- [Claude SEO: link building from Claude Code and Claude Desktop](docs/claude-seo.md)
-- [Cursor SEO: link building from Cursor](docs/cursor-seo.md)
-- [LLM SEO and SEO automation](docs/llm-seo.md)
-- [The SEO MCP server: tool reference](docs/seo-mcp-server.md)
+- [How to get backlinks with an AI agent](https://m4mansoor.github.io/seo-agent/how-to-get-backlinks-with-ai.html)
+- [Claude SEO: link building from Claude Code and Claude Desktop](https://m4mansoor.github.io/seo-agent/claude-seo.html)
+- [Cursor SEO: link building from Cursor](https://m4mansoor.github.io/seo-agent/cursor-seo.html)
+- [LLM SEO and SEO automation](https://m4mansoor.github.io/seo-agent/llm-seo.html)
+- [The SEO MCP server: tool reference](https://m4mansoor.github.io/seo-agent/seo-mcp-server.html)
 
 Documentation site: https://m4mansoor.github.io/seo-agent/
 
-## License
+## Licence and author
 
-MIT. The site library and its metrics are provided as-is; verify a site before relying on it.
+MIT. Built by Engr. Inaamul Haq Mansoor ([@m4mansoor](https://github.com/m4mansoor)).

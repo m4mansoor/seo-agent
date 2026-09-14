@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://m4mansoor.github.io/seo-agent/sitemap.xml
