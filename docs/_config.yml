@@ -1,4 +1,10 @@
 title: SEO Agent
 description: Open-source SEO agent for link building. Plans campaigns and builds backlinks from Claude, Cursor or Codex via MCP.
-theme: jekyll-theme-minimal
-show_downloads: false
+url: https://m4mansoor.github.io
+baseurl: /seo-agent
+markdown: kramdown
+plugins:
+  - jekyll-sitemap
+defaults:
+  - scope: {path: ""}
+    values: {layout: default}

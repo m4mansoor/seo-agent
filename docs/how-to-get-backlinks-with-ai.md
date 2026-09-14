@@ -43,4 +43,4 @@ claude mcp add seo-agent -- seo-agent
 
 Then: *Build a link to my site on a dofollow site from the free list, and verify it.*
 
-Related: [Claude SEO](claude-seo.md), [the free backlink sites list](../README.md#the-free-backlink-sites-list), [high DA backlinks](high-da-backlinks.md).
+Related: [Claude SEO](claude-seo.html), [the free backlink sites list](https://github.com/m4mansoor/seo-agent#the-free-backlink-sites-list), [high DA backlinks](high-da-backlinks.html).

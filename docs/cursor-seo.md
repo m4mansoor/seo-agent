@@ -30,4 +30,4 @@ Cursor calls the server's tools, follows the site's method with a browser tool i
 - Models differ. Claude and GPT-class models follow ten-step methods reliably; small local models struggle. Pick a capable model for building; any model is fine for searching and planning.
 - Cursor without a browser tool can still search, plan, verify and log; the built-in executor handles login-free sites through the hosted engine.
 
-Related: [Claude SEO](claude-seo.md), [SEO MCP server tool reference](seo-mcp-server.md).
+Related: [Claude SEO](claude-seo.html), [SEO MCP server tool reference](seo-mcp-server.html).

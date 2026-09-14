@@ -17,7 +17,7 @@ An LLM-driven SEO agent reads a site's method the way a person would: it knows a
 
 ## ChatGPT, Claude or Cursor as the SEO tool
 
-SEO Agent is an MCP server, so the same library and playbooks work in any of them. Claude Code and Cursor can drive a browser and build the links; ChatGPT through connectors can plan, search and verify with the hosted engine doing the building on login-free sites. See [Claude SEO](claude-seo.md) and [Cursor SEO](cursor-seo.md).
+SEO Agent is an MCP server, so the same library and playbooks work in any of them. Claude Code and Cursor can drive a browser and build the links; ChatGPT through connectors can plan, search and verify with the hosted engine doing the building on login-free sites. See [Claude SEO](claude-seo.html) and [Cursor SEO](cursor-seo.html).
 
 ## Start
 

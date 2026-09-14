@@ -53,10 +53,10 @@ The agent follows the site's steps in its own browser, places the link, opens th
 
 ## Related lists
 
-- [Social bookmarking sites](social-bookmarking-sites.md)
-- [Profile creation sites](profile-creation-sites.md)
-- [Guest posting sites](guest-posting-sites.md)
-- [Web 2.0 sites](web-2-0-sites.md)
-- [Directory submission sites](directory-submission-sites.md)
-- [Forum posting sites](forum-posting-sites.md)
-- [High DA backlinks](high-da-backlinks.md)
+- [Social bookmarking sites](social-bookmarking-sites.html)
+- [Profile creation sites](profile-creation-sites.html)
+- [Guest posting sites](guest-posting-sites.html)
+- [Web 2.0 sites](web-2-0-sites.html)
+- [Directory submission sites](directory-submission-sites.html)
+- [Forum posting sites](forum-posting-sites.html)
+- [High DA backlinks](high-da-backlinks.html)

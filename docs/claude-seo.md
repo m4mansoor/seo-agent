@@ -35,4 +35,4 @@ With a free API key, set `SEOAGENT_API_KEY` in the same place and Claude sees th
 
 Long multi-step guides with quoted button names are exactly the kind of instruction Claude follows reliably, and it reads the annotated screenshot for a step when a page does not match. The playbooks add the judgement a guide leaves out: what to write in an article, why a plain-text URL is not a backlink, when to stop.
 
-Related: [Cursor SEO](cursor-seo.md), [how to get backlinks with an AI agent](how-to-get-backlinks-with-ai.md).
+Related: [Cursor SEO](cursor-seo.html), [how to get backlinks with an AI agent](how-to-get-backlinks-with-ai.html).
