@@ -33,7 +33,7 @@ $97 a year or $27 a month at [https://mcp.seoagent.dev/buy](https://mcp.seoagent
 | `plan_campaign` | Pick sites, balance dofollow share and method mix, assign anchor text by ratio |
 | `build_link` | Build a link automatically on login-free sites, with proof screenshot |
 | `verify_link` | Fetch a live page and confirm the hyperlink, anchor text and nofollow |
-| `connect_service`, `list_services`, `read_inbox` | Connect a captcha solver, inbox or SMS service once; read verification links and codes |
+| `connect_service`, `list_services`, `read_inbox` | Connect your own AI model key (Anthropic, OpenAI, Google, OpenRouter) that drives account-based sites, plus a captcha solver, inbox or SMS service; read verification links and codes |
 | `resolve_gate` | Continue after a gate: clear it in a window, retry with a service, paste a code, or skip |
 | `queue_build`, `job_status` | Background builds for clients with short tool timeouts |
 | `generate_identity` | A complete sign-up identity on your catch-all domain |

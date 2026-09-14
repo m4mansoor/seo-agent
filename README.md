@@ -180,6 +180,7 @@ Activate in the chat; nothing else changes.
 | Feature | What you get |
 |---|---|
 | Model-driven executor | Builds on account-based sites: sign-up, profile fields, articles, forum posts, directory listings, page builders |
+| Your own AI model | Connect an Anthropic, OpenAI, Google or OpenRouter key once; it drives the browser on account-based sites, so model cost is yours and under your control |
 | Gates and services | Captcha solver, IMAP inbox and SMS connected once; verification links and codes read automatically |
 | Background jobs | `queue_build` starts a build and `job_status` polls it, so clients with short tool timeouts never drop a link |
 | Identity generation | `generate_identity` creates a complete, consistent sign-up identity on your catch-all domain |
