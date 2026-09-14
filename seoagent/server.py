@@ -1,7 +1,7 @@
 """SEO Agent MCP server.
 
 Free mode, no account: the 50 bundled sites with their methods, and local tools that build on login-free sites in
-your own browser, verify a live page and keep a results log. Lifetime mode: after `activate` with the key from your
+your own browser, verify a live page and keep a results log. Subscribed: after `activate` with the key from your
 purchase, every tool of the hosted engine is proxied (1,245 sites, planner, model executor, gates, monitoring)."""
 from __future__ import annotations
 
@@ -23,7 +23,8 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 DATA = os.path.join(HERE, "data")
 HOST = os.environ.get("SEOAGENT_HOST", "https://mcp.seoagent.dev").rstrip("/")
 BUY_URL = os.environ.get("SEOAGENT_BUY_URL", f"{HOST}/buy")
-PRICE_USD = 97
+PRICE_YEARLY_USD = int(os.environ.get("SEOAGENT_PRICE_YEARLY_USD", "97"))
+PRICE_MONTHLY_USD = int(os.environ.get("SEOAGENT_PRICE_MONTHLY_USD", "27"))
 CONNECT_TIMEOUT = 20
 
 
@@ -81,19 +82,23 @@ def search_sites(query: str = "", min_da: int = 0, dofollow_only: bool = False, 
 def get_method(slug: str) -> dict:
     s = BY_SLUG.get(slug.strip().lower())
     if not s:
-        return {"error": f"{slug!r} is not in the free list; the full 1,245-site library is in the Lifetime plan", "upgrade": _upgrade_hint()}
+        return {"error": f"{slug!r} is not in the free list; the full 1,245-site library needs a subscription", "upgrade": _upgrade_hint()}
     return {**s, "playbook": PLAYBOOKS.get(s["method"], ""), "rules": RULES}
 
 
 def library_summary() -> dict:
     return {"mode": "free", "sites": len(SITES), "dofollow": sum(1 for s in SITES if s["dofollow"]),
             "da_range": [min(s["da"] for s in SITES), max(s["da"] for s in SITES)],
-            "lifetime_plan": {"sites": 1245, "reachable": 1138, "dofollow": 900, "da_90_plus": 117, "price_usd": PRICE_USD, "buy": BUY_URL}}
+            "subscription": {"sites": 1245, "reachable": 1138, "dofollow": 900, "da_90_plus": 117, "plans": _plans()}}
+
+
+def _plans() -> dict:
+    return {"yearly": {"price_usd": PRICE_YEARLY_USD, "per": "year", "url": f"{BUY_URL}?plan=yearly"},
+            "monthly": {"price_usd": PRICE_MONTHLY_USD, "per": "month", "url": f"{BUY_URL}?plan=monthly"}}
 
 
 def _upgrade_hint() -> dict:
-    return {"plan": "Lifetime", "price_usd": PRICE_USD, "url": BUY_URL,
-            "how": "Pay once at the URL, copy the key shown on the success page, then say: activate <key>."}
+    return {"plans": _plans(), "how": "Subscribe at either URL, copy the key shown on the success page, then say: activate <key>."}
 
 
 def build_link(slug: str, target_url: str, anchor_text: str = "", headless: bool = True, description: str = "") -> dict:
@@ -140,15 +145,16 @@ def list_results(limit: int = 100) -> dict:
 def account() -> dict:
     res = local.Results()
     return {"plan": "free", "links_placed": res.placed(), "free_sites": len(SITES),
-            "note": "Free mode builds on the 50 bundled sites in your own browser. The Lifetime plan adds 1,245 sites, the campaign planner, "
+            "note": "Free mode builds on the 50 bundled sites in your own browser. A subscription adds 1,245 sites, the campaign planner, "
                     "building on account-based sites, gates with connected services, monitoring, reports and a dashboard.",
             "upgrade": _upgrade_hint()}
 
 
 def upgrade() -> dict:
-    return {"plan": "Lifetime", "price_usd": PRICE_USD, "url": BUY_URL,
-            "ask_the_user": f"The Lifetime plan is one payment of ${PRICE_USD} for unlimited links on 1,245 sites: {BUY_URL} . "
-                            "After paying, copy the key from the success page and tell me: activate <key>."}
+    p = _plans()
+    return {"plans": p,
+            "ask_the_user": f"Every one of 1,245 sites and the whole engine: ${PRICE_YEARLY_USD} a year ({p['yearly']['url']}) or "
+                            f"${PRICE_MONTHLY_USD} a month ({p['monthly']['url']}). After paying, copy the key from the success page and tell me: activate <key>."}
 
 
 FREE_TOOLS = [
@@ -169,10 +175,10 @@ FREE_TOOLS = [
                                                             "status": {"type": "string"}, "notes": {"type": "string"}}, "required": ["slug", "target_url", "live_url"]}),
     types.Tool(name="list_results", description="Every link built or logged on this machine.", inputSchema={"type": "object", "properties": {"limit": {"type": "integer"}}}),
     types.Tool(name="account", description="Current plan, links placed, and how to upgrade. Call it when the user asks about credits, pricing or limits.", inputSchema={"type": "object", "properties": {}}),
-    types.Tool(name="upgrade", description=f"The Lifetime plan: ${PRICE_USD} once for unlimited links on 1,245 sites. Returns the payment link and what to do after paying.", inputSchema={"type": "object", "properties": {}}),
-    types.Tool(name="activate", description="Activate a Lifetime key (le_...) or a personal MCP link from the purchase success page. Verifies it with the hosted engine and saves it here; from then on every hosted tool is available.",
+    types.Tool(name="upgrade", description="The subscription: every one of 1,245 sites and the whole engine, yearly or monthly. Returns the payment links and what to do after paying.", inputSchema={"type": "object", "properties": {}}),
+    types.Tool(name="activate", description="Activate a subscription key (le_...) or a personal MCP link from the purchase success page. Verifies it with the hosted engine and saves it here; from then on every hosted tool is available.",
                inputSchema={"type": "object", "properties": {"key": {"type": "string"}}, "required": ["key"]}),
-    types.Tool(name="library_summary", description="What the free list contains and what the Lifetime plan adds.", inputSchema={"type": "object", "properties": {}}),
+    types.Tool(name="library_summary", description="What the free list contains and what a subscription adds.", inputSchema={"type": "object", "properties": {}}),
 ]
 FREE_IMPL = {"search_sites": search_sites, "get_method": get_method, "library_summary": library_summary, "verify_link": verify_link,
              "log_link": log_link, "list_results": list_results, "account": account, "upgrade": upgrade}
@@ -249,7 +255,7 @@ async def activate(key: str) -> dict:
     except Exception:
         pass
     return {"activated": True, "plan": info.get("plan"), "links_left": info.get("links_left"), "dashboard": info.get("dashboard_url"),
-            "note": "Lifetime tools are live in this session: plan_campaign, build_link on every site, gates, monitoring, reports."}
+            "note": "Subscription tools are live in this session: plan_campaign, build_link on every site, gates, monitoring, reports."}
 
 
 @server.list_tools()
@@ -272,7 +278,7 @@ async def call_tool(name: str, arguments: dict | None) -> list[types.TextContent
         return [types.TextContent(type="text", text=json.dumps(out, ensure_ascii=False))]
     fn = FREE_IMPL.get(name)
     if fn is None:
-        return [types.TextContent(type="text", text=json.dumps({"error": f"{name} is a Lifetime tool", "upgrade": _upgrade_hint()}))]
+        return [types.TextContent(type="text", text=json.dumps({"error": f"{name} needs a subscription", "upgrade": _upgrade_hint()}))]
     return [types.TextContent(type="text", text=json.dumps(fn(**arguments), ensure_ascii=False))]
 
 

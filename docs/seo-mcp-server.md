@@ -16,13 +16,13 @@ SEO Agent is an MCP server. Any MCP client, Claude, Cursor, Codex, Windsurf, VS 
 | `build_link` | Build a link in a local browser on login-free sites, with proof; returns the method elsewhere |
 | `verify_link` | Fetch a live page and confirm the hyperlink, anchor text and nofollow |
 | `log_link`, `list_results` | The local results log |
-| `account`, `upgrade` | Links built, and the Lifetime payment link |
-| `activate` | Save a Lifetime key or personal link; every hosted tool appears in the same session |
-| `library_summary` | What the free list contains and what Lifetime adds |
+| `account`, `upgrade` | Links built, and the subscription links |
+| `activate` | Save a subscription key or personal link; every hosted tool appears in the same session |
+| `library_summary` | What the free list contains and what a subscription adds |
 
-## Lifetime, after `activate`
+## Subscribed, after `activate`
 
-$97 once at [https://mcp.seoagent.dev/buy](https://mcp.seoagent.dev/buy). The same server, now proxying the hosted engine:
+$97 a year or $27 a month at [https://mcp.seoagent.dev/buy](https://mcp.seoagent.dev/buy). The same server, now proxying the hosted engine:
 
 | Tool | What it does |
 |---|---|

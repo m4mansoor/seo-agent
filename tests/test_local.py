@@ -19,7 +19,7 @@ def test_free_sites_load_and_mark_auto_build():
     assert len(rows) == 50 and sum(1 for r in rows if r["auto_build"]) >= 4
     m = get_method("ouo-press")
     assert m["method"] == "url_shortener" and "playbook" in m and any(a["is_placement"] for a in m["steps"])
-    assert library_summary()["lifetime_plan"]["price_usd"] == 97
+    assert library_summary()["subscription"]["plans"]["yearly"]["price_usd"] == 97 and library_summary()["subscription"]["plans"]["monthly"]["price_usd"] == 27
 
 
 def test_credentials_from_config_and_personal_link(monkeypatch):
@@ -37,7 +37,7 @@ def test_log_and_list_results_and_account():
     r = log_link("gitbook", "https://t.com/", "https://x.gitbook.io/p", "T", "placed")
     assert r["id"] == 1 and list_results()["placed"] == 1
     a = account()
-    assert a["plan"] == "free" and a["links_placed"] == 1 and a["upgrade"]["price_usd"] == 97
+    assert a["plan"] == "free" and a["links_placed"] == 1 and a["upgrade"]["plans"]["yearly"]["url"].endswith("/buy?plan=yearly")
 
 
 def test_verify_html():
