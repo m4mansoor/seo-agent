@@ -297,7 +297,7 @@
    "rd": 891904,
    "dofollow": true,
    "tier": "A",
-   "free": false
+   "free": true
   },
   {
    "name": "Myspace",
@@ -470,7 +470,7 @@
    "rd": 1371100,
    "dofollow": true,
    "tier": "B",
-   "free": false
+   "free": true
   },
   {
    "name": "Issuu",
@@ -859,7 +859,7 @@
    "rd": 39465,
    "dofollow": true,
    "tier": "B",
-   "free": false
+   "free": true
   },
   {
    "name": "Jimdo",
@@ -886,7 +886,7 @@
    "rd": 12479,
    "dofollow": true,
    "tier": "A",
-   "free": true
+   "free": false
   },
   {
    "name": "RiseUp",
@@ -895,7 +895,7 @@
    "rd": 11528,
    "dofollow": true,
    "tier": "B",
-   "free": false
+   "free": true
   },
   {
    "name": "XtGem",
@@ -904,7 +904,7 @@
    "rd": 26727,
    "dofollow": true,
    "tier": "B",
-   "free": false
+   "free": true
   }
  ],
  "directory-submission-sites": [
@@ -951,7 +951,7 @@
    "rd": 4120,
    "dofollow": true,
    "tier": "C",
-   "free": true
+   "free": false
   },
   {
    "name": "YaraBook",
@@ -1061,7 +1061,7 @@
    "rd": 3139,
    "dofollow": false,
    "tier": "C",
-   "free": true
+   "free": false
   },
   {
    "name": "CS Cart Forum",
@@ -1079,7 +1079,7 @@
    "rd": 46911,
    "dofollow": true,
    "tier": "B",
-   "free": true
+   "free": false
   },
   {
    "name": "Grav",

@@ -1,43 +1,560 @@
 [
  {
-  "slug": "gitbook",
-  "name": "GitBook",
-  "url": "https://www.gitbook.com/",
-  "domain": "gitbook.com",
-  "da": 69,
+  "slug": "medium-2",
+  "name": "Medium",
+  "domain": "medium.com",
+  "url": "https://medium.com",
+  "da": 96,
   "dofollow": true,
   "method": "article_post",
   "method_label": "Article or blog post",
   "tier": "B",
-  "referring_domains": 212041,
-  "organic_traffic": 20340,
-  "spam_score": 26,
+  "referring_domains": 1371100,
+  "organic_traffic": 101543169,
+  "spam_score": 10,
+  "placement_step": "Add a Title, Text with a Website URL and click \"Ready to Publish\", and in the next window click \"Publish now\"",
   "requirements": [
    "an account on this site (name, email, username, password)",
    "written content that includes the link naturally"
   ],
-  "placement_step": "Write your article here with links and click the bottom button to save.",
   "steps": [
    {
     "n": 1,
     "kind": "navigate",
-    "text": "Go to https://app.gitbook.com/join?utm_source=homepage&utm_medium=header&utm_content=signup Enter info and click on \"Create your account\".",
+    "text": "Go to https://medium.com Click on \"Get Started\". Create an account.",
     "targets": [
-     "Create your account"
+     "Get Started"
     ],
     "is_placement": false
    },
    {
     "n": 2,
-    "kind": "note",
-    "text": "You have to verify your account through phone number.",
+    "kind": "click",
+    "text": "Click on \"New story\"",
+    "targets": [
+     "New story"
+    ],
+    "is_placement": false
+   },
+   {
+    "n": 3,
+    "kind": "place_link",
+    "text": "Add a Title, Text with a Website URL and click \"Ready to Publish\", and in the next window click \"Publish now\"",
+    "targets": [
+     "Ready to Publish",
+     "Publish now"
+    ],
+    "is_placement": true
+   },
+   {
+    "n": 4,
+    "kind": "verify",
+    "text": "Here's where the Backlink appears:",
     "targets": [],
+    "is_placement": false
+   }
+  ]
+ },
+ {
+  "slug": "imdb",
+  "name": "IMDB",
+  "domain": "imdb.com",
+  "url": "https://www.imdb.com/",
+  "da": 95,
+  "dofollow": true,
+  "method": "profile_website_field",
+  "method_label": "Profile website field",
+  "tier": "A",
+  "referring_domains": 891904,
+  "organic_traffic": 2052636015,
+  "spam_score": 24,
+  "placement_step": "Add web URL in the Bio section using the format: [link=http://www.yourwebsitename.com/]Anchor-Text[/link]Click \"Save description\".",
+  "requirements": [
+   "access to the sign-up inbox to open a verification link or code"
+  ],
+  "steps": [
+   {
+    "n": 1,
+    "kind": "navigate",
+    "text": "Go to https://www.imdb.com Click \"Sign In\".",
+    "targets": [
+     "Sign In"
+    ],
+    "is_placement": false
+   },
+   {
+    "n": 2,
+    "kind": "click",
+    "text": "Click on \"Create a New Account\".",
+    "targets": [
+     "Create a New Account"
+    ],
+    "is_placement": false
+   },
+   {
+    "n": 3,
+    "kind": "fill_form",
+    "text": "Enter details and click \"Create your IMDB account\".",
+    "targets": [
+     "Create your IMDB account"
+    ],
+    "is_placement": false
+   },
+   {
+    "n": 4,
+    "kind": "email_verify",
+    "text": "Open the email and click the verification link.",
+    "targets": [],
+    "is_placement": false
+   },
+   {
+    "n": 5,
+    "kind": "click",
+    "text": "Click on \"Edit Profile\".",
+    "targets": [
+     "Edit Profile"
+    ],
+    "is_placement": false
+   },
+   {
+    "n": 6,
+    "kind": "place_link",
+    "text": "Add web URL in the Bio section using the format: [link=http://www.yourwebsitename.com/]Anchor-Text[/link]Click \"Save description\".",
+    "targets": [
+     "Save description"
+    ],
+    "is_placement": true
+   },
+   {
+    "n": 7,
+    "kind": "verify",
+    "text": "Here's where the Backlink appears:",
+    "targets": [],
+    "is_placement": false
+   }
+  ]
+ },
+ {
+  "slug": "zotero",
+  "name": "Zotero",
+  "domain": "zotero.org",
+  "url": "https://www.zotero.org/",
+  "da": 75,
+  "dofollow": true,
+  "method": "bookmark_submit",
+  "method_label": "Bookmark / link submit",
+  "tier": "B",
+  "referring_domains": 51364,
+  "organic_traffic": 218140,
+  "spam_score": 30,
+  "placement_step": "Add an item with links and click \"Save\". Here to add item you have to click on Library link of the group.",
+  "requirements": [
+   "an account on this site (name, email, username, password)"
+  ],
+  "steps": [
+   {
+    "n": 1,
+    "kind": "navigate",
+    "text": "Go to https://www.zotero.org Click on \"Log in\".",
+    "targets": [
+     "Log in"
+    ],
+    "is_placement": false
+   },
+   {
+    "n": 2,
+    "kind": "click",
+    "text": "Click \"Register for a free account\".",
+    "targets": [
+     "Register for a free account"
+    ],
+    "is_placement": false
+   },
+   {
+    "n": 3,
+    "kind": "fill_form",
+    "text": "Enter details and click \"Register\".",
+    "targets": [
+     "Register"
+    ],
+    "is_placement": false
+   },
+   {
+    "n": 4,
+    "kind": "note",
+    "text": "Go to email.",
+    "targets": [],
+    "is_placement": false
+   },
+   {
+    "n": 5,
+    "kind": "click",
+    "text": "Click on validation link in the email.",
+    "targets": [],
+    "is_placement": false
+   },
+   {
+    "n": 6,
+    "kind": "click",
+    "text": "Click on Groups and click \"Create a New Group\".",
+    "targets": [
+     "Create a New Group"
+    ],
+    "is_placement": false
+   },
+   {
+    "n": 7,
+    "kind": "click",
+    "text": "Name your group and click \"Create Group\".",
+    "targets": [
+     "Create Group"
+    ],
+    "is_placement": false
+   },
+   {
+    "n": 8,
+    "kind": "click",
+    "text": "Click \"Save settings\".",
+    "targets": [
+     "Save settings"
+    ],
+    "is_placement": false
+   },
+   {
+    "n": 9,
+    "kind": "place_link",
+    "text": "Add an item with links and click \"Save\". Here to add item you have to click on Library link of the group.",
+    "targets": [
+     "Save"
+    ],
+    "is_placement": true
+   },
+   {
+    "n": 10,
+    "kind": "verify",
+    "text": "Here's where the Backlink appears:",
+    "targets": [],
+    "is_placement": false
+   }
+  ]
+ },
+ {
+  "slug": "artfire",
+  "name": "ArtFire",
+  "domain": "artfire.com",
+  "url": "https://www.artfire.com/",
+  "da": 75,
+  "dofollow": true,
+  "method": "profile_website_field",
+  "method_label": "Profile website field",
+  "tier": "B",
+  "referring_domains": 31486,
+  "organic_traffic": 0,
+  "spam_score": 45,
+  "placement_step": "Add website links in \"Find me online\" section. And click \"Save\".",
+  "requirements": [
+   "an account on this site (name, email, username, password)"
+  ],
+  "steps": [
+   {
+    "n": 1,
+    "kind": "navigate",
+    "text": "Go to https://www.artfire.com Click on \"register\".",
+    "targets": [
+     "register"
+    ],
+    "is_placement": false
+   },
+   {
+    "n": 2,
+    "kind": "fill_form",
+    "text": "Enter details and click \"Register\".",
+    "targets": [
+     "Register"
+    ],
     "is_placement": false
    },
    {
     "n": 3,
     "kind": "click",
-    "text": "Click \"Continue\".",
+    "text": "Click on profile panel and click \"My profile\".",
+    "targets": [
+     "My profile"
+    ],
+    "is_placement": false
+   },
+   {
+    "n": 4,
+    "kind": "click",
+    "text": "Click \"Edit Profile\".",
+    "targets": [
+     "Edit Profile"
+    ],
+    "is_placement": false
+   },
+   {
+    "n": 5,
+    "kind": "place_link",
+    "text": "Add website links in \"Find me online\" section. And click \"Save\".",
+    "targets": [
+     "Find me online",
+     "Save"
+    ],
+    "is_placement": true
+   },
+   {
+    "n": 6,
+    "kind": "verify",
+    "text": "Here's where the Backlink appears:",
+    "targets": [],
+    "is_placement": false
+   }
+  ]
+ },
+ {
+  "slug": "milkyway-edu",
+  "name": "Milkyway (.edu)",
+  "domain": "milkyway.cs.rpi.edu",
+  "url": "http://milkyway.cs.rpi.edu/milkyway/",
+  "da": 75,
+  "dofollow": true,
+  "method": "profile_website_field",
+  "method_label": "Profile website field",
+  "tier": "B",
+  "referring_domains": 9011,
+  "organic_traffic": 4163,
+  "spam_score": 25,
+  "placement_step": "Fill the info and add website url for backlink. And click \"Create a Team\". Note: Only add domain without \"https://\".",
+  "requirements": [
+   "an account on this site (name, email, username, password)"
+  ],
+  "steps": [
+   {
+    "n": 1,
+    "kind": "navigate",
+    "text": "Go to http://milkyway.cs.rpi.edu/milkyway/ Click on \"Sign Up\".",
+    "targets": [
+     "Sign Up"
+    ],
+    "is_placement": false
+   },
+   {
+    "n": 2,
+    "kind": "fill_form",
+    "text": "Enter details and click \"Create account\".",
+    "targets": [
+     "Create account"
+    ],
+    "is_placement": false
+   },
+   {
+    "n": 3,
+    "kind": "click",
+    "text": "Click on \"Communities\", choose \"Teams\".",
+    "targets": [
+     "Communities",
+     "Teams"
+    ],
+    "is_placement": false
+   },
+   {
+    "n": 4,
+    "kind": "click",
+    "text": "Go bottom and click on \"Create a Team\".",
+    "targets": [
+     "Create a Team"
+    ],
+    "is_placement": false
+   },
+   {
+    "n": 5,
+    "kind": "place_link",
+    "text": "Fill the info and add website url for backlink. And click \"Create a Team\". Note: Only add domain without \"https://\".",
+    "targets": [
+     "Create a Team",
+     "https://"
+    ],
+    "is_placement": true
+   },
+   {
+    "n": 6,
+    "kind": "verify",
+    "text": "Here's where the Backlink appears:",
+    "targets": [],
+    "is_placement": false
+   }
+  ]
+ },
+ {
+  "slug": "dsiblogger",
+  "name": "DsiBlogger",
+  "domain": "dsiblogger.com",
+  "url": "http://dsiblogger.com/",
+  "da": 74,
+  "dofollow": true,
+  "method": "article_post",
+  "method_label": "Article or blog post",
+  "tier": "B",
+  "referring_domains": 37269,
+  "organic_traffic": 0,
+  "spam_score": 44,
+  "placement_step": "Create a post with links and click \"Publish\".",
+  "requirements": [
+   "an account on this site (name, email, username, password)",
+   "written content that includes the link naturally"
+  ],
+  "steps": [
+   {
+    "n": 1,
+    "kind": "navigate",
+    "text": "Go to http://dsiblogger.com Click on \"Get started\".",
+    "targets": [
+     "Get started"
+    ],
+    "is_placement": false
+   },
+   {
+    "n": 2,
+    "kind": "fill_form",
+    "text": "Enter details and click \"Sign Up Free\".",
+    "targets": [
+     "Sign Up Free"
+    ],
+    "is_placement": false
+   },
+   {
+    "n": 3,
+    "kind": "click",
+    "text": "Click \"Add New\".",
+    "targets": [
+     "Add New"
+    ],
+    "is_placement": false
+   },
+   {
+    "n": 4,
+    "kind": "place_link",
+    "text": "Create a post with links and click \"Publish\".",
+    "targets": [
+     "Publish"
+    ],
+    "is_placement": true
+   },
+   {
+    "n": 5,
+    "kind": "verify",
+    "text": "Here's where the Backlink appears:",
+    "targets": [],
+    "is_placement": false
+   }
+  ]
+ },
+ {
+  "slug": "fireblogz",
+  "name": "FireBlogz",
+  "domain": "fireblogz.com",
+  "url": "http://fireblogz.com",
+  "da": 74,
+  "dofollow": true,
+  "method": "article_post",
+  "method_label": "Article or blog post",
+  "tier": "B",
+  "referring_domains": 39401,
+  "organic_traffic": 0,
+  "spam_score": 42,
+  "placement_step": "Add a post with links. Click \"Publish\".",
+  "requirements": [
+   "an account on this site (name, email, username, password)",
+   "written content that includes the link naturally"
+  ],
+  "steps": [
+   {
+    "n": 1,
+    "kind": "navigate",
+    "text": "Go to http://fireblogz.com Click on \"Get Started\".",
+    "targets": [
+     "Get Started"
+    ],
+    "is_placement": false
+   },
+   {
+    "n": 2,
+    "kind": "fill_form",
+    "text": "Enter details and click \"Sign Up Free\".",
+    "targets": [
+     "Sign Up Free"
+    ],
+    "is_placement": false
+   },
+   {
+    "n": 3,
+    "kind": "click",
+    "text": "Click \"Add New\".",
+    "targets": [
+     "Add New"
+    ],
+    "is_placement": false
+   },
+   {
+    "n": 4,
+    "kind": "place_link",
+    "text": "Add a post with links. Click \"Publish\".",
+    "targets": [
+     "Publish"
+    ],
+    "is_placement": true
+   },
+   {
+    "n": 5,
+    "kind": "verify",
+    "text": "Here's where the Backlink appears:",
+    "targets": [],
+    "is_placement": false
+   }
+  ]
+ },
+ {
+  "slug": "beatstars",
+  "name": "Beatstars",
+  "domain": "beatstars.com",
+  "url": "https://www.beatstars.com/",
+  "da": 73,
+  "dofollow": true,
+  "method": "page_builder",
+  "method_label": "Page builder site",
+  "tier": "B",
+  "referring_domains": 39465,
+  "organic_traffic": 46678,
+  "spam_score": 33,
+  "placement_step": "Add hyperlink in HTML code as shown in the Biography field and click \"Save Changes\".",
+  "requirements": [
+   "an account on this site (name, email, username, password)",
+   "access to the sign-up inbox to open a verification link or code",
+   "written content that includes the link naturally"
+  ],
+  "steps": [
+   {
+    "n": 1,
+    "kind": "navigate",
+    "text": "Go to https://www.beatstars.com/ Click \"Sign Up\".",
+    "targets": [
+     "Sign Up"
+    ],
+    "is_placement": false
+   },
+   {
+    "n": 2,
+    "kind": "click",
+    "text": "Give an email or a username and click \"Continue\".",
+    "targets": [
+     "Continue"
+    ],
+    "is_placement": false
+   },
+   {
+    "n": 3,
+    "kind": "fill_form",
+    "text": "Add details and click \"Continue\".",
     "targets": [
      "Continue"
     ],
@@ -45,62 +562,349 @@
    },
    {
     "n": 4,
-    "kind": "click",
-    "text": "Click on \"Start with your space\".",
-    "targets": [
-     "Start with your space"
-    ],
+    "kind": "email_verify",
+    "text": "Open the email and copy the 4-digit code.",
+    "targets": [],
     "is_placement": false
    },
    {
     "n": 5,
-    "kind": "click",
-    "text": "Click on the draft button at the bottom.",
+    "kind": "note",
+    "text": "Add the 4-digit code.",
     "targets": [],
     "is_placement": false
    },
    {
     "n": 6,
-    "kind": "place_link",
-    "text": "Write your article here with links and click the bottom button to save.",
-    "targets": [],
-    "is_placement": true
+    "kind": "click",
+    "text": "Click \"Get Started\".",
+    "targets": [
+     "Get Started"
+    ],
+    "is_placement": false
    },
    {
     "n": 7,
     "kind": "click",
-    "text": "Click on \"Merge\" at the left. It is a must.",
+    "text": "Click \"Checkout\"",
     "targets": [
-     "Merge"
+     "Checkout"
     ],
     "is_placement": false
    },
    {
     "n": 8,
     "kind": "click",
-    "text": "Click on advanced setting at the left side and set your URL as you like and click \"Save Changes\".",
+    "text": "Click on the menu icon. And click \"Account Settings\".",
+    "targets": [
+     "Account Settings"
+    ],
+    "is_placement": false
+   },
+   {
+    "n": 9,
+    "kind": "place_link",
+    "text": "Add hyperlink in HTML code as shown in the Biography field and click \"Save Changes\".",
     "targets": [
      "Save Changes"
+    ],
+    "is_placement": true
+   },
+   {
+    "n": 10,
+    "kind": "verify",
+    "text": "Here's where the Backlink appears:",
+    "targets": [],
+    "is_placement": false
+   }
+  ]
+ },
+ {
+  "slug": "flip-html5",
+  "name": "Flip HTML5",
+  "domain": "fliphtml5.com",
+  "url": "http://fliphtml5.com/",
+  "da": 73,
+  "dofollow": true,
+  "method": "document_share",
+  "method_label": "Shared document",
+  "tier": "B",
+  "referring_domains": 226903,
+  "organic_traffic": 1605499,
+  "spam_score": 8,
+  "placement_step": "Add more info about the PDF and hit \"Apply\". You can see the sharing link above.",
+  "requirements": [
+   "an account on this site (name, email, username, password)",
+   "a file to upload (image, logo or document) that carries the link where the guide says so"
+  ],
+  "steps": [
+   {
+    "n": 1,
+    "kind": "navigate",
+    "text": "Go to http://fliphtml5.com Click \"Make a Flipping Book\".",
+    "targets": [
+     "Make a Flipping Book"
+    ],
+    "is_placement": false
+   },
+   {
+    "n": 2,
+    "kind": "fill_form",
+    "text": "Enter details and click \"Sign Up\".",
+    "targets": [
+     "Sign Up"
+    ],
+    "is_placement": false
+   },
+   {
+    "n": 3,
+    "kind": "click",
+    "text": "You should get code into your email. Copy that code and click \"Verify Account\".",
+    "targets": [
+     "Verify Account"
+    ],
+    "is_placement": false
+   },
+   {
+    "n": 4,
+    "kind": "note",
+    "text": "Code looks like this in email.",
+    "targets": [],
+    "is_placement": false
+   },
+   {
+    "n": 5,
+    "kind": "upload",
+    "text": "Click \"Upload PDF\" and select a PDF.",
+    "targets": [
+     "Upload PDF"
+    ],
+    "is_placement": false
+   },
+   {
+    "n": 6,
+    "kind": "place_link",
+    "text": "Add more info about the PDF and hit \"Apply\". You can see the sharing link above.",
+    "targets": [
+     "Apply"
+    ],
+    "is_placement": true
+   },
+   {
+    "n": 7,
+    "kind": "verify",
+    "text": "Here's where the Backlink appears:",
+    "targets": [],
+    "is_placement": false
+   }
+  ]
+ },
+ {
+  "slug": "figma",
+  "name": "Figma",
+  "domain": "figma.com",
+  "url": "https://www.figma.com/",
+  "da": 71,
+  "dofollow": true,
+  "method": "social_post",
+  "method_label": "Social post",
+  "tier": "B",
+  "referring_domains": 101339,
+  "organic_traffic": 12714224,
+  "spam_score": 5,
+  "placement_step": "Take \"T\" text tool and type the text with a link. Click \"Share\".",
+  "requirements": [
+   "an account on this site (name, email, username, password)",
+   "access to the sign-up inbox to open a verification link or code",
+   "written content that includes the link naturally"
+  ],
+  "steps": [
+   {
+    "n": 1,
+    "kind": "navigate",
+    "text": "Go to https://www.figma.com/ Click \"Try Figma for free\".",
+    "targets": [
+     "Try Figma for free"
+    ],
+    "is_placement": false
+   },
+   {
+    "n": 2,
+    "kind": "fill_form",
+    "text": "Enter info and click \"Create account\".",
+    "targets": [
+     "Create account"
+    ],
+    "is_placement": false
+   },
+   {
+    "n": 3,
+    "kind": "note",
+    "text": "Follow the screenshot below",
+    "targets": [],
+    "is_placement": false
+   },
+   {
+    "n": 4,
+    "kind": "email_verify",
+    "text": "Open the email and confirm it.",
+    "targets": [],
+    "is_placement": false
+   },
+   {
+    "n": 5,
+    "kind": "note",
+    "text": "Name your team.",
+    "targets": [],
+    "is_placement": false
+   },
+   {
+    "n": 6,
+    "kind": "click",
+    "text": "Choose a plan. I chose the free one.",
+    "targets": [],
+    "is_placement": false
+   },
+   {
+    "n": 7,
+    "kind": "note",
+    "text": "Create a new file.",
+    "targets": [],
+    "is_placement": false
+   },
+   {
+    "n": 8,
+    "kind": "place_link",
+    "text": "Take \"T\" text tool and type the text with a link. Click \"Share\".",
+    "targets": [
+     "T",
+     "Share"
+    ],
+    "is_placement": true
+   },
+   {
+    "n": 9,
+    "kind": "note",
+    "text": "Note: This is a must to change the settings to \"Anyone with the link\", and \"Can view\".",
+    "targets": [
+     "Anyone with the link",
+     "Can view"
+    ],
+    "is_placement": false
+   },
+   {
+    "n": 10,
+    "kind": "verify",
+    "text": "Here's where the Backlink appears:",
+    "targets": [],
+    "is_placement": false
+   }
+  ]
+ },
+ {
+  "slug": "md-anderson",
+  "name": "MD Anderson",
+  "domain": "study.mdanderson.org",
+  "url": "https://study.mdanderson.org/dist/mdanderson/landing/",
+  "da": 71,
+  "dofollow": true,
+  "method": "other",
+  "method_label": "Other",
+  "tier": "A",
+  "referring_domains": 918,
+  "organic_traffic": 141,
+  "spam_score": 38,
+  "placement_step": "Add content with links. Click \"Save Page\".",
+  "requirements": [],
+  "steps": [
+   {
+    "n": 1,
+    "kind": "navigate",
+    "text": "Go to https://study.mdanderson.org/dist/mdanderson/landing/ Click on \"Log in with social accounts\".",
+    "targets": [
+     "Log in with social accounts"
+    ],
+    "is_placement": false
+   },
+   {
+    "n": 2,
+    "kind": "click",
+    "text": "Log in from a social account. I chose Twitter.",
+    "targets": [],
+    "is_placement": false
+   },
+   {
+    "n": 3,
+    "kind": "click",
+    "text": "Click the tick and click \"Submit\".",
+    "targets": [
+     "Submit"
+    ],
+    "is_placement": false
+   },
+   {
+    "n": 4,
+    "kind": "click",
+    "text": "Click \"Account\".",
+    "targets": [
+     "Account"
+    ],
+    "is_placement": false
+   },
+   {
+    "n": 5,
+    "kind": "click",
+    "text": "Click \"ePortfolios\".",
+    "targets": [
+     "ePortfolios"
+    ],
+    "is_placement": false
+   },
+   {
+    "n": 6,
+    "kind": "click",
+    "text": "Click \"+Create an ePortfolio\".",
+    "targets": [
+     "+Create an ePortfolio"
+    ],
+    "is_placement": false
+   },
+   {
+    "n": 7,
+    "kind": "click",
+    "text": "Name it and click \"Make ePortfolio\". Note: You must tick the \"Make it Public\".",
+    "targets": [
+     "Make ePortfolio",
+     "Make it Public"
+    ],
+    "is_placement": false
+   },
+   {
+    "n": 8,
+    "kind": "click",
+    "text": "Click on \"Welcome\".",
+    "targets": [
+     "Welcome"
     ],
     "is_placement": false
    },
    {
     "n": 9,
     "kind": "click",
-    "text": "Click on the share button at the left and click \"Public\" on visibility section.",
+    "text": "Click \"Edit this page\".",
     "targets": [
-     "Public"
+     "Edit this page"
     ],
     "is_placement": false
    },
    {
     "n": 10,
-    "kind": "click",
-    "text": "You should type PUBLIC to change it into public and click \"Yes, I'm sure\".",
+    "kind": "place_link",
+    "text": "Add content with links. Click \"Save Page\".",
     "targets": [
-     "Yes, I'm sure"
+     "Save Page"
     ],
-    "is_placement": false
+    "is_placement": true
    },
    {
     "n": 11,
@@ -112,142 +916,97 @@
   ]
  },
  {
-  "slug": "myminifactory",
-  "name": "MyMiniFactory",
-  "url": "https://www.myminifactory.com",
-  "domain": "myminifactory.com",
-  "da": 68,
+  "slug": "wakelet",
+  "name": "Wakelet",
+  "domain": "wakelet.com",
+  "url": "https://wakelet.com",
+  "da": 71,
   "dofollow": true,
-  "method": "profile_website_field",
-  "method_label": "Profile website field",
+  "method": "bookmark_submit",
+  "method_label": "Bookmark / link submit",
   "tier": "B",
-  "referring_domains": 71374,
-  "organic_traffic": 195589,
-  "spam_score": 27,
+  "referring_domains": 191490,
+  "organic_traffic": 10681,
+  "spam_score": 28,
+  "placement_step": "Add links and click \"Save\".",
   "requirements": [
    "an account on this site (name, email, username, password)"
   ],
-  "placement_step": "Add web URL in website field and click \"Save\".",
   "steps": [
    {
     "n": 1,
     "kind": "navigate",
-    "text": "Go to https://www.myminifactory.com/register Enter details and click \"Next\".",
+    "text": "Go to https://wakelet.com Click \"Sign up for free\".",
     "targets": [
-     "Next"
+     "Sign up for free"
     ],
     "is_placement": false
    },
    {
     "n": 2,
+    "kind": "click",
+    "text": "Click \"Sign up with email\".",
+    "targets": [
+     "Sign up with email"
+    ],
+    "is_placement": false
+   },
+   {
+    "n": 3,
     "kind": "fill_form",
-    "text": "Add more info and complete the registration.",
-    "targets": [],
-    "is_placement": false
-   },
-   {
-    "n": 3,
-    "kind": "click",
-    "text": "Mouse over on the menu icon and click \"Settings\".",
+    "text": "Add info and click \"Create your account\".",
     "targets": [
-     "Settings"
-    ],
-    "is_placement": false
-   },
-   {
-    "n": 4,
-    "kind": "place_link",
-    "text": "Add web URL in website field and click \"Save\".",
-    "targets": [
-     "Save"
-    ],
-    "is_placement": true
-   },
-   {
-    "n": 5,
-    "kind": "verify",
-    "text": "Here's where the Backlink appears:",
-    "targets": [],
-    "is_placement": false
-   }
-  ]
- },
- {
-  "slug": "promodj",
-  "name": "PromoDJ",
-  "url": "http://promodj.com",
-  "domain": "promodj.com",
-  "da": 68,
-  "dofollow": true,
-  "method": "profile_website_field",
-  "method_label": "Profile website field",
-  "tier": "B",
-  "referring_domains": 24384,
-  "organic_traffic": 149,
-  "spam_score": 11,
-  "requirements": [
-   "an account on this site (name, email, username, password)"
-  ],
-  "placement_step": "Add title in the \"Title\" field. Add website URL in the text field. Click \"Save\" when done.",
-  "steps": [
-   {
-    "n": 1,
-    "kind": "navigate",
-    "text": "Go to http://promodj.com Click on \"Registration\". Create an account.",
-    "targets": [
-     "Registration"
-    ],
-    "is_placement": false
-   },
-   {
-    "n": 2,
-    "kind": "click",
-    "text": "Click \"Control Panel\"",
-    "targets": [
-     "Control Panel"
-    ],
-    "is_placement": false
-   },
-   {
-    "n": 3,
-    "kind": "click",
-    "text": "Click \"Write\" under the \"Blog\"",
-    "targets": [
-     "Write",
-     "Blog"
+     "Create your account"
     ],
     "is_placement": false
    },
    {
     "n": 4,
     "kind": "click",
-    "text": "Click \"verify your account\" to be able to publish blog posts",
+    "text": "Click on an option and click \"Done\".",
     "targets": [
-     "verify your account"
+     "Done"
     ],
     "is_placement": false
    },
    {
     "n": 5,
     "kind": "click",
-    "text": "Verify by entering your phone number. They will send you a code via SMS. It's free to verify. When you've received the code, enter it in the field and click \"Verificate\"",
+    "text": "Click on menu and click \"Public Profile\".",
     "targets": [
-     "Verificate"
+     "Public Profile"
     ],
     "is_placement": false
    },
    {
     "n": 6,
-    "kind": "place_link",
-    "text": "Add title in the \"Title\" field. Add website URL in the text field. Click \"Save\" when done.",
+    "kind": "click",
+    "text": "Click \"Edit Profile\".",
     "targets": [
-     "Title",
+     "Edit Profile"
+    ],
+    "is_placement": false
+   },
+   {
+    "n": 7,
+    "kind": "click",
+    "text": "Click \"+\" icon.",
+    "targets": [
+     "+"
+    ],
+    "is_placement": false
+   },
+   {
+    "n": 8,
+    "kind": "place_link",
+    "text": "Add links and click \"Save\".",
+    "targets": [
      "Save"
     ],
     "is_placement": true
    },
    {
-    "n": 7,
+    "n": 9,
     "kind": "verify",
     "text": "Here's where the Backlink appears:",
     "targets": [],
@@ -258,8 +1017,8 @@
  {
   "slug": "growthhackers",
   "name": "GrowthHackers",
-  "url": "https://www.growthhackers.com",
   "domain": "growthhackers.com",
+  "url": "https://www.growthhackers.com",
   "da": 68,
   "dofollow": true,
   "method": "forum_post",
@@ -268,11 +1027,11 @@
   "referring_domains": 7690,
   "organic_traffic": 2698,
   "spam_score": 25,
+  "placement_step": "Click on \"Community>>Discussions\". Create a new post or reply to a discussion with linking to website/page.",
   "requirements": [
    "an account on this site (name, email, username, password)",
    "written content that includes the link naturally"
   ],
-  "placement_step": "Click on \"Community>>Discussions\". Create a new post or reply to a discussion with linking to website/page.",
   "steps": [
    {
     "n": 1,
@@ -338,8 +1097,8 @@
  {
   "slug": "gust",
   "name": "Gust",
-  "url": "https://gust.com",
   "domain": "gust.com",
+  "url": "https://gust.com",
   "da": 67,
   "dofollow": true,
   "method": "directory_listing",
@@ -348,10 +1107,10 @@
   "referring_domains": 11264,
   "organic_traffic": 34114,
   "spam_score": 22,
+  "placement_step": "Add website URL in the \"Company Website\" field. Click \"Save\"",
   "requirements": [
    "an account on this site (name, email, username, password)"
   ],
-  "placement_step": "Add website URL in the \"Company Website\" field. Click \"Save\"",
   "steps": [
    {
     "n": 1,
@@ -445,771 +1204,118 @@
   ]
  },
  {
-  "slug": "hud-gov",
-  "name": "HUD (.gov)",
-  "url": "https://forums.huduser.gov/index.php",
-  "domain": "forums.huduser.gov",
-  "da": 66,
-  "dofollow": true,
-  "method": "profile_website_field",
-  "method_label": "Profile website field",
-  "tier": "C",
-  "referring_domains": 2569,
-  "organic_traffic": 0,
-  "spam_score": 24,
-  "requirements": [
-   "an account on this site (name, email, username, password)",
-   "access to the sign-up inbox to open a verification link or code"
-  ],
-  "placement_step": "Add your website/page url at the \"Your website url\" column for backlink. And click \"Update Profile\".",
-  "steps": [
-   {
-    "n": 1,
-    "kind": "navigate",
-    "text": "Go to https://forums.huduser.gov/index.php Click on \"Register\".",
-    "targets": [
-     "Register"
-    ],
-    "is_placement": false
-   },
-   {
-    "n": 2,
-    "kind": "click",
-    "text": "Click on \"I Agree\".",
-    "targets": [
-     "I Agree"
-    ],
-    "is_placement": false
-   },
-   {
-    "n": 3,
-    "kind": "fill_form",
-    "text": "ENter your details and click on \"Submit Registration\".",
-    "targets": [
-     "Submit Registration"
-    ],
-    "is_placement": false
-   },
-   {
-    "n": 4,
-    "kind": "email_verify",
-    "text": "You have to verify your email.",
-    "targets": [],
-    "is_placement": false
-   },
-   {
-    "n": 5,
-    "kind": "email_verify",
-    "text": "Go to your email and click on activation link.",
-    "targets": [],
-    "is_placement": false
-   },
-   {
-    "n": 6,
-    "kind": "click",
-    "text": "Then, your dashboard will be opened. Click on \"User CP\".",
-    "targets": [
-     "User CP"
-    ],
-    "is_placement": false
-   },
-   {
-    "n": 7,
-    "kind": "click",
-    "text": "Click on \"Edit Profile\".",
-    "targets": [
-     "Edit Profile"
-    ],
-    "is_placement": false
-   },
-   {
-    "n": 8,
-    "kind": "place_link",
-    "text": "Add your website/page url at the \"Your website url\" column for backlink. And click \"Update Profile\".",
-    "targets": [
-     "Your website url",
-     "Update Profile"
-    ],
-    "is_placement": true
-   },
-   {
-    "n": 9,
-    "kind": "verify",
-    "text": "Here's where the Backlink appears:",
-    "targets": [],
-    "is_placement": false
-   }
-  ]
- },
- {
-  "slug": "serato",
-  "name": "Serato",
-  "url": "https://serato.com",
-  "domain": "serato.com",
-  "da": 66,
-  "dofollow": true,
-  "method": "profile_website_field",
-  "method_label": "Profile website field",
-  "tier": "B",
-  "referring_domains": 7121,
-  "organic_traffic": 138128,
-  "spam_score": 13,
-  "requirements": [
-   "an account on this site (name, email, username, password)"
-  ],
-  "placement_step": "Add website URL, click \"Save changes\"",
-  "steps": [
-   {
-    "n": 1,
-    "kind": "navigate",
-    "text": "Go to https://serato.com/login Enter login (even if you don't have one). Then it will say \"There is no user account with the email address. Enter a password and country to create a new user account…\" Enter the details and create an account.",
-    "targets": [],
-    "is_placement": false
-   },
-   {
-    "n": 2,
-    "kind": "note",
-    "text": "Verify the email address",
-    "targets": [],
-    "is_placement": false
-   },
-   {
-    "n": 3,
-    "kind": "click",
-    "text": "Click \"Your Profile\"",
-    "targets": [
-     "Your Profile"
-    ],
-    "is_placement": false
-   },
-   {
-    "n": 4,
-    "kind": "click",
-    "text": "Click \"Edit Profile\"",
-    "targets": [
-     "Edit Profile"
-    ],
-    "is_placement": false
-   },
-   {
-    "n": 5,
-    "kind": "place_link",
-    "text": "Add website URL, click \"Save changes\"",
-    "targets": [
-     "Save changes"
-    ],
-    "is_placement": true
-   },
-   {
-    "n": 6,
-    "kind": "verify",
-    "text": "Here's where the Backlink appears:",
-    "targets": [],
-    "is_placement": false
-   }
-  ]
- },
- {
-  "slug": "portfoliobox",
-  "name": "Portfoliobox",
-  "url": "https://www.portfoliobox.net",
-  "domain": "portfoliobox.net",
-  "da": 66,
+  "slug": "riseup",
+  "name": "RiseUp",
+  "domain": "we.riseup.net",
+  "url": "https://we.riseup.net/",
+  "da": 64,
   "dofollow": true,
   "method": "page_builder",
   "method_label": "Page builder site",
-  "tier": "A",
-  "referring_domains": 12479,
-  "organic_traffic": 2893,
-  "spam_score": 22,
+  "tier": "B",
+  "referring_domains": 11528,
+  "organic_traffic": 6459,
+  "spam_score": 37,
+  "placement_step": "And then, you can add backlinks. And click \"Save\".",
   "requirements": [
+   "an account on this site (name, email, username, password)",
    "written content that includes the link naturally"
   ],
-  "placement_step": "Add Page title, text (add website URL here), click \"Publish\" when done",
   "steps": [
    {
     "n": 1,
     "kind": "navigate",
-    "text": "Go to https://www.portfoliobox.net Click on \"Start your free website\".",
+    "text": "Go to https://we.riseup.net Click on \"Create New User\".",
     "targets": [
-     "Start your free website"
+     "Create New User"
     ],
     "is_placement": false
    },
    {
     "n": 2,
     "kind": "fill_form",
-    "text": "Enter credentials, click \"Start your account\"",
+    "text": "Enter details and click \"Sign Up\".",
     "targets": [
-     "Start your account"
+     "Sign Up"
     ],
     "is_placement": false
    },
    {
     "n": 3,
     "kind": "click",
-    "text": "Click \"Start your free account\"",
+    "text": "Click on \"Pages\".",
     "targets": [
-     "Start your free account"
+     "Pages"
     ],
     "is_placement": false
    },
    {
     "n": 4,
     "kind": "click",
-    "text": "Click \"Complete your account\"",
+    "text": "Click \"Create Page\".",
     "targets": [
-     "Complete your account"
+     "Create Page"
     ],
     "is_placement": false
    },
    {
     "n": 5,
-    "kind": "click",
-    "text": "Tick all the boxes, click \"Login to your site\"",
+    "kind": "fill_form",
+    "text": "Enter info for a Wiki Page and click \"Create\".",
     "targets": [
-     "Login to your site"
+     "Create"
     ],
     "is_placement": false
    },
    {
     "n": 6,
-    "kind": "click",
-    "text": "Click \"New Page\"",
-    "targets": [
-     "New Page"
-    ],
-    "is_placement": false
-   },
-   {
-    "n": 7,
-    "kind": "click",
-    "text": "Choose \"Text\" template",
-    "targets": [
-     "Text"
-    ],
-    "is_placement": false
-   },
-   {
-    "n": 8,
-    "kind": "click",
-    "text": "Click \"Select\"",
-    "targets": [
-     "Select"
-    ],
-    "is_placement": false
-   },
-   {
-    "n": 9,
     "kind": "place_link",
-    "text": "Add Page title, text (add website URL here), click \"Publish\" when done",
-    "targets": [
-     "Publish"
-    ],
-    "is_placement": true
-   },
-   {
-    "n": 10,
-    "kind": "verify",
-    "text": "Here's where the Backlink appears:",
-    "targets": [],
-    "is_placement": false
-   }
-  ]
- },
- {
-  "slug": "credly",
-  "name": "Credly",
-  "url": "https://www.credly.com/",
-  "domain": "credly.com",
-  "da": 65,
-  "dofollow": true,
-  "method": "profile_website_field",
-  "method_label": "Profile website field",
-  "tier": "C",
-  "referring_domains": 59462,
-  "organic_traffic": 168382,
-  "spam_score": 11,
-  "requirements": [
-   "an account on this site (name, email, username, password)",
-   "access to the sign-up inbox to open a verification link or code"
-  ],
-  "placement_step": "Add web URL in the website field and save the changes.",
-  "steps": [
-   {
-    "n": 1,
-    "kind": "navigate",
-    "text": "Go to https://www.credly.com/users/sign_up ENter details and click \"Create account\".",
-    "targets": [
-     "Create account"
-    ],
-    "is_placement": false
-   },
-   {
-    "n": 2,
-    "kind": "email_verify",
-    "text": "Open the email and click the verification link.",
-    "targets": [],
-    "is_placement": false
-   },
-   {
-    "n": 3,
-    "kind": "click",
-    "text": "Click on menu and click \"Settings\".",
-    "targets": [
-     "Settings"
-    ],
-    "is_placement": false
-   },
-   {
-    "n": 4,
-    "kind": "click",
-    "text": "Click on \"Profile\".",
-    "targets": [
-     "Profile"
-    ],
-    "is_placement": false
-   },
-   {
-    "n": 5,
-    "kind": "place_link",
-    "text": "Add web URL in the website field and save the changes.",
-    "targets": [],
-    "is_placement": true
-   },
-   {
-    "n": 6,
-    "kind": "verify",
-    "text": "Here's where the Backlink appears:",
-    "targets": [],
-    "is_placement": false
-   }
-  ]
- },
- {
-  "slug": "grabcad",
-  "name": "GrabCad",
-  "url": "https://grabcad.com/",
-  "domain": "grabcad.com",
-  "da": 65,
-  "dofollow": true,
-  "method": "profile_website_field",
-  "method_label": "Profile website field",
-  "tier": "C",
-  "referring_domains": 17418,
-  "organic_traffic": 70101,
-  "spam_score": 18,
-  "requirements": [
-   "an account on this site (name, email, username, password)",
-   "access to the sign-up inbox to open a verification link or code"
-  ],
-  "placement_step": "Add web URL in website field and click \"Save\".",
-  "steps": [
-   {
-    "n": 1,
-    "kind": "navigate",
-    "text": "Go to https://grabcad.com/profile/register Enter details and click \"Sign up for community\".",
-    "targets": [
-     "Sign up for community"
-    ],
-    "is_placement": false
-   },
-   {
-    "n": 2,
-    "kind": "email_verify",
-    "text": "Go to your email and click activation link.",
-    "targets": [],
-    "is_placement": false
-   },
-   {
-    "n": 3,
-    "kind": "click",
-    "text": "Move the cursor on the profile icon and click \"My Profile\".",
-    "targets": [
-     "My Profile"
-    ],
-    "is_placement": false
-   },
-   {
-    "n": 4,
-    "kind": "click",
-    "text": "Click on \"Edit Profile\".",
-    "targets": [
-     "Edit Profile"
-    ],
-    "is_placement": false
-   },
-   {
-    "n": 5,
-    "kind": "place_link",
-    "text": "Add web URL in website field and click \"Save\".",
+    "text": "And then, you can add backlinks. And click \"Save\".",
     "targets": [
      "Save"
     ],
     "is_placement": true
    },
    {
-    "n": 6,
-    "kind": "verify",
-    "text": "Here's where the Backlink appears:",
-    "targets": [],
-    "is_placement": false
-   }
-  ]
- },
- {
-  "slug": "leetcode",
-  "name": "LeetCode",
-  "url": "https://leetcode.com/",
-  "domain": "leetcode.com",
-  "da": 65,
-  "dofollow": true,
-  "method": "profile_website_field",
-  "method_label": "Profile website field",
-  "tier": "C",
-  "referring_domains": 87346,
-  "organic_traffic": 729740,
-  "spam_score": 26,
-  "requirements": [
-   "an account on this site (name, email, username, password)",
-   "access to the sign-up inbox to open a verification link or code"
-  ],
-  "placement_step": "Add web URL and click \"Done\".",
-  "steps": [
-   {
-    "n": 1,
-    "kind": "navigate",
-    "text": "Go to https://leetcode.com/accounts/signup/ Enter details and click \"Sign Up\".",
-    "targets": [
-     "Sign Up"
-    ],
-    "is_placement": false
-   },
-   {
-    "n": 2,
-    "kind": "click",
-    "text": "Click \"Professional\".",
-    "targets": [
-     "Professional"
-    ],
-    "is_placement": false
-   },
-   {
-    "n": 3,
-    "kind": "click",
-    "text": "Click \"Next\".",
-    "targets": [
-     "Next"
-    ],
-    "is_placement": false
-   },
-   {
-    "n": 4,
-    "kind": "click",
-    "text": "Click \"Next\".",
-    "targets": [
-     "Next"
-    ],
-    "is_placement": false
-   },
-   {
-    "n": 5,
-    "kind": "click",
-    "text": "Click \"Submit\".",
-    "targets": [
-     "Submit"
-    ],
-    "is_placement": false
-   },
-   {
-    "n": 6,
-    "kind": "email_verify",
-    "text": "Open the email and click the verification link.",
-    "targets": [],
-    "is_placement": false
-   },
-   {
     "n": 7,
     "kind": "click",
-    "text": "Click \"here\" link to edit the profile.",
+    "text": "Click on \"Settings\" (You should do to make the page \"Public\".)",
     "targets": [
-     "here"
+     "Settings",
+     "Public"
     ],
     "is_placement": false
    },
    {
     "n": 8,
     "kind": "click",
-    "text": "Click \"Edit Profile\".",
+    "text": "Click on \"Permissions\".",
     "targets": [
-     "Edit Profile"
+     "Permissions"
     ],
     "is_placement": false
    },
    {
     "n": 9,
     "kind": "click",
-    "text": "Click \"Edit\" option of \"Website\" field.",
+    "text": "Make all visibility \"Public\" by clicking on \"Public\".",
     "targets": [
-     "Edit",
-     "Website"
+     "Public",
+     "Public"
     ],
     "is_placement": false
    },
    {
     "n": 10,
     "kind": "click",
-    "text": "Click \"Add\".",
+    "text": "And click on \"Public\" in Page Setting too. (Important).",
     "targets": [
-     "Add"
+     "Public"
     ],
     "is_placement": false
    },
    {
     "n": 11,
-    "kind": "place_link",
-    "text": "Add web URL and click \"Done\".",
-    "targets": [
-     "Done"
-    ],
-    "is_placement": true
-   },
-   {
-    "n": 12,
-    "kind": "verify",
-    "text": "Here's where the Backlink appears:",
-    "targets": [],
-    "is_placement": false
-   }
-  ]
- },
- {
-  "slug": "kiwibox",
-  "name": "Kiwibox",
-  "url": "https://www.kiwibox.com",
-  "domain": "kiwibox.com",
-  "da": 65,
-  "dofollow": true,
-  "method": "article_post",
-  "method_label": "Article or blog post",
-  "tier": "B",
-  "referring_domains": 9959,
-  "organic_traffic": 2627,
-  "spam_score": 27,
-  "requirements": [
-   "an account on this site (name, email, username, password)",
-   "written content that includes the link naturally"
-  ],
-  "placement_step": "Write a post and add your website URL. Publish it.",
-  "steps": [
-   {
-    "n": 1,
-    "kind": "navigate",
-    "text": "Go to https://www.kiwibox.com Click on \"Signup now for free\". Create an account.",
-    "targets": [
-     "Signup now for free"
-    ],
-    "is_placement": false
-   },
-   {
-    "n": 2,
-    "kind": "click",
-    "text": "Click “Write a blog entry “",
-    "targets": [],
-    "is_placement": false
-   },
-   {
-    "n": 3,
-    "kind": "click",
-    "text": "Click \"New Blog Post\"",
-    "targets": [
-     "New Blog Post"
-    ],
-    "is_placement": false
-   },
-   {
-    "n": 4,
-    "kind": "place_link",
-    "text": "Write a post and add your website URL. Publish it.",
-    "targets": [],
-    "is_placement": true
-   },
-   {
-    "n": 5,
-    "kind": "verify",
-    "text": "Here's where the Backlink appears:",
-    "targets": [],
-    "is_placement": false
-   }
-  ]
- },
- {
-  "slug": "vingle",
-  "name": "Vingle",
-  "url": "https://www.vingle.net/",
-  "domain": "vingle.net",
-  "da": 64,
-  "dofollow": true,
-  "method": "article_post",
-  "method_label": "Article or blog post",
-  "tier": "C",
-  "referring_domains": 28178,
-  "organic_traffic": 0,
-  "spam_score": 30,
-  "requirements": [
-   "an account on this site (name, email, username, password)",
-   "access to the sign-up inbox to open a verification link or code",
-   "written content that includes the link naturally"
-  ],
-  "placement_step": "Write the title and info with links. Click \"Post\".",
-  "steps": [
-   {
-    "n": 1,
-    "kind": "navigate",
-    "text": "Go to https://www.vingle.net/users/sign_up/email Enter details and click \"Next\".",
-    "targets": [
-     "Next"
-    ],
-    "is_placement": false
-   },
-   {
-    "n": 2,
-    "kind": "click",
-    "text": "Give a username and click \"Sign Up\".",
-    "targets": [
-     "Sign Up"
-    ],
-    "is_placement": false
-   },
-   {
-    "n": 3,
-    "kind": "email_verify",
-    "text": "Open the email and click the activation link.",
-    "targets": [],
-    "is_placement": false
-   },
-   {
-    "n": 4,
-    "kind": "click",
-    "text": "Click on \"Write a card\".",
-    "targets": [
-     "Write a card"
-    ],
-    "is_placement": false
-   },
-   {
-    "n": 5,
-    "kind": "place_link",
-    "text": "Write the title and info with links. Click \"Post\".",
-    "targets": [
-     "Post"
-    ],
-    "is_placement": true
-   },
-   {
-    "n": 6,
-    "kind": "click",
-    "text": "Again choose some hashtags and click \"Post\".",
-    "targets": [
-     "Post"
-    ],
-    "is_placement": false
-   },
-   {
-    "n": 7,
-    "kind": "verify",
-    "text": "Here's where the Backlink appears:",
-    "targets": [],
-    "is_placement": false
-   }
-  ]
- },
- {
-  "slug": "gamekyo",
-  "name": "GameKyo",
-  "url": "http://www.gamekyo.com/",
-  "domain": "gamekyo.com",
-  "da": 64,
-  "dofollow": true,
-  "method": "bookmark_submit",
-  "method_label": "Bookmark / link submit",
-  "tier": "C",
-  "referring_domains": 4959,
-  "organic_traffic": 4196,
-  "spam_score": 26,
-  "requirements": [
-   "an account on this site (name, email, username, password)",
-   "access to the sign-up inbox to open a verification link or code",
-   "a file to upload (image, logo or document) that carries the link where the guide says so"
-  ],
-  "placement_step": "Add url and its info. Click \"Submit\".",
-  "steps": [
-   {
-    "n": 1,
-    "kind": "navigate",
-    "text": "Go to http://www.gamekyo.com Click on the link for register as shown in the image.",
-    "targets": [],
-    "is_placement": false
-   },
-   {
-    "n": 2,
-    "kind": "fill_form",
-    "text": "Enter the details and click \"Submit\".",
-    "targets": [
-     "Submit"
-    ],
-    "is_placement": false
-   },
-   {
-    "n": 3,
-    "kind": "note",
-    "text": "It asks to verify the email.",
-    "targets": [],
-    "is_placement": false
-   },
-   {
-    "n": 4,
-    "kind": "email_verify",
-    "text": "Go to your email and click the verification link.",
-    "targets": [],
-    "is_placement": false
-   },
-   {
-    "n": 5,
-    "kind": "click",
-    "text": "Now, login into the account.",
-    "targets": [],
-    "is_placement": false
-   },
-   {
-    "n": 6,
-    "kind": "click",
-    "text": "Click on \"Profile\".",
-    "targets": [
-     "Profile"
-    ],
-    "is_placement": false
-   },
-   {
-    "n": 7,
-    "kind": "click",
-    "text": "Click on \"Edit favorite websites\".",
-    "targets": [
-     "Edit favorite websites"
-    ],
-    "is_placement": false
-   },
-   {
-    "n": 8,
-    "kind": "place_link",
-    "text": "Add url and its info. Click \"Submit\".",
-    "targets": [
-     "Submit"
-    ],
-    "is_placement": true
-   },
-   {
-    "n": 9,
     "kind": "verify",
     "text": "Here's where the Backlink appears:",
     "targets": [],
@@ -1220,8 +1326,8 @@
  {
   "slug": "wantedly",
   "name": "Wantedly",
-  "url": "https://wantedly.com/",
   "domain": "wantedly.com",
+  "url": "https://wantedly.com/",
   "da": 64,
   "dofollow": true,
   "method": "bookmark_submit",
@@ -1230,10 +1336,10 @@
   "referring_domains": 29585,
   "organic_traffic": 6144,
   "spam_score": 10,
+  "placement_step": "Add links one by one.",
   "requirements": [
    "an account on this site (name, email, username, password)"
   ],
-  "placement_step": "Add links one by one.",
   "steps": [
    {
     "n": 1,
@@ -1307,735 +1413,85 @@
   ]
  },
  {
-  "slug": "roundme",
-  "name": "RoundMe",
-  "url": "https://roundme.com",
-  "domain": "roundme.com",
-  "da": 63,
-  "dofollow": true,
-  "method": "profile_website_field",
-  "method_label": "Profile website field",
-  "tier": "B",
-  "referring_domains": 8631,
-  "organic_traffic": 123,
-  "spam_score": 20,
-  "requirements": [
-   "an account on this site (name, email, username, password)"
-  ],
-  "placement_step": "Addweb URL in website field and click \"Save Changes\".",
-  "steps": [
-   {
-    "n": 1,
-    "kind": "navigate",
-    "text": "Go to https://roundme.com Click on \"Sign Up\".",
-    "targets": [
-     "Sign Up"
-    ],
-    "is_placement": false
-   },
-   {
-    "n": 2,
-    "kind": "fill_form",
-    "text": "Add details and click \"Sign Up\".",
-    "targets": [
-     "Sign Up"
-    ],
-    "is_placement": false
-   },
-   {
-    "n": 3,
-    "kind": "click",
-    "text": "Click on menu and click \"Settings\".",
-    "targets": [
-     "Settings"
-    ],
-    "is_placement": false
-   },
-   {
-    "n": 4,
-    "kind": "place_link",
-    "text": "Addweb URL in website field and click \"Save Changes\".",
-    "targets": [
-     "Save Changes"
-    ],
-    "is_placement": true
-   },
-   {
-    "n": 5,
-    "kind": "verify",
-    "text": "Here's where the Backlink appears:",
-    "targets": [],
-    "is_placement": false
-   }
-  ]
- },
- {
-  "slug": "itsmyurls",
-  "name": "ItsMyURLs",
-  "url": "https://itsmyurls.com/",
-  "domain": "itsmyurls.com",
-  "da": 63,
-  "dofollow": true,
-  "method": "bookmark_submit",
-  "method_label": "Bookmark / link submit",
-  "tier": "C",
-  "referring_domains": 11263,
-  "organic_traffic": 0,
-  "spam_score": 25,
-  "requirements": [
-   "an account on this site (name, email, username, password)",
-   "access to the sign-up inbox to open a verification link or code"
-  ],
-  "placement_step": "Enter your website details and click on \"Add Link\".",
-  "steps": [
-   {
-    "n": 1,
-    "kind": "navigate",
-    "text": "Go to https://itsmyurls.com Click on \"Join itsMyURLs\".",
-    "targets": [
-     "Join itsMyURLs"
-    ],
-    "is_placement": false
-   },
-   {
-    "n": 2,
-    "kind": "fill_form",
-    "text": "Fill up with your details and click on \"Sign Up\".",
-    "targets": [
-     "Sign Up"
-    ],
-    "is_placement": false
-   },
-   {
-    "n": 3,
-    "kind": "note",
-    "text": "You have to validate the email.",
-    "targets": [],
-    "is_placement": false
-   },
-   {
-    "n": 4,
-    "kind": "email_verify",
-    "text": "Check your email inbox and click on the validation link.",
-    "targets": [],
-    "is_placement": false
-   },
-   {
-    "n": 5,
-    "kind": "note",
-    "text": "Then you will see your account page like this.",
-    "targets": [],
-    "is_placement": false
-   },
-   {
-    "n": 6,
-    "kind": "click",
-    "text": "Click on \"add a link\".",
-    "targets": [
-     "add a link"
-    ],
-    "is_placement": false
-   },
-   {
-    "n": 7,
-    "kind": "place_link",
-    "text": "Enter your website details and click on \"Add Link\".",
-    "targets": [
-     "Add Link"
-    ],
-    "is_placement": true
-   },
-   {
-    "n": 8,
-    "kind": "verify",
-    "text": "Here's where the Backlink appears:",
-    "targets": [],
-    "is_placement": false
-   }
-  ]
- },
- {
-  "slug": "zenodo",
-  "name": "Zenodo",
-  "url": "https://sandbox.zenodo.org/",
-  "domain": "sandbox.zenodo.org",
-  "da": 62,
-  "dofollow": true,
-  "method": "profile_website_field",
-  "method_label": "Profile website field",
-  "tier": "C",
-  "referring_domains": 7015,
-  "organic_traffic": 10,
-  "spam_score": 23,
-  "requirements": [
-   "an account on this site (name, email, username, password)",
-   "access to the sign-up inbox to open a verification link or code"
-  ],
-  "placement_step": "Fill up with info, and add info with links in \"Page\" section. Click \"Create\".",
-  "steps": [
-   {
-    "n": 1,
-    "kind": "navigate",
-    "text": "Go to https://sandbox.zenodo.org Click on \"Sign Up\".",
-    "targets": [
-     "Sign Up"
-    ],
-    "is_placement": false
-   },
-   {
-    "n": 2,
-    "kind": "fill_form",
-    "text": "Enter details and click \"Sign Up\".",
-    "targets": [
-     "Sign Up"
-    ],
-    "is_placement": false
-   },
-   {
-    "n": 3,
-    "kind": "email_verify",
-    "text": "Open the email and click the activation link.",
-    "targets": [],
-    "is_placement": false
-   },
-   {
-    "n": 4,
-    "kind": "click",
-    "text": "Click \"Communities\".",
-    "targets": [
-     "Communities"
-    ],
-    "is_placement": false
-   },
-   {
-    "n": 5,
-    "kind": "click",
-    "text": "Click on \"New\".",
-    "targets": [
-     "New"
-    ],
-    "is_placement": false
-   },
-   {
-    "n": 6,
-    "kind": "place_link",
-    "text": "Fill up with info, and add info with links in \"Page\" section. Click \"Create\".",
-    "targets": [
-     "Page",
-     "Create"
-    ],
-    "is_placement": true
-   },
-   {
-    "n": 7,
-    "kind": "verify",
-    "text": "Here's where the Backlink appears:",
-    "targets": [],
-    "is_placement": false
-   }
-  ]
- },
- {
-  "slug": "longisland",
-  "name": "LongIsland",
-  "url": "https://www.longisland.com/",
-  "domain": "longisland.com",
-  "da": 62,
-  "dofollow": true,
-  "method": "bookmark_submit",
-  "method_label": "Bookmark / link submit",
-  "tier": "B",
-  "referring_domains": 61555,
-  "organic_traffic": 446237,
-  "spam_score": 27,
-  "requirements": [
-   "an account on this site (name, email, username, password)"
-  ],
-  "placement_step": "In \"Edit Profile\" section, add Web URL in \"Website\" column, and also add links of your social networking profiles if you want, and click \"Save\".",
-  "steps": [
-   {
-    "n": 1,
-    "kind": "navigate",
-    "text": "Go to https://www.longisland.com Click on \"Register\" at the top right.",
-    "targets": [
-     "Register"
-    ],
-    "is_placement": false
-   },
-   {
-    "n": 2,
-    "kind": "fill_form",
-    "text": "Enter details and click on \"Sign Up\".",
-    "targets": [
-     "Sign Up"
-    ],
-    "is_placement": false
-   },
-   {
-    "n": 3,
-    "kind": "click",
-    "text": "It automatically takes you to edit your profile, if not, click on \"Edit Profile\".",
-    "targets": [
-     "Edit Profile"
-    ],
-    "is_placement": false
-   },
-   {
-    "n": 4,
-    "kind": "place_link",
-    "text": "In \"Edit Profile\" section, add Web URL in \"Website\" column, and also add links of your social networking profiles if you want, and click \"Save\".",
-    "targets": [
-     "Edit Profile",
-     "Website",
-     "Save"
-    ],
-    "is_placement": true
-   },
-   {
-    "n": 5,
-    "kind": "verify",
-    "text": "Here's where the Backlink appears:",
-    "targets": [],
-    "is_placement": false
-   }
-  ]
- },
- {
-  "slug": "carrd",
-  "name": "Carrd",
-  "url": "https://carrd.co/",
-  "domain": "carrd.co",
-  "da": 61,
-  "dofollow": true,
-  "method": "article_post",
-  "method_label": "Article or blog post",
-  "tier": "C",
-  "referring_domains": 272016,
-  "organic_traffic": 50555,
-  "spam_score": 11,
-  "requirements": [
-   "an account on this site (name, email, username, password)",
-   "access to the sign-up inbox to open a verification link or code",
-   "a file to upload (image, logo or document) that carries the link where the guide says so",
-   "written content that includes the link naturally"
-  ],
-  "placement_step": "Click the \"Publish\" button at the top right. ANd add info and choose a URL and click \"Publish\".",
-  "steps": [
-   {
-    "n": 1,
-    "kind": "navigate",
-    "text": "Go to https://carrd.co/signup Enter details and click \"Sign Up\".",
-    "targets": [
-     "Sign Up"
-    ],
-    "is_placement": false
-   },
-   {
-    "n": 2,
-    "kind": "email_verify",
-    "text": "Open the email and click activation link.",
-    "targets": [],
-    "is_placement": false
-   },
-   {
-    "n": 3,
-    "kind": "click",
-    "text": "Click \"New Site\".",
-    "targets": [
-     "New Site"
-    ],
-    "is_placement": false
-   },
-   {
-    "n": 4,
-    "kind": "click",
-    "text": "Select a theme.",
-    "targets": [],
-    "is_placement": false
-   },
-   {
-    "n": 5,
-    "kind": "click",
-    "text": "Click \"Okay, Got it\".",
-    "targets": [
-     "Okay, Got it"
-    ],
-    "is_placement": false
-   },
-   {
-    "n": 6,
-    "kind": "fill_form",
-    "text": "Click on the blocks and add photo and info.",
-    "targets": [],
-    "is_placement": false
-   },
-   {
-    "n": 7,
-    "kind": "click",
-    "text": "Click \"Done\".",
-    "targets": [
-     "Done"
-    ],
-    "is_placement": false
-   },
-   {
-    "n": 8,
-    "kind": "click",
-    "text": "Click \"+\" icon.",
-    "targets": [
-     "+"
-    ],
-    "is_placement": false
-   },
-   {
-    "n": 9,
-    "kind": "click",
-    "text": "Click \"Links\".",
-    "targets": [
-     "Links"
-    ],
-    "is_placement": false
-   },
-   {
-    "n": 10,
-    "kind": "click",
-    "text": "Add website links and click \"Add\" and click \"Done\".",
-    "targets": [
-     "Add",
-     "Done"
-    ],
-    "is_placement": false
-   },
-   {
-    "n": 11,
-    "kind": "place_link",
-    "text": "Click the \"Publish\" button at the top right. ANd add info and choose a URL and click \"Publish\".",
-    "targets": [
-     "Publish",
-     "Publish"
-    ],
-    "is_placement": true
-   },
-   {
-    "n": 12,
-    "kind": "verify",
-    "text": "Here's where the Backlink appears:",
-    "targets": [],
-    "is_placement": false
-   }
-  ]
- },
- {
-  "slug": "lacartes",
-  "name": "Lacartes",
-  "url": "http://www.lacartes.com/",
-  "domain": "lacartes.com",
-  "da": 61,
-  "dofollow": true,
-  "method": "bookmark_submit",
-  "method_label": "Bookmark / link submit",
-  "tier": "C",
-  "referring_domains": 7671,
-  "organic_traffic": 3241,
-  "spam_score": 29,
-  "requirements": [
-   "an account on this site (name, email, username, password)",
-   "access to the sign-up inbox to open a verification link or code"
-  ],
-  "placement_step": "Add web URL and fill up other info and click the save button to submit.",
-  "steps": [
-   {
-    "n": 1,
-    "kind": "navigate",
-    "text": "Go to http://www.lacartes.com/ Click \"Sign Up\".",
-    "targets": [
-     "Sign Up"
-    ],
-    "is_placement": false
-   },
-   {
-    "n": 2,
-    "kind": "fill_form",
-    "text": "Fill up the details and click \"Sign Up\".",
-    "targets": [
-     "Sign Up"
-    ],
-    "is_placement": false
-   },
-   {
-    "n": 3,
-    "kind": "click",
-    "text": "Write your name and click \"Come on in\".",
-    "targets": [
-     "Come on in"
-    ],
-    "is_placement": false
-   },
-   {
-    "n": 4,
-    "kind": "email_verify",
-    "text": "Open the email and click the verification link.",
-    "targets": [],
-    "is_placement": false
-   },
-   {
-    "n": 5,
-    "kind": "click",
-    "text": "Click \"Local Businesses\".",
-    "targets": [
-     "Local Businesses"
-    ],
-    "is_placement": false
-   },
-   {
-    "n": 6,
-    "kind": "click",
-    "text": "Click \"List Your Company\".",
-    "targets": [
-     "List Your Company"
-    ],
-    "is_placement": false
-   },
-   {
-    "n": 7,
-    "kind": "place_link",
-    "text": "Add web URL and fill up other info and click the save button to submit.",
-    "targets": [],
-    "is_placement": true
-   },
-   {
-    "n": 8,
-    "kind": "verify",
-    "text": "Here's where the Backlink appears:",
-    "targets": [],
-    "is_placement": false
-   }
-  ]
- },
- {
-  "slug": "page4-new",
-  "name": "Page4",
-  "url": "https://en.page4.com/",
-  "domain": "en.page4.com",
-  "da": 61,
+  "slug": "xtgem",
+  "name": "XtGem",
+  "domain": "xtgem.com",
+  "url": "http://xtgem.com/",
+  "da": 64,
   "dofollow": true,
   "method": "page_builder",
   "method_label": "Page builder site",
   "tier": "B",
-  "referring_domains": 2162,
-  "organic_traffic": 1181,
-  "spam_score": 29,
+  "referring_domains": 26727,
+  "organic_traffic": 62,
+  "spam_score": 31,
+  "placement_step": "Change \"Page title\". Change text to your own. Add website URL in the text.",
   "requirements": [
    "an account on this site (name, email, username, password)",
    "written content that includes the link naturally"
   ],
-  "placement_step": "Enter info about link and click \"Apply\".",
   "steps": [
    {
     "n": 1,
     "kind": "navigate",
-    "text": "Go to https://en.page4.com Click on \"Register your own homepage now for free\".",
+    "text": "Go to http://xtgem.com Click on \"Start Building!\". Create an account.",
     "targets": [
-     "Register your own homepage now for free"
+     "Start Building!"
     ],
     "is_placement": false
    },
    {
     "n": 2,
-    "kind": "fill_form",
-    "text": "Enter details and click \"Create now\".",
-    "targets": [
-     "Create now"
-    ],
+    "kind": "click",
+    "text": "Choose any template",
+    "targets": [],
     "is_placement": false
    },
    {
     "n": 3,
     "kind": "click",
-    "text": "Choose a template and click \"Continue\".",
+    "text": "Click \"Next\"",
     "targets": [
-     "Continue"
+     "Next"
     ],
     "is_placement": false
    },
    {
     "n": 4,
     "kind": "click",
-    "text": "Click on \"+\" option on your web page.",
+    "text": "Click \"Next\"",
     "targets": [
-     "+"
+     "Next"
     ],
     "is_placement": false
    },
    {
     "n": 5,
-    "kind": "click",
-    "text": "Click on \"Link List\".",
+    "kind": "place_link",
+    "text": "Change \"Page title\". Change text to your own. Add website URL in the text.",
     "targets": [
-     "Link List"
+     "Page title"
     ],
-    "is_placement": false
+    "is_placement": true
    },
    {
     "n": 6,
     "kind": "click",
-    "text": "Click on \"External link\". And click \"Apply\".",
+    "text": "Click \"Confirm\" when done",
     "targets": [
-     "External link",
-     "Apply"
+     "Confirm"
     ],
     "is_placement": false
    },
    {
     "n": 7,
-    "kind": "place_link",
-    "text": "Enter info about link and click \"Apply\".",
-    "targets": [
-     "Apply"
-    ],
-    "is_placement": true
+    "kind": "click",
+    "text": "Activate your account via email by clicking the link to make the website visible to public.",
+    "targets": [],
+    "is_placement": false
    },
    {
     "n": 8,
-    "kind": "click",
-    "text": "Click \"Save\".",
-    "targets": [
-     "Save"
-    ],
-    "is_placement": false
-   },
-   {
-    "n": 9,
-    "kind": "verify",
-    "text": "Here's where the Backlink appears:",
-    "targets": [],
-    "is_placement": false
-   }
-  ]
- },
- {
-  "slug": "myvidster",
-  "name": "MyVidSter",
-  "url": "https://www.myvidster.com/",
-  "domain": "myvidster.com",
-  "da": 60,
-  "dofollow": true,
-  "method": "profile_website_field",
-  "method_label": "Profile website field",
-  "tier": "B",
-  "referring_domains": 14641,
-  "organic_traffic": 16393,
-  "spam_score": 23,
-  "requirements": [
-   "an account on this site (name, email, username, password)"
-  ],
-  "placement_step": "Enter the website or page url for backlink in the website field. And click \"Save\".",
-  "steps": [
-   {
-    "n": 1,
-    "kind": "navigate",
-    "text": "Go to https://www.myvidster.com Click on \"Register\".",
-    "targets": [
-     "Register"
-    ],
-    "is_placement": false
-   },
-   {
-    "n": 2,
-    "kind": "fill_form",
-    "text": "Enter the details and click \"Register\".",
-    "targets": [
-     "Register"
-    ],
-    "is_placement": false
-   },
-   {
-    "n": 3,
-    "kind": "click",
-    "text": "You are taken to this page and click on your profile link at the top.",
-    "targets": [],
-    "is_placement": false
-   },
-   {
-    "n": 4,
-    "kind": "click",
-    "text": "Click on \"Edit\" of your profile.",
-    "targets": [
-     "Edit"
-    ],
-    "is_placement": false
-   },
-   {
-    "n": 5,
-    "kind": "place_link",
-    "text": "Enter the website or page url for backlink in the website field. And click \"Save\".",
-    "targets": [
-     "Save"
-    ],
-    "is_placement": true
-   },
-   {
-    "n": 6,
-    "kind": "verify",
-    "text": "Here's where the Backlink appears:",
-    "targets": [],
-    "is_placement": false
-   }
-  ]
- },
- {
-  "slug": "revue",
-  "name": "Revue",
-  "url": "https://www.getrevue.co",
-  "domain": "getrevue.co",
-  "da": 60,
-  "dofollow": true,
-  "method": "profile_website_field",
-  "method_label": "Profile website field",
-  "tier": "B",
-  "referring_domains": 10106,
-  "organic_traffic": 0,
-  "spam_score": 9,
-  "requirements": [
-   "an account on this site (name, email, username, password)"
-  ],
-  "placement_step": "Add website URL in the following fields",
-  "steps": [
-   {
-    "n": 1,
-    "kind": "navigate",
-    "text": "Go to https://www.getrevue.co Click on \"Register now\". Create an account.",
-    "targets": [
-     "Register now"
-    ],
-    "is_placement": false
-   },
-   {
-    "n": 2,
-    "kind": "place_link",
-    "text": "Add website URL in the following fields",
-    "targets": [],
-    "is_placement": true
-   },
-   {
-    "n": 3,
-    "kind": "note",
-    "text": "Activate your account via email before sending out the newsletter",
-    "targets": [],
-    "is_placement": false
-   },
-   {
-    "n": 4,
-    "kind": "click",
-    "text": "Go to \"Issues\" and click \"Schedule issue\"",
-    "targets": [
-     "Issues",
-     "Schedule issue"
-    ],
-    "is_placement": false
-   },
-   {
-    "n": 5,
     "kind": "verify",
     "text": "Here's where the Backlink appears:",
     "targets": [],
@@ -2046,8 +1502,8 @@
  {
   "slug": "ouo-press",
   "name": "Ouo Press",
-  "url": "https://ouo.press/",
   "domain": "ouo.press",
+  "url": "https://ouo.press/",
   "da": 60,
   "dofollow": true,
   "method": "url_shortener",
@@ -2056,8 +1512,8 @@
   "referring_domains": 4724,
   "organic_traffic": 4,
   "spam_score": 11,
-  "requirements": [],
   "placement_step": "Add website into the box and click \"Shorten\".",
+  "requirements": [],
   "steps": [
    {
     "n": 1,
@@ -2087,745 +1543,10 @@
   ]
  },
  {
-  "slug": "hugo",
-  "name": "Hugo",
-  "url": "https://discourse.gohugo.io/",
-  "domain": "discourse.gohugo.io",
-  "da": 60,
-  "dofollow": false,
-  "method": "forum_post",
-  "method_label": "Forum post",
-  "tier": "C",
-  "referring_domains": 3139,
-  "organic_traffic": 8615,
-  "spam_score": 11,
-  "requirements": [
-   "an account on this site (name, email, username, password)",
-   "access to the sign-up inbox to open a verification link or code",
-   "written content that includes the link naturally"
-  ],
-  "placement_step": "Add link and click \"Create Topic\".",
-  "steps": [
-   {
-    "n": 1,
-    "kind": "navigate",
-    "text": "Go to https://discourse.gohugo.io Click \"Sign Up\".",
-    "targets": [
-     "Sign Up"
-    ],
-    "is_placement": false
-   },
-   {
-    "n": 2,
-    "kind": "fill_form",
-    "text": "Enter details and click \"Create New Account\".",
-    "targets": [
-     "Create New Account"
-    ],
-    "is_placement": false
-   },
-   {
-    "n": 3,
-    "kind": "email_verify",
-    "text": "Open the email and click the verification link.",
-    "targets": [],
-    "is_placement": false
-   },
-   {
-    "n": 4,
-    "kind": "click",
-    "text": "Click \"New Topic\".",
-    "targets": [
-     "New Topic"
-    ],
-    "is_placement": false
-   },
-   {
-    "n": 5,
-    "kind": "place_link",
-    "text": "Add link and click \"Create Topic\".",
-    "targets": [
-     "Create Topic"
-    ],
-    "is_placement": true
-   },
-   {
-    "n": 6,
-    "kind": "verify",
-    "text": "Here's where the Backlink appears:",
-    "targets": [],
-    "is_placement": false
-   }
-  ]
- },
- {
-  "slug": "jssor",
-  "name": "Jssor",
-  "url": "https://www.jssor.com/",
-  "domain": "jssor.com",
-  "da": 60,
-  "dofollow": true,
-  "method": "other",
-  "method_label": "Other",
-  "tier": "C",
-  "referring_domains": 26392,
-  "organic_traffic": 0,
-  "spam_score": 15,
-  "requirements": [
-   "an account on this site (name, email, username, password)",
-   "access to the sign-up inbox to open a verification link or code",
-   "a file to upload (image, logo or document) that carries the link where the guide says so"
-  ],
-  "placement_step": "Add your text with links and click \"OK\".",
-  "steps": [
-   {
-    "n": 1,
-    "kind": "navigate",
-    "text": "Go to https://www.jssor.com Click on \"Sign Up\".",
-    "targets": [
-     "Sign Up"
-    ],
-    "is_placement": false
-   },
-   {
-    "n": 2,
-    "kind": "fill_form",
-    "text": "Enter details and click \"Create an account\".",
-    "targets": [
-     "Create an account"
-    ],
-    "is_placement": false
-   },
-   {
-    "n": 3,
-    "kind": "email_verify",
-    "text": "Open your email and click activation link.",
-    "targets": [],
-    "is_placement": false
-   },
-   {
-    "n": 4,
-    "kind": "click",
-    "text": "Log in and click on \"Start with Image Slider\".",
-    "targets": [
-     "Start with Image Slider"
-    ],
-    "is_placement": false
-   },
-   {
-    "n": 5,
-    "kind": "click",
-    "text": "It comes with a lot of images, choose one and remove all other.",
-    "targets": [],
-    "is_placement": false
-   },
-   {
-    "n": 6,
-    "kind": "click",
-    "text": "Click on Text menu and change the text as you wish.",
-    "targets": [],
-    "is_placement": false
-   },
-   {
-    "n": 7,
-    "kind": "click",
-    "text": "Click on \"Time lined layer animation\" (The text would be different as per the image you select).",
-    "targets": [
-     "Time lined layer animation"
-    ],
-    "is_placement": false
-   },
-   {
-    "n": 8,
-    "kind": "click",
-    "text": "It shows a pop-up, click on \"HTML\".",
-    "targets": [
-     "HTML"
-    ],
-    "is_placement": false
-   },
-   {
-    "n": 9,
-    "kind": "place_link",
-    "text": "Add your text with links and click \"OK\".",
-    "targets": [
-     "OK"
-    ],
-    "is_placement": true
-   },
-   {
-    "n": 10,
-    "kind": "click",
-    "text": "Click on \"Options\".",
-    "targets": [
-     "Options"
-    ],
-    "is_placement": false
-   },
-   {
-    "n": 11,
-    "kind": "click",
-    "text": "Set Idle to 5000 (As you wish). And click \"OK\".",
-    "targets": [
-     "OK"
-    ],
-    "is_placement": false
-   },
-   {
-    "n": 12,
-    "kind": "click",
-    "text": "Click on \"File\" and click \"Save\".",
-    "targets": [
-     "File",
-     "Save"
-    ],
-    "is_placement": false
-   },
-   {
-    "n": 13,
-    "kind": "click",
-    "text": "It shows a pop-up, change URL as you wish and click \"Save\".",
-    "targets": [
-     "Save"
-    ],
-    "is_placement": false
-   },
-   {
-    "n": 14,
-    "kind": "verify",
-    "text": "Here's where the Backlink appears:",
-    "targets": [],
-    "is_placement": false
-   }
-  ]
- },
- {
-  "slug": "brownbook",
-  "name": "Brownbook",
-  "url": "https://www.brownbook.net/",
-  "domain": "brownbook.net",
-  "da": 59,
-  "dofollow": true,
-  "method": "profile_website_field",
-  "method_label": "Profile website field",
-  "tier": "A",
-  "referring_domains": 50108,
-  "organic_traffic": 3741,
-  "spam_score": 19,
-  "requirements": [
-   "access to the sign-up inbox to open a verification link or code"
-  ],
-  "placement_step": "Enter info including web URL and click \"Next\".",
-  "steps": [
-   {
-    "n": 1,
-    "kind": "navigate",
-    "text": "Go to https://www.brownbook.net/ Click \"+\".",
-    "targets": [
-     "+"
-    ],
-    "is_placement": false
-   },
-   {
-    "n": 2,
-    "kind": "place_link",
-    "text": "Enter info including web URL and click \"Next\".",
-    "targets": [
-     "Next"
-    ],
-    "is_placement": true
-   },
-   {
-    "n": 3,
-    "kind": "click",
-    "text": "Complete the 2nd step and click \"Next\".",
-    "targets": [
-     "Next"
-    ],
-    "is_placement": false
-   },
-   {
-    "n": 4,
-    "kind": "email_verify",
-    "text": "Open the email and click the \"active the account\".",
-    "targets": [
-     "active the account"
-    ],
-    "is_placement": false
-   },
-   {
-    "n": 5,
-    "kind": "note",
-    "text": "You will see your listing, you can stop here but go to claim.",
-    "targets": [],
-    "is_placement": false
-   },
-   {
-    "n": 6,
-    "kind": "click",
-    "text": "Click \"Claim listing\".",
-    "targets": [
-     "Claim listing"
-    ],
-    "is_placement": false
-   },
-   {
-    "n": 7,
-    "kind": "click",
-    "text": "Click \"Claim now\".",
-    "targets": [
-     "Claim now"
-    ],
-    "is_placement": false
-   },
-   {
-    "n": 8,
-    "kind": "click",
-    "text": "Click \"Confirm\".",
-    "targets": [
-     "Confirm"
-    ],
-    "is_placement": false
-   },
-   {
-    "n": 9,
-    "kind": "verify",
-    "text": "Here's where the Backlink appears:",
-    "targets": [],
-    "is_placement": false
-   }
-  ]
- },
- {
-  "slug": "codesandbox",
-  "name": "CodeSandbox",
-  "url": "https://codesandbox.io/s/",
-  "domain": "codesandbox.io",
-  "da": 59,
-  "dofollow": true,
-  "method": "profile_website_field",
-  "method_label": "Profile website field",
-  "tier": "D",
-  "referring_domains": 17524,
-  "organic_traffic": 71012,
-  "spam_score": 21,
-  "requirements": [
-   "an account on this site (name, email, username, password)",
-   "a google account for social login"
-  ],
-  "placement_step": "Add the web URL and click \"Save Changes\".",
-  "steps": [
-   {
-    "n": 1,
-    "kind": "navigate",
-    "text": "Go to https://codesandbox.io/s/ Click \"Sign in with Google\".",
-    "targets": [
-     "Sign in with Google"
-    ],
-    "is_placement": false
-   },
-   {
-    "n": 2,
-    "kind": "click",
-    "text": "Sign in with Google account and set a username and display name. Click \"Finish Sign Up\".",
-    "targets": [
-     "Finish Sign Up"
-    ],
-    "is_placement": false
-   },
-   {
-    "n": 3,
-    "kind": "click",
-    "text": "Click \"Edit Profile\".",
-    "targets": [
-     "Edit Profile"
-    ],
-    "is_placement": false
-   },
-   {
-    "n": 4,
-    "kind": "click",
-    "text": "Click \"Add Website\".",
-    "targets": [
-     "Add Website"
-    ],
-    "is_placement": false
-   },
-   {
-    "n": 5,
-    "kind": "place_link",
-    "text": "Add the web URL and click \"Save Changes\".",
-    "targets": [
-     "Save Changes"
-    ],
-    "is_placement": true
-   },
-   {
-    "n": 6,
-    "kind": "verify",
-    "text": "Here's where the Backlink appears:",
-    "targets": [],
-    "is_placement": false
-   }
-  ]
- },
- {
-  "slug": "folkd",
-  "name": "Folkd",
-  "url": "http://www.folkd.com",
-  "domain": "folkd.com",
-  "da": 59,
-  "dofollow": true,
-  "method": "profile_website_field",
-  "method_label": "Profile website field",
-  "tier": "B",
-  "referring_domains": 43937,
-  "organic_traffic": 247,
-  "spam_score": 25,
-  "requirements": [
-   "an account on this site (name, email, username, password)"
-  ],
-  "placement_step": "Add website URL",
-  "steps": [
-   {
-    "n": 1,
-    "kind": "navigate",
-    "text": "Go to http://www.folkd.com Click on \"Register for free\". Create an account.",
-    "targets": [
-     "Register for free"
-    ],
-    "is_placement": false
-   },
-   {
-    "n": 2,
-    "kind": "note",
-    "text": "Activate your account via email",
-    "targets": [],
-    "is_placement": false
-   },
-   {
-    "n": 3,
-    "kind": "click",
-    "text": "Click \"Add a link\"",
-    "targets": [
-     "Add a link"
-    ],
-    "is_placement": false
-   },
-   {
-    "n": 4,
-    "kind": "place_link",
-    "text": "Add website URL",
-    "targets": [],
-    "is_placement": true
-   },
-   {
-    "n": 5,
-    "kind": "verify",
-    "text": "Here's where the Backlink appears:",
-    "targets": [],
-    "is_placement": false
-   }
-  ]
- },
- {
-  "slug": "whmcs",
-  "name": "WHMCS",
-  "url": "https://marketplace.whmcs.com/",
-  "domain": "marketplace.whmcs.com",
-  "da": 59,
-  "dofollow": true,
-  "method": "bookmark_submit",
-  "method_label": "Bookmark / link submit",
-  "tier": "C",
-  "referring_domains": 3925,
-  "organic_traffic": 3259,
-  "spam_score": 21,
-  "requirements": [
-   "an account on this site (name, email, username, password)",
-   "access to the sign-up inbox to open a verification link or code"
-  ],
-  "placement_step": "Enter info with links in \"Description\", add links in \"Website URL\", and \"Support URL\", and click \"Create a New Group\".",
-  "steps": [
-   {
-    "n": 1,
-    "kind": "navigate",
-    "text": "Go to https://marketplace.whmcs.com/ Click on \"Log in\".",
-    "targets": [
-     "Log in"
-    ],
-    "is_placement": false
-   },
-   {
-    "n": 2,
-    "kind": "click",
-    "text": "Click \"Create your free account\".",
-    "targets": [
-     "Create your free account"
-    ],
-    "is_placement": false
-   },
-   {
-    "n": 3,
-    "kind": "fill_form",
-    "text": "Enter details and click \"Register\".",
-    "targets": [
-     "Register"
-    ],
-    "is_placement": false
-   },
-   {
-    "n": 4,
-    "kind": "email_verify",
-    "text": "Go to your email and click the activation link.",
-    "targets": [],
-    "is_placement": false
-   },
-   {
-    "n": 5,
-    "kind": "click",
-    "text": "Click on \"Your Profile\".",
-    "targets": [
-     "Your Profile"
-    ],
-    "is_placement": false
-   },
-   {
-    "n": 6,
-    "kind": "click",
-    "text": "Click \"Group Membership\".",
-    "targets": [
-     "Group Membership"
-    ],
-    "is_placement": false
-   },
-   {
-    "n": 7,
-    "kind": "place_link",
-    "text": "Enter info with links in \"Description\", add links in \"Website URL\", and \"Support URL\", and click \"Create a New Group\".",
-    "targets": [
-     "Description",
-     "Website URL",
-     "Support URL",
-     "Create a New Group"
-    ],
-    "is_placement": true
-   },
-   {
-    "n": 8,
-    "kind": "verify",
-    "text": "Here's where the Backlink appears:",
-    "targets": [],
-    "is_placement": false
-   }
-  ]
- },
- {
-  "slug": "teletype",
-  "name": "Teletype",
-  "url": "https://teletype.in",
-  "domain": "teletype.in",
-  "da": 59,
-  "dofollow": true,
-  "method": "page_builder",
-  "method_label": "Page builder site",
-  "tier": "A",
-  "referring_domains": 71176,
-  "organic_traffic": 4748,
-  "spam_score": 28,
-  "requirements": [
-   "written content that includes the link naturally"
-  ],
-  "placement_step": "Add web URL and click \"Save\".",
-  "steps": [
-   {
-    "n": 1,
-    "kind": "navigate",
-    "text": "Go to https://teletype.in/login/registration?redir=%2F Enter details and click \"Create a blog\".",
-    "targets": [
-     "Create a blog"
-    ],
-    "is_placement": false
-   },
-   {
-    "n": 2,
-    "kind": "click",
-    "text": "Click \"Settings\" of the menu.",
-    "targets": [
-     "Settings"
-    ],
-    "is_placement": false
-   },
-   {
-    "n": 3,
-    "kind": "click",
-    "text": "Click \"General\".",
-    "targets": [
-     "General"
-    ],
-    "is_placement": false
-   },
-   {
-    "n": 4,
-    "kind": "place_link",
-    "text": "Add web URL and click \"Save\".",
-    "targets": [
-     "Save"
-    ],
-    "is_placement": true
-   },
-   {
-    "n": 5,
-    "kind": "verify",
-    "text": "Here's where the Backlink appears:",
-    "targets": [],
-    "is_placement": false
-   }
-  ]
- },
- {
-  "slug": "allmyfaves",
-  "name": "AllMyFaves",
-  "url": "https://www.allmyfaves.com",
-  "domain": "allmyfaves.com",
-  "da": 58,
-  "dofollow": true,
-  "method": "bookmark_submit",
-  "method_label": "Bookmark / link submit",
-  "tier": "B",
-  "referring_domains": 50030,
-  "organic_traffic": 10736,
-  "spam_score": 30,
-  "requirements": [
-   "an account on this site (name, email, username, password)"
-  ],
-  "placement_step": "Add web URL and title. Click \"Submit\".",
-  "steps": [
-   {
-    "n": 1,
-    "kind": "navigate",
-    "text": "Go to https://www.allmyfaves.com Click on \"Join\".",
-    "targets": [
-     "Join"
-    ],
-    "is_placement": false
-   },
-   {
-    "n": 2,
-    "kind": "click",
-    "text": "Click \"Sign up with Email\".",
-    "targets": [
-     "Sign up with Email"
-    ],
-    "is_placement": false
-   },
-   {
-    "n": 3,
-    "kind": "fill_form",
-    "text": "Enter info and click \"Register\".",
-    "targets": [
-     "Register"
-    ],
-    "is_placement": false
-   },
-   {
-    "n": 4,
-    "kind": "click",
-    "text": "Select some faves and click \"Continue\".",
-    "targets": [
-     "Continue"
-    ],
-    "is_placement": false
-   },
-   {
-    "n": 5,
-    "kind": "click",
-    "text": "Choose some categories and click \"Continue\".",
-    "targets": [
-     "Continue"
-    ],
-    "is_placement": false
-   },
-   {
-    "n": 6,
-    "kind": "click",
-    "text": "Click \"Finish\".",
-    "targets": [
-     "Finish"
-    ],
-    "is_placement": false
-   },
-   {
-    "n": 7,
-    "kind": "click",
-    "text": "Click on empty box.",
-    "targets": [],
-    "is_placement": false
-   },
-   {
-    "n": 8,
-    "kind": "place_link",
-    "text": "Add web URL and title. Click \"Submit\".",
-    "targets": [
-     "Submit"
-    ],
-    "is_placement": true
-   },
-   {
-    "n": 9,
-    "kind": "verify",
-    "text": "Here's where the Backlink appears:",
-    "targets": [],
-    "is_placement": false
-   }
-  ]
- },
- {
-  "slug": "u-to-shortener",
-  "name": "u.to Shortener",
-  "url": "https://u.to/",
-  "domain": "u.to",
-  "da": 58,
-  "dofollow": true,
-  "method": "url_shortener",
-  "method_label": "URL shortener",
-  "tier": "A",
-  "referring_domains": 36168,
-  "organic_traffic": 18,
-  "spam_score": 27,
-  "requirements": [],
-  "placement_step": "Add an URL and click \"Shorten Now\".",
-  "steps": [
-   {
-    "n": 1,
-    "kind": "navigate",
-    "text": "Go to https://u.to You should add your URL's here.",
-    "targets": [],
-    "is_placement": false
-   },
-   {
-    "n": 2,
-    "kind": "place_link",
-    "text": "Add an URL and click \"Shorten Now\".",
-    "targets": [
-     "Shorten Now"
-    ],
-    "is_placement": true
-   },
-   {
-    "n": 3,
-    "kind": "verify",
-    "text": "Here's where the Backlink appears:",
-    "targets": [],
-    "is_placement": false
-   }
-  ]
- },
- {
   "slug": "blogfree",
   "name": "BlogFree",
-  "url": "https://www.blogfree.net/",
   "domain": "blogfree.net",
+  "url": "https://www.blogfree.net/",
   "da": 58,
   "dofollow": true,
   "method": "forum_signature",
@@ -2834,10 +1555,10 @@
   "referring_domains": 5019,
   "organic_traffic": 1296,
   "spam_score": 15,
+  "placement_step": "Add info with links and click \"Update my signature\".",
   "requirements": [
    "an account on this site (name, email, username, password)"
   ],
-  "placement_step": "Add info with links and click \"Update my signature\".",
   "steps": [
    {
     "n": 1,
@@ -2910,95 +1631,53 @@
   ]
  },
  {
-  "slug": "onrpg",
-  "name": "OnRPG",
-  "url": "http://www.onrpg.com",
-  "domain": "onrpg.com",
-  "da": 58,
+  "slug": "pub-html5",
+  "name": "Pub HTML5",
+  "domain": "pubhtml5.com",
+  "url": "http://pubhtml5.com/",
+  "da": 56,
   "dofollow": true,
-  "method": "profile_website_field",
-  "method_label": "Profile website field",
+  "method": "document_share",
+  "method_label": "Shared document",
   "tier": "B",
-  "referring_domains": 6380,
-  "organic_traffic": 3,
-  "spam_score": 9,
+  "referring_domains": 99088,
+  "organic_traffic": 135235,
+  "spam_score": 32,
+  "placement_step": "Go to http://pubhtml5.com Click on \"Create Your Publication\".",
   "requirements": [
-   "an account on this site (name, email, username, password)"
+   "an account on this site (name, email, username, password)",
+   "a file to upload (image, logo or document) that carries the link where the guide says so"
   ],
-  "placement_step": "Add website URL",
   "steps": [
    {
     "n": 1,
-    "kind": "navigate",
-    "text": "Go to http://www.onrpg.com Click on \"Register\". Create an account.",
-    "targets": [
-     "Register"
-    ],
-    "is_placement": false
-   },
-   {
-    "n": 2,
-    "kind": "note",
-    "text": "Go to \"Profile\"",
-    "targets": [
-     "Profile"
-    ],
-    "is_placement": false
-   },
-   {
-    "n": 3,
     "kind": "place_link",
-    "text": "Add website URL",
-    "targets": [],
+    "text": "Go to http://pubhtml5.com Click on \"Create Your Publication\".",
+    "targets": [
+     "Create Your Publication"
+    ],
     "is_placement": true
    },
    {
-    "n": 4,
-    "kind": "verify",
-    "text": "Here's where the Backlink appears:",
-    "targets": [],
-    "is_placement": false
-   }
-  ]
- },
- {
-  "slug": "rawpixel",
-  "name": "RawPixel",
-  "url": "https://www.rawpixel.com/",
-  "domain": "rawpixel.com",
-  "da": 58,
-  "dofollow": true,
-  "method": "profile_website_field",
-  "method_label": "Profile website field",
-  "tier": "B",
-  "referring_domains": 28316,
-  "organic_traffic": 1831521,
-  "spam_score": 21,
-  "requirements": [
-   "an account on this site (name, email, username, password)"
-  ],
-  "placement_step": "Enter details, add web URL in the \"Website\" field. Click \"Update My Profile\".",
-  "steps": [
-   {
-    "n": 1,
-    "kind": "navigate",
-    "text": "Go to https://www.rawpixel.com Click on \"Join Free\".",
-    "targets": [
-     "Join Free"
-    ],
-    "is_placement": false
-   },
-   {
     "n": 2,
-    "kind": "click",
-    "text": "Click \"Get Started\" at FREE section.",
+    "kind": "upload",
+    "text": "Click \"Upload online\".",
     "targets": [
-     "Get Started"
+     "Upload online"
     ],
     "is_placement": false
    },
    {
     "n": 3,
+    "kind": "click",
+    "text": "Click \"Sign up for a free account\".",
+    "targets": [
+     "Sign up for a free account"
+    ],
+    "is_placement": false
+   },
+   {
+    "n": 4,
     "kind": "fill_form",
     "text": "Enter details and click \"Sign Up\".",
     "targets": [
@@ -3007,53 +1686,48 @@
     "is_placement": false
    },
    {
-    "n": 4,
-    "kind": "click",
-    "text": "Click \"Maybe Later\". (Optional)",
-    "targets": [
-     "Maybe Later"
-    ],
-    "is_placement": false
-   },
-   {
     "n": 5,
-    "kind": "click",
-    "text": "Click \"Next\". (Optional)",
-    "targets": [
-     "Next"
-    ],
+    "kind": "note",
+    "text": "Open email and copy the code.",
+    "targets": [],
     "is_placement": false
    },
    {
     "n": 6,
     "kind": "click",
-    "text": "Click \"Get Started\". (You can follow Pinterest if you want).",
+    "text": "Add the code and click \"Verify Account\".",
     "targets": [
-     "Get Started"
+     "Verify Account"
     ],
     "is_placement": false
    },
    {
     "n": 7,
     "kind": "click",
-    "text": "Click on the profile icon and choose \"Account\".",
-    "targets": [
-     "Account"
-    ],
+    "text": "Click on a folder.",
+    "targets": [],
     "is_placement": false
    },
    {
     "n": 8,
-    "kind": "place_link",
-    "text": "Enter details, add web URL in the \"Website\" field. Click \"Update My Profile\".",
+    "kind": "click",
+    "text": "Click \"Add New Book\".",
     "targets": [
-     "Website",
-     "Update My Profile"
+     "Add New Book"
     ],
-    "is_placement": true
+    "is_placement": false
    },
    {
     "n": 9,
+    "kind": "upload",
+    "text": "Upload a PDF and fill other details. Click \"Create\".",
+    "targets": [
+     "Create"
+    ],
+    "is_placement": false
+   },
+   {
+    "n": 10,
     "kind": "verify",
     "text": "Here's where the Backlink appears:",
     "targets": [],
@@ -3062,883 +1736,53 @@
   ]
  },
  {
-  "slug": "turnkeylinux",
-  "name": "Turnkey Linux",
-  "url": "https://www.turnkeylinux.org/",
-  "domain": "turnkeylinux.org",
-  "da": 58,
+  "slug": "axmag",
+  "name": "AxMag",
+  "domain": "data.axmag.com",
+  "url": "https://data.axmag.com/",
+  "da": 54,
   "dofollow": true,
-  "method": "profile_website_field",
-  "method_label": "Profile website field",
-  "tier": "C",
-  "referring_domains": 14662,
-  "organic_traffic": 6963,
+  "method": "document_share",
+  "method_label": "Shared document",
+  "tier": "B",
+  "referring_domains": 1668,
+  "organic_traffic": 0,
   "spam_score": 14,
+  "placement_step": "Select a document with links and click \"Upload Now\".",
   "requirements": [
    "an account on this site (name, email, username, password)",
-   "access to the sign-up inbox to open a verification link or code"
+   "a file to upload (image, logo or document) that carries the link where the guide says so"
   ],
-  "placement_step": "Add website url and click \"Save\".",
   "steps": [
    {
     "n": 1,
     "kind": "navigate",
-    "text": "Go to https://www.turnkeylinux.org Click on \"Register\".",
-    "targets": [
-     "Register"
-    ],
-    "is_placement": false
-   },
-   {
-    "n": 2,
-    "kind": "fill_form",
-    "text": "Enter details and click on \"Create New Account\".",
+    "text": "Go to https://data.axmag.com/account/register.html Enter details and click \"Create New Account\".",
     "targets": [
      "Create New Account"
     ],
     "is_placement": false
    },
    {
-    "n": 3,
-    "kind": "note",
-    "text": "Go to your email.",
-    "targets": [],
-    "is_placement": false
-   },
-   {
-    "n": 4,
-    "kind": "email_verify",
-    "text": "Click on activation link.",
-    "targets": [],
-    "is_placement": false
-   },
-   {
-    "n": 5,
-    "kind": "note",
-    "text": "You should change password to keep the profile active.",
-    "targets": [],
-    "is_placement": false
-   },
-   {
-    "n": 6,
-    "kind": "click",
-    "text": "Click on \"Personal details\".",
-    "targets": [
-     "Personal details"
-    ],
-    "is_placement": false
-   },
-   {
-    "n": 7,
-    "kind": "place_link",
-    "text": "Add website url and click \"Save\".",
-    "targets": [
-     "Save"
-    ],
-    "is_placement": true
-   },
-   {
-    "n": 8,
-    "kind": "verify",
-    "text": "Here's where the Backlink appears:",
-    "targets": [],
-    "is_placement": false
-   }
-  ]
- },
- {
-  "slug": "hotfrog",
-  "name": "HotFrog",
-  "url": "https://www.hotfrog.com/",
-  "domain": "hotfrog.com",
-  "da": 57,
-  "dofollow": true,
-  "method": "bookmark_submit",
-  "method_label": "Bookmark / link submit",
-  "tier": "C",
-  "referring_domains": 23144,
-  "organic_traffic": 28827,
-  "spam_score": 4,
-  "requirements": [
-   "an account on this site (name, email, username, password)",
-   "access to the sign-up inbox to open a verification link or code"
-  ],
-  "placement_step": "You get more options to add. Add web URL and click \"Submit Profile\".",
-  "steps": [
-   {
-    "n": 1,
-    "kind": "navigate",
-    "text": "Go to https://admin.hotfrog.com/login/register Enter details and click \"Get Started\".",
-    "targets": [
-     "Get Started"
-    ],
-    "is_placement": false
-   },
-   {
     "n": 2,
-    "kind": "email_verify",
-    "text": "Verify email.",
-    "targets": [],
-    "is_placement": false
-   },
-   {
-    "n": 3,
-    "kind": "note",
-    "text": "Set a password.",
-    "targets": [],
-    "is_placement": false
-   },
-   {
-    "n": 4,
-    "kind": "click",
-    "text": "Click \"Add a business\".",
+    "kind": "upload",
+    "text": "Click \"Upload\".",
     "targets": [
-     "Add a business"
-    ],
-    "is_placement": false
-   },
-   {
-    "n": 5,
-    "kind": "click",
-    "text": "Enter address and click \"Find Address\".",
-    "targets": [
-     "Find Address"
-    ],
-    "is_placement": false
-   },
-   {
-    "n": 6,
-    "kind": "place_link",
-    "text": "You get more options to add. Add web URL and click \"Submit Profile\".",
-    "targets": [
-     "Submit Profile"
-    ],
-    "is_placement": true
-   },
-   {
-    "n": 7,
-    "kind": "email_verify",
-    "text": "Open the email and copy the URL to claim.",
-    "targets": [],
-    "is_placement": false
-   },
-   {
-    "n": 8,
-    "kind": "click",
-    "text": "Go for the claim by clicking the bottom link.",
-    "targets": [],
-    "is_placement": false
-   },
-   {
-    "n": 9,
-    "kind": "click",
-    "text": "Click \"Verify Now\".",
-    "targets": [
-     "Verify Now"
-    ],
-    "is_placement": false
-   },
-   {
-    "n": 10,
-    "kind": "verify",
-    "text": "Here's where the Backlink appears:",
-    "targets": [],
-    "is_placement": false
-   }
-  ]
- },
- {
-  "slug": "smallseotools-shortener",
-  "name": "Smallseotools Shortener",
-  "url": "https://smallseotools.com/url-shortener/",
-  "domain": "smallseotools.com",
-  "da": 57,
-  "dofollow": true,
-  "method": "url_shortener",
-  "method_label": "URL shortener",
-  "tier": "A",
-  "referring_domains": 16522,
-  "organic_traffic": 763676,
-  "spam_score": 16,
-  "requirements": [],
-  "placement_step": "Add web URL and click \"Shorten URL\".",
-  "steps": [
-   {
-    "n": 1,
-    "kind": "navigate",
-    "text": "Go to https://smallseotools.com/url-shortener/",
-    "targets": [],
-    "is_placement": false
-   },
-   {
-    "n": 2,
-    "kind": "place_link",
-    "text": "Add web URL and click \"Shorten URL\".",
-    "targets": [
-     "Shorten URL"
-    ],
-    "is_placement": true
-   },
-   {
-    "n": 3,
-    "kind": "verify",
-    "text": "Here's where the Backlink appears:",
-    "targets": [],
-    "is_placement": false
-   }
-  ]
- },
- {
-  "slug": "tiny-pl-shortener",
-  "name": "Tiny.pl Shortener",
-  "url": "https://tiny.pl/",
-  "domain": "tiny.pl",
-  "da": 56,
-  "dofollow": true,
-  "method": "url_shortener",
-  "method_label": "URL shortener",
-  "tier": "A",
-  "referring_domains": 15801,
-  "organic_traffic": 13845,
-  "spam_score": 21,
-  "requirements": [],
-  "placement_step": "Add web URL and click \"Tnij!\".",
-  "steps": [
-   {
-    "n": 1,
-    "kind": "navigate",
-    "text": "Go to https://tiny.pl",
-    "targets": [],
-    "is_placement": false
-   },
-   {
-    "n": 2,
-    "kind": "place_link",
-    "text": "Add web URL and click \"Tnij!\".",
-    "targets": [
-     "Tnij!"
-    ],
-    "is_placement": true
-   },
-   {
-    "n": 3,
-    "kind": "verify",
-    "text": "Here's where the Backlink appears:",
-    "targets": [],
-    "is_placement": false
-   }
-  ]
- },
- {
-  "slug": "start-me",
-  "name": "Start Me",
-  "url": "https://start.me/",
-  "domain": "start.me",
-  "da": 56,
-  "dofollow": true,
-  "method": "page_builder",
-  "method_label": "Page builder site",
-  "tier": "B",
-  "referring_domains": 39120,
-  "organic_traffic": 22751,
-  "spam_score": 23,
-  "requirements": [
-   "an account on this site (name, email, username, password)",
-   "written content that includes the link naturally"
-  ],
-  "placement_step": "Then it asks to add link or title.",
-  "steps": [
-   {
-    "n": 1,
-    "kind": "navigate",
-    "text": "Go to https://start.me Enter your email and click \"Register\".",
-    "targets": [
-     "Register"
-    ],
-    "is_placement": false
-   },
-   {
-    "n": 2,
-    "kind": "fill_form",
-    "text": "Fill up with the details and continue.",
-    "targets": [],
-    "is_placement": false
-   },
-   {
-    "n": 3,
-    "kind": "click",
-    "text": "Choose your first page. I chose personalized page.",
-    "targets": [],
-    "is_placement": false
-   },
-   {
-    "n": 4,
-    "kind": "click",
-    "text": "Select your interests to display the news.",
-    "targets": [],
-    "is_placement": false
-   },
-   {
-    "n": 5,
-    "kind": "click",
-    "text": "Select sites from the categories to display news from.",
-    "targets": [],
-    "is_placement": false
-   },
-   {
-    "n": 6,
-    "kind": "click",
-    "text": "Your start page appears as below. Now, click on \"+\" to add widget or link.",
-    "targets": [
-     "+"
-    ],
-    "is_placement": false
-   },
-   {
-    "n": 7,
-    "kind": "place_link",
-    "text": "Then it asks to add link or title.",
-    "targets": [],
-    "is_placement": true
-   },
-   {
-    "n": 8,
-    "kind": "note",
-    "text": "I added a link to add and for backlink.",
-    "targets": [],
-    "is_placement": false
-   },
-   {
-    "n": 9,
-    "kind": "click",
-    "text": "Choose relevant category for this.",
-    "targets": [],
-    "is_placement": false
-   },
-   {
-    "n": 10,
-    "kind": "note",
-    "text": "The the link will be added to relevant widget links on your page.",
-    "targets": [],
-    "is_placement": false
-   },
-   {
-    "n": 11,
-    "kind": "click",
-    "text": "It is important: Click on \"Share\".",
-    "targets": [
-     "Share"
-    ],
-    "is_placement": false
-   },
-   {
-    "n": 12,
-    "kind": "note",
-    "text": "Make it \"Public\".",
-    "targets": [
-     "Public"
-    ],
-    "is_placement": false
-   },
-   {
-    "n": 13,
-    "kind": "click",
-    "text": "Then also make it found in internet. And click \"Save\".",
-    "targets": [
-     "Save"
-    ],
-    "is_placement": false
-   },
-   {
-    "n": 14,
-    "kind": "verify",
-    "text": "Here's where the Backlink appears:",
-    "targets": [],
-    "is_placement": false
-   }
-  ]
- },
- {
-  "slug": "catch-themes",
-  "name": "Catch Themes",
-  "url": "https://catchthemes.com/",
-  "domain": "catchthemes.com",
-  "da": 53,
-  "dofollow": true,
-  "method": "forum_post",
-  "method_label": "Forum post",
-  "tier": "B",
-  "referring_domains": 46911,
-  "organic_traffic": 414,
-  "spam_score": 20,
-  "requirements": [
-   "an account on this site (name, email, username, password)",
-   "written content that includes the link naturally"
-  ],
-  "placement_step": "Next, go to this link: https://catchthemes.com/support-forum/users/username/edit/ * Replace \"username\" with your username and open the URL. Add biographical info with hyperlink as shown and click \"Update Profile\".",
-  "steps": [
-   {
-    "n": 1,
-    "kind": "navigate",
-    "text": "Go to https://catchthemes.com Click on \"My Account\".",
-    "targets": [
-     "My Account"
-    ],
-    "is_placement": false
-   },
-   {
-    "n": 2,
-    "kind": "fill_form",
-    "text": "Enter details and click \"Register\".",
-    "targets": [
-     "Register"
+     "Upload"
     ],
     "is_placement": false
    },
    {
     "n": 3,
     "kind": "place_link",
-    "text": "Next, go to this link: https://catchthemes.com/support-forum/users/username/edit/ * Replace \"username\" with your username and open the URL. Add biographical info with hyperlink as shown and click \"Update Profile\".",
+    "text": "Select a document with links and click \"Upload Now\".",
     "targets": [
-     "username",
-     "Update Profile"
+     "Upload Now"
     ],
     "is_placement": true
    },
    {
     "n": 4,
-    "kind": "verify",
-    "text": "Here's where the Backlink appears:",
-    "targets": [],
-    "is_placement": false
-   }
-  ]
- },
- {
-  "slug": "givology",
-  "name": "Givology",
-  "url": "https://www.givology.org/",
-  "domain": "givology.org",
-  "da": 51,
-  "dofollow": true,
-  "method": "article_post",
-  "method_label": "Article or blog post",
-  "tier": "C",
-  "referring_domains": 2077,
-  "organic_traffic": 24,
-  "spam_score": 16,
-  "requirements": [
-   "an account on this site (name, email, username, password)",
-   "access to the sign-up inbox to open a verification link or code",
-   "written content that includes the link naturally"
-  ],
-  "placement_step": "Write a title, add tags, add info with links. Click \"Compose\".",
-  "steps": [
-   {
-    "n": 1,
-    "kind": "navigate",
-    "text": "Go to https://www.givology.org Click on \"Join Today\".",
-    "targets": [
-     "Join Today"
-    ],
-    "is_placement": false
-   },
-   {
-    "n": 2,
-    "kind": "fill_form",
-    "text": "Enter details and click \"Submit\".",
-    "targets": [
-     "Submit"
-    ],
-    "is_placement": false
-   },
-   {
-    "n": 3,
-    "kind": "email_verify",
-    "text": "Open email and click activation link.",
-    "targets": [],
-    "is_placement": false
-   },
-   {
-    "n": 4,
-    "kind": "click",
-    "text": "Click on \"Dashboard\".",
-    "targets": [
-     "Dashboard"
-    ],
-    "is_placement": false
-   },
-   {
-    "n": 5,
-    "kind": "click",
-    "text": "Click on \"My blog\".",
-    "targets": [
-     "My blog"
-    ],
-    "is_placement": false
-   },
-   {
-    "n": 6,
-    "kind": "click",
-    "text": "Click \"Add a new story\".",
-    "targets": [
-     "Add a new story"
-    ],
-    "is_placement": false
-   },
-   {
-    "n": 7,
-    "kind": "place_link",
-    "text": "Write a title, add tags, add info with links. Click \"Compose\".",
-    "targets": [
-     "Compose"
-    ],
-    "is_placement": true
-   },
-   {
-    "n": 8,
-    "kind": "verify",
-    "text": "Here's where the Backlink appears:",
-    "targets": [],
-    "is_placement": false
-   }
-  ]
- },
- {
-  "slug": "abilogic",
-  "name": "AbiLogic",
-  "url": "https://articles.abilogic.com",
-  "domain": "articles.abilogic.com",
-  "da": 50,
-  "dofollow": true,
-  "method": "article_post",
-  "method_label": "Article or blog post",
-  "tier": "B",
-  "referring_domains": 6222,
-  "organic_traffic": 11708,
-  "spam_score": 28,
-  "requirements": [
-   "an account on this site (name, email, username, password)",
-   "written content that includes the link naturally"
-  ],
-  "placement_step": "Fill all the required fields. In the \"Article body\" field add website URL. Click \"Submit\" when done.",
-  "steps": [
-   {
-    "n": 1,
-    "kind": "navigate",
-    "text": "Go to https://articles.abilogic.com Click on \"Submit\"",
-    "targets": [
-     "Submit"
-    ],
-    "is_placement": false
-   },
-   {
-    "n": 2,
-    "kind": "click",
-    "text": "Click \"Join Now\". Create an account.",
-    "targets": [
-     "Join Now"
-    ],
-    "is_placement": false
-   },
-   {
-    "n": 3,
-    "kind": "click",
-    "text": "Activate the account via email by clicking \"Visit AbiLogic!\" button",
-    "targets": [
-     "Visit AbiLogic!"
-    ],
-    "is_placement": false
-   },
-   {
-    "n": 4,
-    "kind": "navigate",
-    "text": "Go to https://articles.abilogic.com Click \"Submit\"",
-    "targets": [
-     "Submit"
-    ],
-    "is_placement": false
-   },
-   {
-    "n": 5,
-    "kind": "place_link",
-    "text": "Fill all the required fields. In the \"Article body\" field add website URL. Click \"Submit\" when done.",
-    "targets": [
-     "Article body",
-     "Submit"
-    ],
-    "is_placement": true
-   },
-   {
-    "n": 6,
-    "kind": "verify",
-    "text": "Here's where the Backlink appears:",
-    "targets": [],
-    "is_placement": false
-   }
-  ]
- },
- {
-  "slug": "storeboard",
-  "name": "Storeboard",
-  "url": "https://www.storeboard.com",
-  "domain": "storeboard.com",
-  "da": 50,
-  "dofollow": true,
-  "method": "article_post",
-  "method_label": "Article or blog post",
-  "tier": "B",
-  "referring_domains": 48200,
-  "organic_traffic": 1583,
-  "spam_score": 15,
-  "requirements": [
-   "an account on this site (name, email, username, password)",
-   "a file to upload (image, logo or document) that carries the link where the guide says so",
-   "written content that includes the link naturally"
-  ],
-  "placement_step": "Enter the required information. In the \"Blog content\" field add website URL. Click \"Publish\"",
-  "steps": [
-   {
-    "n": 1,
-    "kind": "navigate",
-    "text": "Go to https://www.storeboard.com Click on \"Sign Up\". Enter all credentials and create an account.",
-    "targets": [
-     "Sign Up"
-    ],
-    "is_placement": false
-   },
-   {
-    "n": 2,
-    "kind": "click",
-    "text": "When you get to this screen click on \"Continue as a Guest\"",
-    "targets": [
-     "Continue as a Guest"
-    ],
-    "is_placement": false
-   },
-   {
-    "n": 3,
-    "kind": "click",
-    "text": "Click \"Yes\"",
-    "targets": [
-     "Yes"
-    ],
-    "is_placement": false
-   },
-   {
-    "n": 4,
-    "kind": "click",
-    "text": "Click on \"Add a Web Page Now!\" and add website URL",
-    "targets": [
-     "Add a Web Page Now!"
-    ],
-    "is_placement": false
-   },
-   {
-    "n": 5,
-    "kind": "click",
-    "text": "Now go back to the main page by clicking on the Storeboard logo",
-    "targets": [],
-    "is_placement": false
-   },
-   {
-    "n": 6,
-    "kind": "click",
-    "text": "Click on \"Share a blog\" icon",
-    "targets": [
-     "Share a blog"
-    ],
-    "is_placement": false
-   },
-   {
-    "n": 7,
-    "kind": "place_link",
-    "text": "Enter the required information. In the \"Blog content\" field add website URL. Click \"Publish\"",
-    "targets": [
-     "Blog content",
-     "Publish"
-    ],
-    "is_placement": true
-   },
-   {
-    "n": 8,
-    "kind": "note",
-    "text": "Here's where the Backlinks appear:",
-    "targets": [],
-    "is_placement": false
-   },
-   {
-    "n": 9,
-    "kind": "note",
-    "text": "Follow the screenshot below",
-    "targets": [],
-    "is_placement": false
-   }
-  ]
- },
- {
-  "slug": "blade-journal",
-  "name": "Blade Journal",
-  "url": "https://bladejournal.com/",
-  "domain": "bladejournal.com",
-  "da": 48,
-  "dofollow": true,
-  "method": "article_post",
-  "method_label": "Article or blog post",
-  "tier": "B",
-  "referring_domains": 4175,
-  "organic_traffic": 0,
-  "spam_score": 17,
-  "requirements": [
-   "an account on this site (name, email, username, password)",
-   "written content that includes the link naturally"
-  ],
-  "placement_step": "Add a post with links and change Entry Status to \"Published\". And click \"Save\".",
-  "steps": [
-   {
-    "n": 1,
-    "kind": "navigate",
-    "text": "Go to https://bladejournal.com Click \"Register\".",
-    "targets": [
-     "Register"
-    ],
-    "is_placement": false
-   },
-   {
-    "n": 2,
-    "kind": "fill_form",
-    "text": "Enter details and click \"Register\".",
-    "targets": [
-     "Register"
-    ],
-    "is_placement": false
-   },
-   {
-    "n": 3,
-    "kind": "click",
-    "text": "Log in and click \"New Entry\".",
-    "targets": [
-     "New Entry"
-    ],
-    "is_placement": false
-   },
-   {
-    "n": 4,
-    "kind": "place_link",
-    "text": "Add a post with links and change Entry Status to \"Published\". And click \"Save\".",
-    "targets": [
-     "Published",
-     "Save"
-    ],
-    "is_placement": true
-   },
-   {
-    "n": 5,
-    "kind": "verify",
-    "text": "Here's where the Backlink appears:",
-    "targets": [],
-    "is_placement": false
-   }
-  ]
- },
- {
-  "slug": "zyro",
-  "name": "Zyro",
-  "url": "https://zyro.com/",
-  "domain": "zyro.com",
-  "da": 46,
-  "dofollow": true,
-  "method": "page_builder",
-  "method_label": "Page builder site",
-  "tier": "B",
-  "referring_domains": 6557,
-  "organic_traffic": 0,
-  "spam_score": 16,
-  "requirements": [
-   "an account on this site (name, email, username, password)",
-   "written content that includes the link naturally"
-  ],
-  "placement_step": "Add text with links.",
-  "steps": [
-   {
-    "n": 1,
-    "kind": "navigate",
-    "text": "Go to https://zyro.com Click on \"Create a New Website\".",
-    "targets": [
-     "Create a New Website"
-    ],
-    "is_placement": false
-   },
-   {
-    "n": 2,
-    "kind": "click",
-    "text": "Choose a template.",
-    "targets": [],
-    "is_placement": false
-   },
-   {
-    "n": 3,
-    "kind": "click",
-    "text": "Click on a text and click \"Edit Text\".",
-    "targets": [
-     "Edit Text"
-    ],
-    "is_placement": false
-   },
-   {
-    "n": 4,
-    "kind": "place_link",
-    "text": "Add text with links.",
-    "targets": [],
-    "is_placement": true
-   },
-   {
-    "n": 5,
-    "kind": "click",
-    "text": "Click on \"Publish website\".",
-    "targets": [
-     "Publish website"
-    ],
-    "is_placement": false
-   },
-   {
-    "n": 6,
-    "kind": "fill_form",
-    "text": "It asks to create your account. Enter email. Click \"Continue\".",
-    "targets": [
-     "Continue"
-    ],
-    "is_placement": false
-   },
-   {
-    "n": 7,
-    "kind": "fill_form",
-    "text": "Add details and click \"Create account\".",
-    "targets": [
-     "Create account"
-    ],
-    "is_placement": false
-   },
-   {
-    "n": 8,
-    "kind": "click",
-    "text": "Again click on the \"Publish website\".",
-    "targets": [
-     "Publish website"
-    ],
-    "is_placement": false
-   },
-   {
-    "n": 9,
-    "kind": "click",
-    "text": "Give name for the website URL. Click \"Continue\".",
-    "targets": [
-     "Continue"
-    ],
-    "is_placement": false
-   },
-   {
-    "n": 10,
     "kind": "verify",
     "text": "Here's where the Backlink appears:",
     "targets": [],
@@ -3949,8 +1793,8 @@
  {
   "slug": "yooco",
   "name": "Yooco",
-  "url": "https://www.yooco.org",
   "domain": "yooco.org",
+  "url": "https://www.yooco.org",
   "da": 43,
   "dofollow": true,
   "method": "comment",
@@ -3959,12 +1803,12 @@
   "referring_domains": 8568,
   "organic_traffic": 4601,
   "spam_score": 22,
+  "placement_step": "Now write a comment with a website URL. Click \"Post\"",
   "requirements": [
    "an account on this site (name, email, username, password)",
    "a file to upload (image, logo or document) that carries the link where the guide says so",
    "written content that includes the link naturally"
   ],
-  "placement_step": "Now write a comment with a website URL. Click \"Post\"",
   "steps": [
    {
     "n": 1,
@@ -4028,69 +1872,123 @@
   ]
  },
  {
-  "slug": "cgm-internet-marketing",
-  "name": "Cgm internet marketing",
-  "url": "https://www.cgmimm.com/",
-  "domain": "cgmimm.com",
-  "da": 37,
+  "slug": "n9-cl-shortener",
+  "name": "N9.cl Shortener",
+  "domain": "n9.cl",
+  "url": "https://www.n9.cl/en",
+  "da": 40,
   "dofollow": true,
-  "method": "directory_listing",
-  "method_label": "Directory listing",
-  "tier": "C",
-  "referring_domains": 4120,
-  "organic_traffic": 1146,
-  "spam_score": 13,
-  "requirements": [
-   "an account on this site (name, email, username, password)",
-   "access to the sign-up inbox to open a verification link or code"
-  ],
-  "placement_step": "Fill up the info about website/company.",
+  "method": "url_shortener",
+  "method_label": "URL shortener",
+  "tier": "A",
+  "referring_domains": 17321,
+  "organic_traffic": 1001,
+  "spam_score": 18,
+  "placement_step": "Add web URL and click \"Shorten\".",
+  "requirements": [],
   "steps": [
    {
     "n": 1,
     "kind": "navigate",
-    "text": "Go to https://www.cgmimm.com/join Click \"Create Listing\".",
-    "targets": [
-     "Create Listing"
-    ],
+    "text": "Go to https://www.n9.cl/en",
+    "targets": [],
     "is_placement": false
    },
    {
     "n": 2,
-    "kind": "fill_form",
-    "text": "ENter info and click \"Create my profile\".",
-    "targets": [
-     "Create my profile"
-    ],
-    "is_placement": false
-   },
-   {
-    "n": 3,
-    "kind": "email_verify",
-    "text": "Verify email.",
-    "targets": [],
-    "is_placement": false
-   },
-   {
-    "n": 4,
     "kind": "place_link",
-    "text": "Fill up the info about website/company.",
-    "targets": [],
+    "text": "Add web URL and click \"Shorten\".",
+    "targets": [
+     "Shorten"
+    ],
     "is_placement": true
    },
    {
-    "n": 5,
-    "kind": "click",
-    "text": "Click \"Save & Continue\".",
-    "targets": [
-     "Save & Continue"
-    ],
+    "n": 3,
+    "kind": "verify",
+    "text": "Here's where the Backlink appears:",
+    "targets": [],
+    "is_placement": false
+   }
+  ]
+ },
+ {
+  "slug": "goolnk-com-shortener",
+  "name": "Goolnk.com Shortener",
+  "domain": "goolnk.com",
+  "url": "https://goolnk.com/",
+  "da": 23,
+  "dofollow": true,
+  "method": "url_shortener",
+  "method_label": "URL shortener",
+  "tier": "A",
+  "referring_domains": 1922,
+  "organic_traffic": 15,
+  "spam_score": 6,
+  "placement_step": "Add web URL and click \"Shorten\".",
+  "requirements": [],
+  "steps": [
+   {
+    "n": 1,
+    "kind": "navigate",
+    "text": "Go to https://goolnk.com/",
+    "targets": [],
     "is_placement": false
    },
    {
-    "n": 6,
+    "n": 2,
+    "kind": "place_link",
+    "text": "Add web URL and click \"Shorten\".",
+    "targets": [
+     "Shorten"
+    ],
+    "is_placement": true
+   },
+   {
+    "n": 3,
     "kind": "verify",
-    "text": "After verified, you get listing. Here's where the Backlink appears:",
+    "text": "Here's where the Backlink appears:",
+    "targets": [],
+    "is_placement": false
+   }
+  ]
+ },
+ {
+  "slug": "yellkey-shortener",
+  "name": "YellKey Shortener",
+  "domain": "yellkey.com",
+  "url": "https://www.yellkey.com/",
+  "da": 20,
+  "dofollow": true,
+  "method": "url_shortener",
+  "method_label": "URL shortener",
+  "tier": "A",
+  "referring_domains": 389,
+  "organic_traffic": 192,
+  "spam_score": 29,
+  "placement_step": "Enter your web URL and click \"generate yellkey\".",
+  "requirements": [],
+  "steps": [
+   {
+    "n": 1,
+    "kind": "navigate",
+    "text": "Go to https://www.yellkey.com",
+    "targets": [],
+    "is_placement": false
+   },
+   {
+    "n": 2,
+    "kind": "place_link",
+    "text": "Enter your web URL and click \"generate yellkey\".",
+    "targets": [
+     "generate yellkey"
+    ],
+    "is_placement": true
+   },
+   {
+    "n": 3,
+    "kind": "verify",
+    "text": "Here's where the Backlink appears:",
     "targets": [],
     "is_placement": false
    }

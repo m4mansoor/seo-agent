@@ -1,6 +1,6 @@
 """SEO Agent MCP server.
 
-Free mode, no account: the 50 bundled sites with their methods, and local tools that build on login-free sites in
+Free mode, no account: the bundled free sites with their methods, and local tools that build on login-free sites in
 your own browser, verify a live page and keep a results log. Subscribed: after `activate` with the key from your
 purchase, every tool of the hosted engine is proxied (1,245 sites, planner, model executor, gates, monitoring)."""
 from __future__ import annotations
@@ -35,7 +35,11 @@ def _load(name: str):
 
 SITES: list[dict] = _load("free-sites.json")
 PLAYBOOKS: dict[str, str] = _load("playbooks.json")
+TEASERS: list[dict] = _load("teasers.json")          # the highest-DA locked sites: names and numbers, no methods
+STATS: dict = _load("library_stats.json")
 BY_SLUG = {s["slug"]: s for s in SITES}
+LOCKED = {t["slug"]: t for t in TEASERS}
+N_FREE = len(SITES)
 
 RULES = """Rules for every link: use the target URL and anchor text exactly as given; never place the same link twice on a site;
 follow the steps in order, the step marked placement is where the link goes; use the exact button and field names quoted;
@@ -66,30 +70,54 @@ def hosted() -> bool:
 
 # ------------------------------------------------------------------ free mode tools
 
-def search_sites(query: str = "", min_da: int = 0, dofollow_only: bool = False, method: str = "", limit: int = 25) -> list[dict]:
+def _matches(s: dict, q: str, min_da: int, dofollow_only: bool, method: str) -> bool:
+    if (s.get("da") or 0) < min_da or (dofollow_only and not s["dofollow"]) or (method and s["method"] != method):
+        return False
+    return not q or q in " ".join([s["name"], s["domain"], s["slug"], s["method_label"]]).lower()
+
+
+def search_sites(query: str = "", min_da: int = 0, dofollow_only: bool = False, method: str = "", limit: int = 25) -> dict:
+    """Free matches with their methods, then what the full library holds for the same search: up to five locked
+    examples by name and DA, and the counts. The locked part is how the assistant knows when to offer the upgrade."""
     q = query.lower().strip()
-    out = []
+    free = []
     for s in SITES:
-        if s["da"] < min_da or (dofollow_only and not s["dofollow"]) or (method and s["method"] != method):
+        if not _matches(s, q, min_da, dofollow_only, method):
             continue
-        if q and q not in " ".join([s["name"], s["domain"], s["slug"], s["method_label"]]).lower():
-            continue
-        out.append({k: s[k] for k in ("slug", "name", "domain", "url", "da", "dofollow", "method", "method_label", "tier", "referring_domains", "organic_traffic")})
-        out[-1]["auto_build"] = s["tier"] == "A" and s["method"] in ("url_shortener", "bookmark_submit")
-    return out[:limit]
+        free.append({k: s[k] for k in ("slug", "name", "domain", "url", "da", "dofollow", "method", "method_label", "tier", "referring_domains", "organic_traffic")})
+        free[-1]["auto_build"] = s["tier"] == "A" and s["method"] in ("url_shortener", "bookmark_submit")
+    locked = [{**{k: t[k] for k in ("slug", "name", "domain", "da", "dofollow", "method_label", "tier", "referring_domains")}, "locked": True}
+              for t in TEASERS if _matches(t, q, min_da, dofollow_only, method)]
+    band = "da_90_plus" if min_da >= 90 else "da_70_plus" if min_da >= 70 else "da_50_plus" if min_da >= 50 else None
+    out = {"free": free[:limit], "free_total": len(free), "locked_examples": locked[:5],
+           "full_library": {"sites": STATS["sites"], "reachable": STATS["reachable"], **STATS["by_da"]}, "upgrade": _upgrade_hint()}
+    if len(free) < limit and (locked or band):
+        more = STATS["by_da"].get(band) if band else STATS["reachable"] - N_FREE
+        out["ask_the_user"] = (f"The free list has {len(free)} site{'s' if len(free) != 1 else ''} for this search; the full library has about {more} "
+                               f"{'at DA ' + str(min_da) + '+ ' if min_da else ''}(for example {', '.join(t['name'] + ' DA ' + str(t['da']) for t in locked[:3]) or 'many more'}). "
+                               f"Offer the subscription: ${PRICE_YEARLY_USD} a year or ${PRICE_MONTHLY_USD} a month.")
+    return out
+
+
+def _locked_result(slug: str) -> dict:
+    t = LOCKED.get(slug)
+    if t:
+        return {"locked": True, "site": t, "error": f"{t['name']} (DA {t['da']}) is in the full library; its method unlocks with a subscription", "upgrade": _upgrade_hint(),
+                "ask_the_user": f"{t['name']} is DA {t['da']} and needs the subscription: ${PRICE_YEARLY_USD} a year or ${PRICE_MONTHLY_USD} a month. Shall I show the free sites instead?"}
+    return {"error": f"{slug!r} is not in the free list; the full {STATS['sites']:,}-site library needs a subscription", "upgrade": _upgrade_hint()}
 
 
 def get_method(slug: str) -> dict:
     s = BY_SLUG.get(slug.strip().lower())
     if not s:
-        return {"error": f"{slug!r} is not in the free list; the full 1,245-site library needs a subscription", "upgrade": _upgrade_hint()}
+        return _locked_result(slug.strip().lower())
     return {**s, "playbook": PLAYBOOKS.get(s["method"], ""), "rules": RULES}
 
 
 def library_summary() -> dict:
-    return {"mode": "free", "sites": len(SITES), "dofollow": sum(1 for s in SITES if s["dofollow"]),
+    return {"mode": "free", "sites": N_FREE, "dofollow": sum(1 for s in SITES if s["dofollow"]),
             "da_range": [min(s["da"] for s in SITES), max(s["da"] for s in SITES)],
-            "subscription": {"sites": 1245, "reachable": 1138, "dofollow": 900, "da_90_plus": 117, "plans": _plans()}}
+            "subscription": {"sites": STATS["sites"], "reachable": STATS["reachable"], "dofollow": STATS["dofollow"], **STATS["by_da"], "plans": _plans()}}
 
 
 def _plans() -> dict:
@@ -105,7 +133,7 @@ def build_link(slug: str, target_url: str, anchor_text: str = "", headless: bool
     """Build one link in a local browser on a login-free site. Elsewhere returns the method to follow."""
     s = BY_SLUG.get(slug.strip().lower())
     if not s:
-        return {"error": f"{slug!r} is not in the free list", "upgrade": _upgrade_hint()}
+        return _locked_result(slug.strip().lower())
     res = local.Results()
     if res.placed_on(s["slug"], target_url):
         return {"status": "skipped", "notes": f"a link to {target_url} is already placed on {s['name']}"}
@@ -139,13 +167,13 @@ def log_link(slug: str, target_url: str, live_url: str, anchor_text: str = "", s
 
 def list_results(limit: int = 100) -> dict:
     res = local.Results()
-    return {"placed": res.placed(), "free_sites": len(SITES), "results": res.all(limit)}
+    return {"placed": res.placed(), "free_sites": N_FREE, "results": res.all(limit)}
 
 
 def account() -> dict:
     res = local.Results()
-    return {"plan": "free", "links_placed": res.placed(), "free_sites": len(SITES),
-            "note": "Free mode builds on the 50 bundled sites in your own browser. A subscription adds 1,245 sites, the campaign planner, "
+    return {"plan": "free", "links_placed": res.placed(), "free_sites": N_FREE,
+            "note": f"Free mode builds on the {N_FREE} bundled sites in your own browser. A subscription adds {STATS['sites']:,} sites, the campaign planner, "
                     "building on account-based sites, gates with connected services, monitoring, reports and a dashboard.",
             "upgrade": _upgrade_hint()}
 
@@ -158,7 +186,8 @@ def upgrade() -> dict:
 
 
 FREE_TOOLS = [
-    types.Tool(name="search_sites", description="Search the free list of 50 backlink sites by name, domain, method, DA and dofollow. auto_build marks the ones build_link can do by itself. "
+    types.Tool(name="search_sites", description=f"Search the free list of {N_FREE} backlink sites by name, domain, method, DA and dofollow. auto_build marks the ones build_link can do by itself. "
+               "The result also lists locked higher-DA matches from the full library; when the user wants those, offer the subscription (see ask_the_user). "
                "Methods: profile_website_field, article_post, bookmark_submit, url_shortener, page_builder, forum_post, directory_listing, document_share, social_post, comment, qa_answer, forum_signature.",
                inputSchema={"type": "object", "properties": {"query": {"type": "string"}, "min_da": {"type": "integer"}, "dofollow_only": {"type": "boolean"},
                                                             "method": {"type": "string"}, "limit": {"type": "integer"}}}),

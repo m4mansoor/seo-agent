@@ -28,12 +28,12 @@ This list comes from the SEO Agent library: 69 web 2.0 and page-builder sites, e
 | EmailMeForm | emailmeform.com | 78 | 39,073 | dofollow | email verification |  |
 | EduBlogs | edublogs.org | 77 | 82,929 | nofollow | sign-up |  |
 | About.me | about.me | 76 | 249,608 | dofollow | sign-up |  |
-| Beatstars | beatstars.com | 73 | 39,465 | dofollow | sign-up |  |
+| Beatstars | beatstars.com | 73 | 39,465 | dofollow | sign-up | yes |
 | Jimdo | jimdo.com | 68 | 612,061 | nofollow | sign-up |  |
 | Webself | en.webself.net | 67 | 626 | dofollow | no account |  |
-| Portfoliobox | portfoliobox.net | 66 | 12,479 | dofollow | no account | yes |
-| RiseUp | we.riseup.net | 64 | 11,528 | dofollow | sign-up |  |
-| XtGem | xtgem.com | 64 | 26,727 | dofollow | sign-up |  |
+| Portfoliobox | portfoliobox.net | 66 | 12,479 | dofollow | no account |  |
+| RiseUp | we.riseup.net | 64 | 11,528 | dofollow | sign-up | yes |
+| XtGem | xtgem.com | 64 | 26,727 | dofollow | sign-up | yes |
 
 
 ## How the agent builds this kind of link

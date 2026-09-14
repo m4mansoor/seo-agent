@@ -13,7 +13,7 @@ This list comes from the SEO Agent library: business and web directories, each o
 | VisualStudio | marketplace.visualstudio.com | 90 | 52,939 | dofollow | sign-up |  |
 | Gust | gust.com | 67 | 11,264 | dofollow | sign-up | yes |
 | Tuugo | tuugo.us | 48 | 8,420 | nofollow | email verification |  |
-| Cgm internet marketing | cgmimm.com | 37 | 4,120 | dofollow | email verification | yes |
+| Cgm internet marketing | cgmimm.com | 37 | 4,120 | dofollow | email verification |  |
 | YaraBook | yarabook.com | 31 | 5,861 | dofollow | sign-up |  |
 
 

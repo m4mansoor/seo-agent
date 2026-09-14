@@ -10,7 +10,7 @@ This list comes from the SEO Agent library: 239 article and guest posting sites,
 | Site | Domain | DA | Referring domains | Link | Needs | In free list |
 |---|---|---|---|---|---|---|
 | Blogger | blogger.com | 99 | 11,548,285 | dofollow | social login |  |
-| Medium | medium.com | 96 | 1,371,100 | dofollow | sign-up |  |
+| Medium | medium.com | 96 | 1,371,100 | dofollow | sign-up | yes |
 | Issuu | issuu.com | 94 | 784,367 | nofollow | sign-up |  |
 | BandCamp | bandcamp.com | 93 | 531,964 | dofollow | sign-up |  |
 | BuzzFeed (2 Guides) | buzzfeed.com | 93 | 329,943 | dofollow | email verification |  |

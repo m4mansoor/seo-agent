@@ -19,9 +19,9 @@ This list comes from the SEO Agent library: forums that allow links in posts or 
 | Videomaker | videomaker.com | 69 | 10,245 | nofollow | sign-up |  |
 | GrowthHackers | growthhackers.com | 68 | 7,690 | dofollow | sign-up | yes |
 | Tennis Warehouse | tt.tennis-warehouse.com | 62 | 4,684 | nofollow | email verification |  |
-| Hugo | discourse.gohugo.io | 60 | 3,139 | nofollow | email verification | yes |
+| Hugo | discourse.gohugo.io | 60 | 3,139 | nofollow | email verification |  |
 | CS Cart Forum | forum.cs-cart.com | 56 | 9,660 | nofollow | email verification |  |
-| Catch Themes | catchthemes.com | 53 | 46,911 | dofollow | sign-up | yes |
+| Catch Themes | catchthemes.com | 53 | 46,911 | dofollow | sign-up |  |
 | Grav | discourse.getgrav.org | 53 | 304 | dofollow | email verification |  |
 | Silverstripe | silverstripe.org | 53 | 25,933 | dofollow | sign-up |  |
 

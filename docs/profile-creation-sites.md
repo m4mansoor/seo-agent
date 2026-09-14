@@ -16,7 +16,7 @@ This list comes from the SEO Agent library: 575 profile creation sites, each one
 | Vimeo | vimeo.com | 96 | 2,242,430 | nofollow | sign-up |  |
 | VK | vk.com | 96 | 2,207,026 | nofollow | sign-up |  |
 | GitHub Profile | github.com | 95 | 2,168,888 | dofollow | email verification |  |
-| IMDB | imdb.com | 95 | 891,904 | dofollow | no account |  |
+| IMDB | imdb.com | 95 | 891,904 | dofollow | no account | yes |
 | Myspace | myspace.com | 95 | 598,684 | dofollow | sign-up |  |
 | W3C | w3.org | 95 | 499,393 | dofollow | no account |  |
 | AOL | aol.com | 94 | 285,960 | dofollow | email verification |  |

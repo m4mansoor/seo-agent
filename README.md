@@ -14,7 +14,7 @@ SEO Agent is an open-source SEO agent for link building. It runs as an MCP serve
 
 **What it does**
 
-- **Searches a library of 1,245 backlink sites** with Domain Authority, referring domains, spam score and dofollow status. Fifty sites ship free inside the package (`search_sites`).
+- **Searches a library of 1,245 backlink sites** with Domain Authority, referring domains, spam score and dofollow status. Twenty-five ship free inside the package, two of them at DA 90+; the rest show up locked, by name and DA, and unlock with a subscription (`search_sites`).
 - **Gives your assistant the method for each site**: the playbook for that kind of link, the guide steps parsed into actions with the exact button names, and what the site requires (`get_method`).
 - **Plans a campaign** for your URL: sites inside your DA range, the dofollow share you asked for, methods spread, anchor text assigned by ratio (`plan_campaign`, subscription).
 - **Builds links in your browser** with a proof screenshot on login-free sites, free; on account-based sites with the model-driven executor on a subscription (`build_link`, `queue_build`).
@@ -83,9 +83,9 @@ Notice what the verifier caught: one dofollow link sits on a noindex page and on
 | Methods | profile fields, articles and guest posts, social bookmarking, web 2.0 pages, forums and signatures, directories, shared documents, comments, Q&A, URL shorteners |
 | Per site | the step-by-step method parsed into actions, the placement step, and what the site requires: account, inbox, captcha, social login, upload, moderation |
 
-Fifty of these sites, with their methods, are bundled free. The rest, the campaign planner, automatic building and verification come with a free API key when the hosted service opens.
+Twenty-five of these sites, with their methods, are bundled free. The rest, the campaign planner, automatic building and verification come with a free API key when the hosted service opens.
 
-## Free: 50 backlinks from GitHub, right now
+## Free: 25 sites from GitHub, right now
 
 The package is the agent. It runs on your machine, builds links in your own browser on the login-free sites, follows the method with you on the rest, verifies every link and keeps the log. No account, no key, nothing sent anywhere. Requires Python 3.10 or newer.
 
@@ -102,11 +102,11 @@ claude mcp add seo-agent -- seo-agent
 { "mcpServers": { "seo-agent": { "command": "seo-agent" } } }
 ```
 
-Then ask: *I need 5 dofollow backlinks from the free list for https://example.com, keyword "example".* The assistant searches the 50 sites, calls `build_link` where it can build by itself, follows `get_method` where an account is needed, verifies each link and logs it. Ask *how many links have I built* any time; it calls `account`.
+Then ask: *I need 5 dofollow backlinks from the free list for https://example.com, keyword "example".* The assistant searches the 25 sites, calls `build_link` where it can build by itself, follows `get_method` where an account is needed, verifies each link and logs it. Ask *how many links have I built* any time; it calls `account`.
 
 ## Subscribe: every site, $97 a year or $27 a month
 
-When you want more than the 50 free sites, the assistant gives you the payment links when you ask, or call `upgrade`. Subscribe at **https://mcp.seoagent.dev/buy?plan=yearly** ($97 a year, about $8 a month) or **https://mcp.seoagent.dev/buy?plan=monthly** ($27 a month, cancel any time), copy the key from the success page, and tell your assistant:
+When you ask for more high-DA sites than the free list holds, the assistant shows what is locked and gives you the payment links; or call `upgrade`. Subscribe at **https://mcp.seoagent.dev/buy?plan=yearly** ($97 a year, about $8 a month) or **https://mcp.seoagent.dev/buy?plan=monthly** ($27 a month, cancel any time), copy the key from the success page, and tell your assistant:
 
 ```
 activate le_your_key
@@ -133,63 +133,38 @@ The agent does not replace judgement: you still choose the keywords, the anchor 
 
 ## The free backlink sites list
 
-Fifty sites from the library, all verified reachable, DA 37 to 69, 49 of them dofollow. Each has a method your assistant can follow.
+Twenty-five sites from the library, all verified reachable, DA 20 to 96, 25 of them dofollow, two of them at DA 90 or higher. Each has a method your assistant can follow.
 
 <details>
-<summary>Show all 50</summary>
+<summary>Show all 25</summary>
 
 | Site | DA | Referring domains | Method | Needs |
 |---|---|---|---|---|
-| GitBook | 69 | 212,041 | Article or blog post | sign-up |
-| MyMiniFactory | 68 | 71,374 | Profile website field | sign-up |
-| PromoDJ | 68 | 24,384 | Profile website field | sign-up |
+| Medium | 96 | 1,371,100 | Article or blog post | sign-up |
+| IMDB | 95 | 891,904 | Profile website field | no account |
+| Zotero | 75 | 51,364 | Bookmark / link submit | sign-up |
+| ArtFire | 75 | 31,486 | Profile website field | sign-up |
+| Milkyway (.edu) | 75 | 9,011 | Profile website field | sign-up |
+| DsiBlogger | 74 | 37,269 | Article or blog post | sign-up |
+| FireBlogz | 74 | 39,401 | Article or blog post | sign-up |
+| Beatstars | 73 | 39,465 | Page builder site | sign-up |
+| Flip HTML5 | 73 | 226,903 | Shared document | sign-up |
+| Figma | 71 | 101,339 | Social post | sign-up |
+| MD Anderson | 71 | 918 | Other | no account |
+| Wakelet | 71 | 191,490 | Bookmark / link submit | sign-up |
 | GrowthHackers | 68 | 7,690 | Forum post | sign-up |
 | Gust | 67 | 11,264 | Directory listing | sign-up |
-| HUD (.gov) | 66 | 2,569 | Profile website field | email verification |
-| Serato | 66 | 7,121 | Profile website field | sign-up |
-| Portfoliobox | 66 | 12,479 | Page builder site | no account |
-| Credly | 65 | 59,462 | Profile website field | email verification |
-| GrabCad | 65 | 17,418 | Profile website field | email verification |
-| LeetCode | 65 | 87,346 | Profile website field | email verification |
-| Kiwibox | 65 | 9,959 | Article or blog post | sign-up |
-| Vingle | 64 | 28,178 | Article or blog post | email verification |
-| GameKyo | 64 | 4,959 | Bookmark / link submit | email verification |
+| RiseUp | 64 | 11,528 | Page builder site | sign-up |
 | Wantedly | 64 | 29,585 | Bookmark / link submit | sign-up |
-| RoundMe | 63 | 8,631 | Profile website field | sign-up |
-| ItsMyURLs | 63 | 11,263 | Bookmark / link submit | email verification |
-| Zenodo | 62 | 7,015 | Profile website field | email verification |
-| LongIsland | 62 | 61,555 | Bookmark / link submit | sign-up |
-| Carrd | 61 | 272,016 | Article or blog post | email verification |
-| Lacartes | 61 | 7,671 | Bookmark / link submit | email verification |
-| Page4 | 61 | 2,162 | Page builder site | sign-up |
-| MyVidSter | 60 | 14,641 | Profile website field | sign-up |
-| Revue | 60 | 10,106 | Profile website field | sign-up |
+| XtGem | 64 | 26,727 | Page builder site | sign-up |
 | Ouo Press | 60 | 4,724 | URL shortener | no account |
-| Hugo | 60 | 3,139 | Forum post | email verification |
-| Jssor | 60 | 26,392 | Other | email verification |
-| Brownbook | 59 | 50,108 | Profile website field | no account |
-| CodeSandbox | 59 | 17,524 | Profile website field | social login |
-| Folkd | 59 | 43,937 | Profile website field | sign-up |
-| WHMCS | 59 | 3,925 | Bookmark / link submit | email verification |
-| Teletype | 59 | 71,176 | Page builder site | no account |
-| AllMyFaves | 58 | 50,030 | Bookmark / link submit | sign-up |
-| u.to Shortener | 58 | 36,168 | URL shortener | no account |
 | BlogFree | 58 | 5,019 | Forum signature | sign-up |
-| OnRPG | 58 | 6,380 | Profile website field | sign-up |
-| RawPixel | 58 | 28,316 | Profile website field | sign-up |
-| Turnkey Linux | 58 | 14,662 | Profile website field | email verification |
-| HotFrog | 57 | 23,144 | Bookmark / link submit | email verification |
-| Smallseotools Shortener | 57 | 16,522 | URL shortener | no account |
-| Tiny.pl Shortener | 56 | 15,801 | URL shortener | no account |
-| Start Me | 56 | 39,120 | Page builder site | sign-up |
-| Catch Themes | 53 | 46,911 | Forum post | sign-up |
-| Givology | 51 | 2,077 | Article or blog post | email verification |
-| AbiLogic | 50 | 6,222 | Article or blog post | sign-up |
-| Storeboard | 50 | 48,200 | Article or blog post | sign-up |
-| Blade Journal | 48 | 4,175 | Article or blog post | sign-up |
-| Zyro | 46 | 6,557 | Page builder site | sign-up |
+| Pub HTML5 | 56 | 99,088 | Shared document | sign-up |
+| AxMag | 54 | 1,668 | Shared document | sign-up |
 | Yooco | 43 | 8,568 | Comment | sign-up |
-| Cgm internet marketing | 37 | 4,120 | Directory listing | email verification |
+| N9.cl Shortener | 40 | 17,321 | URL shortener | no account |
+| Goolnk.com Shortener | 23 | 1,922 | URL shortener | no account |
+| YellKey Shortener | 20 | 389 | URL shortener | no account |
 
 
 </details>
@@ -199,7 +174,7 @@ More lists, with DA and referring domains: [social bookmarking sites](https://m4
 ## Why SEO Agent and not another SEO MCP server
 
 - **It builds, not only reports.** Most SEO MCP servers wrap a metrics API. This one follows a site's method in a browser, places the link and proves it with a screenshot and a live-page check.
-- **The library is the moat.** 1,245 sites, each with its parsed step-by-step method, verified reachable monthly, with DataForSEO metrics. Fifty are free with no key.
+- **The library is the moat.** 1,245 sites, each with its parsed step-by-step method, verified reachable monthly, with DataForSEO metrics. Twenty-five are free with no key, two of them at DA 90 or higher; the rest appear locked by name and DA.
 - **It is honest about limits.** A captcha or a login is a gate it asks you about, never something it fakes its way past. Links that are plain text, nofollow or on a noindex page are reported as such.
 
 ## Gates are handled in the chat, not skipped

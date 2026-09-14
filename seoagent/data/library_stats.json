@@ -1,0 +1,32 @@
+{
+ "sites": 1245,
+ "reachable": 1138,
+ "dofollow": 813,
+ "by_da": {
+  "da_90_plus": 117,
+  "da_70_plus": 321,
+  "da_50_plus": 549,
+  "da_30_plus": 808
+ },
+ "by_method": {
+  "Profile website field": 509,
+  "Article or blog post": 231,
+  "Bookmark / link submit": 173,
+  "URL shortener": 74,
+  "Page builder site": 66,
+  "Forum post": 24,
+  "Other": 21,
+  "Shared document": 12,
+  "Forum signature": 7,
+  "Social post": 6,
+  "Directory listing": 6,
+  "Q&A answer": 5,
+  "Comment": 4
+ },
+ "free": {
+  "sites": 25,
+  "da_min": 20,
+  "da_max": 96,
+  "dofollow": 25
+ }
+}
