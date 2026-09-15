@@ -67,3 +67,88 @@ section h2{font-size:30px;font-weight:700;margin-top:64px;padding-top:20px;borde
 /* Diagrams are authored at 1280px; never let one widen the page on a phone. */
 img{max-width:100%;height:auto;display:block}
 .doc img{margin:26px 0;border:1px solid var(--rule);border-radius:4px}
+
+/* ---- marketing page: the conversation is the hero ---- */
+.mk-hero{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:48px;align-items:start;max-width:none;padding-top:56px}
+.mk-hero .hero h1,.mk-hero h1{font-size:52px;line-height:1.02;letter-spacing:-.01em;text-wrap:balance}
+.mk-hero .lede{font-size:18px}
+.mk-chat{background:var(--paper-2);border:1px solid var(--rule);border-radius:6px;padding:22px 22px 14px;font-size:15px;line-height:1.5;display:flex;flex-direction:column;gap:12px}
+.mk-you{align-self:flex-end;max-width:85%;margin:0;padding:8px 14px;background:var(--ink);color:#F3EFE4;border-radius:14px 14px 3px 14px}
+.mk-agent{align-self:flex-start;max-width:92%;background:#fff;border-left:3px solid var(--teal);border-radius:3px 12px 12px 12px;padding:12px 16px;color:var(--ink)}
+.mk-agent p{margin:0}.mk-agent p+p,.mk-agent ul{margin-top:8px}
+.mk-agent ul{padding-left:18px;margin-bottom:0}.mk-agent li{margin:4px 0}.mk-agent li b{color:var(--teal-ink)}
+.mk-done{border-left-color:var(--amber)}
+.mk-chat-note{margin:4px 0 0;font-size:12px;color:var(--ink-3);align-self:flex-end}
+
+/* PAS: three columns, the middle one carries the weight */
+.mk-pas-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px;margin-top:22px}
+.mk-pas-grid h3{font-size:20px;font-weight:700;margin:0 0 10px}
+.mk-pas-grid p,.mk-pas-grid li{color:var(--ink-2)}
+.mk-pas-grid ul{padding-left:18px;margin:0}.mk-pas-grid li{margin:0 0 10px}
+.mk-agitate{border-left:3px solid var(--amber);padding-left:20px}
+.mk-agitate h3{color:var(--amber)}
+
+/* features as a definition list: the term is the plain-English promise */
+.mk-features dl{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:26px 40px;margin:26px 0 0}
+.mk-features dt{font-family:var(--disp);font-weight:700;font-size:19px;color:var(--ink);margin:0}
+.mk-features dd{margin:6px 0 0;color:var(--ink-2);max-width:60ch}
+.mk-features dt+dd{grid-column:auto}
+.mk-features>dl>div{display:contents}
+.mk-tools{color:var(--ink-3);margin-top:26px}
+
+/* human comparison: two columns, no cards */
+.mk-human-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:40px;margin-top:22px}
+.mk-human-grid h3{font-size:20px;font-weight:700;margin:0 0 12px}
+.mk-human-grid ul{padding-left:18px;margin:0}.mk-human-grid li{margin:0 0 12px;color:var(--ink-2)}
+.mk-human-grid li b{color:var(--ink)}
+.mk-human-grid>div:last-child{border-left:1px solid var(--rule);padding-left:40px}
+
+@media (max-width:900px){
+  .mk-hero{grid-template-columns:1fr;gap:28px;padding-top:40px}
+  .mk-hero h1{font-size:40px}
+  .mk-pas-grid{grid-template-columns:1fr}
+  .mk-agitate{padding-left:16px}
+  .mk-features dl{grid-template-columns:1fr}
+  .mk-human-grid{grid-template-columns:1fr}
+  .mk-human-grid>div:last-child{border-left:0;padding-left:0;border-top:1px solid var(--rule);padding-top:24px}
+}
+
+/* ---- motion: one orchestrated hero moment; everything else answers a person's action ---- */
+.mk-chat[data-play] > .mk-you,.mk-chat[data-play] > .mk-agent{opacity:0;transform:translateY(8px)}
+.mk-chat[data-play] > .is-in{opacity:1;transform:none;transition:opacity .45s ease,transform .45s ease}
+.mk-typing{display:inline-flex;gap:4px;align-items:center;padding:10px 14px;background:#fff;border-left:3px solid var(--teal);border-radius:3px 12px 12px 12px;align-self:flex-start}
+.mk-typing i{width:6px;height:6px;border-radius:50%;background:var(--ink-3);animation:mk-dot 1s infinite ease-in-out}
+.mk-typing i:nth-child(2){animation-delay:.15s}.mk-typing i:nth-child(3){animation-delay:.3s}
+@keyframes mk-dot{0%,80%,100%{transform:translateY(0);opacity:.5}40%{transform:translateY(-4px);opacity:1}}
+.mk-replay{background:none;border:1px solid var(--rule);color:var(--ink-2);font:inherit;font-size:12px;padding:4px 10px;border-radius:999px;cursor:pointer;align-self:flex-end}
+.mk-replay:hover{border-color:var(--ink);color:var(--ink)}
+
+/* the facts count up once, when first seen */
+.facts b[data-count]{font-variant-numeric:tabular-nums}
+
+/* the process diagram: a mark travels the pipe from plan to report */
+.mk-flow{margin-top:26px;width:100%;height:auto;display:block}
+.mk-flow .pipe{stroke:var(--rule);stroke-width:3;fill:none}
+.mk-flow .pipe-live{stroke:var(--teal);stroke-width:3;fill:none;stroke-dasharray:1200;stroke-dashoffset:1200}
+.mk-flow.is-in .pipe-live{animation:mk-draw 2.4s ease-out forwards}
+.mk-flow .mark{fill:var(--amber);offset-path:path("M60 90 H1220");offset-distance:0%;opacity:0}
+.mk-flow.is-in .mark{animation:mk-travel 2.4s ease-in-out .2s forwards}
+.mk-flow .stop{fill:#fff;stroke:var(--teal);stroke-width:3}
+.mk-flow .stop-label{font:700 18px var(--disp);fill:var(--ink)}
+.mk-flow .stop-sub{font:14px var(--body);fill:var(--ink-2)}
+@keyframes mk-draw{to{stroke-dashoffset:0}}
+@keyframes mk-travel{0%{opacity:1;offset-distance:0%}95%{opacity:1}100%{offset-distance:100%;opacity:0}}
+
+/* feature terms lift on hover; a person's action, answered */
+.mk-features dt{transition:color .15s}.mk-features dt:hover{color:var(--teal)}
+.mk-human-grid li b{transition:color .15s}
+
+/* a quiet entrance for sections as they arrive, from a visible resting state */
+.mk-reveal{opacity:.001;transform:translateY(10px);transition:opacity .5s ease,transform .5s ease}
+.mk-reveal.is-in{opacity:1;transform:none}
+
+@media (prefers-reduced-motion:reduce){
+  .mk-chat[data-play] > .mk-you,.mk-chat[data-play] > .mk-agent,.mk-reveal{opacity:1;transform:none;transition:none}
+  .mk-typing i,.mk-flow .pipe-live,.mk-flow .mark{animation:none}
+  .mk-flow .pipe-live{stroke-dashoffset:0}.mk-flow .mark{opacity:0}
+}
