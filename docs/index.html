@@ -3,215 +3,295 @@ layout: default
 title: "SEO Agent"
 description: "Open-source AI SEO Agent and MCP server for Claude Code, Cursor and Codex. It plans your backlink campaign with you, builds each link by following that site's method, verifies it went live, and tells you what it did in plain English. 25 sites free; all 1,138 verified-reachable sites for $97 a year."
 ---
-<section class="hero mk-hero">
-  <div class="mk-hero-copy">
-    <h1>Backlinks, built by an agent that talks you through it</h1>
-    <p class="lede">SEO Agent runs inside Claude Code, Cursor, Codex or any MCP client. Tell it what you need. It plans the campaign with you, builds each link by following that site's exact method, checks the link went live, and reports what it did in plain English.</p>
-    <div class="install"><code>pip install seo-agent &amp;&amp; claude mcp add seo-agent -- seo-agent</code></div>
-    <div class="actions"><a class="btn" href="how-to-use-seo-agent.html">Install free, 25 sites</a><a class="btn ghost" href="#pricing">All 1,138 sites, $97 a year</a></div>
-  </div>
-  <div class="mk-chat" id="chat" data-play aria-label="An example conversation with SEO Agent">
-    <p class="mk-you">I want 100 backlinks for brightkettle.com this month.</p>
-    <div class="mk-agent"><p>100 links this month is a lot faster than I would go: 34 sites link to you today, and I'd suggest about 5. It's your site, so I'll build 100 if you want — I'd rather you knew the pace is the part that stands out, not the links themselves.</p></div>
-    <p class="mk-you">Ok, do it your way.</p>
-    <div class="mk-agent">
-      <p>For a site like yours I'd do about 5 links this month, spread over 10 days. Here's the shape of it, and why:</p>
-      <ul>
-        <li><b>Anchor text:</b> 5% exact match, 20% partial, 33% your brand, 27% the bare URL. Your profile is still small, so exact-match anchors stay rare — those are what bought links look like.</li>
-        <li><b>70% followed links.</b> A profile where every link passes authority is not what real sites accumulate.</li>
-        <li><b>Spread over 10 days,</b> not placed in one afternoon.</li>
-      </ul>
-      <p>Want me to go ahead?</p>
+<section class="mk-band deep mk-hero">
+  <div class="mk-inner">
+    <h1>Backlinks built by an agent that <em>talks you through it</em></h1>
+    <p class="lede">Runs inside Claude Code, Cursor, Codex or any MCP client. Tell it what you need. It plans the campaign with you, builds each link by following that site's exact method, checks the link went live, and tells you what it did in plain English.</p>
+    <div class="mk-cta"><a class="btn" href="how-to-use-seo-agent.html">Install free, 25 sites</a><a class="btn ghost" href="#pricing">All 1,138 sites, $97 a year</a></div>
+    <code class="mk-install">pip install seo-agent &amp;&amp; claude mcp add seo-agent -- seo-agent</code>
+
+    <div class="mk-win" aria-label="An example conversation with SEO Agent">
+      <div class="mk-winbar"><i></i><i></i><i></i><span>claude code · seo-agent</span></div>
+      <div class="mk-log" id="chat" data-play>
+        <p class="mk-you">I want 100 backlinks for brightkettle.com this month.</p>
+        <div class="mk-agent"><p>100 links this month is a lot faster than I would go: 34 sites link to you today, and I'd suggest about 5. It's your site, so I'll build 100 if you want — I'd rather you knew the pace is the part that stands out, not the links themselves.</p></div>
+        <p class="mk-you">Ok, do it your way.</p>
+        <div class="mk-agent">
+          <p>For a site like yours I'd do about 5 links this month, spread over 10 days. Here's the shape of it, and why:</p>
+          <ul>
+            <li><b>Anchor text:</b> 5% exact match, 20% partial, 33% your brand, 27% the bare URL. Your profile is still small, so exact-match anchors stay rare — those are what bought links look like.</li>
+            <li><b>70% followed links.</b> A profile where every link passes authority is not what real sites accumulate.</li>
+            <li><b>Spread over 10 days,</b> not placed in one afternoon.</li>
+          </ul>
+          <p>Want me to go ahead?</p>
+        </div>
+        <p class="mk-you">Go.</p>
+        <div class="mk-agent"><p>Signed in to the first site, found the profile field, placing your link… checked the live page: real hyperlink, right anchor, followed. Logged with a screenshot. On to the next.</p></div>
+        <div class="mk-agent mk-done"><p>I've built 5 links for brightkettle.com, 2 of them on sites at DA 90 or higher. Every one is a live page carrying your link with the anchor we agreed, checked after placing. Search engines find new links on their own schedule, usually weeks — that's normal.</p></div>
+      </div>
+      <div class="mk-winfoot"><span>The engine's real replies. Only the domain is changed.</span><button type="button" class="mk-replay" id="replay" hidden>Play again</button></div>
     </div>
-    <p class="mk-you">Go.</p>
-    <div class="mk-agent mk-done"><p>I've built 5 links for brightkettle.com, 2 of them on sites at DA 90 or higher. Every one is a live page carrying your link with the anchor we agreed, checked after placing. Search engines find new links on their own schedule, usually weeks — that's normal.</p></div>
-    <p class="mk-chat-note">The engine's real replies. Only the domain is changed.</p>
   </div>
 </section>
 
-<section class="facts">
+<section class="mk-nums" aria-label="Library in numbers">
   <div><b data-count="1138">1,138</b><span>sites, verified reachable this month</span></div>
   <div><b data-count="117">117</b><span>at DA 90 or higher</span></div>
   <div><b data-count="813">813</b><span>give followed links</span></div>
-  <div><b>seconds</b><span>per link on login-free sites</span></div>
+  <div><b data-count="26">26</b><span>tools your assistant can call</span></div>
   <div><b data-count="25">25</b><span>free, no account needed</span></div>
 </section>
 
-<section class="mk-pas mk-reveal">
-  <h2>Why link building is still the slow part</h2>
-  <div class="mk-pas-grid">
-    <div>
-      <h3>The problem</h3>
-      <p>Links still decide rankings, and getting one has not changed in fifteen years: find a site that gives links, create an account, find the field or the editor, place the link, and check that it actually went live. Then do it again. Fifty links is fifty of those.</p>
+<section class="mk-band mk-reveal">
+  <div class="mk-inner">
+    <h2>Getting a backlink hasn't changed in fifteen years</h2>
+    <div class="mk-story">
+      <div>
+        <p>Find a site that gives links. Create an account. Find the field, or the editor. Place the link. Check that it actually went live, and that it's a real link, and that it's followed. Then do it again. Fifty links is fifty of those, and most of the time goes on the parts that have nothing to do with judgement.</p>
+        <p>So people pay to skip it. And what they pay for is where it goes wrong.</p>
+      </div>
+      <div class="mk-ghost mk-reveal" id="ghost">
+        <div class="stamp">SHUT DOWN 2021</div>
+        <div class="dom">angelfire.lycos.com</div>
+        <div class="row"><span>Domain Authority</span><b>93</b></div>
+        <div class="row"><span>Referring domains</span><b>756</b></div>
+        <div class="row"><span>Visitors a month</span><b class="bad">0</b></div>
+        <p class="cap">A real entry from a bought list. The score is a decade of old links. The site is gone. Nobody fetched the URL.</p>
+      </div>
     </div>
-    <div class="mk-agitate">
+    <div class="mk-wrong">
       <h3>What actually goes wrong</h3>
       <ul>
-        <li>You pay an agency $150 to $400 a link and never see the method or the site list. A new hire starts from a blank page.</li>
-        <li>You buy a list of "1,000 sites" and it is full of ghosts. Angelfire still scores DA 93 on a decade of old links, and it shut down years ago. Nobody fetched the URL.</li>
+        <li>You pay an agency $150 to $400 a link and never see the method or the site list. When they leave, the knowledge leaves with them.</li>
+        <li>You buy a list of "1,000 sites" and it's full of ghosts like the one above. Authority scores lag reality by years.</li>
         <li>The link goes up as plain text, or the host adds nofollow after you post. It looks fine on the page. Nobody checked.</li>
-        <li>Fifty links land in one afternoon, all reading the same phrase. That is the clearest signal links were bought, and you paid for it.</li>
-      </ul>
-    </div>
-    <div>
-      <h3>What the agent does instead</h3>
-      <p>It knows the exact method for 1,138 sites, re-verified every month. It tells you the pace and anchor mix your site can carry, and why. It builds each link in a real browser, checks the live page for a real hyperlink with the right anchor, and logs it with proof. When a site asks for something it should not do alone, it stops and asks you.</p>
-    </div>
-  </div>
-</section>
-
-<section class="mk-process mk-reveal">
-  <h2>How a link gets built</h2>
-  <svg class="mk-flow" viewBox="0 0 1280 200" role="img" aria-label="Plan, build, verify, report">
-    <path class="pipe" d="M60 90 H1220"/>
-    <path class="pipe-live" d="M60 90 H1220"/>
-    <g><circle class="stop" cx="60" cy="90" r="12"/><text class="stop-label" x="60" y="140" text-anchor="middle">Plan</text><text class="stop-sub" x="60" y="164" text-anchor="middle">pace, anchors, why</text></g>
-    <g><circle class="stop" cx="447" cy="90" r="12"/><text class="stop-label" x="447" y="140" text-anchor="middle">Build</text><text class="stop-sub" x="447" y="164" text-anchor="middle">the site's exact method</text></g>
-    <g><circle class="stop" cx="833" cy="90" r="12"/><text class="stop-label" x="833" y="140" text-anchor="middle">Verify</text><text class="stop-sub" x="833" y="164" text-anchor="middle">real link, right anchor, followed?</text></g>
-    <g><circle class="stop" cx="1220" cy="90" r="12"/><text class="stop-label" x="1220" y="140" text-anchor="middle">Report</text><text class="stop-sub" x="1220" y="164" text-anchor="middle">plain English, with proof</text></g>
-    <circle class="mark" r="8"/>
-  </svg>
-</section>
-
-<section class="mk-features mk-reveal">
-  <h2>Everything it does</h2>
-  <dl>
-    <div><dt>Tells you what you need before you start</dt><dd>Ask what it takes and it answers as a number: which sites are open to you right now, how many more open with a mailbox, which ones need you at the screen.</dd></div>
-    <div><dt>Plans the campaign with you, and says why</dt><dd>It reads how many sites already link to you and proposes a pace, an anchor mix, a followed share and how long to spread it over, each with a plain reason. Ask for more than is wise and it says so once, then builds what you asked. It is your site.</dd></div>
-    <div><dt>Knows the method for every site</dt><dd>Not "go to the site and sign up". The playbook for that kind of link, the steps with the exact button and field names, what the site requires, and corrections learned from earlier builds where the guide was wrong.</dd></div>
-    <div><dt>Builds the link in a real browser</dt><dd>Login-free sites build in seconds with a proof screenshot. Sites that need an account are built by the assistant in its own browser, signing up once and signing in ever after.</dd></div>
-    <div><dt>Verifies before it counts</dt><dd>It opens the public page and checks three things: is your URL a real hyperlink, does the anchor match, is it followed. Plain-text URLs and links the host quietly made nofollow do not count.</dd></div>
-    <div><dt>Stops at gates instead of faking its way through</dt><dd>A captcha, an email code or a social login is a gate. It tells you what the site wants in plain words and offers the ways through: clear it yourself, connect a service once, paste a code, or skip.</dd></div>
-    <div><dt>Reads your page for keywords and anchors</dt><dd>It suggests keywords from the target page itself, then spreads anchors across the five types so your profile is not one phrase forty times.</dd></div>
-    <div><dt>Reports what it built, from its own record</dt><dd>Every link with its anchor, where it lives, the site's authority and when it was placed. Not a backlink index that will not show a new link for weeks.</dd></div>
-    <div><dt>Watches the links afterwards</dt><dd>Weekly re-checks of everything it placed, every referring domain to your site, what is new and lost each month, spam flags and a disavow file.</dd></div>
-    <div><dt>Finds what competitors have and you do not</dt><dd>Point it at two or three competitors and it lists the referring domains they have that you lack, with the method to build each one attached.</dd></div>
-    <div><dt>Paces everything</dt><dd>Links arrive steadily across days and methods rather than in a burst. At most 5 a day and 20 a week to any one site, and you can run many sites under one subscription.</dd></div>
-    <div><dt>Never forgets what a site taught it</dt><dd>When a build finds the guide was wrong, which field gives the followed link, a length cap, a password rule, it records the fact. The next build on that site starts from the truth.</dd></div>
-  </dl>
-  <p class="mk-tools">Twenty-six tools in all. The <a href="seo-mcp-server.html">tool reference</a> lists every one.</p>
-</section>
-
-<section class="mk-human mk-reveal">
-  <h2>Where it beats a person, and where it does not</h2>
-  <div class="mk-human-grid">
-    <div>
-      <h3>Better than a link builder at</h3>
-      <ul>
-        <li><b>Remembering.</b> It knows the method for 1,138 sites on day one. A new hire knows the ones they have used before.</li>
-        <li><b>Checking every time.</b> Link 47 at six in the evening gets the same verification as link 1. Plain text and nofollow never slip through because someone was tired.</li>
-        <li><b>Keeping the record.</b> Every link, anchor, live URL and proof in one log, re-checked weekly. Not a spreadsheet nobody updates.</li>
-        <li><b>Pacing.</b> It will not place fifty links in an afternoon because the deadline is Friday.</li>
-        <li><b>Cost.</b> About $8 a month against $2,500 to $4,000 a month for a person, and it works at 2am in the chat you already use.</li>
-      </ul>
-    </div>
-    <div>
-      <h3>Still yours</h3>
-      <ul>
-        <li><b>The judgement.</b> Which keywords matter, how fast to go, whether a site suits your brand. It advises with reasons and then does what you say.</li>
-        <li><b>The gates.</b> It will not solve a captcha by pretending to be a person, log into your Google account unattended, or work around a site's rules. Links built that way are the ones that get removed.</li>
-        <li><b>The content.</b> On sites that want an article, it writes to your brief. It will not spin nonsense to get past a moderator.</li>
-        <li><b>The honesty.</b> A link it could not verify is reported as unverified, not counted. It never promises a ranking.</li>
+        <li>Fifty links land in one afternoon, all reading the same phrase. That's the clearest signal links were bought — and you paid for it.</li>
       </ul>
     </div>
   </div>
 </section>
 
-<section class="compare mk-reveal">
-  <h2>What it costs, against the alternatives</h2>
-  <p>Fifty verified, followed-checked backlinks a month is a job. Typical ways to get it done, at typical market rates:</p>
-  <div class="tablewrap"><table><thead><tr><th></th><th>Cost</th><th>Time to 50 links</th><th>Knows the sites?</th></tr></thead><tbody>
-    <tr><td><b>In-house link builder</b></td><td>$2,500 to $4,000 a month, plus tools</td><td>3 to 6 weeks at 30 to 60 minutes per link</td><td>Only the sites they have used before; a new hire starts from a blank list</td></tr>
-    <tr><td><b>Agency or marketplace</b></td><td>$150 to $400 per DA 40+ followed link: $7,500 to $20,000 per 50</td><td>4 to 8 weeks</td><td>Their list, not yours; you never see the method</td></tr>
-    <tr><td><b>Freelancer on a gig site</b></td><td>$10 to $50 per link</td><td>1 to 2 weeks</td><td>Usually the same 100 sites everyone else spams</td></tr>
-    <tr><td><b>SEO Agent</b></td><td>$97 a year or $27 a month</td><td>Paced on purpose, 5 a day and 20 a week per site; login-free sites build in seconds each</td><td>1,138 sites with the exact method for each, re-verified monthly, with DataForSEO metrics</td></tr>
-  </tbody></table></div>
-  <p>The library is the part a team cannot copy quickly. Every site in it came from years of link building: which DA 60 profile page still gives a followed link, which forum strips links from new members, which shortener sits behind a captcha, which directory approves in a day. Each entry carries the method with the exact button names, what the site requires, and referring domains, spam score and traffic. A person could rebuild that list, but it would take them the same years.</p>
-</section>
+<section class="mk-band paper2">
+  <div class="mk-inner">
+    <h2>What the agent does instead</h2>
+    <p class="mk-kicker">Twenty-six tools, grouped by the four things you actually care about. The <a href="seo-mcp-server.html">tool reference</a> lists every one.</p>
 
-<section class="free mk-reveal">
-  <h2>The free backlink sites list</h2>
-  <p>Twenty-five reachable sites, DA 20 to 96, all followed, two at DA 90 or higher, each with a step-by-step method your assistant can follow. The first twelve:</p>
-  <div class="tablewrap"><table><thead><tr><th>Site</th><th class="num">DA</th><th class="num">Referring domains</th><th>Method</th><th>Link</th></tr></thead><tbody><tr><td>Medium</td><td class='num'>96</td><td class='num'>1,371,100</td><td>Article or blog post</td><td>followed</td></tr><tr><td>IMDB</td><td class='num'>95</td><td class='num'>891,904</td><td>Profile website field</td><td>followed</td></tr><tr><td>Zotero</td><td class='num'>75</td><td class='num'>51,364</td><td>Bookmark / link submit</td><td>followed</td></tr><tr><td>ArtFire</td><td class='num'>75</td><td class='num'>31,486</td><td>Profile website field</td><td>followed</td></tr><tr><td>Milkyway (.edu)</td><td class='num'>75</td><td class='num'>9,011</td><td>Profile website field</td><td>followed</td></tr><tr><td>DsiBlogger</td><td class='num'>74</td><td class='num'>37,269</td><td>Article or blog post</td><td>followed</td></tr><tr><td>FireBlogz</td><td class='num'>74</td><td class='num'>39,401</td><td>Article or blog post</td><td>followed</td></tr><tr><td>Beatstars</td><td class='num'>73</td><td class='num'>39,465</td><td>Page builder site</td><td>followed</td></tr><tr><td>Flip HTML5</td><td class='num'>73</td><td class='num'>226,903</td><td>Shared document</td><td>followed</td></tr><tr><td>Figma</td><td class='num'>71</td><td class='num'>101,339</td><td>Social post</td><td>followed</td></tr><tr><td>MD Anderson</td><td class='num'>71</td><td class='num'>918</td><td>Other</td><td>followed</td></tr><tr><td>Wakelet</td><td class='num'>71</td><td class='num'>191,490</td><td>Bookmark / link submit</td><td>followed</td></tr></tbody></table></div>
-  <p><a href="https://github.com/m4mansoor/seo-agent#the-free-backlink-sites-list">The full free list in the README</a></p>
-</section>
+    <div class="mk-theme mk-reveal">
+      <div>
+        <h3>It plans with you, and says why</h3>
+        <p class="why">Most tools take an order. This one reads your situation first and argues for a pace your site can carry.</p>
+        <dl>
+          <dt>Tells you what you need before you start</dt><dd>Ask what it takes and you get a number: which sites are open right now, how many more open with a mailbox, which need you at the screen.</dd>
+          <dt>Proposes the campaign shape with a reason on every line</dt><dd>Pace from how many sites already link to you. Anchor mix tightened when the profile is thin. A followed share that looks natural. Ask for more than is wise and it says so once, then builds what you asked. It's your site.</dd>
+          <dt>Reads your page for keywords and anchors</dt><dd>Keywords from the target page itself, spread across the five anchor types so your profile isn't one phrase forty times.</dd>
+        </dl>
+      </div>
+      <div class="mk-art" aria-hidden="true">
+        <svg viewBox="0 0 440 240">
+          <rect class="card" x="20" y="20" width="400" height="200" rx="8"/>
+          <text class="m" x="40" y="48">anchor text for brightkettle.com</text>
+          <text class="s" x="40" y="80">brand name</text><rect class="bar" x="180" y="68" width="220" height="14" rx="3"/><rect class="bar-on" x="180" y="68" width="73" height="14" rx="3"/>
+          <text class="s" x="40" y="110">bare URL</text><rect class="bar" x="180" y="98" width="220" height="14" rx="3"/><rect class="bar-on" x="180" y="98" width="59" height="14" rx="3"/>
+          <text class="s" x="40" y="140">partial match</text><rect class="bar" x="180" y="128" width="220" height="14" rx="3"/><rect class="bar-on" x="180" y="128" width="44" height="14" rx="3"/>
+          <text class="s" x="40" y="170">generic</text><rect class="bar" x="180" y="158" width="220" height="14" rx="3"/><rect class="bar-on" x="180" y="158" width="33" height="14" rx="3"/>
+          <text class="s" x="40" y="200">exact match</text><rect class="bar" x="180" y="188" width="220" height="14" rx="3"/><rect class="amber" x="180" y="188" width="11" height="14" rx="3"/>
+          <text class="m" x="200" y="200">kept rare on a small profile</text>
+        </svg>
+      </div>
+    </div>
 
-<section class="lists mk-reveal">
-  <h2>Site lists with DA and referring domains</h2>
-  <div class="cards"><a class="card" href="social-bookmarking-sites.html"><b>Social bookmarking sites</b><span>181 sites in the library</span></a><a class="card" href="profile-creation-sites.html"><b>Profile creation sites</b><span>575 sites in the library</span></a><a class="card" href="guest-posting-sites.html"><b>Guest posting &amp; article sites</b><span>239 sites in the library</span></a><a class="card" href="web-2-0-sites.html"><b>Web 2.0 sites</b><span>69 sites in the library</span></a><a class="card" href="directory-submission-sites.html"><b>Directory submission sites</b><span>6 sites in the library</span></a><a class="card" href="forum-posting-sites.html"><b>Forum posting sites</b><span>34 sites in the library</span></a><a class="card" href="high-da-backlinks.html"><b>High DA backlinks (DA 90+)</b><span>117 sites in the library</span></a></div>
-</section>
+    <div class="mk-theme mk-reveal">
+      <div>
+        <h3>It builds the link the way that site actually works</h3>
+        <p class="why">Not "go to the site and sign up". The exact method, and it learns when the guide is wrong.</p>
+        <dl>
+          <dt>Knows the method for every site</dt><dd>The playbook for that kind of link, the steps with the exact button and field names, and what the site requires.</dd>
+          <dt>Builds in a real browser</dt><dd>Login-free sites build in seconds with a proof screenshot. Account sites are built by the assistant in its own browser — signing up once, signing in ever after.</dd>
+          <dt>Never forgets what a site taught it</dt><dd>Which field gives the followed link, a length cap, a password rule the page never shows. Found once, recorded, and the next build starts from the truth.</dd>
+          <dt>Stops at gates instead of faking its way through</dt><dd>A captcha, an email code or a social login is a gate. It says what the site wants in plain words and offers the ways through.</dd>
+        </dl>
+      </div>
+      <div class="mk-art" aria-hidden="true">
+        <svg viewBox="0 0 440 240">
+          <rect class="card" x="20" y="16" width="400" height="208" rx="8"/>
+          <text class="m" x="40" y="44">livejournal · profile</text>
+          <text class="s" x="40" y="78">Website</text><rect class="soft" x="130" y="64" width="270" height="22" rx="4"/><text class="t" x="140" y="79">https://brightkettle.com/</text>
+          <text class="s" x="40" y="112">Link text</text><rect class="soft" x="130" y="98" width="270" height="22" rx="4"/><text class="t" x="140" y="113">compact espresso machines</text>
+          <text class="s" x="40" y="146">Bio</text><rect class="soft" x="130" y="132" width="270" height="22" rx="4"/><text class="m" x="140" y="147">…nofollow here, the guide was wrong</text>
+          <rect class="teal" x="130" y="176" width="120" height="28" rx="4"/><text x="150" y="195" font-size="13" font-weight="600" fill="#fff" font-family="IBM Plex Sans,sans-serif">Save changes</text>
+          <text class="m" x="264" y="195">learned: "Link text" gives the followed anchor</text>
+        </svg>
+      </div>
+    </div>
 
-<section class="platforms mk-reveal">
-  <h2>Where it runs</h2>
-  <p>One engine, one library, one subscription. Four ways in, at four different stages.</p>
-  <div class="cards">
-    <a class="card" href="https://github.com/m4mansoor/seo-agent"><b>Any AI assistant <span class="tag live">live</span></b><span>Claude Code, Claude Desktop, claude.ai, Cursor, Codex, ChatGPT, Windsurf. pip install, 25 sites free, links built in your own browser.</span></a>
-    <a class="card" href="wordpress-backlink-plugin.html"><b>WordPress <span class="tag soon">in development</span></b><span>Posts, pages and WooCommerce products as targets. Campaigns, gates, weekly monitoring and white-label reports inside wp-admin.</span></a>
-    <a class="card" href="shopify-seo-app.html"><b>Shopify <span class="tag soon">in development</span></b><span>Products and collections as targets, embedded in the Shopify admin, billed through Shopify.</span></a>
-    <a class="card" href="seo-desktop-app.html"><b>Windows and macOS <span class="tag soon">in development</span></b><span>The only door that uses accounts you are already signed in to. Its own browser, your own model key, nothing uploaded.</span></a>
+    <div class="mk-theme mk-reveal">
+      <div>
+        <h3>It checks before it counts</h3>
+        <p class="why">A link only exists if the public page shows a real hyperlink to you, with the anchor you agreed, and passes authority.</p>
+        <dl>
+          <dt>Verifies every link on the live page</dt><dd>Three checks: is your URL a real hyperlink, does the anchor match, is it followed. Plain-text URLs and links the host quietly made nofollow don't count.</dd>
+          <dt>Reports what it built, from its own record</dt><dd>Every link with its anchor, where it lives, the site's authority and when. Not a backlink index that won't show a new link for weeks.</dd>
+          <dt>Keeps the proof</dt><dd>A screenshot of every placement, a live URL, a status you can trust. A link it couldn't verify is reported as unverified, never counted.</dd>
+        </dl>
+      </div>
+      <div class="mk-art" aria-hidden="true">
+        <svg viewBox="0 0 440 240">
+          <rect class="card" x="20" y="20" width="400" height="200" rx="8"/>
+          <text class="m" x="40" y="48">verifying https://write.as/a1b2</text>
+          <path class="tick" d="M44 84 l10 10 l20 -22"/><text class="t" x="90" y="88">Real hyperlink to your URL</text>
+          <path class="tick" d="M44 128 l10 10 l20 -22"/><text class="t" x="90" y="132">Anchor reads “compact espresso machines”</text>
+          <path class="tick" d="M44 172 l10 10 l20 -22"/><text class="t" x="90" y="176">Followed — passes authority</text>
+          <text class="m" x="90" y="200">logged · proof saved · counted</text>
+        </svg>
+      </div>
+    </div>
+
+    <div class="mk-theme mk-reveal">
+      <div>
+        <h3>It keeps watching, and keeps the pace</h3>
+        <p class="why">Links drop. Profiles get deleted. And a burst of links is the pattern that gets a site looked at.</p>
+        <dl>
+          <dt>Paces everything</dt><dd>Links arrive steadily across days and methods — at most 5 a day and 20 a week to any one site. Many sites under one subscription.</dd>
+          <dt>Watches the links afterwards</dt><dd>Weekly re-checks of everything it placed, every referring domain to your site, what's new and lost each month, spam flags, and a disavow file.</dd>
+          <dt>Finds what competitors have and you don't</dt><dd>Point it at two or three competitors and it lists the referring domains they have that you lack, with the method to build each one attached.</dd>
+        </dl>
+      </div>
+      <div class="mk-art" aria-hidden="true">
+        <svg viewBox="0 0 440 240">
+          <rect class="card" x="20" y="20" width="400" height="200" rx="8"/>
+          <text class="m" x="40" y="48">this month · 5 links · spread over 10 days</text>
+          <line x1="50" y1="140" x2="400" y2="140" stroke="#DAD7CE" stroke-width="2"/>
+          <g class="teal"><circle class="drip" cx="70" cy="140" r="9"/><circle class="drip" cx="140" cy="140" r="9"/><circle class="drip" cx="225" cy="140" r="9"/><circle class="drip" cx="300" cy="140" r="9"/><circle class="drip" cx="380" cy="140" r="9"/></g>
+          <text class="m" x="50" y="170">day 1</text><text class="m" x="360" y="170">day 10</text>
+          <text class="s" x="40" y="205">not fifty on Friday because the deadline was Friday</text>
+        </svg>
+      </div>
+    </div>
   </div>
-  <p><a href="roadmap.html">What is live, what is being built, and what is not planned</a></p>
 </section>
 
-<section class="upgrade mk-reveal" id="pricing">
-  <h2>Pricing</h2>
-  <div class="cards">
-    <div class="card"><b>Free, open source</b><span>25 sites with their methods, two at DA 90 or higher. Links built in your own browser on login-free sites, the method followed with you on the rest, every link verified and logged. pip install, no account.</span></div>
-    <div class="card"><b>$97 a year</b><span>About $8 a month, billed yearly. All 1,138 verified-reachable sites, the campaign planner and advisor, building on account-based sites, gates with connected services, monitoring, reports and a dashboard. Subscribe, say <i>activate</i> in the chat, done.</span></div>
-    <div class="card"><b>$27 a month</b><span>The same, month to month, cancel any time. Fair use on both plans: 500 placed links per key in any 30 days.</span></div>
+<section class="mk-band deep mk-reveal">
+  <div class="mk-inner">
+    <h2>Against a person doing it by hand</h2>
+    <p class="mk-kicker">It's better at the repetitive part, which is most of the job. The judgement stays yours.</p>
+    <div class="mk-score">
+      <div class="hd"><div></div><div>A link builder</div><div>SEO Agent</div></div>
+      <div class="r"><div>Knows the sites on day one</div><div data-who="Person">The ones they've used before. A new hire starts blank.</div><div class="win" data-who="Agent">The method for 1,138 sites, re-verified monthly.</div></div>
+      <div class="r"><div>Checks every link the same way</div><div data-who="Person">Link 47 at six in the evening gets a glance.</div><div class="win" data-who="Agent">Three checks on the live page, every time.</div></div>
+      <div class="r"><div>Keeps the record</div><div data-who="Person">A spreadsheet nobody updates.</div><div class="win" data-who="Agent">Every link, anchor, live URL and proof, re-checked weekly.</div></div>
+      <div class="r"><div>Keeps the pace</div><div data-who="Person">Fifty links in an afternoon because the deadline is Friday.</div><div class="win" data-who="Agent">5 a day, 20 a week, spread across methods.</div></div>
+      <div class="r"><div>Costs</div><div data-who="Person">$2,500 to $4,000 a month, plus tools.</div><div class="win" data-who="Agent">About $8 a month, in the chat you already use, at 2am if you like.</div></div>
+    </div>
+    <div class="mk-yours">
+      <div><h4>The judgement is yours</h4><p>Which keywords matter, how fast to go, whether a site suits your brand. It advises with reasons, then does what you say.</p></div>
+      <div><h4>The gates are yours</h4><p>It won't solve a captcha by pretending to be a person, or sign into your Google account unattended. Links built that way get removed.</p></div>
+      <div><h4>The content is yours</h4><p>On sites that want an article, it writes to your brief. It won't spin nonsense to get past a moderator.</p></div>
+      <div><h4>The honesty is built in</h4><p>A link it couldn't verify is reported as unverified, not counted. It never promises a ranking.</p></div>
+    </div>
   </div>
-  <p>Works in Claude Code, Claude Desktop, claude.ai, Cursor, Codex, ChatGPT and any MCP client: the pip package for local mode, a personal link for connectors. Twenty-six tools, and the <a href="roadmap.html">WordPress, Shopify and desktop apps</a> are next.</p>
-  <a class="btn" href="https://mcp.seoagent.dev/buy?plan=yearly">Subscribe, $97 a year</a> <a class="btn ghost" href="https://mcp.seoagent.dev/buy?plan=monthly">$27 a month</a> <a class="btn ghost" href="how-to-use-seo-agent.html">Install free</a>
 </section>
 
-<section class="guides mk-reveal">
-  <h2>Guides</h2>
-  <ul>
-    <li><a href="how-to-use-seo-agent.html">How to use SEO Agent: setup to your first verified backlink</a></li>
-    <li><a href="how-to-get-backlinks-with-ai.html">How to get backlinks with an AI agent</a></li>
-    <li><a href="link-building-software.html">Link building software, and what most of it leaves out</a></li>
-    <li><a href="claude-seo.html">Claude SEO: link building from Claude Code and Claude Desktop</a></li>
-    <li><a href="cursor-seo.html">Cursor SEO: link building from Cursor</a></li>
-    <li><a href="llm-seo.html">LLM SEO and SEO automation</a></li>
-    <li><a href="seo-mcp-server.html">The SEO MCP server: tool reference</a></li>
-    <li><a href="roadmap.html">Roadmap and status</a></li>
-  </ul>
+<section class="mk-band mk-reveal">
+  <div class="mk-inner">
+    <h2>What fifty verified links a month costs</h2>
+    <p class="mk-kicker">Typical market ranges. The point isn't that people are expensive; it's that most of what you pay them for is the repetitive part.</p>
+    <div class="mk-cost">
+      <div><small>In-house link builder</small><b>$2,500–4,000</b><p>a month, plus tools. 3 to 6 weeks for 50, at 30–60 minutes a link. Knows only the sites they've used before.</p></div>
+      <div><small>Agency or marketplace</small><b>$7,500–20,000</b><p>per 50, at $150–400 a DA 40+ followed link. 4 to 8 weeks. Their list, not yours; you never see the method.</p></div>
+      <div><small>Freelancer on a gig site</small><b>$500–2,500</b><p>per 50, at $10–50 a link. 1 to 2 weeks. Usually the same hundred sites everyone else spams.</p></div>
+      <div class="us"><small>SEO Agent</small><b class="big">$8</b><p>a month, billed yearly, or $27 month to month. 1,138 sites with the exact method for each, re-verified monthly, paced on purpose.</p></div>
+    </div>
+    <p class="mk-moat">The library is the part a team can't copy quickly. Every site in it came from years of link building: which DA 60 profile page still gives a followed link, which forum strips links from new members, which shortener sits behind a captcha, which directory approves in a day. Each entry carries the method with the exact button names, what the site requires, and referring domains, spam score and traffic. A person could rebuild that list. It would take them the same years.</p>
+  </div>
+</section>
+
+<section class="mk-band paper2 mk-reveal" id="pricing">
+  <div class="mk-inner upgrade">
+    <h2>Pricing</h2>
+    <div class="cards">
+      <div class="card"><b>Free, open source</b><span>25 sites with their methods, two at DA 90 or higher. Links built in your own browser on login-free sites, the method followed with you on the rest, every link verified and logged. pip install, no account.</span></div>
+      <div class="card"><b>$97 a year</b><span>About $8 a month, billed yearly. All 1,138 verified-reachable sites, the campaign planner and advisor, building on account-based sites, gates with connected services, monitoring, reports and a dashboard. Subscribe, say <i>activate</i> in the chat, done.</span></div>
+      <div class="card"><b>$27 a month</b><span>The same, month to month, cancel any time. Fair use on both plans: 500 placed links per key in any 30 days.</span></div>
+    </div>
+    <p>Works in Claude Code, Claude Desktop, claude.ai, Cursor, Codex, ChatGPT and any MCP client: the pip package for local mode, a personal link for connectors. The <a href="roadmap.html">WordPress, Shopify and desktop apps</a> are next.</p>
+    <a class="btn" href="https://mcp.seoagent.dev/buy?plan=yearly">Subscribe, $97 a year</a> <a class="btn ghost" href="https://mcp.seoagent.dev/buy?plan=monthly">$27 a month</a> <a class="btn ghost" href="how-to-use-seo-agent.html">Install free</a>
+  </div>
+</section>
+
+<section class="mk-band mk-reveal">
+  <div class="mk-inner free">
+    <h2>The free backlink sites list</h2>
+    <p class="mk-kicker">Twenty-five reachable sites, DA 20 to 96, all followed, two at DA 90 or higher, each with a step-by-step method your assistant can follow. The first twelve:</p>
+    <div class="tablewrap"><table><thead><tr><th>Site</th><th class="num">DA</th><th class="num">Referring domains</th><th>Method</th><th>Link</th></tr></thead><tbody><tr><td>Medium</td><td class='num'>96</td><td class='num'>1,371,100</td><td>Article or blog post</td><td>followed</td></tr><tr><td>IMDB</td><td class='num'>95</td><td class='num'>891,904</td><td>Profile website field</td><td>followed</td></tr><tr><td>Zotero</td><td class='num'>75</td><td class='num'>51,364</td><td>Bookmark / link submit</td><td>followed</td></tr><tr><td>ArtFire</td><td class='num'>75</td><td class='num'>31,486</td><td>Profile website field</td><td>followed</td></tr><tr><td>Milkyway (.edu)</td><td class='num'>75</td><td class='num'>9,011</td><td>Profile website field</td><td>followed</td></tr><tr><td>DsiBlogger</td><td class='num'>74</td><td class='num'>37,269</td><td>Article or blog post</td><td>followed</td></tr><tr><td>FireBlogz</td><td class='num'>74</td><td class='num'>39,401</td><td>Article or blog post</td><td>followed</td></tr><tr><td>Beatstars</td><td class='num'>73</td><td class='num'>39,465</td><td>Page builder site</td><td>followed</td></tr><tr><td>Flip HTML5</td><td class='num'>73</td><td class='num'>226,903</td><td>Shared document</td><td>followed</td></tr><tr><td>Figma</td><td class='num'>71</td><td class='num'>101,339</td><td>Social post</td><td>followed</td></tr><tr><td>MD Anderson</td><td class='num'>71</td><td class='num'>918</td><td>Other</td><td>followed</td></tr><tr><td>Wakelet</td><td class='num'>71</td><td class='num'>191,490</td><td>Bookmark / link submit</td><td>followed</td></tr></tbody></table></div>
+    <p><a href="https://github.com/m4mansoor/seo-agent#the-free-backlink-sites-list">The full free list in the README</a></p>
+  </div>
+</section>
+
+<section class="mk-band paper2 mk-reveal">
+  <div class="mk-inner lists">
+    <h2>Site lists with DA and referring domains</h2>
+    <div class="cards"><a class="card" href="social-bookmarking-sites.html"><b>Social bookmarking sites</b><span>181 sites in the library</span></a><a class="card" href="profile-creation-sites.html"><b>Profile creation sites</b><span>575 sites in the library</span></a><a class="card" href="guest-posting-sites.html"><b>Guest posting &amp; article sites</b><span>239 sites in the library</span></a><a class="card" href="web-2-0-sites.html"><b>Web 2.0 sites</b><span>69 sites in the library</span></a><a class="card" href="directory-submission-sites.html"><b>Directory submission sites</b><span>6 sites in the library</span></a><a class="card" href="forum-posting-sites.html"><b>Forum posting sites</b><span>34 sites in the library</span></a><a class="card" href="high-da-backlinks.html"><b>High DA backlinks (DA 90+)</b><span>117 sites in the library</span></a></div>
+  </div>
+</section>
+
+<section class="mk-band mk-reveal">
+  <div class="mk-inner platforms">
+    <h2>Where it runs</h2>
+    <p class="mk-kicker">One engine, one library, one subscription. Four ways in, at four different stages.</p>
+    <div class="cards">
+      <a class="card" href="https://github.com/m4mansoor/seo-agent"><b>Any AI assistant <span class="tag live">live</span></b><span>Claude Code, Claude Desktop, claude.ai, Cursor, Codex, ChatGPT, Windsurf. pip install, 25 sites free, links built in your own browser.</span></a>
+      <a class="card" href="wordpress-backlink-plugin.html"><b>WordPress <span class="tag soon">in development</span></b><span>Posts, pages and WooCommerce products as targets. Campaigns, gates, weekly monitoring and white-label reports inside wp-admin.</span></a>
+      <a class="card" href="shopify-seo-app.html"><b>Shopify <span class="tag soon">in development</span></b><span>Products and collections as targets, embedded in the Shopify admin, billed through Shopify.</span></a>
+      <a class="card" href="seo-desktop-app.html"><b>Windows and macOS <span class="tag soon">in development</span></b><span>The only door that uses accounts you are already signed in to. Its own browser, your own model key, nothing uploaded.</span></a>
+    </div>
+    <p><a href="roadmap.html">What is live, what is being built, and what is not planned</a></p>
+  </div>
+</section>
+
+<section class="mk-band paper2 mk-reveal">
+  <div class="mk-inner guides">
+    <h2>Guides</h2>
+    <ul>
+      <li><a href="how-to-use-seo-agent.html">How to use SEO Agent: setup to your first verified backlink</a></li>
+      <li><a href="how-to-get-backlinks-with-ai.html">How to get backlinks with an AI agent</a></li>
+      <li><a href="link-building-software.html">Link building software, and what most of it leaves out</a></li>
+      <li><a href="claude-seo.html">Claude SEO: link building from Claude Code and Claude Desktop</a></li>
+      <li><a href="cursor-seo.html">Cursor SEO: link building from Cursor</a></li>
+      <li><a href="llm-seo.html">LLM SEO and SEO automation</a></li>
+      <li><a href="seo-mcp-server.html">The SEO MCP server: tool reference</a></li>
+      <li><a href="roadmap.html">Roadmap and status</a></li>
+    </ul>
+  </div>
 </section>
 
 <script>
 (function () {
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var log = document.getElementById('chat'), replay = document.getElementById('replay');
 
-  /* The hero conversation plays once, message by message, the way the product actually replies. */
-  var chat = document.getElementById('chat');
+  /* The conversation plays once, message by message, inside a window that scrolls like a real one. */
   function play() {
-    var msgs = [].slice.call(chat.querySelectorAll('.mk-you, .mk-agent'));
+    var msgs = [].slice.call(log.querySelectorAll('.mk-you, .mk-agent'));
     msgs.forEach(function (m) { m.classList.remove('is-in'); });
-    var old = chat.querySelector('.mk-typing'); if (old) old.remove();
-    if (reduce) { msgs.forEach(function (m) { m.classList.add('is-in'); }); return; }
+    var old = log.querySelector('.mk-typing'); if (old) old.remove();
+    log.scrollTop = 0; replay.hidden = true;
+    if (reduce) { msgs.forEach(function (m) { m.classList.add('is-in'); }); replay.hidden = false; return; }
     var i = 0;
+    function show(m) { m.classList.add('is-in'); log.scrollTop = log.scrollHeight; }
     function next() {
-      if (i >= msgs.length) { addReplay(); return; }
+      if (i >= msgs.length) { replay.hidden = false; return; }
       var m = msgs[i++];
       if (m.classList.contains('mk-agent')) {
         var dots = document.createElement('div'); dots.className = 'mk-typing'; dots.innerHTML = '<i></i><i></i><i></i>';
-        chat.insertBefore(dots, m);
-        setTimeout(function () { dots.remove(); m.classList.add('is-in'); setTimeout(next, 900); }, 1100);
-      } else {
-        m.classList.add('is-in'); setTimeout(next, 700);
-      }
+        log.insertBefore(dots, m); log.scrollTop = log.scrollHeight;
+        setTimeout(function () { dots.remove(); show(m); setTimeout(next, 1000); }, 1100);
+      } else { show(m); setTimeout(next, 750); }
     }
-    setTimeout(next, 400);
+    setTimeout(next, 500);
   }
-  function addReplay() {
-    if (chat.querySelector('.mk-replay')) return;
-    var b = document.createElement('button'); b.type = 'button'; b.className = 'mk-replay'; b.textContent = 'Play again';
-    b.addEventListener('click', function () { b.remove(); play(); });
-    chat.appendChild(b);
-  }
-  if (chat) play();
+  if (log) { play(); replay.addEventListener('click', play); }
 
-  /* The numbers count up once when first seen. They are the point of that strip. */
+  /* Numbers count up once when first seen; they are the point of that strip. */
   function countUp(el) {
     var end = parseInt(el.getAttribute('data-count'), 10), t0 = null, dur = 1100;
     function step(ts) {
@@ -222,6 +302,7 @@ description: "Open-source AI SEO Agent and MCP server for Claude Code, Cursor an
     requestAnimationFrame(step);
   }
 
+  var targets = document.querySelectorAll('.mk-reveal, .mk-theme, [data-count]');
   if ('IntersectionObserver' in window && !reduce) {
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (e) {
@@ -230,10 +311,10 @@ description: "Open-source AI SEO Agent and MCP server for Claude Code, Cursor an
         if (e.target.hasAttribute('data-count')) countUp(e.target);
         io.unobserve(e.target);
       });
-    }, { threshold: 0.2 });
-    document.querySelectorAll('.mk-reveal, .mk-flow, [data-count]').forEach(function (el) { io.observe(el); });
+    }, { threshold: 0.18 });
+    targets.forEach(function (el) { io.observe(el); });
   } else {
-    document.querySelectorAll('.mk-reveal, .mk-flow').forEach(function (el) { el.classList.add('is-in'); });
+    targets.forEach(function (el) { el.classList.add('is-in'); });
   }
 })();
 </script>
