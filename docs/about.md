@@ -7,9 +7,11 @@ description: "Who builds SEO Agent, why it exists, and the rules it is built to 
 
 ## The person
 
-SEO Agent is built by **Inaamul Haq Mansoor**, an engineer who has spent more than twelve years building systems that have to work unattended: IoT and embedded platforms, edge AI, and the infrastructure that keeps them honest. He is CEO and Chief Technology Officer of [Tech Mentions](https://techmentions.com), and builds production AI agents with [Gaper](https://gaper.io), an AI-native implementation partner that deploys supervised agents into companies' own workflows.
+SEO Agent is built by **Inaamul Haq Mansoor**, founder and CEO of [Gapifi.com](https://gapifi.com). He has spent twenty-one years in SEO, automation and digital marketing, and is one of the top names in the field — named among the Top 100 IT Professionals by the Government of Pakistan.
 
-That background shapes this product more than any SEO tool does. An embedded system cannot ask a human what to do when a sensor reads wrong at 3am; it has to know the difference between "the value is zero" and "the value is missing", and act on each correctly. SEO Agent is built with the same discipline. A link that could not be verified is reported as unverified, never counted. A site that answers nothing to this connection is unknown, not dead. A backlink index that shows nothing for a link placed yesterday is a lag, not a failure — and the product says so, in words, rather than leaving you to wonder.
+Two decades of doing link building by hand is where this product comes from. He knows which DA 60 profile page still gives a followed link, which forum strips links from new members, which shortener sits behind a captcha and which directory approves in a day — because he has built links on them. He also knows exactly where the time goes: not on judgement, but on the account, the field, the placement and the check, fifty times over. SEO Agent is that knowledge turned into something that runs.
+
+The automation background shows in the discipline. A system that works unattended has to know the difference between "the value is zero" and "the value is missing" and act on each correctly. So a link that could not be verified is reported as unverified, never counted. A site that answers nothing to this connection is unknown, not dead. A backlink index that shows nothing for a link placed yesterday is a lag, not a failure — and the product says so, in words, rather than leaving you to wonder.
 
 He is on GitHub as [m4mansoor](https://github.com/m4mansoor), where SEO Agent is developed in the open.
 
@@ -38,4 +40,4 @@ The repository is public. If a site changes its method, [open an issue](https://
 
 ## Get in touch
 
-The fastest way is [GitHub](https://github.com/m4mansoor/seo-agent). For work with Tech Mentions or Gaper, their sites have the details.
+The fastest way is [GitHub](https://github.com/m4mansoor/seo-agent). For everything else, [Gapifi.com](https://gapifi.com).
