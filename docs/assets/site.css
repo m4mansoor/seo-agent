@@ -70,7 +70,7 @@ img{max-width:100%;height:auto;display:block}
 
 /* ================= marketing page ================= */
 :root{--deep:#0B3F3C;--deep-2:#0F5551;--on-deep:#EAF2F0;--on-deep-2:#A9C4C0;--line-deep:rgba(234,242,240,.14)}
-main.landing{padding:0 0 60px;max-width:none}
+main.landing{padding:0;max-width:none}
 .mk-band{padding:64px 28px}.mk-inner{max-width:1100px;margin:0 auto}
 .mk-band.deep{background:var(--deep);color:var(--on-deep)}
 .mk-band.deep h2{color:var(--on-deep);border-top-color:var(--line-deep)}
@@ -204,4 +204,34 @@ main.landing section h2{margin-top:0;padding-top:0;border-top:0;font-size:34px;l
   .mk-log[data-play] > .mk-you,.mk-log[data-play] > .mk-agent,.mk-reveal{opacity:1;transform:none;transition:none}
   .mk-typing i,.mk-ghost .stamp,.mk-art .tick,.mk-art .drip{animation:none}
   .mk-ghost .stamp,.mk-art .drip{opacity:1}.mk-art .tick{stroke-dashoffset:0}
+}
+
+/* ---- hero headline: room for the highlight to sit on each line without touching the next ---- */
+.mk-hero h1{line-height:1.14}
+.mk-hero h1 em{-webkit-box-decoration-break:clone;box-decoration-break:clone;padding:.04em .2em;border-radius:3px}
+
+/* ---- every doc page opens with the same band as the homepage ---- */
+.mk-doc-head{padding:52px 28px 44px}
+.mk-doc-head h1{font-family:var(--disp);font-size:clamp(32px,4.6vw,52px);font-weight:800;line-height:1.08;letter-spacing:-.02em;margin:0;max-width:22ch;text-wrap:balance;color:var(--on-deep)}
+.mk-doc-head p{color:var(--on-deep-2);font-size:17px;max-width:64ch;margin:14px 0 0}
+main.doc > h1:first-of-type{display:none}   /* the band already carries the title */
+main.doc{padding-top:36px}
+.top nav{flex-wrap:wrap}
+
+/* ---- footer: columns, then the brand fading out left to right ---- */
+.mk-foot{background:var(--paper-2);border-top:1px solid var(--rule);padding:56px 28px 0;overflow:hidden}
+.mk-foot-grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1.6fr repeat(4,minmax(0,1fr));gap:32px}
+.mk-foot-brand p{color:var(--ink-2);margin:12px 0 0;max-width:34ch;font-size:15px}
+.mk-foot h4{margin:0 0 12px;font-size:14px;font-weight:600;color:var(--ink)}
+.mk-foot-grid a:not(.brand){display:block;color:var(--ink-2);text-decoration:none;font-size:14px;padding:4px 0}
+.mk-foot-grid a:not(.brand):hover{color:var(--teal)}
+.mk-wordmark{max-width:1100px;margin:36px auto 0;padding-bottom:.12em;font-family:var(--disp);font-weight:800;font-size:clamp(84px,17vw,230px);line-height:1;letter-spacing:-.04em;white-space:nowrap;user-select:none;
+  background:linear-gradient(90deg,var(--ink) 0%,var(--ink) 18%,rgba(28,34,41,.06) 92%,rgba(28,34,41,0) 100%);
+  -webkit-background-clip:text;background-clip:text;color:transparent}
+.mk-foot-line{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:18px 0 24px;border-top:1px solid var(--rule);font-size:13px;color:var(--ink-3)}
+@media (max-width:900px){
+  .mk-foot{padding:44px 18px 0}
+  .mk-foot-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:26px}
+  .mk-foot-brand{grid-column:span 2}
+  .mk-doc-head{padding:40px 18px 34px}
 }

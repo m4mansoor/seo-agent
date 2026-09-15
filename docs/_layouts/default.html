@@ -39,15 +39,63 @@
     <a href="{{ site.baseurl }}/high-da-backlinks.html">Site lists</a>
     <a href="{{ site.baseurl }}/seo-mcp-server.html">Tools</a>
     <a href="{{ site.baseurl }}/roadmap.html">Roadmap</a>
+    <a href="{{ site.baseurl }}/about.html">About</a>
     <a class="gh" href="https://github.com/m4mansoor/seo-agent">GitHub</a>
   </nav>
 </header>
+{% unless page.url == '/' or page.url == '/index.html' %}
+<section class="mk-band deep mk-doc-head">
+  <div class="mk-inner">
+    <h1>{{ page.title }}</h1>
+    {% if page.description %}<p>{{ page.description }}</p>{% endif %}
+  </div>
+</section>
+{% endunless %}
 <main class="{% if page.url == '/' or page.url == '/index.html' %}landing{% else %}doc{% endif %}">
 {{ content }}
 </main>
-<footer class="foot">
-  <div>SEO Agent is open source under the MIT licence. Site data is verified monthly; check a site before relying on it.</div>
-  <div><a href="https://github.com/m4mansoor/seo-agent">GitHub</a> · <a href="{{ site.baseurl }}/seo-mcp-server.html">Tool reference</a></div>
+<footer class="mk-foot">
+  <div class="mk-foot-grid">
+    <div class="mk-foot-brand">
+      <a class="brand" href="{{ site.baseurl }}/">SEO<span>Agent</span></a>
+      <p>Backlinks, built by an agent that talks you through it. Open source under the MIT licence.</p>
+    </div>
+    <div>
+      <h4>Product</h4>
+      <a href="{{ site.baseurl }}/how-to-use-seo-agent.html">Setup</a>
+      <a href="{{ site.baseurl }}/seo-mcp-server.html">Tool reference</a>
+      <a href="{{ site.baseurl }}/#pricing">Pricing</a>
+      <a href="{{ site.baseurl }}/roadmap.html">Roadmap</a>
+    </div>
+    <div>
+      <h4>Guides</h4>
+      <a href="{{ site.baseurl }}/how-to-get-backlinks-with-ai.html">Backlinks with an AI agent</a>
+      <a href="{{ site.baseurl }}/link-building-software.html">Link building software</a>
+      <a href="{{ site.baseurl }}/claude-seo.html">Claude SEO</a>
+      <a href="{{ site.baseurl }}/cursor-seo.html">Cursor SEO</a>
+      <a href="{{ site.baseurl }}/llm-seo.html">LLM SEO</a>
+    </div>
+    <div>
+      <h4>Site lists</h4>
+      <a href="{{ site.baseurl }}/high-da-backlinks.html">High DA (90+)</a>
+      <a href="{{ site.baseurl }}/profile-creation-sites.html">Profile creation</a>
+      <a href="{{ site.baseurl }}/guest-posting-sites.html">Guest posting</a>
+      <a href="{{ site.baseurl }}/social-bookmarking-sites.html">Social bookmarking</a>
+      <a href="{{ site.baseurl }}/web-2-0-sites.html">Web 2.0</a>
+    </div>
+    <div>
+      <h4>Company</h4>
+      <a href="{{ site.baseurl }}/about.html">About</a>
+      <a href="https://github.com/m4mansoor/seo-agent">GitHub</a>
+      <a href="https://github.com/m4mansoor/seo-agent/issues">Report a site change</a>
+      <a href="https://github.com/m4mansoor/seo-agent/blob/main/LICENSE">Licence</a>
+    </div>
+  </div>
+  <div class="mk-wordmark" aria-hidden="true">SEO Agent</div>
+  <div class="mk-foot-line">
+    <span>© 2026 Inaamul Haq Mansoor</span>
+    <span>Site data is verified monthly. Check a site before relying on it.</span>
+  </div>
 </footer>
 <script>
 /* Copy each column's header onto its cells so the phone layout can show "DA" above a number
