@@ -95,6 +95,14 @@ claude mcp add seo-agent -- seo-agent
 
 Then ask: *I need 5 dofollow backlinks from the free list for https://example.com, keyword "example".* The assistant searches the 25 sites, calls `build_link` where it can build by itself, follows `get_method` where an account is needed, verifies each link and logs it. Ask *how many links have I built* any time; it calls `account`.
 
+## Where the work happens
+
+Two kinds of tool, and the difference matters.
+
+**On your machine, always.** Anything that drives a browser: building a link, building a Facebook album, checking a link is live. It uses your own browser and your own signed-in accounts. Your passwords are never sent anywhere, no session of yours is ever held on a server, and it keeps working even when our service does not.
+
+**From the service.** The library of 1,245 sites, the campaign planner, keyword suggestions, the backlink monitor, competitor gap and reports. That is where the data lives.
+
 ## Subscribe: every site, $97 a year or $27 a month
 
 When you ask for more high-DA sites than the free list holds, the assistant shows what is locked and gives you the payment links; or call `upgrade`. Subscribe at **https://mcp.seoagent.dev/buy?plan=yearly** ($97 a year, about $8 a month) or **https://mcp.seoagent.dev/buy?plan=monthly** ($27 a month, cancel any time), copy the key from the success page, and tell your assistant:
