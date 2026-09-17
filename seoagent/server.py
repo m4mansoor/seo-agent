@@ -219,14 +219,21 @@ def facebook_sign_in(wait_minutes: int = 30) -> dict:
             "detail": ["Say the word and I will open the window again."]}
 
 
-def get_traffic(url: str, keyword: str, brand: str = "", kind: str = "article", images: str = "") -> dict:
+def get_traffic(url: str, keyword: str, brand: str = "", kind: str = "article", images: str = "",
+                page_url: str = "", make_page: bool = False) -> dict:
     """Build a Facebook album that ranks for a phrase and sends visitors to one page. Runs here, on this machine,
     because it needs the person's own browser and their own signed-in Facebook."""
     from . import media_set_run
     files = [p.strip() for p in (images or "").split(",") if p.strip()]
     steps: list[str] = []
+    cfg = local.read_config()
+    by_site = cfg.get("pages_by_site") or {}
     r = media_set_run.get_traffic(url.strip(), keyword.strip(), brand=brand.strip(), kind=kind,
-                                  images=files or None, on_step=steps.append)
+                                  images=files or None, use_page=page_url.strip(),
+                                  pages_by_site=by_site, may_create_page=make_page, on_step=steps.append)
+    if r.get("site") and r.get("page_url"):
+        by_site[r["site"]] = r["page_url"]          # asked once per website, not once per album
+        local.write_config(pages_by_site=by_site)
     return {**r, "did": steps}
 
 
@@ -258,10 +265,11 @@ FREE_TOOLS = [
     types.Tool(name="get_traffic", description="Get traffic to one page by building a Facebook album that ranks for a phrase and sends visitors on. "
                "Writes the text with their address on the first line, photographs their page, finds or makes their Facebook Page, builds and publishes the album, "
                "puts the address in the album's own description and checks a signed-out visitor can read it. Runs on this machine because it needs their own browser. "
-               "If it answers needs_sign_in, call facebook_sign_in first. What it returns is a traffic asset, never a followed link: say so.",
+               "If it answers needs_sign_in, call facebook_sign_in first. If it answers needs_answer 'page' they have more than one Facebook Page: put the options to them and call again with page_url set; the choice is remembered per website so later albums never ask again. What it returns is a traffic asset, never a followed link: say so.",
                inputSchema={"type": "object", "properties": {"url": {"type": "string"}, "keyword": {"type": "string"},
                                                             "brand": {"type": "string"}, "kind": {"type": "string"},
-                                                            "images": {"type": "string"}}, "required": ["url", "keyword"]}),
+                                                            "images": {"type": "string"}, "page_url": {"type": "string"},
+                                                            "make_page": {"type": "boolean"}}, "required": ["url", "keyword"]}),
 ]
 FREE_IMPL = {"search_sites": search_sites, "get_method": get_method, "library_summary": library_summary, "verify_link": verify_link,
              "log_link": log_link, "list_results": list_results, "account": account, "upgrade": upgrade,

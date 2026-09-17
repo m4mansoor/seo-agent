@@ -251,6 +251,7 @@ def _ensure_public(page: Any) -> str:
 
 def get_traffic(target_url: str, keyword: str, brand: str = "", kind: str = "article",
                 images: Optional[list[str]] = None, profile: str = "facebook", use_page: str = "",
+                pages_by_site: Optional[dict] = None, may_create_page: bool = False,
                 publish: bool = True, on_step: Optional[Callable[[str], None]] = None) -> dict:
     """Everything, from a URL and a phrase to the album's address.
 
@@ -300,14 +301,28 @@ def get_traffic(target_url: str, keyword: str, brand: str = "", kind: str = "art
             return {**out, "ok": False, "needs_sign_in": True,
                     "say": "The Facebook session has expired. One sign-in and I carry on."}
 
-        say("finding or making the Page")
-        page_url = find_page(page, prefer=use_page) or ""
-        if not page_url:
-            made = create_page(page, brand or media_set.title(keyword), target_url)
-            if not made.get("ok"):
-                return {**out, "ok": False, "step": "the Page", "error": made.get("error", "could not make a Page")}
-            page_url = made["page_url"]
+        say("finding the Page")
+        domain = (target_url or "").split("//")[-1].split("/")[0].removeprefix("www.")
+        if use_page:
+            page_url = use_page
+        else:
+            pick = choose_page(list_pages(page), domain, remembered=pages_by_site)
+            if pick["ask"] and not (pick["create"] and may_create_page):
+                # Which Page a site belongs on is theirs to decide, and a Page made by mistake is a public thing
+                # under their name. Hand the question back rather than guessing.
+                return {**out, "ok": False, "needs_answer": "page", "create_offered": pick["create"],
+                        "options": [{"name": o["name"], "page_url": o["url"]} for o in pick["options"]],
+                        "say": pick.get("say", ""), "detail": pick.get("detail", [])}
+            page_url = pick["page_url"]
+            if not page_url:
+                say("making the Page")
+                made = create_page(page, brand or media_set.title(keyword), target_url)
+                if not made.get("ok"):
+                    return {**out, "ok": False, "step": "the Page",
+                            "error": made.get("error", "could not make a Page")}
+                page_url = made["page_url"]
         out["page_url"] = page_url
+        out["site"] = domain
 
         say("building the album")
         built = build_album(page, page_url, title, text, ready, publish=publish, on_step=say)
@@ -335,6 +350,34 @@ def get_traffic(target_url: str, keyword: str, brand: str = "", kind: str = "art
             "detail": ["This one is for traffic. The link inside it passes no ranking strength; what it sends you "
                        "is people who found the album in search.",
                        "It usually appears in search within days. Ranking takes longer."]}
+
+
+def choose_page(pages: list[dict], domain: str, remembered: Optional[dict] = None) -> dict:
+    """Which Page this site's albums belong on.
+
+    A Page is the customer's asset and every album for one site belongs on the same one: a Page per album leaves a
+    row of near-empty Pages, which is weaker and is the pattern Facebook restricts. Someone running several
+    businesses may keep a Page each, and only they know which site goes with which -- so with more than one, ask,
+    and remember the answer so it is asked once per site rather than once per album."""
+    remembered = remembered or {}
+    known = remembered.get(domain, "")
+    urls = {p.get("url", "") for p in pages}
+    if known and known in urls:
+        return {"page_url": known, "ask": False, "create": False, "options": pages}
+    if len(pages) == 1:
+        return {"page_url": pages[0].get("url", ""), "ask": False, "create": False, "options": pages}
+    if not pages:
+        return {"page_url": "", "ask": True, "create": True, "options": [],
+                "say": "You have no Facebook Page yet. Shall I make one for this site?",
+                "detail": ["Albums on a personal profile are not picked up by search at all, so this needs a Page.",
+                           "It is a one-off: every album for this site afterwards goes on the same Page."]}
+    # More than one, and nothing remembered. Put the likeliest first, but it stays their choice.
+    label = (domain or "").split(".")[0].lower()
+    ranked = sorted(pages, key=lambda p: 0 if label and label in (p.get("name", "")).lower() else 1)
+    return {"page_url": "", "ask": True, "create": False, "options": ranked,
+            "say": f"Which of your Pages should the album for {domain} go on?",
+            "detail": ["Every album for this site will go on the Page you pick, so it builds up in one place.",
+                       "I will remember it and not ask again for this site."]}
 
 
 def albums_url(page_url: str) -> str:
@@ -366,29 +409,34 @@ def pick_page(links: list[str], managed: list[str], prefer: str = "") -> Optiona
     return None
 
 
-def find_page(page: Any, prefer: str = "") -> Optional[str]:
-    """The first Page this account manages, or None. A Page is required: albums on a personal profile are not
-    indexed, so finding none is a real answer and not a failure to look harder."""
-    if prefer:
-        return prefer
+def list_pages(page: Any) -> list[dict]:
+    """Every Page this account manages, with its name. The screen links to the person's own profile too, and an
+    album on a personal profile is not indexed at all, so the name matters as much as the address."""
     try:
         page.goto("https://www.facebook.com/pages/?category=your_pages", wait_until="domcontentloaded")
-        _wait(page, 6000)
-        # Only the links under "Pages you manage" are Pages; everything else on this screen is navigation or the
-        # person's own profile.
+        _wait(page, 7000)
+        _clear(page)
         found = page.evaluate(r"""() => {
-          const heading = [...document.querySelectorAll('span,h2,h3')]
-              .find(e => /pages you manage/i.test(e.textContent || ''));
-          const scope = heading ? heading.closest('div[class]')?.parentElement || document : document;
-          const links = [...scope.querySelectorAll('a[href*="profile.php?id="], a[href*="facebook.com/"]')]
-              .map(a => a.href).filter(h => /profile\.php\?id=\d+/.test(h));
-          return {links: [...new Set(links)], scoped: !!heading};
+          const out = [];
+          for (const a of document.querySelectorAll('a[href*="profile.php?id="]')) {
+            const name = (a.innerText || a.getAttribute('aria-label') || '').trim().split('\n')[0];
+            const href = a.href.split('&')[0];
+            if (/profile\.php\?id=\d+/.test(href)) out.push({name, url: href});
+          }
+          const seen = new Set();
+          return out.filter(p => !seen.has(p.url) && seen.add(p.url));
         }""")
-        links = found.get("links") or []
-        ids = [l.split("id=")[-1].split("&")[0] for l in links]
-        return pick_page(links, managed=ids if found.get("scoped") else [], prefer="")
+        return [p for p in (found or []) if p.get("name")]
     except Exception:
-        return None
+        return []
+
+
+def find_page(page: Any, prefer: str = "") -> Optional[str]:
+    """One Page address, for callers that do not need the choice. Prefer `list_pages` plus `choose_page`."""
+    if prefer:
+        return prefer
+    pages = list_pages(page)
+    return pages[0]["url"] if len(pages) == 1 else None
 
 
 def create_page(page: Any, name: str, site: str) -> dict:
@@ -464,7 +512,11 @@ def submit_for_indexing(album_url: str, keyword: str = "") -> dict:
         return {"submitted": False, "why": "the indexer is not available on this engine"}
     try:
         if not indexer.configured():
-            return {"submitted": False, "why": "no indexing key is set, so nothing was submitted"}
+            return {"submitted": False, "offer": True,
+                    "say": "Want me to push this into the index? It is found in hours rather than days.",
+                    "detail": ["Search engines will find it on their own eventually; this asks them to look now.",
+                               "It is a paid extra and it is the one thing that shortens the wait."],
+                    "why": "indexing is not switched on for this account"}
         name = f"media set: {keyword or album_url}"[:60]
         return {"submitted": True, "project": indexer.submit(name, [album_url])}
     except Exception as e:
