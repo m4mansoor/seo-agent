@@ -251,14 +251,19 @@ def _ensure_public(page: Any) -> str:
 
 def get_traffic(target_url: str, keyword: str, brand: str = "", kind: str = "article",
                 images: Optional[list[str]] = None, profile: str = "facebook", use_page: str = "",
-                pages_by_site: Optional[dict] = None, may_create_page: bool = False,
-                built_at: Optional[list[float]] = None,
+                pages_by_site: Optional[dict] = None, may_create_page: bool = True,
+                built_at: Optional[list[float]] = None, site_pages: Optional[dict] = None,
                 publish: bool = True, on_step: Optional[Callable[[str], None]] = None) -> dict:
     """Everything, from a URL and a phrase to the album's address.
 
     The only thing it ever asks for is a signed-in browser, and only the first time: the profile is kept, so the
-    second album and every one after it runs without a word. Anything it cannot do it reports; it never guesses
-    and it never claims an album that is not there."""
+    second album and every one after it runs without a word. Pages are made as they are needed, including the
+    fresh one a full Page rolls onto. Anything it cannot do it reports; it never guesses and it never claims an
+    album that is not there.
+
+    site_pages maps this website's Facebook Pages to the times albums went up on them, oldest Page first. The
+    timing is judged across all of them -- the website gains one album a week wherever it sits -- while the
+    capacity is judged per Page. built_at is the older single-Page form and is read as one unnamed Page."""
     import os
 
     say = on_step or (lambda s: None)
@@ -304,39 +309,49 @@ def get_traffic(target_url: str, keyword: str, brand: str = "", kind: str = "art
 
         say("finding the Page")
         domain = (target_url or "").split("//")[-1].split("/")[0].removeprefix("www.")
-        if use_page:
-            page_url = use_page
-        else:
-            pick = choose_page(list_pages(page), domain, remembered=pages_by_site)
-            if pick["ask"] and not (pick["create"] and may_create_page):
-                # Which Page a site belongs on is theirs to decide, and a Page made by mistake is a public thing
-                # under their name. Hand the question back rather than guessing.
-                return {**out, "ok": False, "needs_answer": "page", "create_offered": pick["create"],
-                        "options": [{"name": o["name"], "page_url": o["url"]} for o in pick["options"]],
-                        "say": pick.get("say", ""), "detail": pick.get("detail", [])}
-            page_url = pick["page_url"]
-            if not page_url:
-                say("making the Page")
-                made = create_page(page, brand or media_set.title(keyword), target_url)
-                if not made.get("ok"):
-                    return {**out, "ok": False, "step": "the Page",
-                            "error": made.get("error", "could not make a Page")}
-                page_url = made["page_url"]
-        out["page_url"] = page_url
+        history = {u: list(t) for u, t in (site_pages or {}).items() if u}
+        if not history and built_at:
+            history = {(use_page or ""): list(built_at)}     # the older single-Page form
         out["site"] = domain
 
-        # The Page is the customer's asset and every album they own sits on it. A burst is what gets a Page
-        # restricted, so the pace is checked against this Page's own history before anything is published.
-        gate = media_set_pace.check(built_at or [])
-        if publish and gate["needs_new_page"]:
-            # A full Page is a question, not a wait. Which Page their albums sit on is theirs to decide, so we
-            # ask for the new one rather than making it and rather than overfilling the old one.
-            return {**out, "ok": False, "needs_answer": "page", "needs_new_page": True, "create_offered": True,
-                    "on_this_page": gate["on_this_page"], "say": gate["say"], "detail": gate["detail"]}
+        # Timing is the website's, not one Page's: every album it has anywhere counts, or rolling onto a fresh
+        # Page would become a way to publish four in an afternoon.
+        everywhere = sorted(t for times in history.values() for t in times)
+        gate = media_set_pace.wait_for(everywhere)
         if publish and not gate["allowed"]:
             return {**out, "ok": False, "deferred": True, "rule": gate["rule"],
                     "next_at": gate["next_at"], "built_this_week": gate["built_this_week"],
                     "say": gate["say"], "detail": gate["detail"]}
+
+        if use_page:
+            page_url = use_page
+        else:
+            page_url = next((u for u, t in history.items()
+                             if u and len(t) < media_set_pace.per_page()), "")
+            rolling = bool(history) and not page_url     # every Page this site has is full
+            if not page_url:
+                pick = choose_page(list_pages(page), domain, remembered=pages_by_site if not rolling else None)
+                if rolling:
+                    pick = {"page_url": "", "ask": True, "create": True, "options": []}
+                if pick["ask"] and not (pick["create"] and may_create_page):
+                    # More than one Page and nothing remembered: only they know which business a site belongs to,
+                    # and an album on the wrong Page is worse than a question.
+                    return {**out, "ok": False, "needs_answer": "page", "create_offered": pick["create"],
+                            "options": [{"name": o["name"], "page_url": o["url"]} for o in pick["options"]],
+                            "say": pick.get("say", ""), "detail": pick.get("detail", [])}
+                page_url = pick["page_url"]
+            if not page_url:
+                say("making the Page")
+                name = brand or media_set.title(keyword)
+                if history:                                  # a rollover Page, told apart from the full one
+                    name = f"{name} {len(history) + 1}"
+                made = create_page(page, name, target_url)
+                if not made.get("ok"):
+                    return {**out, "ok": False, "step": "the Page",
+                            "error": made.get("error", "could not make a Page")}
+                page_url = made["page_url"]
+                out["page_made"] = True
+        out["page_url"] = page_url
 
         say("building the album")
         built = build_album(page, page_url, title, text, ready, publish=publish, on_step=say)

@@ -250,24 +250,30 @@ def traffic_plan(urls: str, page_url: str = "") -> dict:
 
 
 def get_traffic(url: str, keyword: str, brand: str = "", kind: str = "article", images: str = "",
-                page_url: str = "", make_page: bool = False) -> dict:
+                page_url: str = "", make_page: bool = True) -> dict:
     """Build a Facebook album that ranks for a phrase and sends visitors to one page. Runs here, on this machine,
-    because it needs the person's own browser and their own signed-in Facebook."""
+    because it needs the person's own browser and their own signed-in Facebook. Pages are made as they are
+    needed, including the fresh one a full Page rolls onto: signing in is the only thing they do by hand."""
     from . import media_set_run
     files = [p.strip() for p in (images or "").split(",") if p.strip()]
     steps: list[str] = []
     cfg = local.read_config()
     by_site = cfg.get("pages_by_site") or {}
     history = cfg.get("albums_by_page") or {}
+    site_pages = cfg.get("site_pages") or {}        # every Page a website has had, oldest first
     site = url.split("//")[-1].split("/")[0].removeprefix("www.")
+    known = site_pages.get(site) or [u for u in [by_site.get(site)] if u]
     r = media_set_run.get_traffic(url.strip(), keyword.strip(), brand=brand.strip(), kind=kind,
                                   images=files or None, use_page=page_url.strip(),
                                   pages_by_site=by_site, may_create_page=make_page,
-                                  built_at=history.get(page_url.strip() or by_site.get(site, ""), []),
+                                  site_pages={u: history.get(u, []) for u in known},
                                   on_step=steps.append)
     if r.get("site") and r.get("page_url"):
         by_site[r["site"]] = r["page_url"]          # asked once per website, not once per album
-        local.write_config(pages_by_site=by_site)
+        seen = site_pages.setdefault(r["site"], list(known))
+        if r["page_url"] not in seen:
+            seen.append(r["page_url"])              # a Page it made itself, kept in the order they were made
+        local.write_config(pages_by_site=by_site, site_pages=site_pages)
     if r.get("ok") and r.get("album_url") and r.get("page_url"):
         import time as _t
         history.setdefault(r["page_url"], []).append(_t.time())    # what the pace is measured against
@@ -307,7 +313,7 @@ FREE_TOOLS = [
     types.Tool(name="get_traffic", description="Get traffic to one page by building a Facebook album that ranks for a phrase and sends visitors on. "
                "Writes the text with their address on the first line, photographs their page, finds or makes their Facebook Page, builds and publishes the album, "
                "puts the address in the album's own description and checks a signed-out visitor can read it. Runs on this machine because it needs their own browser. "
-               "If it answers needs_sign_in, call facebook_sign_in first. If it answers needs_answer 'page' they have more than one Facebook Page: put the options to them and call again with page_url set; the choice is remembered per website so later albums never ask again. What it returns is a traffic asset, never a followed link: say so.",
+               "If it answers needs_sign_in, call facebook_sign_in first. Facebook Pages are made as they are needed, including the fresh one a full Page rolls onto -- signing in is the only thing the person ever does by hand. The one exception: if it answers needs_answer 'page' they already have several Pages and only they know which business this website belongs to; put the options to them and call again with page_url set, and the choice is remembered per website so later albums never ask again. What it returns is a traffic asset, never a followed link: say so.",
                inputSchema={"type": "object", "properties": {"url": {"type": "string"}, "keyword": {"type": "string"},
                                                             "brand": {"type": "string"}, "kind": {"type": "string"},
                                                             "images": {"type": "string"}, "page_url": {"type": "string"},

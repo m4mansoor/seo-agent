@@ -11,8 +11,8 @@ next album starts a fresh Page. Keeping each Page's footprint small means a Page
 four albums rather than forty. It also paces Page creation itself to about one a month per account, which matters
 because making Pages in a burst is its own flag.
 
-A Page that is full is not waiting for anything, so no date is offered for it: the answer is another Page, and
-that is a question for the customer, never something we do for them.
+A Page that is full is not waiting for anything, so no date is offered for it: the answer is another Page, which
+is made for them. Signing in to Facebook is the only thing the customer ever does by hand.
 
 Both numbers are settings. They are judgements about risk, and whoever carries the risk should be able to change
 them without waiting for a deploy.
@@ -60,21 +60,15 @@ def _recent(built: list[float], now: float) -> list[float]:
     return sorted(t for t in built if now - t < WEEK)
 
 
-def check(built: list[float], now: Optional[float] = None) -> dict:
-    """May another album go up on this Page right now, and if not, when — or whether the answer is a new Page."""
+def wait_for(built: list[float], now: Optional[float] = None) -> dict:
+    """When the next album may go up, on timing alone.
+
+    This is the website's rhythm rather than one Page's capacity, so it is asked of every album the customer has
+    published for a site, across all of their Pages. Rolling onto a fresh Page must not become a way to publish
+    four in an afternoon."""
     now = time.time() if now is None else float(now)
     recent = _recent(built, now)
-    cap, ceiling = per_week(), per_page()
-
-    if len(built) >= ceiling:
-        # Waiting does not fix this one, so no date is offered. The next album belongs on a Page of its own.
-        return {"allowed": False, "rule": "page_full", "needs_new_page": True, "next_at": 0.0,
-                "built_this_week": len(recent), "on_this_page": len(built),
-                "say": f"This Page is carrying {len(built)} albums, which is as many as I put on one. The next one "
-                       f"needs a new Page.",
-                "detail": [f"A Page holds {ceiling} albums here. Spreading them means a Page that does get "
-                           f"restricted costs you four, not everything you have built.",
-                           "Make a second Page for this website and tell me its address, and I will carry on."]}
+    cap = per_week()
 
     gap_at = (max(built) + min_gap()) if built else now
     week_at = (recent[0] + WEEK) if len(recent) >= cap else now
@@ -89,16 +83,36 @@ def check(built: list[float], now: Optional[float] = None) -> dict:
     if week_at >= gap_at:
         return {"allowed": False, "rule": "per_week", "needs_new_page": False, "next_at": at,
                 "built_this_week": len(recent), "on_this_page": len(built),
-                "say": f"This Page has had {len(recent)} album{'s' if len(recent) != 1 else ''} this week, which is "
-                       f"the pace. The next can go up {_ago(at - now)} from now.",
-                "detail": [f"It is {cap} a week on one Page, which is what the method's own guide advises.",
+                "say": f"There {'has' if len(recent) == 1 else 'have'} been {len(recent)} "
+                       f"album{'s' if len(recent) != 1 else ''} this week, which is the pace. The next can go up "
+                       f"{_ago(at - now)} from now.",
+                "detail": [f"It is {cap} a week, which is what the method's own guide advises.",
                            "Hand me more pages any time — I will queue them and tell you when each one lands."]}
     return {"allowed": False, "rule": "too_soon", "needs_new_page": False, "next_at": at,
             "built_this_week": len(recent), "on_this_page": len(built),
-            "say": f"The last album on this Page went up {_ago(now - max(built))} ago. I will put the next one up "
+            "say": f"The last album went up {_ago(now - max(built))} ago. I will put the next one up "
                    f"{_ago(at - now)} from now.",
             "detail": ["Albums arriving minutes apart is the pattern Facebook restricts Pages for.",
                        "Spacing them out is what keeps the Page, and every album on it, alive."]}
+
+
+def check(built: list[float], now: Optional[float] = None) -> dict:
+    """May another album go up on this Page right now, and if not, when — or whether the answer is a new Page."""
+    now = time.time() if now is None else float(now)
+    recent = _recent(built, now)
+    ceiling = per_page()
+
+    if len(built) >= ceiling:
+        # Waiting does not fix this one, so no date is offered. The next album belongs on a Page of its own.
+        return {"allowed": False, "rule": "page_full", "needs_new_page": True, "next_at": 0.0,
+                "built_this_week": len(recent), "on_this_page": len(built),
+                "say": f"This Page is carrying {len(built)} albums, which is as many as I put on one. The next one "
+                       f"needs a new Page.",
+                "detail": [f"A Page holds {ceiling} albums here. Spreading them means a Page that does get "
+                           f"restricted costs you four, not everything you have built.",
+                           "I will make a second Page for this website and carry on from there."]}
+
+    return wait_for(built, now)
 
 
 def next_slot(built: list[float], now: Optional[float] = None) -> float:
@@ -131,9 +145,9 @@ def choose(pages: dict, now: Optional[float] = None) -> dict:
                                else ["This is the last one this Page takes; the next needs a new Page."])}
 
     return {"page_url": "", "at": max(now, floor), "new_page": True, "room_after": per_page() - 1,
-            "say": "This one needs a new Page — the ones you have are full.",
+            "say": "This one starts a new Page — the ones you have are full.",
             "detail": [f"A Page holds {per_page()} albums here, about a month's worth at one a week.",
-                       "Make another Page for this website when you are ready and I will carry on from there."]}
+                       "I make the new Page myself; you will not have to do anything."]}
 
 
 def plan(urls: list[str], built: Optional[list[float]] = None, now: Optional[float] = None,
