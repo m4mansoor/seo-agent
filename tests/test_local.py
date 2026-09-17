@@ -76,3 +76,55 @@ def test_build_link_runs_locally_on_a_fake_shortener(monkeypatch):
     r = server.build_link("fake-short", "https://example.com/")
     assert r["status"] in ("placed", "unverified", "failed") and "links_placed" in r
     assert server.list_results()["results"][0]["slug"] == "fake-short"
+
+
+# ---------------------------------------------------------------- where each tool runs
+
+def test_browser_work_stays_on_this_machine_even_on_a_paid_plan():
+    """A subscription buys the library and the planner, not a place to keep someone's Facebook session. Anything
+    driving a browser needs their own signed-in accounts, so sending it to a server would break it and would put
+    their password somewhere it has no business being."""
+    from seoagent import server
+    for name in ("get_traffic", "build_link", "facebook_sign_in", "verify_link"):
+        assert server.runs_here(name), f"{name} must run on the person's machine"
+    for name in ("search_sites", "plan_campaign", "monitor_backlinks", "competitor_gap", "campaign_report"):
+        assert not server.runs_here(name), f"{name} belongs on the engine, where the data is"
+
+
+def test_the_browser_tools_are_offered_whether_or_not_they_have_a_key():
+    from seoagent import server
+    names = {t.name for t in server.FREE_TOOLS}
+    assert {"get_traffic", "facebook_sign_in"} <= names
+
+
+def test_get_traffic_asks_for_a_sign_in_rather_than_failing(tmp_path, monkeypatch):
+    """With no signed-in browser on the machine there is nothing to do, and the person must be told plainly what
+    to do next rather than shown an error."""
+    from seoagent import media_set_run, server
+    monkeypatch.setattr(media_set_run, "profile_dir", lambda n: str(tmp_path / "nothing-here"))
+    out = server.get_traffic("https://lmrify.com/x", "a phrase")
+    assert out["needs_sign_in"] is True
+    assert out["say"] and "sign" in out["say"].lower()
+    assert not out.get("ok")
+
+
+def test_an_unreachable_engine_does_not_take_the_local_tools_with_it(monkeypatch):
+    """Their browser is on their machine. If our server is down, or their connection drops, the work that never
+    needed us must carry on."""
+    import asyncio
+
+    from seoagent import server
+
+    async def boom(*a, **k):
+        raise ConnectionError("engine down")
+
+    monkeypatch.setattr(server, "hosted", lambda: True)
+    monkeypatch.setattr(server, "_remote_session", boom)
+    tools = asyncio.run(server.list_tools())
+    names = {t.name for t in tools}
+    assert {"get_traffic", "facebook_sign_in", "build_link"} <= names, "browser tools must survive an outage"
+
+    out = asyncio.run(server.call_tool("account", {}))
+    text = "".join(c.text for c in out)
+    assert "unreachable" not in text.lower(), "account has a local version and should have used it"
+    assert "plan" in text.lower()

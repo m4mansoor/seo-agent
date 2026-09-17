@@ -1,6 +1,7 @@
 """Playwright helpers shared by playbooks: session handling and field finding heuristics."""
 from __future__ import annotations
 
+import os
 import re
 from contextlib import contextmanager
 from typing import Iterator, Optional
@@ -30,6 +31,63 @@ def session(headless: bool = True, viewport: tuple[int, int] = (1366, 900)) -> I
             browser.close()
 
 
+DEFAULT_PROFILE = os.path.join(os.path.expanduser("~"), ".linkengine", "profiles")
+
+
+def profile_dir(name: str = "default") -> str:
+    return os.environ.get("LINKENGINE_PROFILES") or os.path.join(DEFAULT_PROFILE, name)
+
+
+@contextmanager
+def signed_in_session(name: str = "default", headless: bool = False, viewport: tuple[int, int] = (1300, 900),
+                      url: str = "") -> Iterator[Page]:
+    """A browser the person can sign into, and that stays signed in.
+
+    Two things here are not cosmetic. It runs **real Chrome**, not Playwright's bundled Chromium, and it turns off
+    the flag that makes the page see `navigator.webdriver === true`. Google refuses to complete a sign-in in a
+    browser advertising itself as automated -- deliberately, to stop phishing -- and since some sites route their
+    own verification through Google, a person can end up unable to sign into their own account at all. Nothing
+    here defeats a security check: the human types their own password into their own account. It stops the browser
+    falsely announcing itself as a robot while they do it.
+
+    The profile is kept on disk, so this is asked for once and every later build starts already signed in."""
+    d = profile_dir(name)
+    os.makedirs(d, exist_ok=True)
+    with sync_playwright() as p:
+        ctx = p.chromium.launch_persistent_context(
+            d,
+            channel="chrome",
+            headless=headless,
+            viewport={"width": viewport[0], "height": viewport[1]},
+            locale="en-US",
+            args=["--disable-blink-features=AutomationControlled",
+                  "--no-default-browser-check", "--no-first-run",
+                  f"--window-size={viewport[0] + 40},{viewport[1] + 120}"],
+            ignore_default_args=["--enable-automation"],
+        )
+        page = ctx.pages[0] if ctx.pages else ctx.new_page()
+        page.set_default_timeout(30000)
+        if url:
+            try:
+                page.goto(url, wait_until="domcontentloaded")
+            except Exception:
+                pass
+        try:
+            yield page
+        finally:
+            ctx.close()
+
+
+def signed_in_to(page: Page, host: str) -> bool:
+    """Whether the profile holds a live session for this host, read from the cookie the site itself sets."""
+    marker = {"facebook.com": r"c_user=\d+", "x.com": r"auth_token=", "linkedin.com": r"li_at=",
+              "reddit.com": r"reddit_session=", "medium.com": r"sid="}.get(host, r"session")
+    try:
+        return bool(page.evaluate(f"() => !!document.cookie.match(/{marker}/)"))
+    except Exception:
+        return False
+
+
 def quoted_names(texts: list[str]) -> list[str]:
     """Button and field names the guide quotes, e.g. Click "Shorten URL"."""
     out: list[str] = []
@@ -51,6 +109,43 @@ def dismiss_banners(page: Page) -> None:
                 return
         except Exception:
             continue
+
+
+# First-run and welcome dialogs sit on top of everything and swallow the click you meant to make. They are not
+# consent banners -- the wording is different and so is the button -- so they need their own pass.
+DIALOG_BUTTONS = ("Use Page", "Not now", "Not Now", "Skip", "Skip for now", "Maybe later", "Got it", "OK",
+                  "Okay", "Done", "Close", "Continue", "Dismiss", "No thanks")
+
+
+def dismiss_dialogs(page: Page, rounds: int = 3) -> list[str]:
+    """Close whatever modal is covering the page, and say what was closed.
+
+    A welcome dialog looks harmless in a screenshot and is fatal to automation: every control behind it is
+    present in the DOM, visible to a query, and impossible to click. Returns the buttons it pressed so a failure
+    later can be read against what was in the way."""
+    closed: list[str] = []
+    for _ in range(rounds):
+        hit = False
+        for name in DIALOG_BUTTONS:
+            try:
+                btn = page.get_by_role("button", name=re.compile(rf"^\s*{re.escape(name)}\s*$", re.I)).first
+                if btn.is_visible(timeout=600):
+                    btn.click(timeout=2500)
+                    closed.append(name)
+                    page.wait_for_timeout(1200)
+                    hit = True
+                    break
+            except Exception:
+                continue
+        if not hit:
+            try:                                  # a dialog with only an X, or one that closes on Escape
+                x = page.locator("div[role=dialog] [aria-label='Close']").first
+                if x.is_visible(timeout=600):
+                    x.click(timeout=2000); closed.append("Close"); page.wait_for_timeout(1000); continue
+            except Exception:
+                pass
+            break
+    return closed
 
 
 def _attr_blob(loc: Locator) -> str:

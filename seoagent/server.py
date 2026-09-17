@@ -185,6 +185,51 @@ def upgrade() -> dict:
                             f"${PRICE_MONTHLY_USD} a month ({p['monthly']['url']}). After paying, copy the key from the success page and tell me: activate <key>."}
 
 
+# Some work cannot be sent to a server, and should not be. Anything that drives a browser runs on this machine:
+# it is the person's own browser, their own signed-in accounts and their own password, none of which should ever
+# be handed to us. Everything else -- the library, the planner, the monitor, anything that costs money -- comes
+# from the engine, because that is where the data and the billing live.
+LOCAL_ALWAYS = {"get_traffic", "build_link", "verify_link", "log_link", "list_results", "facebook_sign_in"}
+
+
+def runs_here(name: str) -> bool:
+    """True when this tool must run on the person's machine whatever their plan says."""
+    return name in LOCAL_ALWAYS
+
+
+def facebook_sign_in(wait_minutes: int = 30) -> dict:
+    """Open a real browser and wait while the person signs in to Facebook. Asked once, ever."""
+    import time
+    from .agent.browser import signed_in_session, signed_in_to
+    deadline = time.time() + max(1, min(wait_minutes, 60)) * 60
+    with signed_in_session("facebook", headless=False, url="https://www.facebook.com/") as page:
+        try:
+            page.bring_to_front()
+        except Exception:
+            pass
+        while time.time() < deadline:
+            if signed_in_to(page, "facebook.com"):
+                page.wait_for_timeout(3000)
+                return {"signed_in": True,
+                        "say": "You are signed in. I will not need to ask again on this machine.",
+                        "detail": ["The signed-in browser is kept here on your computer.",
+                                   "Your password was never seen by me and never leaves this machine."]}
+            page.wait_for_timeout(2000)
+    return {"signed_in": False, "say": "Nobody signed in, so I stopped waiting.",
+            "detail": ["Say the word and I will open the window again."]}
+
+
+def get_traffic(url: str, keyword: str, brand: str = "", kind: str = "article", images: str = "") -> dict:
+    """Build a Facebook album that ranks for a phrase and sends visitors to one page. Runs here, on this machine,
+    because it needs the person's own browser and their own signed-in Facebook."""
+    from . import media_set_run
+    files = [p.strip() for p in (images or "").split(",") if p.strip()]
+    steps: list[str] = []
+    r = media_set_run.get_traffic(url.strip(), keyword.strip(), brand=brand.strip(), kind=kind,
+                                  images=files or None, on_step=steps.append)
+    return {**r, "did": steps}
+
+
 FREE_TOOLS = [
     types.Tool(name="search_sites", description=f"Search the free list of {N_FREE} backlink sites by name, domain, method, DA and dofollow. auto_build marks the ones build_link can do by itself. "
                "The result also lists locked higher-DA matches from the full library; when the user wants those, offer the subscription (see ask_the_user). "
@@ -208,9 +253,19 @@ FREE_TOOLS = [
     types.Tool(name="activate", description="Activate a subscription key (le_...) or a personal MCP link from the purchase success page. Verifies it with the hosted engine and saves it here; from then on every hosted tool is available.",
                inputSchema={"type": "object", "properties": {"key": {"type": "string"}}, "required": ["key"]}),
     types.Tool(name="library_summary", description="What the free list contains and what a subscription adds.", inputSchema={"type": "object", "properties": {}}),
+    types.Tool(name="facebook_sign_in", description="Open a browser here and wait while the person signs in to Facebook. Needed once, ever; the signed-in browser is kept on their machine and their password never leaves it.",
+               inputSchema={"type": "object", "properties": {"wait_minutes": {"type": "integer"}}}),
+    types.Tool(name="get_traffic", description="Get traffic to one page by building a Facebook album that ranks for a phrase and sends visitors on. "
+               "Writes the text with their address on the first line, photographs their page, finds or makes their Facebook Page, builds and publishes the album, "
+               "puts the address in the album's own description and checks a signed-out visitor can read it. Runs on this machine because it needs their own browser. "
+               "If it answers needs_sign_in, call facebook_sign_in first. What it returns is a traffic asset, never a followed link: say so.",
+               inputSchema={"type": "object", "properties": {"url": {"type": "string"}, "keyword": {"type": "string"},
+                                                            "brand": {"type": "string"}, "kind": {"type": "string"},
+                                                            "images": {"type": "string"}}, "required": ["url", "keyword"]}),
 ]
 FREE_IMPL = {"search_sites": search_sites, "get_method": get_method, "library_summary": library_summary, "verify_link": verify_link,
-             "log_link": log_link, "list_results": list_results, "account": account, "upgrade": upgrade}
+             "log_link": log_link, "list_results": list_results, "account": account, "upgrade": upgrade,
+             "facebook_sign_in": facebook_sign_in, "get_traffic": get_traffic}
 
 
 # ------------------------------------------------------------------ server
@@ -289,9 +344,20 @@ async def activate(key: str) -> dict:
 
 @server.list_tools()
 async def list_tools() -> list[types.Tool]:
-    if hosted():
-        return (await (await _remote_session()).list_tools()).tools
-    return FREE_TOOLS
+    if not hosted():
+        return FREE_TOOLS
+    try:
+        remote = list((await (await _remote_session()).list_tools()).tools)
+    except Exception:
+        # The engine being unreachable is not a reason to lose the tools that never needed it. Their browser is
+        # on this machine and works whether or not our server does.
+        return FREE_TOOLS
+    # The engine advertises browser tools too, but running them there would mean a server with no browser and no
+    # session. Ours replace them by name; everything else is the engine's.
+    mine = {t.name: t for t in FREE_TOOLS if runs_here(t.name)}
+    merged = [mine.get(t.name, t) for t in remote]
+    have = {t.name for t in merged}
+    return merged + [t for n, t in mine.items() if n not in have]
 
 
 @server.call_tool()
@@ -299,11 +365,21 @@ async def call_tool(name: str, arguments: dict | None) -> list[types.TextContent
     arguments = arguments or {}
     if name == "activate":
         return [types.TextContent(type="text", text=json.dumps(await activate(arguments.get("key", "")), ensure_ascii=False))]
-    if hosted():
-        res = await (await _remote_session()).call_tool(name, arguments)
-        return list(res.content)
-    if name == "build_link":
-        out = await asyncio.to_thread(build_link, **arguments)
+    if hosted() and not runs_here(name):
+        try:
+            res = await (await _remote_session()).call_tool(name, arguments)
+            return list(res.content)
+        except Exception as e:
+            if name not in FREE_IMPL:
+                return [types.TextContent(type="text", text=json.dumps(
+                    {"error": f"the engine is unreachable: {type(e).__name__}",
+                     "say": "I cannot reach the service right now, so that one will have to wait.",
+                     "detail": ["Anything that runs on your own machine still works: building a link, checking one "
+                                "is live, and your own results."]}, ensure_ascii=False))]
+            await _disconnect_remote()      # fall through to the local version rather than failing outright
+    if name in ("build_link", "get_traffic", "facebook_sign_in"):
+        fn = {"build_link": build_link, "get_traffic": get_traffic, "facebook_sign_in": facebook_sign_in}[name]
+        out = await asyncio.to_thread(fn, **arguments)
         return [types.TextContent(type="text", text=json.dumps(out, ensure_ascii=False))]
     fn = FREE_IMPL.get(name)
     if fn is None:
@@ -342,3 +418,7 @@ async def _run() -> None:
 
 def main() -> None:
     asyncio.run(_run())
+
+
+if __name__ == "__main__":   # `python -m seoagent.server` should start it, not import it silently
+    main()
