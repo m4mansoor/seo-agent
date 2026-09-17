@@ -16,7 +16,7 @@ from __future__ import annotations
 import re
 from typing import Any, Callable, Optional
 
-from . import media_set
+from . import media_set, media_set_pace
 from .agent.browser import dismiss_dialogs, profile_dir, signed_in_session, signed_in_to
 from .media_set import clean_album_url, is_album_url, min_images  # noqa: F401  (re-exported for tests)
 
@@ -252,6 +252,7 @@ def _ensure_public(page: Any) -> str:
 def get_traffic(target_url: str, keyword: str, brand: str = "", kind: str = "article",
                 images: Optional[list[str]] = None, profile: str = "facebook", use_page: str = "",
                 pages_by_site: Optional[dict] = None, may_create_page: bool = False,
+                built_at: Optional[list[float]] = None,
                 publish: bool = True, on_step: Optional[Callable[[str], None]] = None) -> dict:
     """Everything, from a URL and a phrase to the album's address.
 
@@ -323,6 +324,19 @@ def get_traffic(target_url: str, keyword: str, brand: str = "", kind: str = "art
                 page_url = made["page_url"]
         out["page_url"] = page_url
         out["site"] = domain
+
+        # The Page is the customer's asset and every album they own sits on it. A burst is what gets a Page
+        # restricted, so the pace is checked against this Page's own history before anything is published.
+        gate = media_set_pace.check(built_at or [])
+        if publish and gate["needs_new_page"]:
+            # A full Page is a question, not a wait. Which Page their albums sit on is theirs to decide, so we
+            # ask for the new one rather than making it and rather than overfilling the old one.
+            return {**out, "ok": False, "needs_answer": "page", "needs_new_page": True, "create_offered": True,
+                    "on_this_page": gate["on_this_page"], "say": gate["say"], "detail": gate["detail"]}
+        if publish and not gate["allowed"]:
+            return {**out, "ok": False, "deferred": True, "rule": gate["rule"],
+                    "next_at": gate["next_at"], "built_this_week": gate["built_this_week"],
+                    "say": gate["say"], "detail": gate["detail"]}
 
         say("building the album")
         built = build_album(page, page_url, title, text, ready, publish=publish, on_step=say)

@@ -189,7 +189,8 @@ def upgrade() -> dict:
 # it is the person's own browser, their own signed-in accounts and their own password, none of which should ever
 # be handed to us. Everything else -- the library, the planner, the monitor, anything that costs money -- comes
 # from the engine, because that is where the data and the billing live.
-LOCAL_ALWAYS = {"get_traffic", "build_link", "verify_link", "log_link", "list_results", "facebook_sign_in"}
+LOCAL_ALWAYS = {"get_traffic", "traffic_plan", "build_link", "verify_link", "log_link", "list_results",
+                "facebook_sign_in"}
 
 
 def runs_here(name: str) -> bool:
@@ -219,6 +220,35 @@ def facebook_sign_in(wait_minutes: int = 30) -> dict:
             "detail": ["Say the word and I will open the window again."]}
 
 
+def traffic_plan(urls: str, page_url: str = "") -> dict:
+    """Plan albums for several pages: when each lands and which Facebook Page it lands on. One a week, and a Page
+    carries four before the next album starts a fresh one — a restricted Page takes every album on it down."""
+    import time as _t
+
+    from . import media_set_pace
+    wanted = [u.strip() for u in (urls or "").split(",") if u.strip()]
+    if not wanted:
+        return {"error": "give me the page addresses, separated by commas"}
+    cfg = local.read_config()
+    page = page_url.strip() or next(iter((cfg.get("pages_by_site") or {}).values()), "")
+    history = cfg.get("albums_by_page") or {}
+    pages = {page: history.get(page, [])} if page else {}
+    rows = media_set_pace.plan(wanted, pages=pages)   # no Page yet means the first album already needs one made
+    more = media_set_pace.pages_needed(len(wanted), pages)
+    per, cap = media_set_pace.per_week(), media_set_pace.per_page()
+    return {"plan": [{"url": r["url"], "when": _t.strftime("%a %d %b, %H:%M", _t.localtime(r["at"])),
+                      "at": r["at"], "page": r["page"] or "your Page", "new_page": r["new_page"],
+                      "say": r["say"]} for r in rows],
+            "page_url": page, "pages_to_make": more,
+            "say": f"{len(rows)} albums, {per} a week. The first goes up now."
+                   + (f" You will need {more} {'more ' if pages else ''}Facebook Page"
+                      f"{'s' if more > 1 else ''} along the way." if more else ""),
+            "detail": ["One album a week is the pace this method is built around; a burst is what gets a Page restricted.",
+                       f"A Page carries {cap} albums, about a month's worth, and then the next starts a fresh Page.",
+                       "Each website's own Page gets its own allowance, so several sites move faster than one.",
+                       "Say the word and I will build the first now."]}
+
+
 def get_traffic(url: str, keyword: str, brand: str = "", kind: str = "article", images: str = "",
                 page_url: str = "", make_page: bool = False) -> dict:
     """Build a Facebook album that ranks for a phrase and sends visitors to one page. Runs here, on this machine,
@@ -228,12 +258,20 @@ def get_traffic(url: str, keyword: str, brand: str = "", kind: str = "article", 
     steps: list[str] = []
     cfg = local.read_config()
     by_site = cfg.get("pages_by_site") or {}
+    history = cfg.get("albums_by_page") or {}
+    site = url.split("//")[-1].split("/")[0].removeprefix("www.")
     r = media_set_run.get_traffic(url.strip(), keyword.strip(), brand=brand.strip(), kind=kind,
                                   images=files or None, use_page=page_url.strip(),
-                                  pages_by_site=by_site, may_create_page=make_page, on_step=steps.append)
+                                  pages_by_site=by_site, may_create_page=make_page,
+                                  built_at=history.get(page_url.strip() or by_site.get(site, ""), []),
+                                  on_step=steps.append)
     if r.get("site") and r.get("page_url"):
         by_site[r["site"]] = r["page_url"]          # asked once per website, not once per album
         local.write_config(pages_by_site=by_site)
+    if r.get("ok") and r.get("album_url") and r.get("page_url"):
+        import time as _t
+        history.setdefault(r["page_url"], []).append(_t.time())    # what the pace is measured against
+        local.write_config(albums_by_page=history)
     return {**r, "did": steps}
 
 
@@ -262,6 +300,10 @@ FREE_TOOLS = [
     types.Tool(name="library_summary", description="What the free list contains and what a subscription adds.", inputSchema={"type": "object", "properties": {}}),
     types.Tool(name="facebook_sign_in", description="Open a browser here and wait while the person signs in to Facebook. Needed once, ever; the signed-in browser is kept on their machine and their password never leaves it.",
                inputSchema={"type": "object", "properties": {"wait_minutes": {"type": "integer"}}}),
+    types.Tool(name="traffic_plan", description="Plan albums for several of the customer's pages at once: a date and a Facebook Page for each. "
+               "Albums go up one a week, and a Page carries four before the next starts a fresh Page. Show the dates plainly, say how many new "
+               "Pages they will have to make, then build the first with get_traffic.",
+               inputSchema={"type": "object", "properties": {"urls": {"type": "string"}, "page_url": {"type": "string"}}, "required": ["urls"]}),
     types.Tool(name="get_traffic", description="Get traffic to one page by building a Facebook album that ranks for a phrase and sends visitors on. "
                "Writes the text with their address on the first line, photographs their page, finds or makes their Facebook Page, builds and publishes the album, "
                "puts the address in the album's own description and checks a signed-out visitor can read it. Runs on this machine because it needs their own browser. "
@@ -273,7 +315,8 @@ FREE_TOOLS = [
 ]
 FREE_IMPL = {"search_sites": search_sites, "get_method": get_method, "library_summary": library_summary, "verify_link": verify_link,
              "log_link": log_link, "list_results": list_results, "account": account, "upgrade": upgrade,
-             "facebook_sign_in": facebook_sign_in, "get_traffic": get_traffic}
+             "facebook_sign_in": facebook_sign_in, "get_traffic": get_traffic,
+             "traffic_plan": traffic_plan}
 
 
 # ------------------------------------------------------------------ server
