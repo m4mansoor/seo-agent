@@ -67,7 +67,14 @@ def _token_path() -> str:
 
 
 def read_token() -> dict:
-    """What we hold for GitHub, or an empty dict. The token itself never leaves this module's callers."""
+    """What we hold for GitHub, or an empty dict. The token itself never leaves this module's callers.
+
+    An operator can put one in the environment instead of connecting -- that is how this gets tested against a
+    real account, and how a self-hosted engine can publish under its own. An environment token is used but never
+    written to disk: it belongs to whoever set the variable, not to this machine."""
+    env = (os.environ.get("GITHUB_TOKEN") or "").strip()
+    if env:
+        return {"token": env, "login": (os.environ.get("GITHUB_LOGIN") or "").strip(), "from": "environment"}
     try:
         with open(_token_path(), encoding="utf-8") as f:
             return json.load(f)
@@ -377,7 +384,8 @@ def get_traffic(target_url: str, keyword: str, brand: str = "", kind: str = "art
     if not owner:
         try:
             owner = (_api("/user", token) or {}).get("login", "")
-            write_token(token, owner)
+            if held.get("from") != "environment":
+                write_token(token, owner)      # an environment token is not ours to persist
         except GitHubError as e:
             return {**out, "ok": False, "error": f"GitHub would not say who you are: {e.message}"}
     out["owner"] = owner
