@@ -10,7 +10,6 @@ from typing import Optional
 from .models import JobResult
 
 HOME = os.environ.get("SEOAGENT_HOME", os.path.join(os.path.expanduser("~"), ".seoagent"))
-FREE_LINKS = 50
 
 
 def _config_path() -> str:

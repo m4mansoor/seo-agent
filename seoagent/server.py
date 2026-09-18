@@ -16,7 +16,7 @@ import mcp.types as types
 from mcp.server import Server
 from mcp.server.stdio import stdio_server
 
-from . import local
+from . import free, local
 from .models import JobResult, Site
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -125,6 +125,29 @@ def _plans() -> dict:
             "monthly": {"price_usd": PRICE_MONTHLY_USD, "per": "month", "url": f"{BUY_URL}?plan=monthly"}}
 
 
+def subscribed() -> bool:
+    """Whether this machine has a subscription. A key that was never verified is not one."""
+    _, key = credentials()
+    return bool((key or "").strip())
+
+
+def _spent() -> tuple[int, int]:
+    """How many free links are used, and how many of them were on a DA 90+ site.
+
+    Counted from the results log rather than a stored tally: a link logged by hand is still a link, and a tally
+    kept separately is a tally that can disagree with what the person can see."""
+    rows = local.Results().all(limit=1000)
+    placed = [r for r in rows if r.get("status") == "placed"]
+    strong = [r for r in placed if free.is_strong((BY_SLUG.get(r.get("slug") or "") or {}).get("da") or 0)]
+    return len(placed), len(strong)
+
+
+def _needs_subscription(name: str) -> Optional[dict]:
+    """The answer to give when a tool is not in the free plan, or None when it is."""
+    got = free.tool(name, paid=subscribed())
+    return None if got["allowed"] else {**got, "upgrade": _upgrade_hint()}
+
+
 def _upgrade_hint() -> dict:
     return {"plans": _plans(), "how": "Subscribe at either URL, copy the key shown on the success page, then say: activate <key>."}
 
@@ -137,6 +160,13 @@ def build_link(slug: str, target_url: str, anchor_text: str = "", headless: bool
     res = local.Results()
     if res.placed_on(s["slug"], target_url):
         return {"status": "skipped", "notes": f"a link to {target_url} is already placed on {s['name']}"}
+    placed, strong = _spent()
+    room = free.check(placed, strong, da=s.get("da") or 0, paid=subscribed())
+    if not room["allowed"]:
+        # Checked before the browser opens: spending a minute building something we will not save is worse than
+        # saying so now.
+        return {"status": "locked", "reason": room["reason"], "say": room["say"], "detail": room["detail"],
+                "remaining": room["remaining"], "upgrade": _upgrade_hint()}
     from .agent.executor import can_auto_build, run_job
     site = Site.from_record(s)
     if not can_auto_build(site):
@@ -167,14 +197,18 @@ def log_link(slug: str, target_url: str, live_url: str, anchor_text: str = "", s
 
 def list_results(limit: int = 100) -> dict:
     res = local.Results()
-    return {"placed": res.placed(), "free_sites": N_FREE, "results": res.all(limit)}
+    placed, strong = _spent()
+    return {"placed": res.placed(), "free_sites": N_FREE, "results": res.all(limit),
+            **({} if subscribed() else {"free_left": free.left(placed, strong)})}
 
 
 def account() -> dict:
-    res = local.Results()
-    return {"plan": "free", "links_placed": res.placed(), "free_sites": N_FREE,
-            "note": f"Free mode builds on the {N_FREE} bundled sites in your own browser. A subscription adds {STATS['sites']:,} sites, the campaign planner, "
-                    "building on account-based sites, gates with connected services, monitoring, reports and a dashboard.",
+    placed, strong = _spent()
+    got = free.summary(placed, strong, paid=subscribed())
+    return {**got, "links_placed": placed, "free_sites": N_FREE,
+            "note": f"Free mode builds {free.FREE_LINKS} links on the {N_FREE} bundled sites in your own browser, one of them "
+                    f"on a DA 90+ site. A subscription adds {STATS['sites']:,} sites, Facebook albums, GitHub Pages links, the "
+                    "campaign planner, building on account-based sites, gates with connected services, monitoring, reports and a dashboard.",
             "upgrade": _upgrade_hint()}
 
 
@@ -200,6 +234,9 @@ def runs_here(name: str) -> bool:
 
 def facebook_sign_in(wait_minutes: int = 30) -> dict:
     """Open a real browser and wait while the person signs in to Facebook. Asked once, ever."""
+    locked = _needs_subscription("facebook_sign_in")
+    if locked:
+        return locked
     import time
     from .agent.browser import signed_in_session, signed_in_to
     deadline = time.time() + max(1, min(wait_minutes, 60)) * 60
@@ -223,6 +260,9 @@ def facebook_sign_in(wait_minutes: int = 30) -> dict:
 def traffic_plan(urls: str, page_url: str = "") -> dict:
     """Plan albums for several pages: when each lands and which Facebook Page it lands on. One a week, and a Page
     carries four before the next album starts a fresh one — a restricted Page takes every album on it down."""
+    locked = _needs_subscription("traffic_plan")
+    if locked:
+        return locked
     import time as _t
 
     from . import media_set_pace
@@ -251,6 +291,9 @@ def traffic_plan(urls: str, page_url: str = "") -> dict:
 
 def github_connect(wait_minutes: int = 10) -> dict:
     """Connect this person's GitHub once, in their own browser, so pages can be published to their own site."""
+    locked = _needs_subscription("github_connect")
+    if locked:
+        return locked
     from . import pages_run
     already = pages_run.connected()
     if already["connected"]:
@@ -269,6 +312,9 @@ def github_connect(wait_minutes: int = 10) -> dict:
 def publish_page(url: str, keyword: str, brand: str = "", kind: str = "article", repo: str = "") -> dict:
     """Publish a page on this person's own GitHub Pages site linking to one of their pages. Runs here, on their
     machine: it is their GitHub account and their token, and neither leaves the computer."""
+    locked = _needs_subscription("publish_page")
+    if locked:
+        return locked
     import time as _t
 
     from . import pages_run
@@ -299,6 +345,9 @@ def get_traffic(url: str, keyword: str, brand: str = "", kind: str = "article", 
     """Build a Facebook album that ranks for a phrase and sends visitors to one page. Runs here, on this machine,
     because it needs the person's own browser and their own signed-in Facebook. Pages are made as they are
     needed, including the fresh one a full Page rolls onto: signing in is the only thing they do by hand."""
+    locked = _needs_subscription("get_traffic")
+    if locked:
+        return locked
     from . import media_set_run
     files = [p.strip() for p in (images or "").split(",") if p.strip()]
     steps: list[str] = []

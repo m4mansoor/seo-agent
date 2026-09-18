@@ -94,13 +94,28 @@ def test_browser_work_stays_on_this_machine_even_on_a_paid_plan():
 def test_the_browser_tools_are_offered_whether_or_not_they_have_a_key():
     from seoagent import server
     names = {t.name for t in server.FREE_TOOLS}
-    assert {"get_traffic", "facebook_sign_in"} <= names
+    assert {"get_traffic", "facebook_sign_in"} <= names, "listed, so the assistant can offer them and say what they cost"
 
 
-def test_get_traffic_asks_for_a_sign_in_rather_than_failing(tmp_path, monkeypatch):
+def test_the_asset_methods_are_offered_but_locked_until_they_subscribe(monkeypatch):
+    """They are in the tool list on purpose: an assistant that cannot see them cannot tell anyone they exist."""
+    from seoagent import server
+    monkeypatch.setattr(server, "subscribed", lambda: False)
+    for name, call in (("get_traffic", lambda: server.get_traffic("https://lmrify.com/x", "a phrase")),
+                       ("traffic_plan", lambda: server.traffic_plan("https://lmrify.com/x")),
+                       ("publish_page", lambda: server.publish_page("https://lmrify.com/x", "a phrase")),
+                       ("facebook_sign_in", lambda: server.facebook_sign_in()),
+                       ("github_connect", lambda: server.github_connect())):
+        out = call()
+        assert out["reason"] == "paid_only", name
+        assert out["upgrade"]["plans"], f"{name} says what it costs, not just no"
+
+
+def test_get_traffic_asks_a_subscriber_for_a_sign_in_rather_than_failing(tmp_path, monkeypatch):
     """With no signed-in browser on the machine there is nothing to do, and the person must be told plainly what
     to do next rather than shown an error."""
     from seoagent import media_set_run, server
+    monkeypatch.setattr(server, "subscribed", lambda: True)
     monkeypatch.setattr(media_set_run, "profile_dir", lambda n: str(tmp_path / "nothing-here"))
     out = server.get_traffic("https://lmrify.com/x", "a phrase")
     assert out["needs_sign_in"] is True

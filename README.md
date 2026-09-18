@@ -14,7 +14,7 @@ SEO Agent is an open-source SEO agent for link building. It runs as an MCP serve
 
 **What it does**
 
-- **Searches a library of 1,138 backlink sites, every one verified reachable this month** with Domain Authority, referring domains, spam score and dofollow status. Twenty-five ship free inside the package, two of them at DA 90+; the rest show up locked, by name and DA, and unlock with a subscription (`search_sites`).
+- **Searches a library of 1,138 backlink sites, every one verified reachable this month** with Domain Authority, referring domains, spam score and dofollow status. Twenty-five ship free inside the package; the rest show up locked, by name and DA, and unlock with a subscription (`search_sites`). The free plan builds **ten links, one of them on a DA 90+ site**.
 - **Gives your assistant the method for each site**: the playbook for that kind of link, the guide steps parsed into actions with the exact button names, and what the site requires (`get_method`).
 - **Plans a campaign** for your URL: sites inside your DA range, the dofollow share you asked for, methods spread, anchor text assigned by ratio (`plan_campaign`, subscription).
 - **Builds links in your browser** with a proof screenshot on login-free sites, free; on account-based sites with the model-driven executor on a subscription (`build_link`, `queue_build`).
@@ -74,7 +74,7 @@ That is the whole interaction, on the free list alone. In detail:
 | Methods | profile fields, articles and guest posts, social bookmarking, web 2.0 pages, forums and signatures, directories, shared documents, comments, Q&A, URL shorteners |
 | Per site | the step-by-step method parsed into actions, the placement step, and what the site requires: account, inbox, captcha, social login, upload, moderation |
 
-Twenty-five of these sites, with their methods, are bundled free. The rest, the campaign planner, automatic building and verification come with a free API key when the hosted service opens.
+Twenty-five of these sites, with their methods, are bundled free, and the free plan builds ten links on them, one of which may be on a DA 90+ site. The rest of the library, the campaign planner, automatic building and verification, Facebook albums and GitHub Pages links come with a subscription.
 
 ## Free: 25 sites from GitHub, right now
 
