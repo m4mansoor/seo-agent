@@ -31,6 +31,15 @@ PER_WEEK = 1               # the guide's own cadence
 PER_PAGE = 4               # albums one Page ever carries; at one a week, a month's worth
 MIN_GAP_HOURS = 20         # a floor under the cadence, so a raised weekly cap never means two in an afternoon
 
+# Each method has its own risk, so each has its own numbers. A Facebook Page is borrowed ground and a burst is
+# what gets it restricted. A GitHub Pages site is the customer's own site publishing its own writing: three a
+# week there is an ordinary blog, not a footprint, and a repository holds as many pages as it likes -- more pages
+# on one site is what a real site looks like, so there is no ceiling on it at all.
+LIMITS = {
+    "media_set": {"per_week": PER_WEEK, "per_home": PER_PAGE, "gap_hours": MIN_GAP_HOURS, "env": "MEDIA_SET"},
+    "github_pages": {"per_week": 3, "per_home": 0, "gap_hours": 8, "env": "GITHUB_PAGES"},
+}
+
 
 def _num(name: str, default: float) -> float:
     try:
@@ -39,28 +48,39 @@ def _num(name: str, default: float) -> float:
         return default
 
 
-def per_week() -> int:
-    return max(1, int(_num("MEDIA_SETS_PER_WEEK", PER_WEEK)))
+def _limits(method: str) -> dict:
+    return LIMITS.get(method) or LIMITS["media_set"]
 
 
-def per_page() -> int:
-    return max(1, int(_num("MEDIA_SETS_PER_PAGE", PER_PAGE)))
+def per_week(method: str = "media_set") -> int:
+    d = _limits(method)
+    return max(1, int(_num(f"{d['env']}S_PER_WEEK", d["per_week"])))
 
 
-def min_gap() -> float:
-    return _num("MEDIA_SET_MIN_GAP_HOURS", MIN_GAP_HOURS) * 3600
+def per_page(method: str = "media_set") -> int:
+    """How many go on one home -- a Facebook Page, a repository -- before the next starts a fresh one.
+
+    Zero means no ceiling, which is right for anything that is genuinely the customer's own site."""
+    d = _limits(method)
+    n = int(_num(f"{d['env']}S_PER_PAGE", d["per_home"]))
+    return n if n > 0 else 10 ** 9
 
 
-def cadence() -> float:
-    """The spacing one album a week works out to, used to keep a rollover Page on the same rhythm."""
-    return WEEK / per_week()
+def min_gap(method: str = "media_set") -> float:
+    d = _limits(method)
+    return _num(f"{d['env']}_MIN_GAP_HOURS", d["gap_hours"]) * 3600
+
+
+def cadence(method: str = "media_set") -> float:
+    """The spacing the weekly number works out to, used to keep a rollover home on the same rhythm."""
+    return WEEK / per_week(method)
 
 
 def _recent(built: list[float], now: float) -> list[float]:
     return sorted(t for t in built if now - t < WEEK)
 
 
-def wait_for(built: list[float], now: Optional[float] = None) -> dict:
+def wait_for(built: list[float], now: Optional[float] = None, method: str = "media_set") -> dict:
     """When the next album may go up, on timing alone.
 
     This is the website's rhythm rather than one Page's capacity, so it is asked of every album the customer has
@@ -68,9 +88,9 @@ def wait_for(built: list[float], now: Optional[float] = None) -> dict:
     four in an afternoon."""
     now = time.time() if now is None else float(now)
     recent = _recent(built, now)
-    cap = per_week()
+    cap = per_week(method)
 
-    gap_at = (max(built) + min_gap()) if built else now
+    gap_at = (max(built) + min_gap(method)) if built else now
     week_at = (recent[0] + WEEK) if len(recent) >= cap else now
     at = max(gap_at, week_at)
 
@@ -96,11 +116,11 @@ def wait_for(built: list[float], now: Optional[float] = None) -> dict:
                        "Spacing them out is what keeps the Page, and every album on it, alive."]}
 
 
-def check(built: list[float], now: Optional[float] = None) -> dict:
+def check(built: list[float], now: Optional[float] = None, method: str = "media_set") -> dict:
     """May another album go up on this Page right now, and if not, when — or whether the answer is a new Page."""
     now = time.time() if now is None else float(now)
     recent = _recent(built, now)
-    ceiling = per_page()
+    ceiling = per_page(method)
 
     if len(built) >= ceiling:
         # Waiting does not fix this one, so no date is offered. The next album belongs on a Page of its own.
@@ -112,13 +132,13 @@ def check(built: list[float], now: Optional[float] = None) -> dict:
                            f"restricted costs you four, not everything you have built.",
                            "I will make a second Page for this website and carry on from there."]}
 
-    return wait_for(built, now)
+    return wait_for(built, now, method)
 
 
-def next_slot(built: list[float], now: Optional[float] = None) -> float:
+def next_slot(built: list[float], now: Optional[float] = None, method: str = "media_set") -> float:
     """The earliest moment another album may go up on this Page. A full Page never comes free."""
     now = time.time() if now is None else float(now)
-    d = check(built, now)
+    d = check(built, now, method)
     if d["needs_new_page"]:
         return float("inf")
     return now if d["allowed"] else float(d["next_at"])

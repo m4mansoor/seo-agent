@@ -190,7 +190,7 @@ def upgrade() -> dict:
 # be handed to us. Everything else -- the library, the planner, the monitor, anything that costs money -- comes
 # from the engine, because that is where the data and the billing live.
 LOCAL_ALWAYS = {"get_traffic", "traffic_plan", "build_link", "verify_link", "log_link", "list_results",
-                "facebook_sign_in"}
+                "facebook_sign_in", "github_connect", "publish_page"}
 
 
 def runs_here(name: str) -> bool:
@@ -247,6 +247,51 @@ def traffic_plan(urls: str, page_url: str = "") -> dict:
                        f"A Page carries {cap} albums, about a month's worth, and then the next starts a fresh Page.",
                        "Each website's own Page gets its own allowance, so several sites move faster than one.",
                        "Say the word and I will build the first now."]}
+
+
+def github_connect(wait_minutes: int = 10) -> dict:
+    """Connect this person's GitHub once, in their own browser, so pages can be published to their own site."""
+    from . import pages_run
+    already = pages_run.connected()
+    if already["connected"]:
+        who = f" as {already['login']}" if already["login"] else ""
+        return {**already, "say": f"GitHub is already connected{who}.",
+                "detail": ["Nothing to do. Ask me to publish a page whenever you like."]}
+    steps: list[str] = []
+    started = pages_run.connect_start()
+    if not started.get("ok"):
+        return started
+    done = pages_run.connect_wait(started["device_code"], started["interval"],
+                                  min(started["expires_in"], max(1, wait_minutes) * 60), on_step=steps.append)
+    return {**done, "user_code": started["user_code"], "url": started["url"], "did": steps}
+
+
+def publish_page(url: str, keyword: str, brand: str = "", kind: str = "article", repo: str = "") -> dict:
+    """Publish a page on this person's own GitHub Pages site linking to one of their pages. Runs here, on their
+    machine: it is their GitHub account and their token, and neither leaves the computer."""
+    import time as _t
+
+    from . import pages_run
+    cfg = local.read_config()
+    repos = cfg.get("repos_by_site") or {}
+    history = cfg.get("pages_built") or {}
+    site = url.split("//")[-1].split("/")[0].removeprefix("www.")
+    steps: list[str] = []
+    r = pages_run.get_traffic(url.strip(), keyword.strip(), brand=brand.strip(), kind=kind,
+                              use_repo=repo.strip(), repos_by_site=repos,
+                              built_at=history.get(site, []), on_step=steps.append)
+    if r.get("site") and r.get("repo"):
+        repos[r["site"]] = r["repo"]                # one repository per website, decided once
+        local.write_config(repos_by_site=repos)
+    if r.get("ok") and r.get("url") and not r.get("pending"):
+        history.setdefault(site, []).append(_t.time())      # what the pace is measured against
+        local.write_config(pages_built=history)
+    if r.get("ok") and r.get("verified"):
+        # In "what we built" only once a stranger has loaded it and the link was really there.
+        local.Results().save(JobResult(slug="github-pages", target_url=url, anchor_text=keyword,
+                                       live_url=r["url"], status="placed",
+                                       notes="GitHub Pages, followed link"))
+    return {**r, "did": steps}
 
 
 def get_traffic(url: str, keyword: str, brand: str = "", kind: str = "article", images: str = "",
@@ -306,6 +351,17 @@ FREE_TOOLS = [
     types.Tool(name="library_summary", description="What the free list contains and what a subscription adds.", inputSchema={"type": "object", "properties": {}}),
     types.Tool(name="facebook_sign_in", description="Open a browser here and wait while the person signs in to Facebook. Needed once, ever; the signed-in browser is kept on their machine and their password never leaves it.",
                inputSchema={"type": "object", "properties": {"wait_minutes": {"type": "integer"}}}),
+    types.Tool(name="github_connect", description="Connect the person's GitHub once so pages can be published to their own GitHub Pages site. "
+               "A window opens on GitHub's own device page with the code already filled in; they approve it and it is never asked again on this machine. "
+               "Only public repositories are in reach -- tell them that. Runs on this machine because it is their browser and their account.",
+               inputSchema={"type": "object", "properties": {"wait_minutes": {"type": "integer"}}}),
+    types.Tool(name="publish_page", description="Publish a page on the person's own GitHub Pages site that links to one of their pages on a phrase. "
+               "This is a FOLLOWED link, unlike get_traffic's Facebook album: it sits on a real domain, is indexed like any other page and passes ranking strength -- say that difference plainly when offering both. "
+               "One call writes an original page about their page, makes the repository for that website if there is not one, commits the page, rebuilds the site index, switches Pages on, waits for the build and checks a stranger can load it with the link really in it. "
+               "If it answers needs_connect, call github_connect and call this again. One repository per website, never one per keyword. kind: 'article' for something read, 'tool' for something operated.",
+               inputSchema={"type": "object", "properties": {"url": {"type": "string"}, "keyword": {"type": "string"},
+                                                            "brand": {"type": "string"}, "kind": {"type": "string"},
+                                                            "repo": {"type": "string"}}, "required": ["url", "keyword"]}),
     types.Tool(name="traffic_plan", description="Plan albums for several of the customer's pages at once: a date and a Facebook Page for each. "
                "Albums go up one a week, and a Page carries four before the next starts a fresh Page. Show the dates plainly, say how many new "
                "Pages they will have to make, then build the first with get_traffic.",
@@ -322,7 +378,7 @@ FREE_TOOLS = [
 FREE_IMPL = {"search_sites": search_sites, "get_method": get_method, "library_summary": library_summary, "verify_link": verify_link,
              "log_link": log_link, "list_results": list_results, "account": account, "upgrade": upgrade,
              "facebook_sign_in": facebook_sign_in, "get_traffic": get_traffic,
-             "traffic_plan": traffic_plan}
+             "traffic_plan": traffic_plan, "github_connect": github_connect, "publish_page": publish_page}
 
 
 # ------------------------------------------------------------------ server

@@ -286,6 +286,17 @@
   "referring_domains": 130922
  },
  {
+  "slug": "facebook-media-set",
+  "name": "Facebook Media Set",
+  "domain": "facebook.com",
+  "da": 95,
+  "dofollow": false,
+  "method": "media_set",
+  "method_label": "Facebook media set (ranking asset)",
+  "tier": "C",
+  "referring_domains": 0
+ },
+ {
   "slug": "reddit",
   "name": "Reddit",
   "domain": "reddit.com",
@@ -394,6 +405,17 @@
   "method_label": "Social post",
   "tier": "D",
   "referring_domains": 265835
+ },
+ {
+  "slug": "github-pages",
+  "name": "GitHub Pages",
+  "domain": "github.io",
+  "da": 94,
+  "dofollow": true,
+  "method": "pages_site",
+  "method_label": "GitHub Pages site (followed link)",
+  "tier": "B",
+  "referring_domains": 0
  },
  {
   "slug": "twitter",
@@ -535,7 +557,7 @@
   "dofollow": true,
   "method": "page_builder",
   "method_label": "Page builder site",
-  "tier": "A",
+  "tier": "B",
   "referring_domains": 465357
  },
  {
@@ -856,27 +878,5 @@
   "method_label": "Profile website field",
   "tier": "B",
   "referring_domains": 155356
- },
- {
-  "slug": "crunchbase",
-  "name": "Crunchbase",
-  "domain": "crunchbase.com",
-  "da": 92,
-  "dofollow": true,
-  "method": "directory_listing",
-  "method_label": "Directory listing",
-  "tier": "B",
-  "referring_domains": 147773
- },
- {
-  "slug": "scoop-it",
-  "name": "Scoop it",
-  "domain": "scoop.it",
-  "da": 92,
-  "dofollow": false,
-  "method": "bookmark_submit",
-  "method_label": "Bookmark / link submit",
-  "tier": "B",
-  "referring_domains": 139259
  }
 ]

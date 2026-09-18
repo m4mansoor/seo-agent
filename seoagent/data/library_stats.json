@@ -1,12 +1,12 @@
 {
- "sites": 1245,
- "reachable": 1138,
- "dofollow": 813,
+ "sites": 1248,
+ "reachable": 1141,
+ "dofollow": 815,
  "by_da": {
-  "da_90_plus": 117,
-  "da_70_plus": 321,
-  "da_50_plus": 549,
-  "da_30_plus": 808
+  "da_90_plus": 119,
+  "da_70_plus": 323,
+  "da_50_plus": 552,
+  "da_30_plus": 811
  },
  "by_method": {
   "Profile website field": 509,
@@ -21,7 +21,10 @@
   "Social post": 6,
   "Directory listing": 6,
   "Q&A answer": 5,
-  "Comment": 4
+  "Comment": 4,
+  "Facebook media set (ranking asset)": 1,
+  "GitHub Pages site (followed link)": 1,
+  "Article or post": 1
  },
  "free": {
   "sites": 25,

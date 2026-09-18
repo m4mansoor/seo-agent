@@ -530,7 +530,7 @@ def readable_to_a_stranger(page: Any, url: str, expect: list[str]) -> bool:
         return False
 
 
-def submit_for_indexing(album_url: str, keyword: str = "") -> dict:
+def submit_for_indexing(album_url: str, keyword: str = "", label: str = "media set") -> dict:
     """Ask for the album to be crawled.
 
     Being found and being ranked are different things, and only the first is ours to influence. This shortens
@@ -546,7 +546,7 @@ def submit_for_indexing(album_url: str, keyword: str = "") -> dict:
                     "detail": ["Search engines will find it on their own eventually; this asks them to look now.",
                                "It is a paid extra and it is the one thing that shortens the wait."],
                     "why": "indexing is not switched on for this account"}
-        name = f"media set: {keyword or album_url}"[:60]
+        name = f"{label}: {keyword or album_url}"[:60]
         return {"submitted": True, "project": indexer.submit(name, [album_url])}
     except Exception as e:
         return {"submitted": False, "why": f"{type(e).__name__}: {str(e)[:120]}"}
