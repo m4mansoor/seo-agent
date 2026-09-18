@@ -18,6 +18,7 @@ SEO Agent is an open-source SEO agent for link building. It runs as an MCP serve
 - **Gives your assistant the method for each site**: the playbook for that kind of link, the guide steps parsed into actions with the exact button names, and what the site requires (`get_method`).
 - **Plans a campaign** for your URL: sites inside your DA range, the dofollow share you asked for, methods spread, anchor text assigned by ratio (`plan_campaign`, subscription).
 - **Builds links in your browser** with a proof screenshot on login-free sites, free; on account-based sites with the model-driven executor on a subscription (`build_link`, `queue_build`).
+- **Builds a Facebook album that ranks and sends you traffic, and a followed link on your own GitHub Pages site**, both unattended after one sign-in. Subscription only (`get_traffic`, `publish_page`).
 - **Verifies every link** by fetching the live page and checking the hyperlink, the anchor text and nofollow (`verify_link`).
 - **Handles gates in the chat**: at a captcha, email code or login it asks you, or with a subscription uses a service you connected once (`resolve_gate`, `connect_service`, `read_inbox`).
 - **Suggests the keywords and anchors** by reading the target page itself, then allocates them across the five anchor types so your profile is not one phrase forty times (`suggest_keywords`, subscription).
@@ -132,7 +133,7 @@ The agent does not replace judgement: you still choose the keywords, the anchor 
 
 ## The free backlink sites list
 
-Twenty-five sites from the library, all verified reachable, DA 20 to 96, 25 of them dofollow, two of them at DA 90 or higher. Each has a method your assistant can follow.
+Twenty-five sites from the library, all verified reachable, DA 20 to 96, 25 of them dofollow, two of them at DA 90 or higher. Each has a method your assistant can follow. The free plan builds ten links on this list, one of which may go on a DA 90+ site.
 
 <details>
 <summary>Show all 25</summary>
@@ -173,7 +174,7 @@ More lists, with DA and referring domains: [social bookmarking sites](https://m4
 ## Why SEO Agent and not another SEO MCP server
 
 - **It builds, not only reports.** Most SEO MCP servers wrap a metrics API. This one follows a site's method in a browser, places the link and proves it with a screenshot and a live-page check.
-- **The library is the moat.** 1,138 sites, each with its parsed step-by-step method, re-verified reachable every month, with DataForSEO metrics. Twenty-five are free with no key, two of them at DA 90 or higher; the rest appear locked by name and DA.
+- **The library is the moat.** 1,138 sites, each with its parsed step-by-step method, re-verified reachable every month, with DataForSEO metrics. Twenty-five are free with no key; the free plan builds ten links on them, one of which may be on a DA 90+ site, and the rest appear locked by name and DA.
 - **It is honest about limits.** A captcha or a login is a gate it asks you about, never something it fakes its way past. Links that are plain text, nofollow or on a noindex page are reported as such.
 
 ## Gates are handled in the chat, not skipped
@@ -222,7 +223,7 @@ One engine, one library, one subscription. Four ways in, at four different stage
 
 | Door | Status | What it is |
 |---|---|---|
-| **Any AI assistant** | Live | Claude Code, Claude Desktop, claude.ai, Cursor, Codex, ChatGPT, Windsurf. `pip install seo-agent`, 25 sites free, links built in your own browser. |
+| **Any AI assistant** | Live | Claude Code, Claude Desktop, claude.ai, Cursor, Codex, ChatGPT, Windsurf. `pip install seo-agent`, ten free links, built in your own browser. |
 | **[WordPress plugin](https://m4mansoor.github.io/seo-agent/wordpress-backlink-plugin.html)** | In development | Posts, pages and WooCommerce products as targets. Campaigns, gates, weekly monitoring and white-label reports inside wp-admin. |
 | **[Shopify app](https://m4mansoor.github.io/seo-agent/shopify-seo-app.html)** | In development | Products and collections as targets, embedded in the Shopify admin, billed through Shopify. |
 | **[Windows and macOS app](https://m4mansoor.github.io/seo-agent/seo-desktop-app.html)** | In development | The only door that uses accounts you are already signed in to. Its own browser, your own model key, nothing uploaded. |

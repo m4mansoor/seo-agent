@@ -106,3 +106,23 @@ def test_an_ordinary_site_still_builds_with_the_strong_one_spent(monkeypatch):
     ordinary = next(s["slug"] for s in server.SITES if not free.is_strong(s.get("da") or 0))
     out = server.build_link(ordinary, "https://lmrify.com/x", "anchor")
     assert out.get("status") != "locked", "eight links are still theirs to use"
+
+
+def test_what_we_say_about_the_plan_is_what_we_enforce():
+    """The number in the sentence and the number in the check are the same object, so they cannot drift."""
+    from seoagent import server
+    note = server.account()["note"]
+    assert f"{free.FREE_LINKS} links" in note
+    assert "DA 90+" in note
+    assert "Facebook albums" in note and "GitHub Pages" in note, "what is not in the free plan is said, not implied"
+
+
+def test_the_readme_states_the_plan_the_code_enforces():
+    """A README promising fifty while the code gives ten is the complaint nobody needs to receive."""
+    import pathlib
+    readme = pathlib.Path(__file__).resolve().parents[1] / "README.md"
+    if not readme.exists():
+        return                          # installed from a wheel, where the README does not ship
+    text = readme.read_text().lower()
+    assert "ten links" in text
+    assert "50 free" not in text and "fifty free" not in text

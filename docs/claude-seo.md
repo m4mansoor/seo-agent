@@ -9,7 +9,7 @@ Claude can plan and build backlinks when it has two things: a library of sites w
 
 ## Install
 
-Free, 25 sites, links built in your own browser, no account:
+Free, ten links on 25 sites, built in your own browser, no account:
 
 ```bash
 pip install seo-agent && playwright install chromium

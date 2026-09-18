@@ -34,7 +34,7 @@ These are not marketing lines; they are constraints in the code, most of them wi
 
 ## How it is built
 
-An open-source MCP server in Python, so it runs inside whatever assistant you already use — Claude Code, Cursor, Codex, Claude Desktop — rather than being one more dashboard. The library, the planner, the browser executor and the verifier are the same code whether you install the free package or subscribe. Twenty-five sites ship free with no account; the full library, the advisor, and building on account-based sites are the subscription.
+An open-source MCP server in Python, so it runs inside whatever assistant you already use — Claude Code, Cursor, Codex, Claude Desktop — rather than being one more dashboard. The library, the planner, the browser executor and the verifier are the same code whether you install the free package or subscribe. Twenty-five sites ship free with no account, and the free plan builds ten links on them, one of which may be on a DA 90+ site. The full library, the advisor, building on account-based sites, Facebook albums and GitHub Pages links are the subscription.
 
 The repository is public. If a site changes its method, [open an issue](https://github.com/m4mansoor/seo-agent/issues): a report is how the method gets corrected for everyone.
 

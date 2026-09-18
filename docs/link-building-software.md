@@ -27,7 +27,7 @@ An agent that reads each site's method the way a person would, and is honest abo
 |---|---|---|
 | In-house link builder | $2,500 to $4,000 a month | 3 to 6 weeks |
 | Agency or marketplace | $150 to $400 per DA 40+ dofollow link | 4 to 8 weeks |
-| SEO Agent | Free for 25 sites, $97 a year for all 1,245 | An afternoon |
+| SEO Agent | Free for ten links, $97 a year for all 1,248 | An afternoon |
 
 Figures for the first two are typical market ranges, not a survey.
 
@@ -38,6 +38,6 @@ pip install seo-agent && playwright install chromium
 claude mcp add seo-agent -- seo-agent
 ```
 
-Twenty-five sites with their methods, links built in your own browser, every one verified, no account. Then ask your assistant: *build a dofollow backlink to my site from the free list and verify it.*
+Ten links on twenty-five sites with their methods, one of them on a DA 90+ site, built in your own browser, every one verified, no account. Then ask your assistant: *build a dofollow backlink to my site from the free list and verify it.*
 
 See also: [how to get backlinks with an AI agent](how-to-get-backlinks-with-ai.html), [the tool reference](seo-mcp-server.html), and the [roadmap](roadmap.html) for the WordPress, Shopify and desktop versions.

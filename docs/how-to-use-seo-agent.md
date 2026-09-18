@@ -110,7 +110,7 @@ Ask in plain language:
 
 > Show me dofollow sites at DA 60 or higher.
 
-You get back name, domain, Domain Authority, referring domains, spam score, dofollow status, the method used to get a link, and the tier. Twenty-five sites are bundled in the package and work immediately; the rest of the library appears by name and DA but locked.
+You get back name, domain, Domain Authority, referring domains, spam score, dofollow status, the method used to get a link, and the tier. Twenty-five sites are bundled in the package and work immediately; the free plan builds ten links on them, one of which may be on a DA 90+ site. The rest of the library appears by name and DA but locked.
 
 **Read the numbers together, not alone.** Domain Authority is a third-party estimate, not a Google metric. A DA 90 site with almost no referring domains and a high spam score is worth less than a DA 55 site with real traffic. The agent shows you all of these so you can tell the difference.
 

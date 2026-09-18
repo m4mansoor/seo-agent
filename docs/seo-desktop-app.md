@@ -13,7 +13,7 @@ Because it is the only place the agent can use **your own accounts**. A WordPres
 
 ## What it does
 
-**Free, without an account.** Everything the pip package does, without Python or a terminal: the 25 free sites with their methods, building on login-free sites with proof screenshots, verification, and a local results log, all behind a real interface. Guided manual mode opens the page next to the checklist and highlights the field each step names. It will also write the MCP entry for Claude Desktop, Claude Code, Cursor and Windsurf for you, so your assistant uses the same library and the same results database.
+**Free, without an account.** Everything the pip package does, without Python or a terminal: ten links on the 25 free sites with their methods, building on login-free sites with proof screenshots, verification, and a local results log, all behind a real interface. Guided manual mode opens the page next to the checklist and highlights the field each step names. It will also write the MCP entry for Claude Desktop, Claude Code, Cursor and Windsurf for you, so your assistant uses the same library and the same results database.
 
 **With a subscription.** The full 1,245-site library and the campaign planner. Building on every method inside your own signed-in sessions, with your own AI model key held on your machine and called directly, so page snapshots go to your provider and nowhere else. A session vault showing which sites are signed in and which need a fresh login. The backlink monitor, competitor gap and reports, with PDFs saved straight to disk. Overnight runs with the browser hidden and tray notifications when a link lands, a gate opens or a link drops. Separate profiles per client, so agency accounts never mix.
 

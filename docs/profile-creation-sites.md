@@ -5,7 +5,7 @@ description: "575 profile creation sites, verified reachable, with Domain Author
 
 # Profile creation sites list (high DA, dofollow marked)
 
-This list comes from the SEO Agent library: 575 profile creation sites, each one verified as reachable this month, with Domain Authority, referring domains from DataForSEO, and whether the link it gives is dofollow. The free list bundled with the agent includes the rows marked below; the full library, with the step-by-step method for every site, needs a free API key.
+This list comes from the SEO Agent library: 575 profile creation sites, each one verified as reachable this month, with Domain Authority, referring domains from DataForSEO, and whether the link it gives is dofollow. The free list bundled with the agent includes the rows marked below, and the free plan builds ten links on them, one of which may be on a DA 90+ site. The full library, with the step-by-step method for every site, needs a subscription.
 
 | Site | Domain | DA | Referring domains | Link | Needs | In free list |
 |---|---|---|---|---|---|---|

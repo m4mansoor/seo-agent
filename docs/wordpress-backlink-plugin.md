@@ -51,6 +51,6 @@ One subscription, many installs, each registered with its own caps and allowance
 
 ## The free tier
 
-Twenty-five sites, built for your site by the hosted engine once your domain is verified, plus verification, weekly monitoring of your own links and a link-building audit of your site. Building on the full library needs a subscription.
+Ten links, one of them on a DA 90+ site, built for you by the hosted engine once your domain is verified, plus verification, weekly monitoring of your own links and a link-building audit of your site. The full library, Facebook albums and GitHub Pages links need a subscription.
 
 Meanwhile, the [command line and MCP version](https://github.com/m4mansoor/seo-agent) works today.

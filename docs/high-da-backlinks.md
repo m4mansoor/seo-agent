@@ -5,7 +5,7 @@ description: "117 sites with Domain Authority 90 or higher, verified reachable, 
 
 # High DA backlinks: 117 reachable sites at DA 90+
 
-This list comes from the SEO Agent library: 117 sites with Domain Authority 90 or higher, each one verified as reachable this month, with Domain Authority, referring domains from DataForSEO, and whether the link it gives is dofollow. The free list bundled with the agent includes the rows marked below; the full library, with the step-by-step method for every site, needs a free API key.
+This list comes from the SEO Agent library: 117 sites with Domain Authority 90 or higher, each one verified as reachable this month, with Domain Authority, referring domains from DataForSEO, and whether the link it gives is dofollow. The free list bundled with the agent includes the rows marked below, and the free plan builds ten links on them, one of which may be on a DA 90+ site. The full library, with the step-by-step method for every site, needs a subscription.
 
 | Site | Domain | DA | Referring domains | Link | Needs | In free list |
 |---|---|---|---|---|---|---|
