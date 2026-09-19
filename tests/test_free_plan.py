@@ -126,3 +126,19 @@ def test_the_readme_states_the_plan_the_code_enforces():
     text = readme.read_text().lower()
     assert "ten links" in text
     assert "50 free" not in text and "fifty free" not in text
+
+
+def test_no_file_in_the_package_still_promises_the_old_free_plan():
+    """A stale number in a README is a promise someone will hold us to."""
+    import pathlib
+    import re
+    root = pathlib.Path(__file__).resolve().parents[1]
+    stale = re.compile(r"free[^.\n]{0,40}\b(50|25)\b\s*(links|built)|\b50\b[^.\n]{0,30}(free|built) links", re.I)
+    found = []
+    for p in list(root.glob("*.md")) + list(root.glob("docs/*.md")) + list(root.glob("seoagent/**/*.py")):
+        if "test_free_plan" in p.name:
+            continue
+        for i, line in enumerate(p.read_text(errors="ignore").splitlines(), 1):
+            if stale.search(line):
+                found.append(f"{p.relative_to(root)}:{i}: {line.strip()[:90]}")
+    assert not found, "these still promise the old free plan:\n" + "\n".join(found)
