@@ -15,7 +15,7 @@ The bulk submitters of the last decade did the opposite and posted the same text
 
 An agent that reads each site's method the way a person would, and is honest about the result:
 
-- **A method per site, not a URL per site.** Every one of the 1,245 sites in the library carries its steps parsed into actions, with the exact button and field names, which step places the link, and what the site requires: an account, an inbox, a captcha, a social login, an upload, a wait for moderation.
+- **A method per site, not a URL per site.** Every one of the 1,248 sites in the library carries its steps parsed into actions, with the exact button and field names, which step places the link, and what the site requires: an account, an inbox, a captcha, a social login, an upload, a wait for moderation.
 - **It stops where a person would have to.** A captcha, an email code or a login is reported and handed back to you, with the option to connect a service once so it clears itself next time. Nothing is faked.
 - **Verification is the product.** After placing a link it opens the public page and checks three things: is the target a real hyperlink, does the anchor match, and is it nofollow. A URL printed as plain text is not a backlink and is never counted as one.
 - **Pacing.** Links are spread across days and methods, never fired in a burst, because a sudden run of identical links is the pattern that gets a site filtered.

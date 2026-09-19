@@ -53,7 +53,7 @@ Fifty verified, dofollow-checked backlinks a month is a job. Typical ways to get
 | **In-house link builder** | $2,500 to $4,000 a month salary, plus tools | 3 to 6 weeks, at 30 to 60 minutes per link | Only the sites they have used before; a new hire starts from a blank list |
 | **Agency or marketplace** | $150 to $400 per DA 40+ dofollow link, so $7,500 to $20,000 per 50 | 4 to 8 weeks | Their list, not yours; you never see the method |
 | **Freelancer on a gig site** | $10 to $50 per link | 1 to 2 weeks | Usually the same 100 sites everyone else spams |
-| **SEO Agent** | $97 a year or $27 a month | An afternoon; login-free sites build in seconds each | 1,245 sites with the exact method for each, verified reachable monthly, with DataForSEO metrics |
+| **SEO Agent** | $97 a year or $27 a month | An afternoon; login-free sites build in seconds each | 1,248 sites with the exact method for each, verified reachable monthly, with DataForSEO metrics |
 
 The library is the part a team cannot copy quickly. Every site in it came from years of link building: which DA 60 profile page still gives a dofollow link, which forum strips links from new members, which shortener sits behind a captcha, which directory approves in a day. Each entry carries the step-by-step method with the exact button names, what the site requires, and referring domains, spam score and traffic from DataForSEO. A person could rebuild that list, but it would take them the same years.
 

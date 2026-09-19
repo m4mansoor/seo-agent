@@ -20,7 +20,7 @@ Written plainly, because a roadmap that reads like a brochure is useless. Three 
 
 ## In development
 
-**The hosted engine.** The full 1,245-site library, the campaign planner, building on account-based sites with your own AI model key, gates with connected services, link velocity pacing, the backlink monitor with a disavow file, competitor gap analysis, campaign reports and a dashboard. Every piece is built and tested; it is not deployed yet, so the subscription is not open. When it opens, the same package activates with a key and nothing else changes.
+**The hosted engine.** The full 1,248-site library, the campaign planner, building on account-based sites with your own AI model key, gates with connected services, link velocity pacing, the backlink monitor with a disavow file, competitor gap analysis, campaign reports and a dashboard. Every piece is built and tested; it is not deployed yet, so the subscription is not open. When it opens, the same package activates with a key and nothing else changes.
 
 ## Planned
 

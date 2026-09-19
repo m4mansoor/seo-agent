@@ -202,7 +202,7 @@ The planner picks sites inside your range, spreads the methods so you do not end
 
 ## Going further: the full library
 
-The free twenty-five are real, usable sites, and two of them are DA 90+. The rest of the library — 1,245 sites, the campaign planner, automatic building on account-based sites, gate handling, competitor gap analysis and monthly monitoring — comes with a subscription, currently $97 a year or $27 a month.
+The free twenty-five are real, usable sites, and two of them are DA 90+. The rest of the library — 1,248 sites, the campaign planner, automatic building on account-based sites, gate handling, competitor gap analysis and monthly monitoring — comes with a subscription, currently $97 a year or $27 a month.
 
 After paying, copy the key from the success page and tell your assistant:
 

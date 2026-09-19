@@ -159,3 +159,36 @@ def test_every_published_link_points_at_the_domain_we_own():
                 if host != ours:
                     bad.append(f"{p.relative_to(root)}:{i}: {host} (we serve {ours})")
     assert not bad, "published links point somewhere we do not own:\n" + "\n".join(bad)
+
+
+def test_every_stated_library_size_is_the_real_one():
+    """Four different counts were live at once, none of them current. The claim and the data are now one thing:
+    a monthly sweep that changes the library fails this until the copy is updated with it."""
+    import json
+    import pathlib
+    import re
+    root = pathlib.Path(__file__).resolve().parents[1]
+    stats = json.loads((root / "seoagent/data/library_stats.json").read_text())
+    ok = {f"{stats['reachable']:,}", f"{stats['sites']:,}", str(stats["reachable"]), str(stats["sites"])}
+    # Only the shapes that are a claim about the library. A referring-domain figure like 1,371,100 is not one.
+    claims = [r"([\d,]+),? (?:backlink )?sites?, (?:every one )?verified", r"([\d,]+)[- ]site library",
+              r"library of ([\d,]+) sites", r"full ([\d,]+)[- ]site", r"[Ee]very one of ([\d,]+) sites",
+              r"all ([\d,]+) verified-reachable sites", r"catalogue holds ([\d,]+)"]
+    bad = []
+    for p in [root / "README.md"] + sorted(root.glob("docs/*.md")) + sorted(root.glob("docs/*.html")):
+        text = p.read_text(errors="ignore")
+        for pat in claims:
+            for n in re.findall(pat, text):
+                if n not in ok:
+                    bad.append(f"{p.relative_to(root)}: claims {n}, library has {stats['reachable']:,} reachable of {stats['sites']:,}")
+    assert not bad, "stated library size is not the real one:\n" + "\n".join(sorted(set(bad)))
+
+
+def test_the_package_reports_the_version_it_ships_as():
+    """They disagreed: the module said 0.1.0 while the wheel said 0.2.0, so a bug report named the wrong build."""
+    import pathlib
+    import tomllib
+    import seoagent
+    root = pathlib.Path(__file__).resolve().parents[1]
+    declared = tomllib.loads((root / "pyproject.toml").read_text())["project"]["version"]
+    assert seoagent.__version__ == declared

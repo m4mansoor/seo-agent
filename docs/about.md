@@ -19,7 +19,7 @@ He is on GitHub as [m4mansoor](https://github.com/m4mansoor), where SEO Agent is
 
 Link building has been the same job for fifteen years, and most of the job is not judgement. It is finding the field, creating the account, placing the link, and checking it went live — repeated fifty times. Agencies charge $150 to $400 a link for that and never show you the method. Bought lists are full of ghosts: sites that still score DA 90 on a decade of old links and shut down years ago, because nobody fetched the URL.
 
-SEO Agent started as a personal project to automate that repetition properly: not to replace the judgement, but to remove everything around it. The library of 1,138 sites, each with its parsed method, is the product of that work. Every site is fetched monthly, and the ones that fail are hidden from search and planning rather than sold. Every method is checked against its live page, and the checker is worded to say "nothing looks wrong" rather than "verified", because only a real build proves a method works.
+SEO Agent started as a personal project to automate that repetition properly: not to replace the judgement, but to remove everything around it. The library of 1,141 sites, each with its parsed method, is the product of that work. Every site is fetched monthly, and the ones that fail are hidden from search and planning rather than sold. Every method is checked against its live page, and the checker is worded to say "nothing looks wrong" rather than "verified", because only a real build proves a method works.
 
 ## The rules it keeps
 

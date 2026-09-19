@@ -4,4 +4,4 @@ Free mode serves the bundled 25-site library locally and builds ten links, one o
 which adds the full 1,245-site library, campaign planning, automatic building and verification.
 """
 
-__version__ = "0.1.0"
+__version__ = "0.2.0"

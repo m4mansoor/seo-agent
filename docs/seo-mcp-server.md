@@ -26,7 +26,7 @@ $97 a year or $27 a month at [https://mcp.seoagents.dev/buy](https://mcp.seoagen
 
 | Tool | What it does |
 |---|---|
-| `search_sites` | The full library of 1,245 sites with referring domains, traffic, spam score and liveness |
+| `search_sites` | The full library of 1,248 sites with referring domains, traffic, spam score and liveness |
 | `get_method` | The playbook, requirements and parsed actions for every site, with the placement step marked |
 | `get_step_screenshot` | The annotated screenshot for a step, when a page does not match the text |
 | `plan_campaign` | Pick sites, balance the dofollow share and method mix, assign anchor text by ratio |
