@@ -22,7 +22,7 @@ SEO Agent is an MCP server. Any MCP client, Claude, Cursor, Codex, Windsurf, VS 
 
 ## Subscribed, after `activate`
 
-$97 a year or $27 a month at [https://mcp.seoagent.dev/buy](https://mcp.seoagent.dev/buy). The same server, now proxying the hosted engine:
+$97 a year or $27 a month at [https://mcp.seoagents.dev/buy](https://mcp.seoagents.dev/buy). The same server, now proxying the hosted engine:
 
 | Tool | What it does |
 |---|---|

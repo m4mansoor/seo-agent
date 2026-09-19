@@ -21,7 +21,7 @@ from .models import JobResult, Site
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 DATA = os.path.join(HERE, "data")
-HOST = os.environ.get("SEOAGENT_HOST", "https://mcp.seoagent.dev").rstrip("/")
+HOST = os.environ.get("SEOAGENT_HOST", "https://mcp.seoagents.dev").rstrip("/")
 BUY_URL = os.environ.get("SEOAGENT_BUY_URL", f"{HOST}/buy")
 PRICE_YEARLY_USD = int(os.environ.get("SEOAGENT_PRICE_YEARLY_USD", "97"))
 PRICE_MONTHLY_USD = int(os.environ.get("SEOAGENT_PRICE_MONTHLY_USD", "27"))

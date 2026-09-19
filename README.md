@@ -106,7 +106,7 @@ Two kinds of tool, and the difference matters.
 
 ## Subscribe: every site, $97 a year or $27 a month
 
-When you ask for more high-DA sites than the free list holds, the assistant shows what is locked and gives you the payment links; or call `upgrade`. Subscribe at **https://mcp.seoagent.dev/buy?plan=yearly** ($97 a year, about $8 a month) or **https://mcp.seoagent.dev/buy?plan=monthly** ($27 a month, cancel any time), copy the key from the success page, and tell your assistant:
+When you ask for more high-DA sites than the free list holds, the assistant shows what is locked and gives you the payment links; or call `upgrade`. Subscribe at **https://mcp.seoagents.dev/buy?plan=yearly** ($97 a year, about $8 a month) or **https://mcp.seoagents.dev/buy?plan=monthly** ($27 a month, cancel any time), copy the key from the success page, and tell your assistant:
 
 ```
 activate le_your_key
@@ -114,7 +114,7 @@ activate le_your_key
 
 No restart, no config file. From that message on, the same MCP has the full 1,138-site library, the campaign planner, browser building on account-based sites, gates with connected services, background jobs, identity generation, monitoring, campaign reports and a dashboard. Fair use is 500 placed links per key in any 30 days.
 
-**No pip? Use the link instead.** The success page also shows a personal MCP link, `https://mcp.seoagent.dev/u/le_…/mcp`. Paste it into Claude Desktop or claude.ai (Settings, Connectors, Add custom connector, no OAuth), ChatGPT (Settings, Connectors, Developer mode) or Cursor (`"url"` instead of `"command"`). It carries your key, so keep it private.
+**No pip? Use the link instead.** The success page also shows a personal MCP link, `https://mcp.seoagents.dev/u/le_…/mcp`. Paste it into Claude Desktop or claude.ai (Settings, Connectors, Add custom connector, no OAuth), ChatGPT (Settings, Connectors, Developer mode) or Cursor (`"url"` instead of `"command"`). It carries your key, so keep it private.
 
 ## What it replaces
 
@@ -215,7 +215,7 @@ Nothing is required. `activate` stores your key in `~/.seoagent/config.json`; re
 | Variable | Purpose |
 |---|---|
 | `SEOAGENT_API_KEY` | A subscription key, for environments where a config file is inconvenient (CI, containers). |
-| `SEOAGENT_URL` | The hosted endpoint, or a personal link `https://mcp.seoagent.dev/u/le_…/mcp`. Only needed for a self-hosted engine. |
+| `SEOAGENT_URL` | The hosted endpoint, or a personal link `https://mcp.seoagents.dev/u/le_…/mcp`. Only needed for a self-hosted engine. |
 
 ## Where it runs
 

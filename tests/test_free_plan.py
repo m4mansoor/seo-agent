@@ -142,3 +142,20 @@ def test_no_file_in_the_package_still_promises_the_old_free_plan():
             if stale.search(line):
                 found.append(f"{p.relative_to(root)}:{i}: {line.strip()[:90]}")
     assert not found, "these still promise the old free plan:\n" + "\n".join(found)
+
+
+def test_every_published_link_points_at_the_domain_we_own():
+    """seoagent.dev was registered by someone else while our README still sent buyers there. A published link to
+    a domain we do not own is a link to whatever a stranger decides to put on it."""
+    import pathlib
+    import re
+    from seoagent import server
+    ours = server.HOST.split("//", 1)[1].rstrip("/")
+    root = pathlib.Path(__file__).resolve().parents[1]
+    bad = []
+    for p in [root / "README.md"] + sorted(root.glob("docs/*.md")) + sorted(root.glob("docs/*.html")):
+        for i, line in enumerate(p.read_text(errors="ignore").splitlines(), 1):
+            for host in re.findall(r"https?://([a-z0-9.-]*seoagents?\.dev)", line):
+                if host != ours:
+                    bad.append(f"{p.relative_to(root)}:{i}: {host} (we serve {ours})")
+    assert not bad, "published links point somewhere we do not own:\n" + "\n".join(bad)

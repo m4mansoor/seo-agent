@@ -18,7 +18,7 @@ claude mcp add seo-agent -- seo-agent
 
 Claude Desktop, in `claude_desktop_config.json`: `{ "mcpServers": { "seo-agent": { "command": "seo-agent" } } }`
 
-Every site, $97 a year or $27 a month: subscribe at [https://mcp.seoagent.dev/buy](https://mcp.seoagent.dev/buy), then tell Claude `activate le_your_key`. In Claude Desktop or claude.ai you can instead add the personal link from the success page as a custom connector (Settings, Connectors, Add custom connector, no OAuth).
+Every site, $97 a year or $27 a month: subscribe at [https://mcp.seoagents.dev/buy](https://mcp.seoagents.dev/buy), then tell Claude `activate le_your_key`. In Claude Desktop or claude.ai you can instead add the personal link from the success page as a custom connector (Settings, Connectors, Add custom connector, no OAuth).
 
 ## A first session
 
