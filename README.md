@@ -31,14 +31,14 @@ Twenty-six tools in all; the [tool reference](https://m4mansoor.github.io/seo-ag
 **Quick start**
 
 ```bash
-pip install seo-agent && playwright install chromium
-claude mcp add seo-agent -- seo-agent
+pip install seoagents && playwright install chromium
+claude mcp add seoagents -- seoagents
 ```
 
 Any other MCP client, in its `mcpServers` config:
 
 ```json
-{ "mcpServers": { "seo-agent": { "command": "seo-agent" } } }
+{ "mcpServers": { "seoagents": { "command": "seoagents" } } }
 ```
 
 Then ask: *Build a link to my site on a dofollow site from the free list, and verify it.*
@@ -84,14 +84,14 @@ The package is the agent. It runs on your machine, builds links in your own brow
 **Claude Code**
 
 ```bash
-pip install seo-agent && playwright install chromium
-claude mcp add seo-agent -- seo-agent
+pip install seoagents && playwright install chromium
+claude mcp add seoagents -- seoagents
 ```
 
 **Claude Desktop, Cursor, Codex** and any other MCP client take the same command in their config:
 
 ```json
-{ "mcpServers": { "seo-agent": { "command": "seo-agent" } } }
+{ "mcpServers": { "seoagents": { "command": "seoagents" } } }
 ```
 
 Then ask: *I need 5 dofollow backlinks from the free list for https://example.com, keyword "example".* The assistant searches the 25 sites, calls `build_link` where it can build by itself, follows `get_method` where an account is needed, verifies each link and logs it. Ask *how many links have I built* any time; it calls `account`.
@@ -223,7 +223,7 @@ One engine, one library, one subscription. Four ways in, at four different stage
 
 | Door | Status | What it is |
 |---|---|---|
-| **Any AI assistant** | Live | Claude Code, Claude Desktop, claude.ai, Cursor, Codex, ChatGPT, Windsurf. `pip install seo-agent`, ten free links, built in your own browser. |
+| **Any AI assistant** | Live | Claude Code, Claude Desktop, claude.ai, Cursor, Codex, ChatGPT, Windsurf. `pip install seoagents`, ten free links, built in your own browser. |
 | **[WordPress plugin](https://m4mansoor.github.io/seo-agent/wordpress-backlink-plugin.html)** | In development | Posts, pages and WooCommerce products as targets. Campaigns, gates, weekly monitoring and white-label reports inside wp-admin. |
 | **[Shopify app](https://m4mansoor.github.io/seo-agent/shopify-seo-app.html)** | In development | Products and collections as targets, embedded in the Shopify admin, billed through Shopify. |
 | **[Windows and macOS app](https://m4mansoor.github.io/seo-agent/seo-desktop-app.html)** | In development | The only door that uses accounts you are already signed in to. Its own browser, your own model key, nothing uploaded. |

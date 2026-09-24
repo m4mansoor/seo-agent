@@ -62,8 +62,8 @@ The agent does not replace judgement: you still choose the keywords, the anchor 
 ## Try it
 
 ```bash
-pip install seo-agent
-claude mcp add seo-agent -- seo-agent
+pip install seoagents
+claude mcp add seoagents -- seoagents
 ```
 
 Then: *Build a link to my site on a dofollow site from the free list, and verify it.*

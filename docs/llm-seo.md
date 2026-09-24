@@ -30,8 +30,8 @@ SEO Agent is an MCP server, so the same library and playbooks work in any of the
 ## Start
 
 ```bash
-pip install seo-agent
-claude mcp add seo-agent -- seo-agent
+pip install seoagents
+claude mcp add seoagents -- seoagents
 ```
 
 Then ask for a plan for your URL and keywords, and let the agent work through it.

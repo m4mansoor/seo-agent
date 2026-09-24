@@ -12,11 +12,11 @@ Claude can plan and build backlinks when it has two things: a library of sites w
 Free, ten links on 25 sites, built in your own browser, no account:
 
 ```bash
-pip install seo-agent && playwright install chromium
-claude mcp add seo-agent -- seo-agent
+pip install seoagents && playwright install chromium
+claude mcp add seoagents -- seoagents
 ```
 
-Claude Desktop, in `claude_desktop_config.json`: `{ "mcpServers": { "seo-agent": { "command": "seo-agent" } } }`
+Claude Desktop, in `claude_desktop_config.json`: `{ "mcpServers": { "seoagents": { "command": "seoagents" } } }`
 
 Every site, $97 a year or $27 a month: subscribe at [https://mcp.seoagents.dev/buy](https://mcp.seoagents.dev/buy), then tell Claude `activate le_your_key`. In Claude Desktop or claude.ai you can instead add the personal link from the success page as a custom connector (Settings, Connectors, Add custom connector, no OAuth).
 

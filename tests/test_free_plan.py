@@ -175,7 +175,9 @@ def test_every_stated_library_size_is_the_real_one():
               r"library of ([\d,]+) sites", r"full ([\d,]+)[- ]site", r"[Ee]very one of ([\d,]+) sites",
               r"all ([\d,]+) verified-reachable sites", r"catalogue holds ([\d,]+)"]
     bad = []
-    for p in [root / "README.md"] + sorted(root.glob("docs/*.md")) + sorted(root.glob("docs/*.html")):
+    pages = [root / "README.md", root / "pyproject.toml"] + sorted(root.glob("docs/*.md")) \
+        + sorted(root.glob("docs/*.html"))          # pyproject too: its description is the PyPI page
+    for p in pages:
         text = p.read_text(errors="ignore")
         for pat in claims:
             for n in re.findall(pat, text):

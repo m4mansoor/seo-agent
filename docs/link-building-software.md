@@ -34,8 +34,8 @@ Figures for the first two are typical market ranges, not a survey.
 ## Try the free part
 
 ```bash
-pip install seo-agent && playwright install chromium
-claude mcp add seo-agent -- seo-agent
+pip install seoagents && playwright install chromium
+claude mcp add seoagents -- seoagents
 ```
 
 Ten links on twenty-five sites with their methods, one of them on a DA 90+ site, built in your own browser, every one verified, no account. Then ask your assistant: *build a dofollow backlink to my site from the free list and verify it.*

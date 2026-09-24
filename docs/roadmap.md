@@ -11,7 +11,7 @@ Written plainly, because a roadmap that reads like a brochure is useless. Three 
 
 | What | Where it is |
 |---|---|
-| The `seo-agent` package | `pip install seo-agent`, MIT, on GitHub |
+| The `seoagents` package | `pip install seoagents`, MIT, on GitHub |
 | 25 backlink sites with their step-by-step methods | Bundled in the package; the free plan builds ten links, one of them on a DA 90+ site |
 | Local building on login-free sites | Scripted playbooks drive a browser on your machine, with a proof screenshot |
 | Link verification | Fetches the live page and checks the hyperlink, the anchor and nofollow |

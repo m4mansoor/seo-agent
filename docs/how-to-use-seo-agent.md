@@ -32,13 +32,13 @@ One more thing worth deciding now: **which site you are building links to, and w
 Two commands:
 
 ```bash
-pip install seo-agent
+pip install seoagents
 playwright install chromium
 ```
 
 The first installs the agent. The second downloads the browser it builds links in — about 150 MB, once. Skip it and every build fails with a missing-browser error.
 
-If `pip` is not found, try `pip3`. If you use pipx, `pipx install seo-agent` works too, but then run `pipx runpip seo-agent install playwright && playwright install chromium`.
+If `pip` is not found, try `pip3`. If you use pipx, `pipx install seoagents` works too, but then run `pipx runpip seo-agent install playwright && playwright install chromium`.
 
 **Check it worked:**
 
@@ -57,13 +57,13 @@ Pick the one you use.
 **Claude Code** — one command:
 
 ```bash
-claude mcp add seo-agent -- seo-agent
+claude mcp add seoagents -- seoagents
 ```
 
 **Cursor** — open Settings, MCP, Add new server, and paste:
 
 ```json
-{ "mcpServers": { "seo-agent": { "command": "seo-agent" } } }
+{ "mcpServers": { "seoagents": { "command": "seoagents" } } }
 ```
 
 **Claude Desktop** — edit the config file directly:
